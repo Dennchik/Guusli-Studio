@@ -1,0 +1,79 @@
+// todo -------------------------- Variables -----------------------------------
+@import 'core/variables';
+@import 'core/variables-icon';
+@import 'core/swiper-vars';
+//todo ---------------------------- Core ---------------------------------------
+@import 'core/mixins';
+@import 'core/extend';
+@import 'core/modifiers';
+@import 'core/reset';
+@import 'core/ui';
+//todo ------------------------- Default fonts ---------------------------------
+// &display=swap&subset=cyrillic-ext
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter:regular);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,regular,400,500,700&display=swap&subset=cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700&display=swap&subset=cyrillic-ext);
+// todo --------------------------- Fonts --------------------------------------
+@import 'core/fonts';
+//todo  ------------------------ Icon Fonts ------------------------------------
+@import 'core/iconfonts';
+// todo -------------------------- Plugins -------------------------------------
+@import 'assets/swiper';
+// @import 'components/swiper-pagination';
+// @import 'components/swiper-scrollbar';
+// @import 'assets/swiper-bundle';
+// todo -------------------------- Classes -------------------------------------
+// #region
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	margin: 0 auto;
+	// @extend .gradient;
+	// z-index: -1;
+}
+
+[class*='_container'] {
+	/* border: groove; */
+	max-width: $maxWidthContainer;
+	box-sizing: content-box;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+[class*='grid-'] {
+	display: grid;
+}
+
+[class*='icon-'] {
+	cursor: pointer;
+	height: 100%;
+	@include flex-align-center-justify-center;
+}
+
+[class*='_stretch'] {
+	position: relative;
+	z-index: 0;
+	// min-height: calc(100vh - ($headerHeight + $footerHeight));
+}
+
+// todo --------------------------- Assets -------------------------------------
+@import 'assets/burger-bottom';
+// todo --------------------------- layout -------------------------------------
+// @import 'layout/bem-block';
+@import 'layouts/header';
+@import 'layouts/footer';
+// todo --------------------------- Pages --------------------------------------
+@import 'pages/page';
+// todo --------------------------- Modules ------------------------------------
+// @import 'modules/loading';
+// @import 'modules/breadcrumbs';
+// todo -------------------------- Sections ------------------------------------
+@import 'section/section-mainslide';
+@import 'section/setion-services';
+// @import 'section/section-project';
+// @import 'section/section-aboute';
+// @import 'section/section-terminal';
+// @import 'section/section-swiper';
+// @import 'section/section-modal';

@@ -1,0 +1,117 @@
+.main-slide {
+	position: relative;
+
+	// .main-slide__pagination
+	&__pagination {
+		position: absolute;
+		top: 0 !important;
+		right: 0 !important;
+		width: 6rem;
+		height: 100%;
+		z-index: 10;
+		flex-direction: column;
+		@include flex-justify-center;
+
+		.swiper-pagination-bullet {
+			position: relative;
+			width: 100%;
+			@include flex-align-center;
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 0;
+				width: 0;
+				transition: scale 0.5s ease-in-out;
+				scale: 0;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background: rgba(153, 205, 50, 0.178);
+				transition: background 0.5s ease-in-out;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+		.swiper-pagination-bullet-active {
+			&::after {
+				height: 1px;
+				background: rgba(153, 205, 50, 0.527);
+				width: calc(100% - 16px);
+				scale: 1;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				background: yellowgreen;
+				width: 12px;
+				height: 12px;
+				scale: 1.2;
+				transition: scale 0.5s ease-in-out;
+				border-radius: 50%;
+			}
+		}
+	}
+	// .main-slide__body
+	&__body {
+		overflow: hidden;
+	}
+
+	// .main-slide__slide-wrapper
+	&__slide-wrapper {
+		@include flex-align-center-justify-center;
+	}
+
+	// .main-slide__content
+	&__content {
+		position: absolute;
+		padding: 0 15px;
+		max-width: 96rem;
+		flex-direction: column;
+		@include flex-align-center-justify-center;
+
+		gap: 2rem;
+	}
+
+	// .main-slide__title
+	&__title {
+		opacity: 0;
+		transition: all 0.9s ease-in-out;
+		text-shadow: 1px 1px 7pt #000;
+		font: {
+			size: 3.6rem;
+			weight: 700;
+		}
+		span {
+			color: $active;
+		}
+	}
+
+	// .main-slide__text
+	&__text {
+		opacity: 0;
+		transition: all 0.9s ease-in-out;
+		text-align: center;
+		text-shadow: 1px 1px 7px #000;
+	}
+
+	// .main-slide__slide-image
+	&__slide-image {
+		position: relative;
+		height: 100%;
+		img {
+			opacity: 0.5;
+			max-width: 100%;
+			object-position: center;
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+		}
+	}
+}

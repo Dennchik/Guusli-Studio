@@ -1,0 +1,26 @@
+.footer {
+	@include flex-align-center-justify-space-between;
+
+	// .footer__column
+	&__column {
+		&:last-child {
+			border-left: 1px solid var(--border-color);
+		}
+	}
+
+	// .footer__items
+	&__items {
+		height: 3rem;
+		padding-left: 2rem;
+	}
+
+	// .footer__items-link
+	&__items-link {
+		height: 100%;
+		padding-left: 1.5rem;
+		font-size: 1.8rem;
+		&:hover {
+			color: var(--font-color-active);
+		}
+	}
+}

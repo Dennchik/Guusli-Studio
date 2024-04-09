@@ -1,0 +1,61 @@
+.editor > .editor__section:not(._active) {
+	position: absolute;
+	opacity: 0;
+	transform: rotate(360deg) scale(0);
+	transition: all 0.5s ease-in-out;
+}
+
+.terminal ._collapse:not(._show) {
+	flex: 0 1 0;
+}
+
+.bgblurs-box {
+	position: absolute;
+	width: 50%;
+	height: 0;
+	top: 0%;
+	bottom: 0;
+	right: 0;
+	min-height: 100%;
+	z-index: 0;
+	opacity: 0;
+
+	@include _690 {
+		width: 100%;
+	}
+
+	// .bg-blurs__top
+	&__top {
+		position: absolute;
+		top: 15%;
+		width: 40rem;
+		height: 44.2rem;
+		transform: rotate(-94.305deg);
+		fill: #00717e;
+		opacity: 0.5;
+		filter: blur(87px);
+
+		@include _min-690 {
+			top: 10%;
+			left: -35%;
+		}
+	}
+
+	// .bg-blurs__bottom
+	&__bottom {
+		position: absolute;
+		top: 40%;
+		left: 20%;
+		width: 40rem;
+		height: 44.2rem;
+		transform: rotate(13.508deg);
+		fill: #4d5bce;
+		opacity: 0.5;
+		filter: blur(87px);
+
+		@include _min-690 {
+			top: 20%;
+			left: 15%;
+		}
+	}
+}

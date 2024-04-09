@@ -1,0 +1,112 @@
+import React, { useEffect } from 'react';
+import { fadeInSlide, fadeInSlideBack } from '../modules/animations.js';
+import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
+
+// Компонент Mainslide
+export default function Mainslide() {
+	useEffect(() => {
+		const slideWrappers = document.querySelectorAll('.main-slide__slide-wrapper');
+		if (!slideWrappers.length) return; // Проверка, что слайд-контейнеры существуют
+
+		// Проверяем активен ли первый слайд при загрузке страницы
+		const firstSlideWrapper = slideWrappers[0];
+		const isActive = firstSlideWrapper.classList.contains('swiper-slide-active');
+		if (isActive) {
+			// Если первый слайд активен, запускаем анимацию
+			fadeInSlide();
+		}
+
+		// Начинаем отслеживать изменения в слайд-контейнерах
+		slideWrappers.forEach((slideWrapper) => {
+			const observer = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+						const isActive = slideWrapper.classList.contains('swiper-slide-active');
+						if (isActive) {
+							// Если слайд-контейнер содержит класс 'swiper-slide-active', запускаем анимацию
+							fadeInSlide();
+						} else {
+							fadeInSlideBack();
+						}
+					}
+				});
+			});
+
+			observer.observe(slideWrapper, { attributes: true });
+
+			// Отключение наблюдателя при размонтировании компонента
+			return () => {
+				observer.disconnect();
+			};
+		});
+	}, []);
+	return (
+		<div className="main-slide" id="home">
+			<div className="main-slide__body _swiper">
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture>
+							{isWebpSupported()
+								? <img src="./img/slides/slide_4.webp" type="image/webp" />
+								: <img src="./img/slides/slide_4.jpg" alt="image" />}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Профессиональная </span>Студия Звукозаписи
+						</div>
+						<div className="main-slide__text">Мы - современная студия звукозаписи, в которой работают лучшие
+							российские специалисты в области записи и продюсирования музыки, предоставляющие самый лучший
+							сервис и удобства для современных артистов, как подписанных, так и независимых.
+						</div>
+					</div>
+				</div>
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture>
+							{isWebpSupported()
+								? <img src="./img/slides/slide_1.webp" type="image/webp" />
+								: <img src="./img/slides/slide_1.jpg" alt="image" />}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Атмосфера Звука </span>Музыкального Пространства
+						</div>
+						<div className="main-slide__text">Мы создаем звуковые шедевры в атмосфере исключительного звукового пространства, где каждая нота оживает и звучит волшебно. Наша команда талантливых звукорежиссеров и инженеров гарантирует, что ваше музыкальное произведение будет звучать так же эмоционально и мощно, как в самом сердце концертного зала. Доверьте нам ваше творчество и ощутите магию звука в каждой ноте.
+						</div>
+					</div>
+				</div>
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture>
+							{isWebpSupported()
+								? <img src="./img/slides/slide_2.webp" type="image/webp" />
+								: <img src="./img/slides/slide_2.jpg" alt="image" />}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Индивидуальный  подход  </span>к Нашим Клиентам
+						</div>
+						<div className="main-slide__text">В нашей студии мы всегда стараемся делать все возможное, чтобы процесс записи был вдохновляющим и творческим. Мы индивидуально подбираем подход к каждому клиенту, с которым работаем.
+						</div>
+					</div>
+				</div>
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture>
+							{isWebpSupported()
+								? <img src="./img/slides/slide_3.webp" type="image/webp" />
+								: <img src="./img/slides/slide_3.jpg" alt="image" />}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Все виды  </span> Микширования Звука
+						</div>
+						<div className="main-slide__text">Если вы ищете качественное сведение звука, то в нашей студии есть все, что вам нужно! Помимо первоклассных решений для микширования и мастеринга, мы также предлагаем полный цикл услуг по созданию музыки.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="main-slide__pagination"></div>
+		</div>
+	);
+}

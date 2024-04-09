@@ -1,0 +1,149 @@
+.main-content {
+	text-align: center;
+
+	// .main-content__title;
+	&__title {
+		// position: relative;
+		// z-index: 9;
+		padding: 20px 0;
+		h1 {
+			text-transform: uppercase;
+			font-family: 'Play', sans-serif;
+			font-size: 42px;
+			color: aqua;
+			// margin: 20px 0;
+		}
+	}
+
+	// .main-content__content;
+	&__content {
+		// border: 1px solid red;
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+	// .main-content__body
+
+	&__body {
+		color: #707070;
+	}
+
+	// .main-content__top
+	&__top {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin-bottom: 40px;
+	}
+
+	// .main-content__list
+	&__list
+
+	// .main-content__items 
+	&__items {
+		text-align: left;
+	}
+
+	// .main-content__item
+	&__item {
+		color: #ffa27d;
+		line-height: 170%;
+	}
+
+	// .main-content__text
+	&__text {
+		display: block;
+		color: #bbbbbb;
+		margin-bottom: 20px;
+	}
+
+	// .main-content__middle
+	&__middle {
+		display: flex;
+		height: 100%;
+		position: relative;
+		// transition: all 0.9s ease 0s;
+
+		&:last-child {
+			top: 0;
+		}
+		&:nth-child(1) {
+			.main-content__rellax-box {
+				background: #4e2d57;
+				padding-bottom: 120px;
+			}
+		}
+		&:nth-child(2) {
+			// margin-top: -80px;
+			position: relative;
+			z-index: 3;
+			.main-content__rellax-box {
+				background-color: #1b35a8;
+			}
+		}
+		&:nth-child(3) {
+			// margin-top: -120px;
+			position: relative;
+			z-index: 2;
+			.main-content__rellax-box {
+				background-color: #a39b79;
+				padding: 120px 0;
+			}
+		}
+		&:nth-child(4) {
+			z-index: 3;
+			.main-content__rellax-box {
+				background-color: #a32323;
+			}
+		}
+		&:nth-child(5) {
+			margin-top: 40px;
+			margin-bottom: -80px;
+			position: relative;
+			z-index: 2;
+			.main-content__rellax-box {
+				padding-top: 120px;
+				background-color: #e67e42;
+			}
+		}
+	}
+	// .main-content__rellax-box
+	&__rellax-box {
+		padding-bottom: 40px;
+		border-radius: 42px;
+		overflow: visible;
+	}
+
+	// .main-content__rellax-wrappe
+	&__rellax-wrapper {
+		min-height: 0;
+	}
+
+	// .main-content__main-slide
+	&__main-slide {
+		gap: 20px;
+		padding: 0 20px;
+		@include flex-justify-center;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		@include _768 {
+			grid-template-columns: 1fr;
+			flex-direction: column;
+		}
+	}
+
+	// .main-content__slide
+	&__slide {
+		flex-wrap: wrap;
+		width: 100%;
+		flex: 0 1 50%;
+	}
+
+	// .main-content__img
+	&__img {
+		border-radius: 42px;
+		// width: 100%;
+		min-height: 100%;
+		// max-width: 100%;
+		object-fit: cover;
+	}
+}

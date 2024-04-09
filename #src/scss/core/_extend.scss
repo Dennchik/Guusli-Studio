@@ -1,0 +1,72 @@
+.grad_underline {
+	background: linear-gradient(to left, transparent, transparent),
+		linear-gradient(
+			to left,
+			var(--background-selected),
+			var(--font-color-active)
+		);
+	background-size:
+		100% 1px,
+		0 1px;
+	background-position:
+		100% 100%,
+		0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 400ms;
+}
+.gradient-box {
+	background: linear-gradient(to right, #0b486bbd, #0b486b, #0b486bbd);
+}
+.gradient-top-link {
+	text-shadow: $orange 1px 0 10px;
+	background: linear-gradient(to bottom, #008192, #90effc, #008192 100%);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.liner-gradient-box {
+	background: linear-gradient(
+		45deg,
+		// #47208a,
+		#10133a 55%,
+		#47208a73 10%,
+		#10133a
+	);
+}
+.gradient {
+	background: linear-gradient(to left, #0b0813, #392b7c 50%, #0c0814 100%);
+}
+.gradient-header {
+	background: linear-gradient(
+		-45deg,
+		#1a1530,
+		#332764 60%,
+		rgb(42, 53, 20) 10%,
+		#000 70%
+	);
+}
+.gradient-services {
+	background: linear-gradient(to right, #0b0813 20%, #1c153f 50%, #0b0813 80%);
+}
+.gradient-spec {
+	background: linear-gradient(-45deg, #fe59c2, #170e31 83%);
+	background-size: 200% 200%;
+}
+
+.gradient-spec-active {
+	background: linear-gradient(-45deg, #04d9ff, #170e31 83%);
+	background-size: 200% 200%;
+}
+.gradient-spec-comfort {
+	background: linear-gradient(-45deg, #c8ff00, #170e31 83%);
+	background-size: 200% 200%;
+}
+.icon-style {
+	border: 1px var(--border-color);
+	border-style: none solid;
+	height: 100%;
+	padding: 0 1.5rem;
+	@include flex-align-center;
+}
+// background: linear-gradient(to right, #04d9ff 20%, #ffff 50%, #04d9ff 80%);

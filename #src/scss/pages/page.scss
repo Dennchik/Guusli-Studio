@@ -1,0 +1,46 @@
+.page {
+	height: 100%;
+
+	// .page__header
+	&__header {
+		position: relative;
+		width: 100%;
+		z-index: 9;
+	}
+
+	// .page__content
+	&__main-content {
+		position: relative;
+		// margin-top: 1px;
+	}
+	// .page__footer
+	&__footer {
+	}
+}
+
+.main-content {
+	// .main-content__content
+	&__content {
+	}
+
+	// .main-content__slide
+	&__slide {
+		position: relative;
+		z-index: 7;
+		@extend .gradient;
+	}
+	// .main-content__services #0b0813
+	&__services {
+		@extend .gradient-services;
+		position: relative;
+		z-index: 8;
+	}
+	// .main-content__spacer
+	&__spacer {
+		position: relative;
+		z-index: 9;
+		@extend .gradient;
+		height: 900px;
+	}
+}
+//  background: linear-gradient(to right, #000 32.5%, #2f2469 20%, #000 70%);
