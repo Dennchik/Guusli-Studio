@@ -1,6 +1,5 @@
 .services {
 	position: relative;
-
 	// .services__body
 	&__body {
 		position: relative;
@@ -41,6 +40,9 @@
 			transform: translateY(0) !important;
 		}
 		//! ------------------------------------------------------------------------
+		@include _425 {
+			// font-size: 3.8rem;
+		}
 		&::before {
 			content: '';
 			width: 100%;
@@ -154,22 +156,18 @@
 			&:nth-child(2) {
 				position: relative;
 				// transform: translateX(277px);
-				border: 1px solid #fff;
 			}
 			&:nth-child(3) {
 				position: relative;
-				border: 1px solid #fff;
 			}
 			&:nth-child(4) {
 				position: relative;
 				z-index: 9;
 				// transform: translateX(-280px);
-				border: 1px solid #fff;
 			}
 			&:nth-child(5) {
 				position: relative;
 				// transform: translateX(-556px);
-				border: 1px solid #fff;
 			}
 		}
 	}

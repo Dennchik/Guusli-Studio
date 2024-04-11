@@ -1,10 +1,4 @@
 .header {
-	overflow: hidden;
-	position: fixed;
-	width: 100%;
-	z-index: 9;
-	background: transparent;
-
 	&::before {
 		z-index: 7;
 		opacity: 0;
@@ -59,9 +53,10 @@
 
 	// .header__text
 	&__text {
-		@include flex-align-center;
 		flex-direction: column;
 		text-transform: uppercase;
+		white-space: nowrap;
+		@include flex-align-center;
 		h1 {
 			line-height: 100%;
 		}

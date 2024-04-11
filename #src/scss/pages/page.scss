@@ -6,11 +6,21 @@
 		position: relative;
 		width: 100%;
 		z-index: 9;
+		overflow: hidden;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 9;
+		background: transparent;
 	}
 
 	// .page__content
 	&__main-content {
-		position: relative;
+		// position: relative;
+		inset: 0;
+		height: 100%;
+		width: 100%;
 		// margin-top: 1px;
 	}
 	// .page__footer

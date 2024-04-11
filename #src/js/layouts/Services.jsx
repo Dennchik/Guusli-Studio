@@ -17,7 +17,7 @@ export default function Services() {
 		const handleScroll = () => {
 			const contentServicesRect = contentServices.getBoundingClientRect();
 
-			if (contentServicesRect.top < window.innerHeight - 100 && contentServicesRect.bottom > 0) {
+			if (contentServicesRect.top < window.innerHeight - 100 && contentServicesRect.top > 0) {
 				setIsVisible(true); // Показываем блок с заголовком
 			} else {
 				setIsVisible(false); // Скрываем блок с заголовком
@@ -69,7 +69,7 @@ export default function Services() {
 		// handleScrollRect(contentServicesOffer, 120, offerTitle);
 		const handleScroll = (content, value, el) => {
 			const rect = contentServicesOffer.getBoundingClientRect();
-			if (rect.top < window.innerHeight - 120 && rect.bottom > 0) {
+			if (rect.top < window.innerHeight - 120 && rect.bottom < 10) {
 				offerTitle.classList.add('visible');
 			} else {
 				offerTitle.classList.remove('visible');

@@ -99,8 +99,12 @@ export default {
 			},
 		},
 		entry: {
-			ScrollTrigger: './#src/js/libraries/ScrollTrigger.min.js',
-			ScrollToPlugin: './#src/js/libraries/ScrollToPlugin.min.js',
+			gsap: './#src/js/libraries/gsap.js',
+			chroma: './#src/js/libraries/chroma.js',
+			SplitText: './#src/js/libraries/SplitText.js',
+			ScrollSmoother: './#src/js/libraries/ScrollSmoother.js',
+			ScrollTrigger: './#src/js/libraries/ScrollTrigger.js',
+			ScrollToPlugin: './#src/js/libraries/ScrollToPlugin.js',
 			app: './#src/js/app.js',
 			main: './#src/js/main.js'
 		},
