@@ -11,8 +11,11 @@ html(lang="ru")
 			link(rel="icon" type="image/icon" href="@@webRoot/img/icons/icon-logo.ico")
 			link(rel="stylesheet" type="text/css" href="@@webRoot/css/style.min.css" ) 
 		block script
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appreact.min.js")
+			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/ScrollToPlugin.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/ScrollTrigger.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appreact.min.js") 
 			script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/app.min.js")
 		block title
 		- var text
 			title #{text}

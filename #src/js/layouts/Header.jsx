@@ -32,14 +32,14 @@ export default function Header() {
 				<div className="header__column el-logo">
 					<div className="header__logo"></div>
 					<div className="header__text">
-						<h1>recording</h1>
-						<p><span>studio</span><span>Obninsk</span></p>
+						<h1>Media-Studio</h1>
+						<p><span>Group</span><span>Obninsk</span></p>
 					</div>
 				</div>
 				<div className="header__column">
 					<div className="header__menu">
 						<div className="header__item _home"><a href="#home">HOME</a></div>
-						<div className="header__item"><a href="#">SERVICES</a></div>
+						<div className="header__item"><a id="services" href="#">SERVICES</a></div>
 						<div className="header__item"><a href="#">VIDEOS</a></div>
 						<div className="header__item"><a href="#">BIO</a></div>
 						<div className="header__item"><a href="#">NEWS</a></div>

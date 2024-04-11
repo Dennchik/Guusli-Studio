@@ -7,9 +7,9 @@ ReactDOM.render(
 	<StrictMode><Header /></StrictMode>, document.querySelector('.page__header')
 );
 
-import Parallax from "../layouts/Parallax.jsx";
+import Services from "../layouts/Services.jsx";
 ReactDOM.render(
-	<StrictMode><Parallax /></StrictMode>, document.querySelector('.main-content__services')
+	<StrictMode><Services /></StrictMode>, document.querySelector('.main-content__services')
 );
 
 import Mainslide from "../layouts/Mainslide.jsx";

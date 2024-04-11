@@ -28,8 +28,26 @@
 		position: relative;
 		z-index: 7;
 		@extend .gradient;
+
+		&::before {
+			left: 0;
+		}
+		&::after {
+			right: 0;
+			@extend .gradient-border-right;
+		}
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: 10;
+			bottom: 0;
+			width: 100%;
+			// width: calc(33% - 20px);
+			height: 1.5px;
+		}
 	}
-	// .main-content__services #0b0813
+	// .main-content__services
 	&__services {
 		@extend .gradient-services;
 		position: relative;

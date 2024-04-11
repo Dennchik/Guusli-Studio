@@ -98,7 +98,8 @@ export function fadeInSlideBack() {
 		});
 }
 export function animationSvgLine(target, reverse) {
-	const path = target.querySelector('.content-box__svg .lines path'); // Создаем переменную path
+	const path = target.querySelector('.content-box__svg .lines path');
+	// Создаем переменную path
 	anime({
 		targets: path,
 		strokeDashoffset: [anime.setDashoffset, 0],
@@ -116,5 +117,67 @@ export function animationSvgLine(target, reverse) {
 				path.setAttribute('stroke-dashoffset', anime.setDashoffset);
 			}
 		}
+	});
+}
+export function animationSvgSound(target, reverse) {
+	const textPath = target.querySelectorAll('.content-box__image .lines-text path');
+	// Создаем переменную path
+	anime({
+		targets: textPath,
+		strokeDashoffset: [0, anime.setDashoffset],
+		easing: 'easeInOutSine',
+		duration: 300,
+		opacity: 1,
+		delay: function (el, i) { return i * 150; },
+		direction: reverse ? 'reverse' : 'normal', // Устанавливаем направление анимации в зависимости от параметра reverse 
+		begin: () => {
+			target.classList.add('animating'); // Добавляем класс при начале анимации
+		},
+		complete: () => {
+			if (reverse) {
+				target.classList.remove('animating'); // Удаляем класс после завершения анимации в обратном направлении
+				textPath.forEach(path => {
+					path.setAttribute('stroke-dashoffset', anime.setDashoffset);
+				});
+			}
+		}
+	});
+}
+export function elasticServices() {
+	// anime({
+	// 	targets: '.content-box .line:nth-child(1)',
+	// 	translateX: 0,
+	// 	duration: 500,
+	// 	easing: 'easeInElastic(2, .5)',
+	// });
+
+	// anime({
+	// 	targets: '.content-box .line:nth-child(2)',
+	// 	translateX: 0,
+	// 	easing: 'easeOutElastic(1, 1)'
+	// });
+
+	// anime({
+	// 	targets: '.content-box .line:nth-child(3)',
+	// 	translateX: 0,
+	// 	easing: 'easeInOutElastic(1, .3)'
+	// });
+
+	// anime({
+	// 	targets: '.content-box .line:nth-child(4)',
+	// 	translateX: 0,
+	// 	easing: 'easeOutInElastic(1, .1)'
+	// });
+
+	// anime({
+	// 	targets: '.content-box .line:nth-child(5)',
+	// 	translateX: 0,
+	// 	easing: 'easeOutInElastic(1, .6)',
+	// });
+	anime({
+		targets: '.content-box__column .el',
+		translateX: [-80, 0],
+		opacity: [0, 1],
+		duration: 3000
 	});
 }

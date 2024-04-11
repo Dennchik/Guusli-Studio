@@ -1,8 +1,8 @@
 import mainSlede from './modules/main-slide.js';
 mainSlede();
 
-import { timeLineHeaderItem } from "./modules/animations.js";
-timeLineHeaderItem();
+import { timeLineHeaderItem, elasticServices } from "./modules/animations.js";
+timeLineHeaderItem(); elasticServices();
 // -----------------------------------------------------------------------------
 
 

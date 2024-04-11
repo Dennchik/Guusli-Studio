@@ -26,6 +26,7 @@ export default {
 			],
 		},
 		entry: {
+			smoothscrolling: './#src/js/assets/smooth-scrolling.jsx',
 			appreact: './#src/js/assets/app-react.jsx',
 		},
 		output: {
@@ -98,8 +99,9 @@ export default {
 			},
 		},
 		entry: {
-			// app_jsx: './#src/js/module/app_jsx.jsx',
-			// app: './#src/js/app.js',
+			ScrollTrigger: './#src/js/libraries/ScrollTrigger.min.js',
+			ScrollToPlugin: './#src/js/libraries/ScrollToPlugin.min.js',
+			app: './#src/js/app.js',
 			main: './#src/js/main.js'
 		},
 		output: {

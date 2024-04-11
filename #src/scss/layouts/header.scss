@@ -70,12 +70,12 @@
 			span {
 				line-height: 100%;
 				font-size: 1.6rem;
-				color: #797979;
+				color: gray;
 				&:not(:last-child) {
 					margin-right: 0.8rem;
 				}
 				&:nth-child(2) {
-					color: $yellow;
+					color: $laser-lemon;
 					font-size: 2.4rem;
 					text-transform: none;
 				}
@@ -103,11 +103,11 @@
 	&__item {
 		cursor: pointer;
 		position: relative;
-		text-shadow: 2px 2px 15px $orange;
+		text-shadow: 2px 2px 15px $luminescent-red;
 		opacity: 0;
 		transition: color 0.5s ease-in-out;
 		&:hover {
-			color: $active;
+			color: $neon-red;
 		}
 		a {
 			padding: 2rem 0;
@@ -123,7 +123,7 @@
 			position: absolute;
 			width: 0;
 			height: 1px;
-			background-color: $yellow;
+			background-color: $electric-lime;
 			transition: width 0.5s ease-in-out;
 		}
 		&::before {
@@ -153,12 +153,11 @@
 
 	// .header__icon
 	&__icon {
-		// background: $yellow;
-		background: #ccff00;
+		background: $electric-lime;
 		width: 4.2rem;
 		height: 4.2rem;
 		border-radius: 50%;
-		color: #0e0e0e;
+		color: $black-color;
 		overflow: hidden;
 		transition: all 0.5s ease-in-out;
 
@@ -167,9 +166,9 @@
 		}
 
 		&:hover {
-			background: $second-color;
-			color: $active;
-			scale: 1.2;
+			background: $black-color;
+			color: $electric-lime;
+			scale: 1.1;
 		}
 	}
 }
