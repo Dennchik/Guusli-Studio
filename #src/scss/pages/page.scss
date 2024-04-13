@@ -54,6 +54,7 @@
 .main-content {
 	// .main-content__content
 	&__content {
+		overflow-x: hidden;
 	}
 
 	// .main-content__slide

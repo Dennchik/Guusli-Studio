@@ -1,6 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { animationSvgLine, animationSvgSound } from '../modules/animations.js';
+import { animationSvgLine, animationSvgText } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
+import {
+	NeonGreenColor,
+	NeonFuchsiaColor,
+	NeonPinkColor,
+	NeonRedColor,
+	NeonBlueColor,
+	NeonElectricColor,
+	NeonBlueDarkColor,
+	NeonPurpleColor,
+	NeonCarrotColor,
+	NeonYellowColor,
+	LaserLemonColor,
+	LuminescentRedColor,
+	LuminescentOrangeColor,
+	liquidNeonColor,
+	ElectricLimeColor,
+} from '../core/variables.jsx';
 // -----------------------------------------------------------------------------
 export default function Services() {
 	const boxImagesRef = useRef([]);
@@ -19,13 +36,13 @@ export default function Services() {
 		const handleMouseOver = (event) => {
 			const target = event.currentTarget;
 			animationSvgLine(target, false); // Запускаем анимацию при наведении
-			animationSvgSound(target, false);
+			animationSvgText(target, false);
 		};
 		const handleMouseLeave = (event) => {
 			const target = event.currentTarget;
 			setTimeout(() => {
 				animationSvgLine(target, true); // Запускаем анимацию в обратном направлении с задержкой при уходе мыши 
-				animationSvgSound(target, true);
+				animationSvgText(target, true);
 			}, 500);
 		};
 		const boxImages = document.querySelectorAll('.content-box__image');
@@ -113,15 +130,14 @@ export default function Services() {
 		<section className="services key-object" ref={contentServicesRef}>
 			<div className="material-parallax parallax">
 				<div className="parallax__image">
-					<img src="img/body/parallax_bg.png" alt="фон" />
+					<img src="img/body/parallax_bg.png" alt="" />
 				</div>
 			</div>
 			<div className="services__body _container">
 				<div className={`services__title ${isVisible ? 'visible' : ''}`} ref={boxTitleRef}>Наши услуги</div>
-				<div className="services__content ">
+				<div className="services__content">
 					<div className="content-box">
 						<div className="content-box__body">
-
 
 							<div className="content-box__column line">
 								<div className="content-box__image el">
@@ -152,8 +168,8 @@ export default function Services() {
 										<svg viewBox="0 0 250 40">
 											<defs>
 												<linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-													<stop offset="0%" style={{ stopColor: 'rgb(0, 204, 255)', stopOpacity: 1 }} />
-													<stop offset="100%" style={{ stopColor: 'rgb(200,255,0)', stopOpacity: 1 }} />
+													<stop offset="0%" style={{ stopColor: NeonGreenColor, stopOpacity: 1 }} />
+													<stop offset="100%" style={{ stopColor: ElectricLimeColor, stopOpacity: 1 }} />
 												</linearGradient>
 											</defs>
 											<g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1" className="lines-text">
@@ -325,8 +341,6 @@ export default function Services() {
 									</div>
 								</div>
 							</div>
-
-
 						</div>
 					</div>
 				</div>

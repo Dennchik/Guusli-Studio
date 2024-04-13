@@ -78,14 +78,6 @@
 
 	// .services__content
 	&__content {
-		// position: relative;
-		// padding: 2rem;
-		// margin-bottom: 4rem;
-		// gap: 2.5rem;
-		// overflow-x: auto;
-		// -webkit-overflow-scrolling: touch;
-		// scrollbar-width: none;
-		// @include flex-justify-space-evenly;
 	}
 
 	// .services__offer
@@ -140,8 +132,8 @@
 		margin-bottom: 4rem;
 		gap: 2.5rem;
 		display: flex;
-		// @extend .overflow-hidden;
 	}
+
 	// .content-box__column
 	&__column {
 		position: relative;
@@ -153,13 +145,14 @@
 			content: '';
 			display: block;
 			position: absolute;
-			// border: 7px solid rgba(255, 255, 255, 0.1);
 			box-shadow: $boxShadow;
 			top: -20px;
-			left: 20px;
-			right: 20px;
+			left: 30px;
+			right: 30px;
 			bottom: -20px;
 			z-index: -1;
+			border-radius: 4px;
+			opacity: 0.3;
 			transition: all 0.3s ease-in-out;
 		}
 
@@ -169,6 +162,7 @@
 				left: -10px;
 				right: -10px;
 				bottom: -10px;
+				opacity: 0.8;
 			}
 			.content-box__image {
 				scale: 1.01;
@@ -205,10 +199,11 @@
 
 	// .content-box__image
 	&__image {
-		// overflow: hidden;
+		overflow: hidden;
 		transition: all 0.5s ease-in-out;
 		height: 100%;
 		cursor: pointer;
+		border-radius: 4px;
 		filter: $filter;
 
 		img {
@@ -224,6 +219,7 @@
 				scale: 1.1;
 			}
 		}
+
 		svg {
 			pointer-events: none;
 		}
@@ -269,23 +265,22 @@
 		text-shadow: 0 0 7px #000;
 		display: flex;
 		justify-content: center;
-		color: $liquid-neon;
+		color: $neon-purple;
 		svg {
-			height: 40px;
+			height: 32px;
 			path {
-				// opacity: 1;
 				fill: url(#grad);
 				stroke: currentColor;
-				stroke-width: 1px;
+				stroke-width: 1.2px;
 			}
 		}
 	}
 }
-// -----------------------------------------------------------------------------
 
 .offer-container {
-	@include flex-align-center-justify-space-between;
 	flex-direction: column;
+	@include flex-align-center-justify-space-between;
+
 	// .offer-container__title
 	&__title {
 		position: relative;
@@ -376,6 +371,7 @@
 			}
 		}
 	}
+
 	// .offer-container__link
 	&__link {
 		cursor: pointer;

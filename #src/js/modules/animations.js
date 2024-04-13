@@ -119,7 +119,7 @@ export function animationSvgLine(target, reverse) {
 		}
 	});
 }
-export function animationSvgSound(target, reverse) {
+export function animationSvgText(target, reverse) {
 	const textPath = target.querySelectorAll('.content-box__image .lines-text path');
 	// Создаем переменную path
 	anime({
@@ -128,7 +128,7 @@ export function animationSvgSound(target, reverse) {
 		easing: 'easeInOutSine',
 		duration: 300,
 		opacity: 1,
-		delay: function (el, i) { return i * 150; },
+		delay: function (el, i) { return i * 200; },
 		direction: reverse ? 'reverse' : 'normal', // Устанавливаем направление анимации в зависимости от параметра reverse 
 		begin: () => {
 			target.classList.add('animating'); // Добавляем класс при начале анимации
