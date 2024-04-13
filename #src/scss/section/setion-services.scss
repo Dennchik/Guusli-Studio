@@ -26,10 +26,12 @@
 		color: $neon-blue;
 		z-index: 9;
 
+		//! ------------------------------------------------------------------------
 		perspective-origin: 45% 320%;
 		transform-style: preserve-3d;
 		perspective: 100px;
 		filter: $filter;
+
 		//! ------------------------------------------------------------------------
 		transform: translateY(100%);
 		transition:
@@ -54,8 +56,15 @@
 		}
 
 		&:nth-child(1) {
-			margin: -6rem 0 6rem;
-
+			margin: -3rem 0 6rem;
+			@include _690 {
+				font-size: 5.1rem;
+				margin: -2rem 0 6rem;
+			}
+			@include _425 {
+				font-size: 3.4rem;
+				margin: -1.2rem 0 6rem;
+			}
 			&::before {
 				transform: translate(0, 58%);
 			}
@@ -69,7 +78,9 @@
 				font: {
 					weight: 900;
 				}
-
+				@include _425 {
+					// padding: 0 5.5rem;
+				}
 				transform: rotateX(15deg) translateZ(-11px);
 				@extend .shadow-after;
 			}
@@ -78,6 +89,7 @@
 
 	// .services__content
 	&__content {
+		margin: 4rem 0 0;
 	}
 
 	// .services__offer
@@ -129,7 +141,7 @@
 	&__body {
 		position: relative;
 		padding: 2rem;
-		margin-bottom: 4rem;
+		margin-bottom: 8rem;
 		gap: 2.5rem;
 		display: flex;
 	}
@@ -138,7 +150,7 @@
 	&__column {
 		position: relative;
 		min-width: 250px;
-		height: 30rem;
+		height: 300px;
 		width: 20%;
 
 		&::before {
@@ -211,7 +223,6 @@
 			left: 0;
 			z-index: 1;
 			width: 100%;
-			height: 30rem;
 			object-fit: cover;
 			object-position: center;
 			transition: scale 0.4s ease-in-out;
@@ -265,13 +276,13 @@
 		text-shadow: 0 0 7px #000;
 		display: flex;
 		justify-content: center;
-		color: $neon-purple;
+		color: $electric-lime;
 		svg {
 			height: 32px;
 			path {
 				fill: url(#grad);
 				stroke: currentColor;
-				stroke-width: 1.2px;
+				stroke-width: 1px;
 			}
 		}
 	}
@@ -298,7 +309,16 @@
 		color: $neon-blue;
 		z-index: 9;
 		opacity: 0;
-
+		@include _690 {
+			font-size: 2.6rem;
+		}
+		@include _490 {
+			font-size: 2.2rem;
+			padding: 0 2rem 2rem;
+			margin: 0 6rem 6rem;
+			line-height: 120%;
+		}
+		//! ------------------------------------------------------------------------
 		perspective-origin: 45% 320%;
 		transform-style: preserve-3d;
 		perspective: 100px;
@@ -326,6 +346,7 @@
 			transform: translate(0, 10%);
 			@extend .gradient-title;
 		}
+
 		&::after {
 			content: 'специальное предложение';
 			position: absolute;
@@ -346,6 +367,9 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 2rem;
+		@include _690 {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	// .offer-container__column
@@ -377,7 +401,7 @@
 		cursor: pointer;
 	}
 
-	// .offer-container__title
+	// .offer-container__title-box
 	&__title-box {
 		color: ghostwhite;
 		margin-bottom: 2rem;

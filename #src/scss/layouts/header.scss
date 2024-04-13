@@ -5,7 +5,8 @@
 	width: 100%;
 	z-index: 9;
 	background: transparent;
-
+	display: flex;
+	align-items: center;
 	&::before {
 		z-index: 7;
 		opacity: 0;
@@ -47,6 +48,7 @@
 
 	// .header__container
 	&__container {
+		width: 100%;
 		z-index: 8;
 		position: relative;
 		@include flex-align-center-justify-space-between;
@@ -57,7 +59,7 @@
 	&__column {
 		@include flex-align-center;
 		@include _768 {
-			&:nth-child(2) {
+			&:nth-child(3) {
 				display: none;
 			}
 		}
@@ -72,6 +74,9 @@
 		h1 {
 			line-height: 100%;
 			font-size: 2.8rem;
+			@include _425 {
+				font-size: 2.4rem;
+			}
 		}
 		P {
 			margin-top: 0.5rem;
@@ -163,6 +168,7 @@
 	&__ellipsis {
 		padding: 2rem;
 		display: none;
+		margin-left: 3rem;
 
 		@include _920 {
 			display: flex;
@@ -248,12 +254,14 @@
 	}
 }
 
-.burger-bottom {
+.burger-button {
 	z-index: 10;
+	// margin-right: 0.5rem;
 
 	// .burger-bottom__items
 	&__items {
-		border: 1px var(--border-color);
-		border-style: none solid;
+		// border: 1px var(--border-color);
+		// border-style: none solid;
+		// border-right: 1px solid #fff;
 	}
 }

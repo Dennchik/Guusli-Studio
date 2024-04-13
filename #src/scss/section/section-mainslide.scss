@@ -72,7 +72,7 @@
 	// .main-slide__content
 	&__content {
 		position: absolute;
-		padding: 0 15px;
+		padding: 0 2rem;
 		max-width: 96rem;
 		flex-direction: column;
 		@include flex-align-center-justify-center;
@@ -83,9 +83,12 @@
 	// .main-slide__title
 	&__title {
 		opacity: 0;
+		width: 100%;
 		transition: all 0.9s ease-in-out;
 		text-shadow: 1px 1px 7pt #000;
-		text-align: center;
+		text-align: left;
+		padding-left: 2rem;
+
 		font: {
 			size: 3.6rem;
 			weight: 700;
@@ -93,14 +96,22 @@
 		span {
 			color: $neon-purple;
 		}
+		@include _690 {
+			text-align: center;
+			font-size: 3.2rem;
+			padding-left: 0;
+		}
+		@include _425 {
+			font-size: 3.2rem;
+		}
 	}
 
 	// .main-slide__text
 	&__text {
 		opacity: 0;
-		transition: all 0.9s ease-in-out;
-		text-align: justify;
-		text-indent: 4rem;
+		transition: all 0.7s ease-in-out;
+		text-align: left;
+		padding: 0 6rem 0 2rem;
 		text-shadow: 0px 0px 5px $neon-blue-dark;
 	}
 

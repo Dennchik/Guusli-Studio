@@ -1,4 +1,4 @@
-.burger-bottom {
+.burger-button {
 	position: sticky;
 	top: 0rem;
 	flex: 0;
@@ -9,13 +9,13 @@
 	}
 	&__items {
 		overflow: visible;
-		height: 3.8rem;
-		width: 3.8rem;
+		height: 5rem;
+		width: 5rem;
 		cursor: pointer;
 		svg {
-			width: 3.8rem;
-			height: 3.8rem;
-			stroke: var(--font-color-active);
+			width: 5rem;
+			height: 5rem;
+			stroke: $electric-lime;
 			stroke-width: 0.1em;
 			stroke-linecap: round;
 			stroke-linejoin: round;
@@ -31,7 +31,7 @@
 				stroke-dashoffset: var(--offset, 126px);
 				transform: translateZ(0);
 				&:nth-child(2) {
-					border: 1px solid var(--font-color-active);
+					border: 1px solid $electric-lime;
 					--duration: 0.35s;
 					--easing: ease-in;
 					--offset: 100px;
@@ -44,9 +44,9 @@
 			}
 		}
 	}
-	&._open {
+	&._active {
 		svg {
-			stroke: $orange;
+			stroke: $electric-lime;
 			path {
 				--offset: 57px;
 				&:nth-child(1),

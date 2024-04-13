@@ -8,7 +8,11 @@ export default function Header() {
 		document.querySelector('.header__ellipsis').addEventListener("click", () => {
 			fadeIn.classList.toggle('_active');
 		});
-
+		document.querySelector('.burger-button').addEventListener('click', function () {
+			this.classList.toggle('_active');
+			// let target = e.target;
+			// console.log(target);
+		});
 		const handleScroll = () => {
 			const header = document.querySelector('.header');
 			const mainContent = document.querySelector('.main-content');
@@ -40,6 +44,16 @@ export default function Header() {
 	return (
 		<header className="header key-object">
 			<div className="header__container">
+
+				<div className="burger-button">
+					<div className="burger-button__items">
+						<svg viewBox="10 6 44 36">
+							<path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37" />
+							<path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24" />
+							<path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37" />
+						</svg>
+					</div>
+				</div>
 				<div className="header__column el-logo">
 					<div className="header__logo"></div>
 					<div className="header__text">
