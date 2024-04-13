@@ -6,13 +6,13 @@ html {
 		family: $font-defoult;
 	}
 	height: 100%;
-	overflow-x: hidden;
+	// overflow-x: hidden;
 	counter-reset: heading;
 	color: var(--font-body-color);
 	// @extend .gradient;
 
 	letter-spacing: 1.7px;
-	user-select: none;
+	// user-select: none;
 
 	@include _1024 {
 		font-size: 50%;
@@ -25,10 +25,15 @@ body {
 	font:
 		1.6rem/1.6 Roboto,
 		sans-serif;
+	@include _1024 {
+		font:
+			1.8rem/1.6 Roboto,
+			sans-serif;
+	}
 
 	@include _320 {
 		font:
-			1.2rem/1.4 Roboto,
+			1.4rem/1.4 Roboto,
 			sans-serif;
 	}
 }

@@ -1,10 +1,14 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from "react-dom";
 
-
 import Header from "../layouts/Header.jsx";
 ReactDOM.render(
-	<StrictMode><Header /></StrictMode>, document.querySelector('.page__header')
+	<StrictMode><Header /></StrictMode>, document.querySelector('.page__header-wrapper')
+);
+
+import Mainslide from "../layouts/Mainslide.jsx";
+ReactDOM.render(
+	<StrictMode><Mainslide /></StrictMode>, document.querySelector('.main-content__slide')
 );
 
 import Services from "../layouts/Services.jsx";
@@ -12,7 +16,3 @@ ReactDOM.render(
 	<StrictMode><Services /></StrictMode>, document.querySelector('.main-content__services')
 );
 
-import Mainslide from "../layouts/Mainslide.jsx";
-ReactDOM.render(
-	<StrictMode><Mainslide /></StrictMode>, document.querySelector('.main-content__slide')
-);

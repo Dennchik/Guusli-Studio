@@ -1,4 +1,11 @@
 .header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9;
+	background: transparent;
+
 	&::before {
 		z-index: 7;
 		opacity: 0;
@@ -6,11 +13,22 @@
 		position: absolute;
 		height: 10rem;
 		width: 100%;
-		@extend .gradient-header;
 		background-size: 111% 200%;
 		background-position: 0 0;
 		transition: opacity 0.7s ease-in-out;
 		animation: fadeOutGradient 0.7s ease-in-out alternate-reverse;
+		@extend .gradient-header;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: linear-gradient(to left top, #8164ff 40%, rgb(42, 53, 20) 70%);
+		transition: all 0.7s ease-in-out;
 	}
 
 	&.with-border {
@@ -27,17 +45,6 @@
 		}
 	}
 
-	&::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background: linear-gradient(to left top, #8164ff 40%, rgb(42, 53, 20) 70%);
-		transition: all 0.7s ease-in-out;
-	}
-
 	// .header__container
 	&__container {
 		z-index: 8;
@@ -49,6 +56,11 @@
 	// .header__column
 	&__column {
 		@include flex-align-center;
+		@include _768 {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
 	}
 
 	// .header__text
@@ -59,6 +71,7 @@
 		@include flex-align-center;
 		h1 {
 			line-height: 100%;
+			font-size: 2.8rem;
 		}
 		P {
 			margin-top: 0.5rem;
@@ -80,10 +93,10 @@
 
 	// .header__logo
 	&__logo {
-		height: 8.3em;
+		height: 5.3em;
 		width: 8.3rem;
 		background: url('../img/header/logo.png') center / contain no-repeat;
-		margin-right: 1.5rem;
+		// margin-right: 1.5rem;
 	}
 
 	// .header__menu
@@ -91,7 +104,7 @@
 		user-select: none;
 		display: flex;
 		transition: all 0.9s ease 0s;
-		margin: 0 2rem;
+		margin: 0 1.5rem;
 	}
 
 	// .header__item
@@ -109,7 +122,7 @@
 		}
 
 		&:not(:last-child) {
-			margin-right: 2.5rem;
+			margin-right: 2rem;
 		}
 
 		&::before,
@@ -144,6 +157,62 @@
 	&__community {
 		display: flex;
 		font-size: 2.8rem;
+	}
+
+	// .header__ellipsis
+	&__ellipsis {
+		padding: 2rem;
+		display: none;
+
+		@include _920 {
+			display: flex;
+			align-items: center;
+		}
+
+		span {
+			top: 50%;
+			margin-top: -3px;
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			line-height: 6px;
+			text-align: center;
+			background: $electric-lime;
+			left: 50%;
+			margin-left: -3px;
+			border-radius: 50%;
+			transition: 0.3s all ease;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				line-height: 6px;
+				text-align: center;
+				background: $electric-lime;
+				left: 50%;
+				margin-left: -3px;
+				border-radius: 50%;
+				transition: 0.3s all ease;
+			}
+
+			&::before {
+				bottom: 100%;
+				margin-bottom: 3px;
+			}
+
+			&::after {
+				top: 100%;
+				margin-top: 3px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0.7);
+			}
+		}
 	}
 
 	// .header__icon

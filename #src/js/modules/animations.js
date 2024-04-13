@@ -174,10 +174,10 @@ export function elasticServices() {
 	// 	translateX: 0,
 	// 	easing: 'easeOutInElastic(1, .6)',
 	// });
-	anime({
-		targets: '.content-box__column .el',
-		translateX: [-80, 0],
-		opacity: [0, 1],
-		duration: 3000
-	});
+	// anime({
+	// 	targets: '.content-box__column .el',
+	// 	translateX: [-80, 0],
+	// 	opacity: [0, 1],
+	// 	duration: 3000
+	// });
 }

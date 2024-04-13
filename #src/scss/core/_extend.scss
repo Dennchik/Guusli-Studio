@@ -106,3 +106,12 @@
 	z-index: -1;
 }
 // background: linear-gradient(to right, #04d9ff 20%, #ffff 50%, #04d9ff 80%);
+//! ----------------------------------------------------------------------------
+.overflow-hidden {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		height: 0;
+	}
+}

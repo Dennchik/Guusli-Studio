@@ -1,3 +1,6 @@
+import dinamicAdaptive from './libraries/move-elements.js';
+dinamicAdaptive();
+
 import mainSlede from './modules/main-slide.js';
 mainSlede();
 

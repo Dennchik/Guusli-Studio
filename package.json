@@ -4,8 +4,8 @@
 	"description": "Сборка Gulp-V-ES6",
 	"main": "index.js",
 	"scripts": {
-		"(1) (Project)": "gulp",
-		"(2) (Production)": "gulp --production",
+		"START": "gulp",
+		"PRODUCTION": "gulp --production",
 		"DEL (Build)": "gulp clear",
 		"PUG": "gulp pug",
 		"HTML": "gulp html",

@@ -4,9 +4,9 @@
 	&__body {
 		position: relative;
 		z-index: 9;
-		padding: 2rem 0 6rem;
-		@include flex-align-center-justify-center;
+		padding-bottom: 6rem;
 		flex-direction: column;
+		@include flex-align-center-justify-center;
 	}
 
 	// .services__title
@@ -35,14 +35,12 @@
 		transition:
 			opacity 0.9s,
 			transform 0.9s;
+
 		&.visible {
 			opacity: 1;
 			transform: translateY(0) !important;
 		}
-		//! ------------------------------------------------------------------------
-		@include _425 {
-			// font-size: 3.8rem;
-		}
+
 		&::before {
 			content: '';
 			width: 100%;
@@ -80,10 +78,14 @@
 
 	// .services__content
 	&__content {
-		padding: 2rem;
-		margin-bottom: 4rem;
-		gap: 2.5rem;
-		@include flex-justify-space-evenly;
+		// position: relative;
+		// padding: 2rem;
+		// margin-bottom: 4rem;
+		// gap: 2.5rem;
+		// overflow-x: auto;
+		// -webkit-overflow-scrolling: touch;
+		// scrollbar-width: none;
+		// @include flex-justify-space-evenly;
 	}
 
 	// .services__offer
@@ -131,17 +133,45 @@
 }
 
 .content-box {
+	// .content-box__body
+	&__body {
+		position: relative;
+		padding: 2rem;
+		margin-bottom: 4rem;
+		gap: 2.5rem;
+		display: flex;
+		// @extend .overflow-hidden;
+	}
 	// .content-box__column
 	&__column {
-		width: 100%;
-		height: 30rem;
 		position: relative;
+		min-width: 250px;
+		height: 30rem;
 		width: 20%;
-		// transition: all 0.5s ease-in-out;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			// border: 7px solid rgba(255, 255, 255, 0.1);
+			box-shadow: $boxShadow;
+			top: -20px;
+			left: 20px;
+			right: 20px;
+			bottom: -20px;
+			z-index: -1;
+			transition: all 0.3s ease-in-out;
+		}
+
 		&:hover {
+			&::before {
+				top: -10px;
+				left: -10px;
+				right: -10px;
+				bottom: -10px;
+			}
 			.content-box__image {
 				scale: 1.01;
-				box-shadow: $boxShadow;
 			}
 
 			.content-box__bg-img {
@@ -149,6 +179,7 @@
 				opacity: 1;
 			}
 		}
+
 		&.line {
 			&:nth-child(1) {
 				// transform: translateX(552px);
@@ -174,7 +205,7 @@
 
 	// .content-box__image
 	&__image {
-		overflow: hidden;
+		// overflow: hidden;
 		transition: all 0.5s ease-in-out;
 		height: 100%;
 		cursor: pointer;
@@ -209,6 +240,7 @@
 			opacity 1.5s,
 			box-shadow 0.3s ease-in-out 0.2s;
 	}
+
 	// .content-box__svg
 	&__svg {
 		width: 100%;

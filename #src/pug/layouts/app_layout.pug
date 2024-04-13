@@ -11,14 +11,14 @@ html(lang="ru")
 			link(rel="icon" type="image/icon" href="@@webRoot/img/icons/icon-logo.ico")
 			link(rel="stylesheet" type="text/css" href="@@webRoot/css/style.min.css" ) 
 		block script 
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/gsap.min.js")
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/ScrollTrigger.min.js")
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/ScrollSmoother.min.js") 
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/SplitText.min.js")
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/chroma.min.js")
+			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/gsap.min.js")
+			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/ScrollTrigger.min.js")
+			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/ScrollSmoother.min.js") 
+			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/SplitText.min.js")
+			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/chroma.min.js")
 			script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appreact.min.js")
 			script(defer="defer" type="text/javascript" src="@@webRoot/js/app.min.js") 
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js") 
 		block title
 		- var text
 			title #{text}
@@ -28,20 +28,12 @@ html(lang="ru")
 		include ../includes/mixins 
 		div(class="wrapper")
 			block page
-			.page 
-				._header
-					block header 
+			.page
+				._header#home
+					._header-wrapper
+					._fade-in.bp-1
 				._main-content
 					block main-content 
-						//- main.main-content 
-						//- 	._content
-						//- 		section._slide 
-						//- 			block main-slide
-						//- 		section._services
-						//- 			block services
-								
-								._spacer
-							
 
 				block footer 
 						//- footer._footer
