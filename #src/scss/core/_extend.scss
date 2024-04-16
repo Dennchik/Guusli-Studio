@@ -115,3 +115,57 @@
 		height: 0;
 	}
 }
+
+.border-present {
+	color: $neon-blue;
+	display: block;
+	position: absolute;
+	inset: 0.7rem;
+	background: linear-gradient(
+			to right,
+			currentColor 0%,
+			$liquid-neon 8%,
+			transparent 8%,
+			transparent 92%,
+			$liquid-neon 92%,
+			currentColor 100%
+		),
+		linear-gradient(
+			to right,
+			currentColor 0%,
+			$liquid-neon 8%,
+			transparent 8%,
+			transparent 92%,
+			$liquid-neon 92%,
+			currentColor 100%
+		),
+		linear-gradient(
+			to bottom,
+			currentColor 0%,
+			$liquid-neon 11%,
+			transparent 11%,
+			transparent 89%,
+			$liquid-neon 89%,
+			currentColor 100%
+		),
+		linear-gradient(
+			to bottom,
+			currentColor 0%,
+			$liquid-neon 11%,
+			transparent 11%,
+			transparent 89%,
+			$liquid-neon 89%,
+			currentColor 100%
+		);
+	background-size:
+		100% 1px,
+		100% 1px,
+		1px 100%,
+		1px 100%;
+	background-position:
+		0 0,
+		0 100%,
+		0 0,
+		100% 0;
+	background-repeat: no-repeat;
+}

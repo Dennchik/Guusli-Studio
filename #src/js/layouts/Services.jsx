@@ -351,49 +351,64 @@ export default function Services() {
 					}}>Специальное предложение</div>;
 					<div className="offer-container__body">
 						<div className="offer-container__column">
-							<div className="offer-container__title-box">
-								<span>Пакет Домашний</span>
-								<span>5 000<i className='icon-rub'> </i></span>
+							<div className="offer-container__wrapper">
+								<a className='offer-container__link' href="#">
+									<div className="offer-container__title-box">
+										<span>Пакет Домашний</span>
+										<span>5 000<i className='icon-rub'> </i></span>
+									</div>
+								</a>
+								<div className="offer-container__text">
+									Включает час звукозаписи сведение и мастеринг
+								</div>
 							</div>
-							<div className="offer-container__text">
-								Включает час звукозаписи сведение и мастеринг
-							</div>
+							<div className="offer-container__thumbnail"></div>
 						</div>
 						<div className="offer-container__column">
-							<a className='offer-container__link' href="#"></a>
-							<div className="offer-container__title-box">
-								<span>Пакет Комфорт</span>
-								<span>8 000<i className='icon-rub'></i></span>
+							<div className="offer-container__wrapper">
+								<a className='offer-container__link' href="#">
+									<div className="offer-container__title-box">
+										<span>Пакет Комфорт</span>
+										<span>8 000<i className='icon-rub'></i></span>
+									</div>
+								</a>
+								<div className="offer-container__text">
+									Час звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг
+								</div>
 							</div>
-							<div className="offer-container__text">
-								Час звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг
-							</div>
+							<div className="offer-container__thumbnail"></div>
 						</div>
 						<div className="offer-container__column">
-							<div className="offer-container__title-box">
-								<span>Пакет Профи</span>
-								<span>12 000<i className='icon-rub'></i></span>
+							<div className="offer-container__wrapper">
+								<a className='offer-container__link' href="#">
+									<div className="offer-container__title-box">
+										<span>Пакет Профи</span>
+										<span>12 000<i className='icon-rub'></i></span>
+									</div>
+								</a>
+								<div className="offer-container__text">
+									Час звукозаписи, Педагог по вокалу поможет раскрыть ваш голос присутствуя на звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг
+								</div>
 							</div>
-							<div className="offer-container__text">
-								Час звукозаписи, Педагог по вокалу поможет раскрыть ваш голос присутствуя на звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг
-							</div>
+							<div className="offer-container__thumbnail"></div>
 						</div>
 						<div className="offer-container__column">
-							<div className="offer-container__title-box">
-								<span>Съемка клипа в студии</span>
-								<span>от 5 000<i className='icon-rub'></i></span>
+							<div className="offer-container__wrapper">
+								<a className='offer-container__link' href="#">
+									<div className="offer-container__title-box">
+										<span>Съемка клипа в студии</span>
+										<span>от 5 000<i className='icon-rub'></i></span>
+									</div>
+								</a>
+								<div className="offer-container__text">
+									При заказе Клипа в студии дарим скидку 10%
+								</div>
 							</div>
-							<div className="offer-container__text">
-								При заказе Клипа в студии дарим скидку 10%
-							</div>
+							<div className="offer-container__thumbnail"></div>
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</section >
 	);
 }

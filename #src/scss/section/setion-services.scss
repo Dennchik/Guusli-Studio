@@ -188,6 +188,7 @@
 
 		&.line {
 			&:nth-child(1) {
+				position: relative;
 				// transform: translateX(552px);
 			}
 			&:nth-child(2) {
@@ -290,6 +291,7 @@
 
 .offer-container {
 	flex-direction: column;
+	height: 100%;
 	@include flex-align-center-justify-space-between;
 
 	// .offer-container__title
@@ -366,7 +368,9 @@
 	&__body {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
 		gap: 2rem;
+		height: 100%;
 		@include _690 {
 			grid-template-columns: 1fr;
 		}
@@ -376,49 +380,88 @@
 	&__column {
 		cursor: pointer;
 		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 		border-bottom: 1px solid $border-color;
 		padding: 2rem;
-		@extend .gradient-spec;
 		border-radius: 4px;
-		transition: all 0.5s ease-in-out;
-		filter: $filter;
 
+		filter: $filter;
+		z-index: 9;
+		@extend .gradient-spec;
 		&:hover {
-			box-shadow: $boxShadow;
-			content: '';
-			@extend .gradient-spec-active;
+			.offer-container__thumbnail {
+				opacity: 1;
+			}
 		}
 		&:nth-child(2) {
 			@extend .gradient-spec-comfort;
-			&:hover {
-				@extend .gradient-spec-active;
-			}
 		}
+	}
+
+	// .offer-container__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 100%;
+	}
+
+	// .offer-container__thumbnail
+	&__thumbnail {
+		opacity: 0;
+		position: absolute;
+		pointer-events: none;
+		inset: 0;
+		transition: all 0.7s ease-in-out;
+		&::before {
+			content: '';
+			@extend .border-present;
+		}
+		// @extend .gradient-spec-active;
+		background: linear-gradient(-45deg, #04d9ff81, #170e3181 83%);
+		background-size: 200% 200%;
 	}
 
 	// .offer-container__link
 	&__link {
 		cursor: pointer;
+		flex: 0 1 auto;
+		margin-bottom: 2rem;
+		display: inline;
 	}
 
 	// .offer-container__title-box
 	&__title-box {
 		color: ghostwhite;
-		margin-bottom: 2rem;
-		@include flex-align-center-justify-space-between;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
 		.icon-rub {
 			font-size: 24px;
 			font-weight: 100;
 		}
+
 		span {
 			font-size: 2.4rem;
+
+			&:nth-child(1) {
+				margin-right: 2rem;
+			}
+
 			&:nth-child(2) {
+				white-space: nowrap;
 				display: inline-flex;
 				align-items: center;
 
 				i {
 					margin-left: 1rem;
 				}
+			}
+
+			@include _425 {
+				font-size: 2rem;
 			}
 		}
 	}
@@ -427,5 +470,8 @@
 	&__text {
 		color: gray;
 		font-size: 1.8rem;
+		@include _425 {
+			font-size: 1.6rem;
+		}
 	}
 }

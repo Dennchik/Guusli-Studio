@@ -14,7 +14,7 @@ html {
 	letter-spacing: 1.7px;
 	// user-select: none;
 
-	@include _1024 {
+	@include _690 {
 		font-size: 50%;
 	}
 }
@@ -33,7 +33,7 @@ body {
 
 	@include _320 {
 		font:
-			1.4rem/1.4 Roboto,
+			1rem/1.6 Roboto,
 			sans-serif;
 	}
 }
