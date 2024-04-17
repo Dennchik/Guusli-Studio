@@ -1,26 +1,144 @@
 .footer {
-	@include flex-align-center-justify-space-between;
+	// .footer__row
+	&__row {
+		padding: 6rem 2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 4rem;
+	}
+
+	// .footer__content
+	&__content {
+		position: relative;
+		&::before {
+			content: '';
+			height: 1px;
+			width: 100%;
+			position: absolute;
+			background: linear-gradient(
+				to left top,
+				#8164ff 40%,
+				rgb(42, 53, 20) 70%
+			);
+		}
+	}
 
 	// .footer__column
 	&__column {
-		&:last-child {
-			border-left: 1px solid var(--border-color);
+		p {
+			font-size: 1.4rem;
+			&:nth-child(2) {
+				color: $neon-blue-dark;
+			}
+			&:nth-child(3) {
+				color: $gray;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
 		}
 	}
 
-	// .footer__items
-	&__items {
-		height: 3rem;
-		padding-left: 2rem;
+	// .footer__info
+	&__info {
+		padding: 2rem 0;
+		background: #332764;
 	}
 
-	// .footer__items-link
-	&__items-link {
-		height: 100%;
-		padding-left: 1.5rem;
-		font-size: 1.8rem;
-		&:hover {
-			color: var(--font-color-active);
+	// .footer__title
+	&__title {
+		margin-bottom: 2.5rem;
+		font-size: 2rem;
+		text-shadow: 1px 1px 1px $neon-pink;
+	}
+
+	&__item-services {
+		flex-wrap: nowrap;
+		&:not(:last-child) {
+			margin-bottom: 2rem;
 		}
+		i {
+			display: block;
+			margin-right: 3rem;
+			width: 7rem;
+			height: 3.2rem;
+		}
+		[class*='icon-'] {
+			&::before {
+				cursor: pointer;
+				font-size: 3.2rem;
+				color: $gray;
+			}
+		}
+		span {
+			color: $gray;
+			font-size: 1.4rem;
+		}
+		@include flex-align-center;
+	}
+
+	// .footer__contacts
+	&__contacts {
+		display: flex;
+	}
+
+	// .footer__footer
+	&__footer {
+	}
+
+	// .footer__community
+	&__community {
+		padding: 3rem 0;
+		justify-content: space-between;
+		@include flex-align-center;
+	}
+}
+
+.contacts {
+	// .contacts__logo
+	&__logo {
+		font:
+			6.4rem Architectural,
+			Roboto,
+			sans-serif;
+	}
+
+	// .contacts__item
+	&__item {
+		display: flex;
+		font:
+			1.8rem Roboto,
+			sans-serif;
+
+		i {
+			margin-right: 2rem;
+		}
+
+		a {
+			@include flex-align-center;
+			font-size: 1.4rem;
+		}
+
+		[class*='icon-'] {
+			&::before {
+				cursor: pointer;
+				font-size: 2.2rem;
+				color: $electric-lime;
+			}
+		}
+		&:not(:first-child) {
+			margin-left: 4rem;
+		}
+	}
+
+	// .contacts__text
+	&__text {
+		font-size: 1.4rem;
+	}
+}
+
+.icon-location {
+	&__text {
 	}
 }

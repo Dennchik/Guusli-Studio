@@ -7,6 +7,7 @@
 	background: transparent;
 	display: flex;
 	align-items: center;
+
 	&::before {
 		z-index: 7;
 		opacity: 0;
@@ -101,7 +102,6 @@
 		height: 5.3em;
 		width: 8.3rem;
 		background: url('../img/header/logo.png') center / contain no-repeat;
-		// margin-right: 1.5rem;
 	}
 
 	// .header__menu
@@ -116,11 +116,18 @@
 	&__item {
 		cursor: pointer;
 		position: relative;
-		text-shadow: 2px 2px 15px $luminescent-red;
+		text-shadow: 1px 1px 2px #000;
 		opacity: 0;
 		transition: color 0.5s ease-in-out;
 		&:hover {
-			color: $neon-red;
+			color: $neon-blue;
+			text-shadow: 2px 2px 3px #000;
+			&::before {
+				width: 75%;
+			}
+			&::after {
+				width: 40%;
+			}
 		}
 		a {
 			padding: 2rem 0;
@@ -147,21 +154,11 @@
 			bottom: -3px;
 			left: 0;
 		}
-
-		&:hover {
-			&::before {
-				width: 75%;
-			}
-			&::after {
-				width: 40%;
-			}
-		}
 	}
 
 	// .header__community
 	&__community {
 		display: flex;
-		font-size: 2.8rem;
 	}
 
 	// .header__ellipsis
@@ -220,27 +217,6 @@
 			}
 		}
 	}
-
-	// .header__icon
-	&__icon {
-		background: $electric-lime;
-		width: 4.2rem;
-		height: 4.2rem;
-		border-radius: 50%;
-		color: $black-color;
-		overflow: hidden;
-		transition: all 0.5s ease-in-out;
-
-		&:not(:last-child) {
-			margin-right: 1rem;
-		}
-
-		&:hover {
-			background: $black-color;
-			color: $electric-lime;
-			scale: 1.1;
-		}
-	}
 }
 
 @keyframes fadeOutGradient {
@@ -251,17 +227,5 @@
 @keyframes fadeInGradient {
 	100% {
 		background-position: 100% 0;
-	}
-}
-
-.burger-button {
-	z-index: 10;
-	// margin-right: 0.5rem;
-
-	// .burger-bottom__items
-	&__items {
-		// border: 1px var(--border-color);
-		// border-style: none solid;
-		// border-right: 1px solid #fff;
 	}
 }

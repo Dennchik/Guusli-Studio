@@ -46,9 +46,6 @@
 		height: 100%;
 		width: 100%;
 	}
-	// .page__footer
-	&__footer {
-	}
 }
 
 .main-content {
@@ -81,18 +78,17 @@
 			height: 1.5px;
 		}
 	}
+
 	// .main-content__services
 	&__services {
 		@extend .gradient-services;
 		position: relative;
 		z-index: 8;
 	}
-	// .main-content__spacer
-	&__spacer {
-		position: relative;
-		z-index: 9;
-		@extend .gradient;
-		height: 900px;
+
+	// .main-content__footer
+	&__footer {
+		@extend .gradient-services;
 	}
 }
 //  background: linear-gradient(to right, #000 32.5%, #2f2469 20%, #000 70%);

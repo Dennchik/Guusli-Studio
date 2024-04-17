@@ -10,9 +10,8 @@ export default function Header() {
 		});
 		document.querySelector('.burger-button').addEventListener('click', function () {
 			this.classList.toggle('_active');
-			// let target = e.target;
-			// console.log(target);
 		});
+
 		const handleScroll = () => {
 			const header = document.querySelector('.header');
 			const mainContent = document.querySelector('.main-content');
@@ -42,9 +41,8 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header className="header key-object">
+		<div className="header key-object">
 			<div className="header__container">
-
 				<div className="burger-button">
 					<div className="burger-button__items">
 						<svg viewBox="10 6 44 36">
@@ -80,14 +78,30 @@ export default function Header() {
 						<span></span>
 					</div>
 
-					<div className="header__community" data-move-el={JSON.stringify(dataMoveEl)}>
-						<div className="header__icon"><i className="icon-whatsapp"></i></div>
-						<div className="header__icon"><i className="icon-vk-brand"></i></div>
-						<div className="header__icon"><i className="icon-telegram-fly"></i></div>
-						<div className="header__icon"><i className="icon-youtube"></i></div>
+					<div className="community header__community" data-move-el={JSON.stringify(dataMoveEl)}>
+						<div className="community__icon">
+							<a class="wa" title="WhatsApp" target="blank" href="https://wa.me/79106044424">
+								<i className="icon-whatsapp"></i>
+							</a>
+						</div>
+						<div className="community__icon">
+							<a class="wa" title="VK" target="blank" href="https://vk.com/studio_gusli">
+								<i className="icon-vk-brand"></i>
+							</a>
+						</div>
+						<div className="community__icon">
+							<a class="wa" title="TG" target="blank" href="https://t.me/gusli_studio">
+								<i className="icon-telegram-fly"></i>
+							</a>
+						</div>
+						<div className="community__icon">
+							<a class="wa" title="youtube" target="blank" href="https://youtube.com/@guslistudio6257?si=36fe20TYpLAJyB3m">
+								<i className="icon-youtube"></i>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</header>
+		</div>
 	);
 }

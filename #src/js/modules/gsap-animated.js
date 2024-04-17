@@ -8,6 +8,7 @@ export default () => {
 	let smoother = ScrollSmoother.create({
 		content: '.main-content',
 		content: '.main-content__content',
+
 		smooth: true,
 		effects: true,
 	});
@@ -15,13 +16,26 @@ export default () => {
 	smoother.effects(".content-box__column", {
 		speed: (i) => {
 			// Desktop three columns layout
-			if (window.matchMedia('(min-width:1440)').matches) {
+			if (window.matchMedia('(min-width:730)').matches) {
 				// Center column is faster
 				return i % 3 === 1 ? 1.15 : 1;
 			} else {
 				// Mobile, right column is fast
 				return i % 2 === 0 ? 0.9 : 1.15;
 			}
+		}
+	});
+	gsap.set('.footer', {
+		opacity: 1
+	});
+	gsap.to('.footer', {
+		opacity: 1,
+		duration: 1,
+		ease: 'power2.out',
+		scrollTrigger: {
+			trigger: '.footer',
+			start: 'bottom 100%-=50px',
+			once: true
 		}
 	});
 
@@ -32,23 +46,19 @@ export default () => {
 			const linkKey = linkKeys[key];
 			const keyObject = keyObjects[key];
 			linkKey.addEventListener('click', (e) => {
-
 				let target = e.target;
 				if (target.closest('.key-home')) {
-					console.log(target, 'services');
 					gsap.to(smoother, {
 						scrollTop: smoother.offset(keyObject, "top bottom"),
 						duration: 1
 					});
 				} else {
-					console.log(target, 'next');
 					gsap.to(smoother, {
 						scrollTop: smoother.offset(keyObject, "26% center"),
 						duration: 1
 					});
 				}
 			});
-
 		}
 	}
 };

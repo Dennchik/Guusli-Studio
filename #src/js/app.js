@@ -1,3 +1,4 @@
-import ScrollAccordion from "./modules/app_jsx.jsx";
+import ScrollAccordion from "./modules/gsap-animated";
 ScrollAccordion();
+
 
