@@ -163,3 +163,35 @@
 		100% 0;
 	background-repeat: no-repeat;
 }
+.link_underline {
+	transition: color 04s ease-in-out;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 1px;
+		background-color: $electric-lime;
+		transition: width 0.5s ease-in-out;
+	}
+
+	&::before {
+		right: 0;
+		bottom: 0;
+	}
+	&::after {
+		bottom: -3px;
+		left: 0;
+	}
+
+	&:hover {
+		color: $neon-blue;
+		text-shadow: 2px 2px 3px #000;
+		&::before {
+			width: 75%;
+		}
+		&::after {
+			width: 40%;
+		}
+	}
+}

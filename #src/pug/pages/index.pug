@@ -2,16 +2,11 @@ extends ../layouts/app_layout
 block title
 	- var text='Студия зувукозаписи "Gusli" Обнинск' 
 
-
-//- block page  
-//- 	block header
-//- 		include ../layouts/header
 block main-content 
-	.main-content 
-		._content 
+	.main-content#wrapper 
+		._content#content
 			block section
 				section._slide  
 				section._services  
 			block footer
-				._footer
-//- 	//- include ../layouts/footer
+				._footer 

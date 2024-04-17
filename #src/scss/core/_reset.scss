@@ -9,7 +9,6 @@ html {
 	// overflow-x: hidden;
 	counter-reset: heading;
 	color: var(--font-body-color);
-	// @extend .gradient;
 
 	letter-spacing: 1.7px;
 	// user-select: none;
@@ -20,8 +19,8 @@ html {
 }
 
 body {
-	// position: relative;
-	overscroll-behavior: none;
+	@extend .gradient-services;
+	// overscroll-behavior: none;
 	font:
 		1.6rem/1.6 Roboto,
 		sans-serif;

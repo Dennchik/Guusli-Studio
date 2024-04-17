@@ -6,8 +6,8 @@ export default () => {
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 	let smoother = ScrollSmoother.create({
-		content: '.main-content',
-		content: '.main-content__content',
+		wrapper: "#wrapper",
+		content: "#content",
 
 		smooth: true,
 		effects: true,
@@ -25,17 +25,58 @@ export default () => {
 			}
 		}
 	});
-	gsap.set('.footer', {
-		opacity: 1
-	});
-	gsap.to('.footer', {
-		opacity: 1,
+	gsap.from('.footer', {
+		y: 150,
 		duration: 1,
-		ease: 'power2.out',
+		opacity: 0,
 		scrollTrigger: {
 			trigger: '.footer',
-			start: 'bottom 100%-=50px',
-			once: true
+			start: 'top+=10 bottom', // начать анимацию, когда верхняя граница .footer находится на 50px выше нижней границы окна браузера
+			end: 'bottom bottom',
+			toggleActions: 'play none none reverse',
+		}
+	});
+	gsap.from('.footer .el-1', {
+		x: -350,
+		duration: 1,
+		opacity: 0,
+		scrollTrigger: {
+			trigger: '.footer',
+			start: 'top bottom',
+			end: 'bottom bottom',
+			toggleActions: 'play none none reverse'
+		}
+	});
+	gsap.from('.footer .el-2', {
+		duration: 5,
+		opacity: 0,
+		scrollTrigger: {
+			trigger: '.footer',
+			start: 'top bottom',
+			end: 'bottom bottom',
+			toggleActions: 'play none none reverse'
+		}
+	});
+	gsap.from('.footer .el-3', {
+		x: 350,
+		duration: 1,
+		opacity: 0,
+		scrollTrigger: {
+			trigger: '.footer',
+			start: 'top bottom',
+			end: 'bottom bottom',
+			toggleActions: 'play none none reverse'
+		}
+	});
+	gsap.from('.contacts__items', {
+		x: 250,
+		duration: 0.5,
+		opacity: 0,
+		scrollTrigger: {
+			trigger: '.contacts',
+			start: 'top-=50 bottom',
+			end: 'bottom bottom',
+			toggleActions: 'play none none reverse',
 		}
 	});
 

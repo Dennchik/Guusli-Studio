@@ -14,7 +14,7 @@ export default function Header() {
 
 		const handleScroll = () => {
 			const header = document.querySelector('.header');
-			const mainContent = document.querySelector('.main-content');
+			const mainContent = document.querySelector('.page__main-content');
 			const mainContentTop = mainContent.getBoundingClientRect().top;
 
 			if (mainContentTop < 0) {

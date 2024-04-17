@@ -21,18 +21,7 @@ import {
 // -----------------------------------------------------------------------------
 export default function Services() {
 	const boxImagesRef = useRef([]);
-	const contentServicesRef = useRef(null); // Создаем useRef для элемента .services
-	const boxTitleRef = useRef(null); // Создаем useRef для элемента .services__title
-	const contentServicesOfferRef = useRef(null);
-	const offerTitleRef = useRef(null); // Создаем useRef для элемента .offer-container__title
-	const [isVisible] = useState(false);
-
-
-
 	useEffect(() => {
-		const contentServices = contentServicesRef.current; // Получаем доступ к элементу .services
-		const boxTitle = boxTitleRef.current; // Получаем доступ к элементу .services__title 
-
 		const handleMouseOver = (event) => {
 			const target = event.currentTarget;
 			animationSvgLine(target, false); // Запускаем анимацию при наведении
@@ -51,94 +40,27 @@ export default function Services() {
 			boxImage.addEventListener('mouseover', handleMouseOver);
 			boxImage.addEventListener('mouseleave', handleMouseLeave);
 		});
-		// -------------------------------------------------------------------------
-		if (!contentServices || !boxTitle) return;
-		const handleScroll = () => {
-			handleScrollRect(contentServices, 150, boxTitle);
-		};
-		// const handleScroll = () => {
-		// 	const contentServicesRect = contentServices.getBoundingClientRect();
-
-
-		// 	if (contentServicesRect.top < window.innerHeight - 100 && contentServicesRect.bottom > 0) {
-		// 		boxTitle.classList.add('visible');
-		// setIsVisible(true); // Показываем блок с заголовком
-		// 	} else {
-		// 		// setIsVisible(false); // Скрываем блок с заголовком 
-		// 		boxTitle.classList.remove('visible');
-		// 	}
-
-		// };
-		window.addEventListener('scroll', handleScroll);
-		// Добавляем проверку на класс visible внутри useEffect
-		if (isVisible) {
-			boxTitle.classList.add('visible');
-		} else {
-			boxTitle.classList.remove('visible');
-		}
-
 
 		return () => {
 			boxImages.forEach(boxImage => {
 				boxImage.removeEventListener('mouseover', handleMouseOver);
 				boxImage.removeEventListener('mouseleave', handleMouseLeave);
 			});
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-	// ---------------------------------------------------------------------------
-	// Добавляем useEffect для блока offer-container__title
-	useEffect(() => {
-		const contentServicesOffer = contentServicesOfferRef.current;
-		const offerTitle = offerTitleRef.current;
-
-		if (!contentServicesOffer || !offerTitle) return;
-		const handleScroll = () => {
-			handleScrollRect(contentServicesOffer, 120, offerTitle);
-		};
-
-		// const handleScroll = (content, value, el) => {
-		// 	const rect = contentServicesOffer.getBoundingClientRect();
-		// 	if (rect.top < window.innerHeight - 120 && rect.bottom > 0) {
-		// 		offerTitle.classList.add('visible');
-		// 	} else {
-		// 		offerTitle.classList.remove('visible');
-		// 	}
-		// };
-
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 
-	function handleScrollRect(content, value, el) {
-		const contentRect = content.getBoundingClientRect();
-		if (contentRect.top < window.innerHeight - value && contentRect.top > 0) {
-			el.classList.add('visible');
-		} else {
-			el.classList.remove('visible');
-		}
-	};
-
-	// ---------------------------------------------------------------------------
-	useEffect(() => {
-
-	});
-	// ---------------------------------------------------------------------------
 	return (
-		<section className="services key-object" ref={contentServicesRef}>
+		<section className="services key-object" >
 			<div className="material-parallax parallax">
 				<div className="parallax__image">
 					<img src="img/body/parallax_bg.png" alt="" />
 				</div>
 			</div>
 			<div className="services__body _container">
-				<div className={`services__title ${isVisible ? 'visible' : ''}`} ref={boxTitleRef}>Наши услуги</div>
+				<div className="services__title">Наши услуги</div>
 				<div className="services__content">
 					<div className="content-box">
 						<div className="content-box__body">
-
 							<div className="content-box__column line">
 								<div className="content-box__image el">
 									<div className="content-box__svg">
@@ -344,11 +266,8 @@ export default function Services() {
 						</div>
 					</div>
 				</div>
-				<div className="services__offer offer-container" ref={contentServicesOfferRef}>
-					<div className={`offer-container__title ${isVisible ? 'visible' : ''}`} ref={(node) => {
-						// offerTitleTriggerRef.current = node;
-						offerTitleRef.current = node;
-					}}>Специальное предложение</div>;
+				<div className="services__offer offer-container" >
+					<div className="offer-container__title">Специальное предложение</div>;
 					<div className="offer-container__body">
 						<div className="offer-container__column">
 							<div className="offer-container__wrapper">

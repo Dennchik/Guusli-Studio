@@ -17,8 +17,6 @@ html(lang="ru")
 			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/SplitText.min.js")
 			//- script(defer="defer" type="text/javascript" src="@@webRoot/js/chroma.min.js")
 			script(defer="defer" type="text/javascript" src="@@webRoot/js/app/app.min.js")
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/animated.min.js") 
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js") 
 		block title
 		- var text
 			title #{text}
@@ -36,7 +34,9 @@ html(lang="ru")
 					main._main-content
 						block main-content 
 							block section
-							block footer 
+							block footer  
+		script(defer="defer" type="text/javascript" src="@@webRoot/js/animated.min.js") 
+		script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js") 
 
 
 

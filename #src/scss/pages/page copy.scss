@@ -3,19 +3,15 @@
 	overflow: hidden;
 	// .page__header
 	&__header {
-		position: fixed;
-		top: 0;
-		left: 0;
-
+		position: relative;
 		width: 100%;
 		z-index: 9;
-		height: 10rem;
+		// height: 10rem;
 	}
 
 	// .page__header-wrapper
 	&__header-wrapper {
-		width: 100%;
-		height: 100%;
+		// width: 100%;
 	}
 
 	// .page__fade-in
@@ -60,6 +56,7 @@
 .main-content {
 	// .main-content__content
 	&__content {
+		overflow-x: hidden;
 		@extend .gradient-services;
 	}
 
@@ -89,11 +86,13 @@
 
 	// .main-content__services
 	&__services {
+		// @extend .gradient-services;
 		position: relative;
 		z-index: 8;
 	}
 
 	// .main-content__footer
 	&__footer {
+		border: 3px solid red;
 	}
 }
