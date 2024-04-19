@@ -1,2 +1,9 @@
 import ScrollAccordion from "./modules/gsap-animated.js";
-ScrollAccordion();
+import isMobile from "./libraries/Js-devise";
+if (isMobile.any()) {
+
+} else {
+
+	ScrollAccordion();
+
+}

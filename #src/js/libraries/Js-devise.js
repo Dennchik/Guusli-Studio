@@ -1,29 +1,19 @@
-// === Определение устройства вывода ===
-"use strict";
-let isMobile = {
-	Android: function () {
-		return navigator.userAgent.match(/Android/i);
-	},
-	BlackBerry: () => {
-		return navigator.userAgent.match(/BlackBerry/i);
-	},
-	iOS: () => {
-		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-	},
-	Opera: () => {
-		return navigator.userAgent.match(/Opera Mini/i);
-	},
-	Windows: () => {
-		return navigator.userAgent.match(/IEMobile/i);
-	},
+const isMobile = {
+	Android: () => /Android/i.test(navigator.userAgent),
+	BlackBerry: () => /BlackBerry/i.test(navigator.userAgent),
+	iOS: () => /iPhone|iPad|iPod/i.test(navigator.userAgent),
+	Opera: () => /Opera Mini/i.test(navigator.userAgent),
+	Windows: () => /IEMobile/i.test(navigator.userAgent),
+	smallerThan960px: () => window.innerWidth < 960,
 
-	any: () => {
-		return (
-			isMobile.Android() ||
-			isMobile.BlackBerry() ||
-			isMobile.iOS() ||
-			isMobile.Opera() ||
-			isMobile.Windows());
-	}
+	any: () => (
+		isMobile.Android() ||
+		isMobile.BlackBerry() ||
+		isMobile.iOS() ||
+		isMobile.Opera() ||
+		isMobile.Windows() ||
+		isMobile.smallerThan960px()
+	)
 };
+
 export default isMobile;

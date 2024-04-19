@@ -119,10 +119,10 @@ export default () => {
 			trigger: '.contacts',
 			pin: true,
 			start: 'top-=80 bottom',
-			end: 'bottom-=80 bottom',
+			end: 'bottom-=160 bottom',
 			endTrigger: '.contacts',
 			toggleActions: 'play none none reverse',
-			// markers: true
+			markers: true
 		}
 	});
 
