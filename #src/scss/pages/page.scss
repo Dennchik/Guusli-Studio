@@ -8,7 +8,7 @@
 		left: 0;
 
 		width: 100%;
-		z-index: 9;
+		z-index: 11;
 		height: 10rem;
 	}
 
@@ -51,9 +51,11 @@
 
 	// .page__content
 	&__main-content {
+		position: relative;
 		inset: 0;
 		height: 100%;
 		width: 100%;
+		z-index: 8;
 	}
 }
 
