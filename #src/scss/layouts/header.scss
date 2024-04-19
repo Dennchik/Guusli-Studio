@@ -119,6 +119,11 @@
 		text-shadow: 1px 1px 2px #000;
 		opacity: 0;
 		transition: color 0.5s ease-in-out;
+
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+
 		&:hover {
 			color: $neon-blue;
 			text-shadow: 2px 2px 3px #000;
@@ -129,14 +134,16 @@
 				width: 40%;
 			}
 		}
-		a {
-			padding: 2rem 0;
+		&.active {
+			color: $neon-blue;
+			text-shadow: 2px 2px 3px #000;
+			&::before {
+				width: 75%;
+			}
+			&::after {
+				width: 40%;
+			}
 		}
-
-		&:not(:last-child) {
-			margin-right: 2rem;
-		}
-
 		&::before,
 		&::after {
 			content: '';
@@ -146,10 +153,12 @@
 			background-color: $electric-lime;
 			transition: width 0.5s ease-in-out;
 		}
+
 		&::before {
 			right: 0;
 			bottom: 0;
 		}
+
 		&::after {
 			bottom: -3px;
 			left: 0;
@@ -167,9 +176,10 @@
 		display: none;
 		margin-left: 3rem;
 
-		@include _920 {
-			display: flex;
-			align-items: center;
+		display: flex;
+		align-items: center;
+		@include _min-920 {
+			display: none;
 		}
 
 		span {

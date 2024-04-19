@@ -1,37 +1,54 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Element } from "react-scroll";
 
 export default function Header() {
 	return (
-		<footer className='footer'>
-			<div className="footer__content">
+		<footer className='footer' name='footer' id='footer'>
+			<Element className="footer__content">
 				<div className="footer__info _container">
 					<div className="content-info footer__content-info">
 						<div className="content-info__column el-1">
-							<div className="content-info__title">ABOUT OUR STUDIO</div>
-							<p>Наша медиа-группа представляет собой превосходную студию звукозаписи и продюсерскую компанию. Мы специализируемся на создании текстов, продюсировании, звукозаписи и развитии талантов. Готовы к сотрудничеству с вами в любое время.</p>
-							<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка. В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p>
+							<div className="content-info__body">
+								<div className="content-info__title">ABOUT OUR STUDIO</div>
+								<p>Наша медиа-группа представляет собой превосходную студию звукозаписи и продюсерскую компанию. Мы специализируемся на создании текстов, продюсировании, звукозаписи и развитии талантов. Готовы к сотрудничеству с вами в любое время.</p>
+								<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка. В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p>
+							</div>
+							<div className='content-info__footer'>
+								<a className='content-info__button' href="#" type='button'>Read more</a>
+							</div>
 						</div>
 						<div className="content-info__column el-2">
-							<div className="content-info__title">SERVICES</div>
-							<div className="content-info__item-services">
-								<i className='icon-microphone'></i>
-								<span>Мы предлагаем услуги аналоговой и цифровой записи, а также микширования в широком спектре жанров.</span>
+							<div className='content-info__body'>
+								<div className="content-info__title">SERVICES</div>
+								<div className="content-info__item-services">
+									<i className='icon-microphone'></i>
+									<span>Мы предлагаем услуги аналоговой и цифровой записи, а также микширования в широком спектре жанров.</span>
+								</div>
+								<div className="content-info__item-services">
+									<i className='icon-fast-forward'></i>
+									<span>Наша студия привлекает великолепным интерьером и оборудованными комфортабельными помещениями, идеально подходящими для создания лучших произведений.</span>
+								</div>
+								<div className="content-info__item-services">
+									<i className='icon-music'></i>
+									<span>В нашей студии мы внедряем передовое оборудование и программное обеспечение для микширования, обеспечивая высочайшее качество звучания ваших треков. Ваше творчество - наш приоритет.</span>
+								</div>
 							</div>
-							<div className="content-info__item-services">
-								<i className='icon-fast-forward'></i>
-								<span>Наша студия привлекает великолепным интерьером и оборудованными комфортабельными помещениями, идеально подходящими для создания лучших произведений.</span>
-							</div>
-							<div className="content-info__item-services">
-								<i className='icon-music'></i>
-								<span>В нашей студии мы внедряем передовое оборудование и программное обеспечение для микширования, обеспечивая высочайшее качество звучания ваших треков. Ваше творчество - наш приоритет.</span>
+							<div className='content-info__footer'>
+								<a className='content-info__button' href="#" type='button'>Read more</a>
 							</div>
 						</div>
 						<div className="content-info__column el-3">
 							<div className="content-info__title">OUR TEAM</div>
 							<div className="content-info__team-items">
-
+								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus ea ipsa quod a, natus doloremque maiores dolores ipsum? Atque unde pariatur, quo, ex aperiam velit necessitatibus magnam error asperiores eos beatae itaque voluptas obcaecati aliquam quisquam nulla reprehenderit ipsam exercitationem. Quae adipisci reiciendis quisquam ipsa delectus, veritatis autem, neque numquam facilis ipsum temporibus explicabo dicta laborum. Ipsam commodi adipisci fugit doloribus, perferendis laboriosam. Illo, cum. Qui nisi accusantium consequatur sequi pariatur? In hic esse aperiam doloremque natus, corporis perspiciatis quisquam, dolor rem tempora quidem, repellendus voluptatem libero! Eaque saepe veritatis nam qui asperiores. Obcaecati, amet nihil labore molestiae repellat iste.</p>
 							</div>
 						</div>
+					</div>
+					<div className="content-info__nav">
+						<i className='icon-achievements'></i>
+						<i className='icon-services'></i>
+						<i className='icon-reviews'></i>
+						<i className='icon-contacts'></i>
 					</div>
 				</div>
 				<div className="contacts footer__contacts">
@@ -56,10 +73,12 @@ export default function Header() {
 									<span>studio@obninsk-gusli.ru</span>
 								</a>
 							</div>
+
 						</div>
 					</div>
+
 				</div>
-			</div>
+			</Element>
 			<div className="footer__community _container">
 				<div className="community">
 					<div className="community__items">
@@ -68,7 +87,6 @@ export default function Header() {
 							<a className='community__link' href="">Privacy Policy.</a>
 						</div>
 						<div className="community__icons">
-
 							<div className="community__icon">
 								<a class="wa" title="WhatsApp" target="blank" href="https://wa.me/79106044424">
 									<i className="icon-whatsapp"></i>

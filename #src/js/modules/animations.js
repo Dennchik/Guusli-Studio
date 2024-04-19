@@ -1,4 +1,4 @@
-import anime from 'animejs';
+import anime, { easings } from 'animejs';
 
 // -----------------------------------------------------------------------------
 export function timeLineHeaderItem() {
@@ -143,41 +143,67 @@ export function animationSvgText(target, reverse) {
 		}
 	});
 }
-export function elasticServices() {
-	// anime({
-	// 	targets: '.content-box .line:nth-child(1)',
-	// 	translateX: 0,
-	// 	duration: 500,
-	// 	easing: 'easeInElastic(2, .5)',
+export function equalizerAnimated() {
+	// var equaContentEl = document.querySelector('.equalizer-content');
+	// var fragment = document.createDocumentFragment();
+	// var easingNames = [
+	// 	'easeInQuad',
+	// 	'easeInCubic',
+	// 	'easeInQuart',
+	// 	'easeInQuint',
+	// 	'easeInSine',
+	// 	'easeInExpo',
+	// 	'easeInCirc',
+	// 	'easeInBack',
+	// 	'easeOutQuad',
+	// 	'easeOutCubic',
+	// 	'easeOutQuart',
+	// 	'easeOutQuint',
+	// 	'easeOutSine',
+	// 	'easeOutExpo',
+	// 	'easeOutCirc',
+	// 	'easeOutBack',
+	// 	'easeInBounce',
+	// 	'easeInOutQuad',
+	// 	'easeInOutCubic',
+	// 	'easeInOutQuart',
+	// 	'easeInOutQuint',
+	// 	'easeInOutSine',
+	// 	'easeInOutExpo',
+	// 	'easeInOutCirc',
+	// 	'easeInOutBack',
+	// 	'easeInOutBounce',
+	// 	'easeOutBounce',
+	// 	'easeOutInQuad',
+	// 	'easeOutInCubic',
+	// 	'easeOutInQuart',
+	// 	'easeOutInQuint',
+	// 	'easeOutInSine',
+	// 	'easeOutInExpo',
+	// 	'easeOutInCirc',
+	// 	'easeOutInBack',
+	// 	'easeOutInBounce',
+	// ];
+
+	// function createEasingDemo(easing) {
+	// 	var divEl = document.createElement('div');
+	// 	divEl.classList.add('equalizer-content__square', 'el', 'stretched', 'easing-' + easing);
+	// 	anime({
+	// 		targets: divEl,
+	// 		translateY: [750, -750],
+	// 		direction: 'alternate',
+	// 		loop: true,
+	// 		delay: 1500,
+	// 		endDelay: 700,
+	// 		duration: 1000,
+	// 		easing: easing
+	// 	});
+	// 	fragment.appendChild(divEl);
+	// }
+	// easingNames.forEach(function (easeName) {
+	// 	createEasingDemo(easeName);
 	// });
 
-	// anime({
-	// 	targets: '.content-box .line:nth-child(2)',
-	// 	translateX: 0,
-	// 	easing: 'easeOutElastic(1, 1)'
-	// });
-
-	// anime({
-	// 	targets: '.content-box .line:nth-child(3)',
-	// 	translateX: 0,
-	// 	easing: 'easeInOutElastic(1, .3)'
-	// });
-
-	// anime({
-	// 	targets: '.content-box .line:nth-child(4)',
-	// 	translateX: 0,
-	// 	easing: 'easeOutInElastic(1, .1)'
-	// });
-
-	// anime({
-	// 	targets: '.content-box .line:nth-child(5)',
-	// 	translateX: 0,
-	// 	easing: 'easeOutInElastic(1, .6)',
-	// });
-	// anime({
-	// 	targets: '.content-box__column .el',
-	// 	translateX: [-80, 0],
-	// 	opacity: [0, 1],
-	// 	duration: 3000
-	// });
+	// equaContentEl.innerHTML = '';
+	// equaContentEl.appendChild(fragment);
 }

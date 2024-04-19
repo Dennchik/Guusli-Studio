@@ -108,7 +108,7 @@
 }
 
 @mixin _min-920 {
-	@media (min-width: 920.89px) {
+	@media (min-width: 920.99px) {
 		@content;
 	}
 }
@@ -271,6 +271,12 @@
 
 @mixin _375-490 {
 	@media (min-width: 376px) and (max-width: 490px) {
+		@content;
+	}
+}
+
+@mixin _425-490 {
+	@media (min-width: 425.98px) and (max-width: 490px) {
 		@content;
 	}
 }

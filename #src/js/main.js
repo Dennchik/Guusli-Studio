@@ -4,8 +4,8 @@ dinamicAdaptive();
 import mainSlede from './modules/main-slide.js';
 mainSlede();
 
-import { timeLineHeaderItem } from "./modules/animations.js";
-timeLineHeaderItem();
+import { timeLineHeaderItem, equalizerAnimated } from "./modules/animations.js";
+timeLineHeaderItem(); equalizerAnimated();
 // -----------------------------------------------------------------------------
 
 

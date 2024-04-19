@@ -41,7 +41,7 @@ export default function Mainslide() {
 		});
 	}, []);
 	return (
-		<div className="main-slide" id="home">
+		<div className="main-slide" id='main-slide'>
 			<div className="main-slide__body _swiper">
 				<div className="main-slide__slide-wrapper">
 					<div className="main-slide__slide-image _img">

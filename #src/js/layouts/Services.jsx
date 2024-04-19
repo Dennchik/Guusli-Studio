@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Element } from 'react-scroll';
 import { animationSvgLine, animationSvgText } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import {
@@ -50,12 +51,13 @@ export default function Services() {
 	}, []);
 
 	return (
-		<section className="services key-object" >
-			<div className="material-parallax parallax">
+
+		<Element className="services key-object" name='services' id='services'>
+			{/* <div className="material-parallax parallax">
 				<div className="parallax__image">
-					<img src="img/body/parallax_bg.png" alt="" />
+					<img src="img/body/parallax_bg.png" alt="parallax-bg" />
 				</div>
-			</div>
+			</div> */}
 			<div className="services__body _container">
 				<div className="services__title">Наши услуги</div>
 				<div className="services__content">
@@ -266,8 +268,8 @@ export default function Services() {
 						</div>
 					</div>
 				</div>
-				<div className="services__offer offer-container" >
-					<div className="offer-container__title">Специальное предложение</div>;
+				<div className="services__offer offer-container">
+					<div className="offer-container__title">Специальное предложение</div>
 					<div className="offer-container__body">
 						<div className="offer-container__column">
 							<div className="offer-container__wrapper">
@@ -328,6 +330,7 @@ export default function Services() {
 					</div>
 				</div>
 			</div>
-		</section >
+		</Element>
+
 	);
 }

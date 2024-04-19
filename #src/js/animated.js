@@ -1,4 +1,2 @@
-import ScrollAccordion from "./modules/gsap-animated";
+import ScrollAccordion from "./modules/gsap-animated.js";
 ScrollAccordion();
-
-

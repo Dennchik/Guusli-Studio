@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 export default function Header() {
-	const dataMoveEl = [{ 'bp-max': 920, 'index': 1, 'target': '.bp-1' }];
+	const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
+
 	useEffect(() => {
 		const fadeIn = document.querySelector('.page__fade-in');
 
@@ -26,7 +27,6 @@ export default function Header() {
 				fadeIn.classList.remove('with-border');
 			}
 			if (mainContentTop < 0) {
-				// headerCommunity.classList.remove('with-border');
 				header.classList.remove('without-border');
 			}
 		};
@@ -36,12 +36,10 @@ export default function Header() {
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
-
-
-	}, []);
+	},);
 
 	return (
-		<div className="header key-object">
+		<div className="header key-object" name='home'>
 			<div className="header__container">
 				<div className="burger-button">
 					<div className="burger-button__items">
@@ -61,16 +59,26 @@ export default function Header() {
 				</div>
 				<div className="header__column">
 					<div className="header__menu">
-						<div className="header__item">
-							<a className='link-key key-home' href="#home">HOME</a>
+						<div className="header__item header__item--home">
+							<a href='#' className='link-key key-home' to='home'>HOME</a>
 						</div>
-						<div className="header__item">
-							<a className='link-key key-services' id="services" href="#">SERVICES</a>
+						<div className="header__item header__item--services">
+							<Link className='link-key key-services'
+								to='services'
+								duration={300}
+								offset={-130}
+							>SERVICES</Link>
 						</div>
 						<div className="header__item"><a href="#">VIDEOS</a></div>
 						<div className="header__item"><a href="#">BIO</a></div>
 						<div className="header__item"><a href="#">NEWS</a></div>
-						<div className="header__item"><a href="#">CONTACTS</a></div>
+						<div className="header__item" id='contacts'>
+							<Link className='link-key key-services'
+								to='footer'
+								duration={300}
+								offset={-250}
+							>CONTACTS</Link>
+						</div>
 					</div>
 				</div>
 				<div className="header__column el-community">
@@ -96,12 +104,13 @@ export default function Header() {
 						</div>
 						<div className="community__icon">
 							<a class="wa" title="youtube" target="blank" href="https://youtube.com/@guslistudio6257?si=36fe20TYpLAJyB3m">
-								<i className="icon-youtube"></i>
+								<i className="icon-youtube-logo"></i>
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	);
 }

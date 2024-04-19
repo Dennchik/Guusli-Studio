@@ -14,7 +14,6 @@
 		position: relative;
 		display: inline;
 		padding: 0 5rem 2rem;
-		opacity: 0;
 		font: {
 			family: 'aa_neon', serif;
 			size: 7.5rem;
@@ -31,18 +30,7 @@
 		transform-style: preserve-3d;
 		perspective: 100px;
 		filter: $filter;
-
 		//! ------------------------------------------------------------------------
-		transform: translateY(100%);
-		transition:
-			opacity 0.9s,
-			transform 0.9s;
-
-		&.visible {
-			opacity: 1;
-			transform: translateY(0) !important;
-		}
-
 		&::before {
 			content: '';
 			width: 100%;
@@ -99,39 +87,72 @@
 }
 
 .material-parallax {
-	position: relative;
+	position: fixed;
+	display: flex;
+	justify-content: center;
 	overflow: hidden;
 	width: 100%;
+	height: 100vh;
+	z-index: 9;
 }
+
 .parallax {
 	position: absolute;
 	background-size: cover;
-	object-position: center;
+	overflow: hidden;
 	z-index: 1;
-	width: 100vw;
+	width: 100%;
 	height: 100%;
-	background-size: 100% 200%;
 
 	// .parallax__image
 	&__image {
-		top: 0;
-		left: -1px;
-		right: -1px;
-		bottom: 0;
+		display: flex;
+		justify-content: center;
 		opacity: 0.3;
 		z-index: 0;
 		width: 100%;
 		height: 100%;
-
+		@extend .gradient-services;
+		object-position: center;
 		img {
-			// pointer-events: none;
+			pointer-events: none;
 			width: 100%;
+			min-width: 1440px;
 			height: 100%;
-			left: 0;
-			bottom: 0;
 			max-width: none;
-			object-fit: cover;
+			object-fit: contain;
 			object-position: center;
+		}
+	}
+}
+
+.equalizer-content {
+	z-index: 999;
+	overflow: hidden;
+	width: 98%;
+	height: 50%;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	&.vertical {
+		flex-direction: row;
+	}
+
+	&__square {
+		border-bottom: 10px solid $neon-blue;
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		width: 290px;
+		height: 50%;
+		&:not(:last-child) {
+			margin-right: 1rem;
 		}
 	}
 }
@@ -177,39 +198,18 @@
 				opacity: 0.8;
 			}
 			.content-box__image {
-				scale: 1.01;
+				scale: 1.05;
 			}
 
 			.content-box__bg-img {
 				transform: translateY(0);
 				opacity: 1;
 			}
-		}
-
-		&.line {
-			&:nth-child(1) {
-				position: relative;
-				// transform: translateX(552px);
-			}
-			&:nth-child(2) {
-				position: relative;
-				// transform: translateX(277px);
-			}
-			&:nth-child(3) {
-				position: relative;
-			}
-			&:nth-child(4) {
-				position: relative;
-				z-index: 9;
-				// transform: translateX(-280px);
-			}
-			&:nth-child(5) {
-				position: relative;
-				// transform: translateX(-556px);
+			.content-box__text {
+				transform: translateY(-150%);
 			}
 		}
 	}
-
 	// .content-box__image
 	&__image {
 		overflow: hidden;
@@ -276,8 +276,10 @@
 		font-weight: normal;
 		text-shadow: 0 0 7px #000;
 		display: flex;
+		background-color: #0b0813bb;
 		justify-content: center;
-		color: $electric-lime;
+		color: $neon-blue;
+		transition: transform 0.4s ease-in-out;
 		svg {
 			height: 32px;
 			path {
@@ -310,7 +312,6 @@
 		letter-spacing: 0;
 		color: $neon-blue;
 		z-index: 9;
-		opacity: 0;
 		@include _690 {
 			font-size: 2.6rem;
 		}
@@ -325,15 +326,6 @@
 		transform-style: preserve-3d;
 		perspective: 100px;
 		filter: $filter;
-		//! ------------------------------------------------------------------------
-		transform: translateY(100%);
-		transition:
-			opacity 0.9s,
-			transform 0.9s;
-		&.visible {
-			opacity: 1;
-			transform: translateY(0) !important;
-		}
 		//! ------------------------------------------------------------------------
 
 		&::before {
@@ -418,7 +410,6 @@
 			content: '';
 			@extend .border-present;
 		}
-		// @extend .gradient-spec-active;
 		background: linear-gradient(-45deg, #04d9ff81, #170e3181 83%);
 		background-size: 200% 200%;
 	}

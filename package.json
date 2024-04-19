@@ -98,6 +98,7 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-image-webp": "^0.8.0",
+		"react-scroll": "^1.9.0",
 		"require-dir": "^1.2.0",
 		"sass": "^1.72.0",
 		"sass-loader": "^14.1.1",

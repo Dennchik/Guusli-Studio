@@ -1,6 +1,7 @@
 .footer {
 	// .footer__content
 	&__content {
+		@extend .gradient-services;
 		position: relative;
 		&::before {
 			content: '';
@@ -22,15 +23,21 @@
 
 	// .footer__content-info
 	&__content-info {
+		margin-bottom: 6rem;
 		padding: 0 2rem;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 4rem;
+		@include _690-920 {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include _690 {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	// .footer__contacts
 	&__contacts {
-		height: 74px;
 		padding: 2rem 0;
 		background: #332764;
 	}
@@ -75,6 +82,10 @@
 				padding: 3rem 2rem;
 				justify-content: space-between;
 				@include flex-align-center;
+				@include _490 {
+					flex-direction: column;
+					gap: 2rem;
+				}
 			}
 
 			// .community__title
@@ -87,9 +98,16 @@
 					background: #332764;
 					border-radius: 4px;
 					line-height: 170%;
+					@include _490 {
+						// display: block;
+					}
 				}
 
 				a {
+					@include _490 {
+						// display: block;
+						// margin-left: 1rem;
+					}
 					color: $gray;
 					&:hover {
 						color: $neon-blue;
@@ -124,14 +142,28 @@
 .content-info {
 	// .content-info__column
 	&__column {
+		display: flex;
+		flex-direction: column;
+
+		&:nth-child(1) {
+			.content-info__title {
+				padding-bottom: 2.5rem;
+			}
+		}
+
 		&:nth-child(3) {
 			height: 100%;
+			@include _690-920 {
+				grid-column: -3 / -1;
+			}
 			.content-info__team-items {
 				border: 1px solid $gray;
 				height: 90%;
 			}
 		}
+
 		p {
+			color: $gray;
 			font-size: 1.4rem;
 			&:nth-child(2) {
 				color: $neon-blue-dark;
@@ -141,14 +173,26 @@
 			}
 
 			&:not(:last-child) {
-				margin-bottom: 1rem;
+				margin-bottom: 1.5rem;
 			}
 		}
 	}
 
+	// .content-info__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		border-bottom: 1px solid $gray;
+	}
+
+	// .content-info__footer
+	&__footer {
+		padding: 2rem 0;
+	}
+
 	// .content-info__title
 	&__title {
-		margin-bottom: 2.5rem;
 		font-size: 2rem;
 		text-shadow: 1px 1px 1px $neon-pink;
 	}
@@ -156,15 +200,19 @@
 	// .content-info__item-services
 	&__item-services {
 		flex-wrap: nowrap;
+		padding: 2.5rem 0;
+
 		&:not(:last-child) {
-			margin-bottom: 2rem;
+			border-bottom: 1px solid $gray;
 		}
+
 		i {
 			display: block;
 			margin-right: 3rem;
 			width: 7rem;
 			height: 3.2rem;
 		}
+
 		[class*='icon-'] {
 			&::before {
 				cursor: pointer;
@@ -172,11 +220,58 @@
 				color: $gray;
 			}
 		}
+
 		span {
 			color: $gray;
 			font-size: 1.4rem;
 		}
 		@include flex-align-center;
+	}
+
+	// .content-info__nav
+	&__nav {
+		text-align: center;
+		font-size: 4.8rem;
+		color: $gray;
+
+		i {
+			transition: scale 0.4s ease-in-out;
+			&::before {
+				transition: color 0.4s ease-in-out;
+			}
+			&:not(:last-child) {
+				margin: 3rem;
+				@include _425 {
+					margin: 3rem 2rem;
+				}
+			}
+			&:hover {
+				scale: 1.2;
+				&::before {
+					color: $neon-blue-dark;
+				}
+			}
+			text-shadow: 3px 3px 10px #000;
+		}
+		@include flex-align-center-justify-center;
+	}
+
+	// .content-info__button
+	&__button {
+		margin-top: 2rem;
+		padding: 1rem;
+		background-color: #3d3d3d;
+		border-radius: 2px;
+		font-weight: 500;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 2px #000;
+		transition:
+			color 0.4s,
+			background 0.4s ease-in-out;
+		&:hover {
+			background: #392b7c;
+			color: #392b7c;
+		}
 	}
 
 	// .content-info__team-items
@@ -188,8 +283,20 @@
 	// .contacts__contacts
 	&__items {
 		padding: 0 2rem;
-		display: flex;
-		text-shadow: 1px 1px 2px #000;
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		justify-content: start;
+		text-shadow: 2px 2px 4px #000;
+		@include _768 {
+			grid-template-columns: repeat(2, auto);
+			gap: 2rem;
+		}
+		@include _490 {
+			width: 100%;
+		}
+		@include _425 {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	// .contacts__item
@@ -198,7 +305,11 @@
 		font:
 			1.8rem Roboto,
 			sans-serif;
-
+		&:nth-child(1) {
+			@include _425-490 {
+				grid-column: 1 / 3;
+			}
+		}
 		i {
 			margin-right: 2rem;
 		}
@@ -215,8 +326,24 @@
 				color: $electric-lime;
 			}
 		}
-		&:not(:first-child) {
-			margin-left: 4rem;
+		&:not(:last-child) {
+			margin-right: 4rem;
+		}
+		&:nth-child(n + 2) {
+			transition: color 0.4s ease-in-out;
+			i {
+				&::before {
+					transition: color 0.4s ease-in-out;
+				}
+			}
+			&:hover {
+				color: #584a9b;
+				i {
+					&::before {
+						color: #392b7c;
+					}
+				}
+			}
 		}
 	}
 

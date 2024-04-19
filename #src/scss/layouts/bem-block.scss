@@ -17,6 +17,12 @@
 		overflow: hidden;
 		transition: all 0.3s ease-in-out;
 
+		i {
+			&::before {
+				transition: color 0.4s ease-in-out;
+			}
+		}
+
 		&:not(:last-child) {
 			margin-right: 1rem;
 		}

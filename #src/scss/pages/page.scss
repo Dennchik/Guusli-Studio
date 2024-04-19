@@ -60,6 +60,7 @@
 .main-content {
 	// .main-content__content
 	&__content {
+		position: relative;
 		@extend .gradient-services;
 	}
 
@@ -95,5 +96,7 @@
 
 	// .main-content__footer
 	&__footer {
+		position: relative;
+		z-index: 9;
 	}
 }
