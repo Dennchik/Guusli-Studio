@@ -144,66 +144,73 @@ export function animationSvgText(target, reverse) {
 	});
 }
 export function equalizerAnimated() {
-	// var equaContentEl = document.querySelector('.equalizer-content');
-	// var fragment = document.createDocumentFragment();
-	// var easingNames = [
-	// 	'easeInQuad',
-	// 	'easeInCubic',
-	// 	'easeInQuart',
-	// 	'easeInQuint',
-	// 	'easeInSine',
-	// 	'easeInExpo',
-	// 	'easeInCirc',
-	// 	'easeInBack',
-	// 	'easeOutQuad',
-	// 	'easeOutCubic',
-	// 	'easeOutQuart',
-	// 	'easeOutQuint',
-	// 	'easeOutSine',
-	// 	'easeOutExpo',
-	// 	'easeOutCirc',
-	// 	'easeOutBack',
-	// 	'easeInBounce',
-	// 	'easeInOutQuad',
-	// 	'easeInOutCubic',
-	// 	'easeInOutQuart',
-	// 	'easeInOutQuint',
-	// 	'easeInOutSine',
-	// 	'easeInOutExpo',
-	// 	'easeInOutCirc',
-	// 	'easeInOutBack',
-	// 	'easeInOutBounce',
-	// 	'easeOutBounce',
-	// 	'easeOutInQuad',
-	// 	'easeOutInCubic',
-	// 	'easeOutInQuart',
-	// 	'easeOutInQuint',
-	// 	'easeOutInSine',
-	// 	'easeOutInExpo',
-	// 	'easeOutInCirc',
-	// 	'easeOutInBack',
-	// 	'easeOutInBounce',
-	// ];
+	var equaContentEl = document.querySelector('.equalizer-content');
+	var fragment = document.createDocumentFragment();
+	var easingNames = [
+		'easeInQuad',
+		'easeInCubic',
+		'easeInQuart',
+		'easeInQuint',
+		'easeInSine',
+		'easeInExpo',
+		'easeInCirc',
+		'easeInBack',
+		'easeOutQuad',
+		'easeOutCubic',
+		'easeOutQuart',
+		'easeOutQuint',
+		'easeOutSine',
+		'easeOutExpo',
+		'easeOutCirc',
+		'easeOutBack',
+		'easeInBounce',
+		'easeInOutQuad',
+		'easeInOutCubic',
+		'easeInOutQuart',
+		'easeInOutQuint',
+		'easeInOutSine',
+		'easeInOutExpo',
+		'easeInOutCirc',
+		'easeInOutBack',
+		'easeInOutBounce',
+		'easeOutBounce',
+		'easeOutInQuad',
+		'easeOutInCubic',
+		'easeOutInQuart',
+		'easeOutInQuint',
+		'easeOutInSine',
+		'easeOutInExpo',
+		'easeOutInCirc',
+		'easeOutInBack',
+		'easeOutInBounce',
+	];
 
-	// function createEasingDemo(easing) {
-	// 	var divEl = document.createElement('div');
-	// 	divEl.classList.add('equalizer-content__square', 'el', 'stretched', 'easing-' + easing);
-	// 	anime({
-	// 		targets: divEl,
-	// 		translateY: [750, -750],
-	// 		direction: 'alternate',
-	// 		loop: true,
-	// 		delay: 1500,
-	// 		endDelay: 700,
-	// 		duration: 1000,
-	// 		easing: easing
-	// 	});
-	// 	fragment.appendChild(divEl);
-	// }
-	// easingNames.forEach(function (easeName) {
-	// 	createEasingDemo(easeName);
-	// });
+	function createEasingDemo(easing) {
+		var divEl = document.createElement('div');
+		divEl.classList.add('equalizer-content__square', 'el', 'stretched', 'easing-' + easing);
+		var animation = anime({
+			targets: divEl,
+			translateY: [750, -750],
+			direction: 'alternate',
+			loop: true,
+			delay: 1500,
+			endDelay: 700,
+			duration: 1000,
+			easing: easing
+		});
 
-	// equaContentEl.innerHTML = '';
-	// equaContentEl.appendChild(fragment);
+
+		fragment.appendChild(divEl);
+	}
+	easingNames.forEach(function (easeName) {
+		createEasingDemo(easeName);
+	});
+
+	equaContentEl.innerHTML = '';
+	equaContentEl.appendChild(fragment);
 }
+export function removeEl() {
+	// const animatedElements = document.querySelectorAll('.equalizer-content__square');
+	// animatedElements.forEach(element => { });
+	animation.remove('.remove-demo .line:nth-child(2) .el');
+};

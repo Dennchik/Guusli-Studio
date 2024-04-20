@@ -1,7 +1,8 @@
 import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import { equalizerAnimated, removeEl } from './animations';
+import anime, { easings } from 'animejs';
 export default () => {
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 	ScrollTrigger.normalizeScroll(true);
@@ -69,8 +70,6 @@ export default () => {
 		}
 	});
 
-
-
 	gsap.from('.footer .el-1', {
 		x: -350,
 		duration: 1,
@@ -82,8 +81,6 @@ export default () => {
 			toggleActions: 'play none none reverse'
 		}
 	});
-
-
 
 	gsap.from('.el-2', {
 		x: window.innerWidth <= 680 ? 350 : 0,
@@ -122,7 +119,7 @@ export default () => {
 			end: 'bottom-=160 bottom',
 			endTrigger: '.contacts',
 			toggleActions: 'play none none reverse',
-			markers: true
+			// markers: true
 		}
 	});
 
@@ -138,25 +135,24 @@ export default () => {
 		// markers: true
 	});
 
+
 	ScrollTrigger.create({
 		trigger: "#services",
-		start: "top center", // Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
-		endTrigger: '#services', // Конец события - конец документа
-		end: "bottom center", // Закончить событие, когда верхняя граница элемента 1 достигнет верха окна браузера
+		start: "top center",
+		endTrigger: '#services',
+		end: "bottom center",
 		toggleClass: {
 			targets: ".header__item--services",
 			className: "active"
 		},
-		onToggle: ({ isActive }) => {
-			if (isActive) {
-				setTimeout(() => {
-					gsap.set(".header__item--services", { className: "header__item header__item--services" });
-				}, 2000); // Задержка в 2 секунды (2000 миллисекунд)
-			} else {
-				gsap.set(".header__item--services", { className: "header__item header__item--services" });
-			}
+		onEnter: function () {
+			equalizerAnimated();
 		},
-		// markers: true
+		onLeaveBack: function () {
+			removeEl();
+		},
+
+		markers: true
 	});
 
 	ScrollTrigger.create({
@@ -171,10 +167,8 @@ export default () => {
 		// markers: true
 	});
 
-
-
-
 	// ---------------------------------------------------------------------------
+
 
 };
 
