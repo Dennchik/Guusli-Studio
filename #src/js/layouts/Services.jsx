@@ -51,7 +51,6 @@ export default function Services() {
 	}, []);
 
 	return (
-
 		<Element className="services key-object" name='services' id='services'>
 			{/* <div className="material-parallax parallax">
 				<div className="parallax__image">
@@ -271,7 +270,7 @@ export default function Services() {
 				<div className="services__offer offer-container">
 					<div className="offer-container__title">Специальное предложение</div>
 					<div className="offer-container__body">
-						<div className="offer-container__column">
+						<div className="offer-container__column sr-1">
 							<div className="offer-container__wrapper">
 								<a className='offer-container__link' href="#">
 									<div className="offer-container__title-box">
@@ -285,7 +284,7 @@ export default function Services() {
 							</div>
 							<div className="offer-container__thumbnail"></div>
 						</div>
-						<div className="offer-container__column">
+						<div className="offer-container__column sr-2">
 							<div className="offer-container__wrapper">
 								<a className='offer-container__link' href="#">
 									<div className="offer-container__title-box">
@@ -299,7 +298,7 @@ export default function Services() {
 							</div>
 							<div className="offer-container__thumbnail"></div>
 						</div>
-						<div className="offer-container__column">
+						<div className="offer-container__column sr-3">
 							<div className="offer-container__wrapper">
 								<a className='offer-container__link' href="#">
 									<div className="offer-container__title-box">
@@ -313,7 +312,7 @@ export default function Services() {
 							</div>
 							<div className="offer-container__thumbnail"></div>
 						</div>
-						<div className="offer-container__column">
+						<div className="offer-container__column sr-4">
 							<div className="offer-container__wrapper">
 								<a className='offer-container__link' href="#">
 									<div className="offer-container__title-box">
@@ -331,6 +330,5 @@ export default function Services() {
 				</div>
 			</div>
 		</Element>
-
 	);
 }

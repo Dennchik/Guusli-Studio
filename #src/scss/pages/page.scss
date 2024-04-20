@@ -100,5 +100,6 @@
 	&__footer {
 		position: relative;
 		z-index: 9;
+		@extend .gradient-services;
 	}
 }

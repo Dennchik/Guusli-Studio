@@ -188,7 +188,7 @@ export function equalizerAnimated() {
 	function createEasingDemo(easing) {
 		var divEl = document.createElement('div');
 		divEl.classList.add('equalizer-content__square', 'el', 'stretched', 'easing-' + easing);
-		var animation = anime({
+		anime({
 			targets: divEl,
 			translateY: [750, -750],
 			direction: 'alternate',
@@ -209,8 +209,9 @@ export function equalizerAnimated() {
 	equaContentEl.innerHTML = '';
 	equaContentEl.appendChild(fragment);
 }
-export function removeEl() {
-	// const animatedElements = document.querySelectorAll('.equalizer-content__square');
-	// animatedElements.forEach(element => { });
-	animation.remove('.remove-demo .line:nth-child(2) .el');
-};
+export function removeElement() {
+	const animatedElements = document.querySelectorAll('.equalizer-content__square');
+	animatedElements.forEach(element => {
+		anime.remove(element); // Удаляем анимацию для каждого элемента
+	});
+}

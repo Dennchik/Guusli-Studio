@@ -76,7 +76,7 @@ export default function Header() {
 							<Link className='link-key key-services'
 								to='footer'
 								duration={300}
-								offset={-250}
+								offset={-90}
 							>CONTACTS</Link>
 						</div>
 					</div>

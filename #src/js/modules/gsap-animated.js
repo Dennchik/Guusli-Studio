@@ -1,15 +1,14 @@
 import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { equalizerAnimated, removeEl } from './animations';
-import anime, { easings } from 'animejs';
+import { equalizerAnimated, removeElement } from './animations';
+
 export default () => {
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 	ScrollTrigger.normalizeScroll(true);
 	let smoother = ScrollSmoother.create({
 		wrapper: "#wrapper",
 		content: "#content",
-
 		smooth: 2,
 		effects: true,
 		normalizeScroll: true
@@ -57,72 +56,7 @@ export default () => {
 		}
 	});
 	// ---------------------------------------------------------------------------
-	gsap.from('.footer', {
-		y: 150,
-		duration: 1,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: '.footer',
-			start: 'top-=150 bottom',
-			end: 'bottom bottom',
-			toggleActions: 'play none none reverse',
-			// markers: true
-		}
-	});
-
-	gsap.from('.footer .el-1', {
-		x: -350,
-		duration: 1,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: '.el-1',
-			start: 'top bottom',
-			end: 'bottom bottom',
-			toggleActions: 'play none none reverse'
-		}
-	});
-
-	gsap.from('.el-2', {
-		x: window.innerWidth <= 680 ? 350 : 0,
-		y: window.innerWidth > 680 ? 150 : 0,
-		duration: 1,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: '.el-2',
-			start: 'top-=250 bottom',
-			end: 'bottom bottom',
-			toggleActions: 'play none none reverse',
-			// markers: true
-		}
-	});
-	gsap.from('.footer .el-3', {
-		x: window.innerWidth <= 680 ? -350 : (window.innerWidth > 680 ? 350 : 0),
-		duration: 1,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: '.el-3',
-			start: 'top bottom',
-			end: 'bottom bottom',
-			toggleActions: 'play none none reverse',
-			// markers: true
-		}
-	});
-
-	gsap.from('.contacts__items', {
-		x: 250,
-		duration: 0.5,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: '.contacts',
-			pin: true,
-			start: 'top-=80 bottom',
-			end: 'bottom-=160 bottom',
-			endTrigger: '.contacts',
-			toggleActions: 'play none none reverse',
-			// markers: true
-		}
-	});
-
+	//todo: Секция "#main-slide".
 	ScrollTrigger.create({
 		trigger: "#main-slide",
 		start: "top center", // Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
@@ -134,8 +68,7 @@ export default () => {
 		},
 		// markers: true
 	});
-
-
+	//todo: Секция "#services".
 	ScrollTrigger.create({
 		trigger: "#services",
 		start: "top center",
@@ -146,31 +79,144 @@ export default () => {
 			className: "active"
 		},
 		onEnter: function () {
+			//todo: Запуск анимации при входе в зону видимости триг. - Start.
+			gsap.to('.equalizer-content', {
+				duration: 0.5,
+				opacity: 1,
+			});
 			equalizerAnimated();
 		},
 		onLeaveBack: function () {
-			removeEl();
+			//todo: Останавливаем анимацию при выходе из зоны видимости триг. - Start.
+			removeElement();
+			gsap.to('.equalizer-content', {
+				opacity: 0,
+			});
+		},
+		onLeave: function () {
+			//todo: Останавливаем анимацию при выходе из зоны видимости триг. - End.
+			removeElement();
+			gsap.to('.equalizer-content', {
+				opacity: 0,
+			});
+		},
+		onEnterBack: function () {
+			//todo: Запуск анимации при входе в зоны видимости триг. - End.
+			equalizerAnimated();
+			gsap.to('.equalizer-content', {
+				opacity: 1,
+			});
 		},
 
-		markers: true
+		// markers: true
 	});
-
+	//todo: Секция "#footer".
 	ScrollTrigger.create({
 		trigger: "#footer",
-		start: "-150 center", // Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
+		start: "top center", // Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
 		endTrigger: '#footer', // Конец события - конец документа
-		end: "bottom+=150 center", // Закончить событие, когда верхняя граница элемента 1 достигнет верха окна браузера
+		end: "bottom center", // Закончить событие, когда верхняя граница элемента 1 достигнет верха окна браузера
 		toggleClass: {
 			targets: "#contacts",
 			className: "active"
 		},
 		// markers: true
 	});
-
 	// ---------------------------------------------------------------------------
+	const tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.footer',
+			start: 'top bottom',
+			endTrigger: '.footer',
+			end: 'bottom bottom',
+			scrub: 0.1,
+			ease: 'linear',
+			toggleActions: 'play none none reverse',
+			// ease: 'linear',
+			markers: true,
+		}
+	}, '-=0.2');
+	tl.from('.footer .el-1', {
+		x: -250,
+		duration: 1,
+		opacity: 0,
+	});
 
+	tl.from('.el-2', {
+		x: window.innerWidth <= 680 ? 350 : 0,
+		y: window.innerWidth > 680 ? 150 : 0,
+		duration: 1,
+		opacity: 0,
+	}, '-=1');
 
+	tl.from('.el-3', {
+		x: window.innerWidth <= 680 ? -350 : (window.innerWidth > 680 ? 350 : 0),
+		duration: 1,
+		opacity: 0,
+	}, '-=1');
+
+	tl.from('.el-4', {
+		y: 150,
+		duration: 1,
+		opacity: 0,
+	}, '-=0.5');
+
+	tl.from('.el-5', {
+		y: 350,
+		duration: 1,
+		opacity: 0,
+	}, '-=1');
+
+	tl.from('.contacts__items', {
+		x: 450,
+		duration: 1,
+		opacity: 0,
+	}, '-=1');
+	// ---------------------------------------------------------------------------
+	const tlServices1 = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.services__offer',
+			start: 'top center+=300',
+			endTrigger: '.services__offer',
+			end: 'bottom center+=300',
+			scrub: 1,
+			ease: 'linear',
+			toggleActions: 'play none none reverse',
+			// ease: 'linear',
+			markers: true,
+		}
+	});
+	tlServices1.from('.sr-1', {
+		x: -150,
+		duration: 1,
+		opacity: 0,
+	});
+	tlServices1.from('.sr-2', {
+		x: 150,
+		duration: 1,
+		opacity: 0,
+	}, '-=1');
+	const tlServices2 = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.services__offer',
+			start: 'top center+=50',
+			endTrigger: '.services__offer',
+			end: 'bottom center+=150',
+			scrub: 1,
+			ease: 'linear',
+			toggleActions: 'play none none reverse',
+			// ease: 'linear',
+			markers: true,
+		}
+	});
+	tlServices2.from('.sr-3', {
+		x: -150,
+		duration: 1,
+		opacity: 0,
+	});
+	tlServices2.from('.sr-4', {
+		x: 150,
+		duration: 1,
+		opacity: 0,
+	}, '-=1');
 };
-
-
-

@@ -27,34 +27,24 @@
   //* Better Font Rendering
 }
 
-.icon-reviews {
+.icon-angle-left {
   &:before {
-    content: $icon-reviews;
+    content: $icon-angle-left;
   }
 }
-.icon-contacts {
+.icon-angle-right {
   &:before {
-    content: $icon-contacts;
+    content: $icon-angle-right;
   }
 }
-.icon-achievements {
+.icon-angle-up {
   &:before {
-    content: $icon-achievements;
+    content: $icon-angle-up;
   }
 }
-.icon-services {
+.icon-angle-down {
   &:before {
-    content: $icon-services;
-  }
-}
-.icon-head-phones {
-  &:before {
-    content: $icon-head-phones;
-  }
-}
-.icon-youtube {
-  &:before {
-    content: $icon-youtube;
+    content: $icon-angle-down;
   }
 }
 .icon-hand-shake {
@@ -100,6 +90,56 @@
 .icon-telegram-fly {
   &:before {
     content: $icon-telegram-fly;
+  }
+}
+.icon-angles-left-solid {
+  &:before {
+    content: $icon-angles-left-solid;
+  }
+}
+.icon-angles-right-solid {
+  &:before {
+    content: $icon-angles-right-solid;
+  }
+}
+.icon-angles-up-solid {
+  &:before {
+    content: $icon-angles-up-solid;
+  }
+}
+.icon-angles-down-solid {
+  &:before {
+    content: $icon-angles-down-solid;
+  }
+}
+.icon-reviews {
+  &:before {
+    content: $icon-reviews;
+  }
+}
+.icon-contacts {
+  &:before {
+    content: $icon-contacts;
+  }
+}
+.icon-achievements {
+  &:before {
+    content: $icon-achievements;
+  }
+}
+.icon-services {
+  &:before {
+    content: $icon-services;
+  }
+}
+.icon-head-phones {
+  &:before {
+    content: $icon-head-phones;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
   }
 }
 .icon-location {

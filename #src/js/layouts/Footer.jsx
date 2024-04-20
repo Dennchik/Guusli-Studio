@@ -44,14 +44,14 @@ export default function Header() {
 							</div>
 						</div>
 					</div>
-					<div className="content-info__nav">
+					<div className="content-info__nav el-4">
 						<i className='icon-achievements'></i>
 						<i className='icon-services'></i>
 						<i className='icon-reviews'></i>
 						<i className='icon-contacts'></i>
 					</div>
 				</div>
-				<div className="contacts footer__contacts">
+				<div className="contacts footer__contacts el-5">
 					<div className="contacts__container">
 						<div className="contacts__items">
 							<div className="contacts__item">
@@ -84,7 +84,9 @@ export default function Header() {
 					<div className="community__items">
 						<div className="community__title">
 							<span>Media-Studio GROUP ©  2024.</span>
-							<a className='community__link' href="">Privacy Policy.</a>
+							<a className='community__link' href="">Privacy Policy.
+								<i className='icon-angles-right-solid'></i>
+							</a>
 						</div>
 						<div className="community__icons">
 							<div className="community__icon">
