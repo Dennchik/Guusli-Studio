@@ -14,6 +14,8 @@
 
 		.swiper-pagination-bullet {
 			position: relative;
+			top: 0;
+			left: 0;
 			width: 100%;
 			@include flex-align-center;
 
@@ -25,24 +27,25 @@
 				transition: scale 0.5s ease-in-out;
 				scale: 0;
 			}
+
 			&::before {
 				content: '';
 				position: absolute;
 				width: 12px;
 				height: 12px;
 				border-radius: 50%;
-				background: rgba(153, 205, 50, 0.178);
+				background: $border-color;
 				transition: background 0.5s ease-in-out;
 			}
 
 			&:not(:last-child) {
-				margin-bottom: 2rem;
+				margin-bottom: 3rem;
 			}
 		}
 		.swiper-pagination-bullet-active {
 			&::after {
 				height: 1px;
-				background: rgba(153, 205, 50, 0.527);
+				background: $electric-lime;
 				width: calc(100% - 16px);
 				scale: 1;
 			}
@@ -87,7 +90,7 @@
 		transition: all 0.9s ease-in-out;
 		text-shadow: 1px 1px 7pt #000;
 		text-align: left;
-		padding-left: 2rem;
+		padding: 0 6rem 0 2rem;
 
 		font: {
 			size: 3.6rem;
@@ -97,12 +100,10 @@
 			color: $liquid-neon;
 		}
 		@include _690 {
-			text-align: center;
 			font-size: 3.2rem;
-			padding-left: 0;
 		}
 		@include _425 {
-			font-size: 3.2rem;
+			font-size: 2.4rem;
 		}
 	}
 

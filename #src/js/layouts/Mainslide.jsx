@@ -47,8 +47,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="./img/slides/slide_4.webp" type="image/webp" />
-								: <img src="./img/slides/slide_4.jpg" alt="image" />}
+								? <img src="./img/slides/slide_1.webp" type="image/webp" />
+								: <img src="./img/slides/slide_1.jpg" alt="image" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">
@@ -62,8 +62,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="./img/slides/slide_1.webp" type="image/webp" />
-								: <img src="./img/slides/slide_1.jpg" alt="image" />}
+								? <img src="./img/slides/slide_4.webp" type="image/webp" />
+								: <img src="./img/slides/slide_4.jpg" alt="image" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">

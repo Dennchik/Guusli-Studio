@@ -135,7 +135,7 @@ export default () => {
 			// ease: 'linear',
 			markers: true,
 		}
-	}, '-=0.2');
+	});
 	tl.from('.footer .el-1', {
 		x: -250,
 		duration: 1,

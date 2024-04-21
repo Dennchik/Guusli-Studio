@@ -153,12 +153,6 @@
 		display: flex;
 		flex-direction: column;
 
-		&:nth-child(1) {
-			.content-info__title {
-				padding-bottom: 2.5rem;
-			}
-		}
-
 		&:nth-child(3) {
 			height: 100%;
 			@include _690-920 {
@@ -192,6 +186,11 @@
 		flex-direction: column;
 		flex: 1 1 auto;
 		border-bottom: 1px solid $gray;
+	}
+
+	// .content-info__text
+	&__text {
+		padding: 2rem 0;
 	}
 
 	// .content-info__footer
