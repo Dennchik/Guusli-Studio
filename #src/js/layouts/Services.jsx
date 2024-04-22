@@ -30,17 +30,13 @@ export default function Services() {
 			console.log('  mobyle');
 			if (initSwiper.classList.contains('_swiper')) {
 				console.log('есть класс swiper');
-
-				// servicesSlide();
 			} else {
 				console.log('нет класс swiper');
 			}
 		} else {
 			console.log('no mobyle');
 		}
-
-
-	});
+	}, []);
 
 	const boxImagesRef = useRef([]);
 	useEffect(() => {
