@@ -130,7 +130,11 @@
 		@content;
 	}
 }
-
+@mixin _min-425 {
+	@media (min-width: 425.99px) {
+		@content;
+	}
+}
 @mixin _min-375 {
 	@media (min-width: 375.99px) {
 		@content;

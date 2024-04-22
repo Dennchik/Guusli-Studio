@@ -77,12 +77,14 @@
 
 	// .services__content
 	&__content {
-		margin: 4rem 0 0;
+		padding: 4rem 2rem;
+		width: 100%;
+		overflow: hidden;
 	}
 
 	// .services__offer
 	&__offer {
-		padding: 2rem;
+		padding: 2rem 0;
 	}
 }
 
@@ -164,18 +166,18 @@
 	// .content-box__body
 	&__body {
 		position: relative;
-		padding: 2rem;
-		margin-bottom: 8rem;
+		padding: 2rem 0;
+		margin-bottom: 4rem;
 		gap: 2.5rem;
 		display: flex;
+		justify-content: space-between;
 	}
 
 	// .content-box__column
 	&__column {
 		position: relative;
-		min-width: 250px;
-		height: 300px;
-		width: 20%;
+		min-width: 150px;
+		max-width: 350px;
 
 		&::before {
 			content: '';
@@ -256,6 +258,9 @@
 	&__svg {
 		width: 100%;
 		object-fit: cover;
+		img {
+			max-width: 100%;
+		}
 		svg {
 			position: absolute;
 			right: 0;

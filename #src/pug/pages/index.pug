@@ -8,43 +8,8 @@ block main-content
 			div(class="material-parallax parallax")
 				div(class="parallax__image")
 					img(src="./img/body/parallax_bg.png", alt="parallax-bg")
-					.equalizer-content.vertical
-						._square.el.stretched.easing-easeInQuad 
-						._square.el.stretched.easing-easeInCubic 
-						._square.el.stretched.easing-easeInQuart 
-						._square.el.stretched.easing-easeInQuint 
-						._square.el.stretched.easing-easeInSine 
-						._square.el.stretched.easing-easeInExpo 
-						._square.el.stretched.easing-easeInCirc 
-						._square.el.stretched.easing-easeInBack 
-						._square.el.stretched.easing-easeOutQuad 
-						._square.el.stretched.easing-easeOutCubic 
-						._square.el.stretched.easing-easeOutQuart 
-						._square.el.stretched.easing-easeOutQuint 
-						._square.el.stretched.easing-easeOutSine 
-						._square.el.stretched.easing-easeOutExpo 
-						._square.el.stretched.easing-easeOutCirc 
-						._square.el.stretched.easing-easeOutBack
-						._square.el.stretched.easing-easeInBounce 
-						._square.el.stretched.easing-easeInOutQuad 
-						._square.el.stretched.easing-easeInOutCubic 
-						._square.el.stretched.easing-easeInOutQuart 
-						._square.el.stretched.easing-easeInOutQuint 
-						._square.el.stretched.easing-easeInOutSine 
-						._square.el.stretched.easing-easeInOutExpo 
-						._square.el.stretched.easing-easeInOutCirc 
-						._square.el.stretched.easing-easeInOutBack 
-						._square.el.stretched.easing-easeInOutBounce 
-						._square.el.stretched.easing-easeOutBounce 
-						._square.el.stretched.easing-easeOutInQuad 
-						._square.el.stretched.easing-easeOutInCubic 
-						._square.el.stretched.easing-easeOutInQuart 
-						._square.el.stretched.easing-easeOutInQuint 
-						._square.el.stretched.easing-easeOutInSine 
-						._square.el.stretched.easing-easeOutInExpo 
-						._square.el.stretched.easing-easeOutInCirc 
-						._square.el.stretched.easing-easeOutInBack
-						._square.el.stretched.easing-easeOutInBounce
+					block equalizer
+						include ../partials/block-equalizer
 			block section
 				section._slide  
 				section._services  

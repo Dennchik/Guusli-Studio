@@ -60,8 +60,8 @@ export default function Services() {
 			<div className="services__body _container">
 				<div className="services__title">Наши услуги</div>
 				<div className="services__content">
-					<div className="content-box ">
-						<div className="content-box__body _swiper">
+					<div className="content-box _swiper">
+						<div className="content-box__body">
 							<div className="content-box__column line">
 								<div className="content-box__image el">
 									<div className="content-box__svg">

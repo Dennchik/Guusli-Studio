@@ -9,9 +9,7 @@ export default function Header() {
 		document.querySelector('.header__ellipsis').addEventListener("click", () => {
 			fadeIn.classList.toggle('_active');
 		});
-		document.querySelector('.burger-button').addEventListener('click', function () {
-			this.classList.toggle('_active');
-		});
+
 
 		const handleScroll = () => {
 			const header = document.querySelector('.header');
@@ -41,7 +39,7 @@ export default function Header() {
 	return (
 		<div className="header key-object" name='home'>
 			<div className="header__container">
-				<div className="burger-button">
+				{/* <div className="burger-button">
 					<div className="burger-button__items">
 						<svg viewBox="10 6 44 36">
 							<path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37" />
@@ -49,7 +47,7 @@ export default function Header() {
 							<path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37" />
 						</svg>
 					</div>
-				</div>
+				</div> */}
 				<div className="header__column el-logo">
 					<div className="header__logo"></div>
 					<div className="header__text">

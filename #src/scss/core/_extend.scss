@@ -83,6 +83,7 @@
 .gradient-border-left {
 	background: linear-gradient(to left top, #8164ff 40%, rgb(42, 53, 20) 70%);
 }
+
 .icon-style {
 	border: 1px var(--border-color);
 	border-style: none solid;
@@ -192,5 +193,18 @@
 		&::after {
 			width: 40%;
 		}
+	}
+}
+
+.is-open {
+	display: grid;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	transition:
+		grid-template-rows 0.4s,
+		opacity 0.5s ease-in-out;
+	&._is-open {
+		opacity: 1;
+		grid-template-rows: 1fr;
 	}
 }

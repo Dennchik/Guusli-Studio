@@ -2,12 +2,9 @@ import swiperLayout from "../assets/swiper-layout";
 swiperLayout('._swiper');
 //* import Swiper bundle with all modules installed 
 import Swiper from 'swiper/bundle';
-//* import styles bundle
-// import 'swiper/css/bundle';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
+//* import styles bundle 
 export default function mainSlide(
-	mainslide = '._swiper',
+	mainslide = '.main-slide__body',
 	pagination = '.main-slide__pagination',
 	scrollbar = '',
 	nextEl = '',
