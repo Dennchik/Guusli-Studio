@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Element } from 'react-scroll';
 import { animationSvgLine, animationSvgText } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
+import isMobile from "../libraries/Js-devise.js";
 import {
 	NeonGreenColor,
 	NeonFuchsiaColor,
@@ -21,6 +22,26 @@ import {
 } from '../core/variables.jsx';
 // -----------------------------------------------------------------------------
 export default function Services() {
+	useEffect(() => {
+		const initSwiper = document.querySelector('.content-box__body');
+		if (isMobile.any()) {
+			initSwiper.classList.add('_swiper');
+			console.log(initSwiper);
+			console.log('  mobyle');
+			if (initSwiper.classList.contains('_swiper')) {
+				console.log('есть класс swiper');
+
+				// servicesSlide();
+			} else {
+				console.log('нет класс swiper');
+			}
+		} else {
+			console.log('no mobyle');
+		}
+
+
+	});
+
 	const boxImagesRef = useRef([]);
 	useEffect(() => {
 		const handleMouseOver = (event) => {
@@ -60,8 +81,8 @@ export default function Services() {
 			<div className="services__body _container">
 				<div className="services__title">Наши услуги</div>
 				<div className="services__content">
-					<div className="content-box ">
-						<div className="content-box__body _swiper">
+					<div className="content-box">
+						<div className="content-box__body">
 							<div className="content-box__column line">
 								<div className="content-box__image el">
 									<div className="content-box__svg">

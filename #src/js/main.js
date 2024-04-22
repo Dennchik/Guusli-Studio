@@ -4,13 +4,17 @@ dinamicAdaptive();
 import mainSlede from './modules/main-slide.js';
 mainSlede();
 
+import isMobile from "./libraries/Js-devise";
 import servicesSlide from './modules/services-slide.js';
 
-servicesSlide();
-// if (isMobile.any()) {
-// } else {
-// 	servicesSlide();
-// }
+
+const initSwiper = document.querySelector('.content-box__body');
+if (isMobile.any()) {
+	servicesSlide();
+
+
+} else {
+}
 
 
 import { timeLineHeaderItem } from './modules/animations.js';

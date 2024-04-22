@@ -16,12 +16,12 @@ export default function servicesSlide(
 			spaceBetween: 30,
 			loop: true,
 			grabCursor: true,
-			// mousewheel: true, 
+			mousewheel: true,
 			// centeredSlides: true,
 			slidesPerView: 5,
 			breakpoints: {
 				300: {
-					slidesPerView: 2,
+					slidesPerView: 1,
 				},
 				376: {
 					slidesPerView: 2,
