@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Element } from 'react-scroll';
+import { Element, Link } from 'react-scroll';
 // -----------------------------------------------------------------------------
 export default function Menufloat() {
 	useEffect(() => {
@@ -61,9 +61,16 @@ export default function Menufloat() {
 							<div className="menu-float__layout menu-float__layout--secondary">
 								<div className="menu-float__content">
 									<div className="menu-float__nav">
-										<div className="menu-float__menu-link"><a href="#">Home</a></div>
-										<div className="menu-float__menu-link"><a href="#services">Servisec</a></div>
-										<div className="menu-float__menu-link"><a href="#footer">Contacts</a></div>
+										<div className="menu-float__menu-link">
+											<a href="#">Home</a></div>
+										<div className="menu-float__menu-link">
+											<Link to='services' duration={300} offset={-130}>
+												Servisec
+											</Link></div>
+										<div className="menu-float__menu-link">
+											<Link to='footer' duration={300} offset={-90}>
+												Contacts
+											</Link></div>
 									</div>
 								</div>
 							</div>
