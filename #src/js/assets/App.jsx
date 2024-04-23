@@ -6,11 +6,6 @@ ReactDOM.render(
 	<StrictMode><Header /></StrictMode>, document.querySelector('.page__header-wrapper')
 );
 
-import Services from "../layouts/Services.jsx";
-ReactDOM.render(
-	<StrictMode><Services /></StrictMode>, document.querySelector('.main-content__services')
-);
-
 import Footer from '../layouts/Footer.jsx';
 ReactDOM.render(
 	<StrictMode><Footer /></StrictMode>, document.querySelector('.main-content__footer')
@@ -21,8 +16,12 @@ ReactDOM.render(
 	<StrictMode> <Menufloat /></StrictMode>, document.querySelector('.page__menu-float')
 );
 
+import Services from "../layouts/Services.jsx";
+ReactDOM.render(
+	<StrictMode><Services /></StrictMode>, document.querySelector('.main-content__services')
+);
+
 import Mainslide from "../layouts/Mainslide.jsx";
 ReactDOM.render(
 	<StrictMode><Mainslide /></StrictMode>, document.querySelector('.main-content__slide')
 );
-

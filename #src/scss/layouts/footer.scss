@@ -77,11 +77,13 @@
 		.community {
 			// .community__items
 			&__items {
-				padding: 5rem 0 13rem;
+				padding: 5rem 0;
 
 				justify-content: space-between;
 				@include flex-align-center;
-
+				@include _768 {
+					padding-bottom: 13rem;
+				}
 				@include _490 {
 					flex-direction: column;
 					align-items: flex-start;

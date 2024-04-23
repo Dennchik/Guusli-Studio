@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Element } from 'react-scroll';
 import { animationSvgLine, animationSvgText } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import isMobile from "../libraries/Js-devise.js";
+import TextBlock from './Add-content.jsx';
 import {
 	NeonGreenColor,
 	NeonFuchsiaColor,
@@ -22,6 +23,8 @@ import {
 } from '../core/variables.jsx';
 // -----------------------------------------------------------------------------
 export default function Services() {
+
+
 	useEffect(() => {
 		const initSwiper = document.querySelector('.content-box__body');
 		if (isMobile.any()) {
@@ -69,11 +72,6 @@ export default function Services() {
 
 	return (
 		<Element className="services key-object" name='services' id='services'>
-			{/* <div className="material-parallax parallax">
-				<div className="parallax__image">
-					<img src="img/body/parallax_bg.png" alt="parallax-bg" />
-				</div>
-			</div> */}
 			<div className="services__body _container">
 				<div className="services__title">Наши услуги</div>
 				<div className="services__content">

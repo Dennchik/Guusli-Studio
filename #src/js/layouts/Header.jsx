@@ -34,7 +34,7 @@ export default function Header() {
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
-	},);
+	}, []);
 
 	return (
 		<div className="header key-object" name='home'>

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Element, Link } from 'react-scroll';
+import React, { useEffect } from 'react';
+import { Link } from 'react-scroll';
 // -----------------------------------------------------------------------------
 export default function Menufloat() {
 	useEffect(() => {
@@ -9,7 +9,8 @@ export default function Menufloat() {
 			console.log(menuFloattop);
 			menuFloattop.classList.toggle('_is-open');
 		});
-	});
+	}, []);
+
 	return (
 		<nav className="menu-float">
 			<div className="menu-float__body">

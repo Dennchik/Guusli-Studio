@@ -1,4 +1,4 @@
-import anime, { easings } from 'animejs';
+import anime from 'animejs';
 
 // -----------------------------------------------------------------------------
 export function timeLineHeaderItem() {

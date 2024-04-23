@@ -16,7 +16,7 @@ export default function servicesSlide(
 			spaceBetween: 30,
 			loop: true,
 			grabCursor: true,
-			mousewheel: true,
+			// mousewheel: true,
 			// centeredSlides: true,
 			slidesPerView: 5,
 			breakpoints: {
@@ -36,15 +36,6 @@ export default function servicesSlide(
 					slidesPerView: 5,
 				}
 			}
-			// autoHeight: true,
-			// pagination: {
-			// el: pagination,
-			// clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + ' ' + 'el' + '">' + (index + 1) + "</span>";
-			// },
-			// },
-
 		});
 	}
 }
