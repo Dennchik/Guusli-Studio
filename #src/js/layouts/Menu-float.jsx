@@ -81,13 +81,13 @@ export default function Menufloat() {
 								<div className="menu-float__content">
 									<div className="menu-float__nav">
 										<div className="menu-float__menu-link">
-											<a href="#">Home</a></div>
+											<Link to='main-slide' duration={700} smooth={true} offset={0}>Home</Link></div>
 										<div className="menu-float__menu-link">
-											<Link to='services' duration={300} offset={-80}>
+											<Link to='services' duration={700} smooth={true} offset={-80}>
 												Services
 											</Link></div>
 										<div className="menu-float__menu-link">
-											<Link to='footer' duration={300} offset={-80}>
+											<Link to='footer' duration={700} smooth={true} offset={-80}>
 												Contacts
 											</Link></div>
 									</div>

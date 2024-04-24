@@ -3,7 +3,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // -----------------------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-// ScrollTrigger.normalizeScroll(true);
+ScrollTrigger.normalizeScroll(true);
 export let smoother = ScrollSmoother.create({
 	wrapper: "#wrapper",
 	content: "#content",
