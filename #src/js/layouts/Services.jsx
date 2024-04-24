@@ -3,7 +3,6 @@ import { Element } from 'react-scroll';
 import { animationSvgLine, animationSvgText } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import isMobile from "../libraries/Js-devise.js";
-import TextBlock from './Add-content.jsx';
 import {
 	NeonGreenColor,
 	NeonFuchsiaColor,
@@ -23,8 +22,6 @@ import {
 } from '../core/variables.jsx';
 // -----------------------------------------------------------------------------
 export default function Services() {
-
-
 	useEffect(() => {
 		const initSwiper = document.querySelector('.content-box__body');
 		if (isMobile.any()) {

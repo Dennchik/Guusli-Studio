@@ -66,7 +66,7 @@ export default function Menufloat() {
 											<a href="#">Home</a></div>
 										<div className="menu-float__menu-link">
 											<Link to='services' duration={300} offset={-130}>
-												Servisec
+												Services
 											</Link></div>
 										<div className="menu-float__menu-link">
 											<Link to='footer' duration={300} offset={-90}>

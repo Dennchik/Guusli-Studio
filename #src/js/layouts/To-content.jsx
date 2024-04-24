@@ -17,7 +17,7 @@ const Content = () => {
 
 	const renderButton = () => {
 		if (blocks.length < 3) { // Поменяйте на blocks.length < максимальное количество блоков
-			return <button onClick={addBlock}>Добавить блок</button>;
+			return <button className='button' onClick={addBlock}>Добавить блок</button>;
 		}
 		return null;
 	};

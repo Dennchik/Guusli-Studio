@@ -2,8 +2,6 @@ import swiperLayout from "../assets/swiper-layout";
 swiperLayout('._swiper');
 //* import Swiper bundle with all modules installed 
 import Swiper from 'swiper/bundle';
-//* import styles bundle 
-
 export default function servicesSlide(
 	mainslide = '.content-box__body',
 	scrollbar = '',

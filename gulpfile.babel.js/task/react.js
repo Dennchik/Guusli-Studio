@@ -21,6 +21,7 @@ export default () => {
 		}))
 		.pipe($.gul.babel())
 		.pipe($.webPackStream(app.webpackReact))
+		.pipe($.gul.fileInclude())
 		.pipe($.gulpIf(app.isDev, $.gul.sourcemaps.write('.', {
 			includeContent: false,
 		})))

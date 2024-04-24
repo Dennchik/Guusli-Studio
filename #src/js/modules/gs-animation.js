@@ -3,27 +3,27 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // -----------------------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-// ScrollTrigger.normalizeScroll(true);
-// export let smoother = ScrollSmoother.create({
-// 	wrapper: "#wrapper",
-// 	content: "#content",
-// 	smooth: 2,
-// 	effects: true,
-// 	normalizeScroll: true
-// });
+ScrollTrigger.normalizeScroll(true);
+export let smoother = ScrollSmoother.create({
+	wrapper: "#wrapper",
+	content: "#content",
+	smooth: 1,
+	effects: true,
+	normalizeScroll: true
+});
 // -----------------------------------------------------------------------------
-export function smoother() {
-	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-	ScrollTrigger.normalizeScroll(true);
-	ScrollSmoother.create({
-		wrapper: "#wrapper",
-		content: "#content",
-		smooth: 2,
-		effects: true,
-		normalizeScroll: true
-	});
-}
-export let smoother = smoother();
+// export function smoother() {
+// 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+// 	ScrollTrigger.normalizeScroll(true);
+// 	ScrollSmoother.create({
+// 		wrapper: "#wrapper",
+// 		content: "#content",
+// 		smooth: 2,
+// 		effects: true,
+// 		normalizeScroll: true
+// 	});
+// }
+// export let smoother = smoother();
 // -----------------------------------------------------------------------------
 export function applyEffects(smoother) {
 	smoother.effects(".content-box__column", {
@@ -55,10 +55,13 @@ export function animateTitles() {
 		opacity: 0,
 		scrollTrigger: {
 			trigger: '.services',
-			start: 'top+=50 bottom',
-			end: 'bottom bottom',
+			start: 'top bottom-=300',
+			endTrigger: '.services',
+			end: 'bottom bottom-=300',
 			toggleActions: 'play none none reverse',
-		}
+			markers: true,
+		},
+
 	});
 
 	gsap.from('.offer-container__title', {
@@ -67,9 +70,11 @@ export function animateTitles() {
 		opacity: 0,
 		scrollTrigger: {
 			trigger: '.services__offer',
-			start: 'top+=100 bottom',
-			end: 'bottom bottom',
+			start: 'top bottom-=300',
+			endTrigger: '.services',
+			end: 'bottom bottom-=300',
 			toggleActions: 'play none none reverse',
+			markers: true,
 		}
 	});
 }
@@ -99,7 +104,7 @@ export function tlFooterParallel() {
 			scrub: 0.1,
 			ease: 'linear',
 			toggleActions: 'play none none reverse',
-			markers: true,
+			// markers: true,
 		}
 	});
 	tlFooter.from('.footer .el-1', {
@@ -187,7 +192,7 @@ export function tlServices1() {
 			ease: 'linear',
 			toggleActions: 'play none none reverse',
 			// ease: 'linear',
-			markers: true,
+			// markers: true,
 		}
 	});
 	tlServices1.from('.sr-1', {
@@ -213,7 +218,7 @@ export function tlServices2() {
 			ease: 'linear',
 			toggleActions: 'play none none reverse',
 			// ease: 'linear',
-			markers: true,
+			// markers: true,
 		}
 	});
 	tlServices2.from('.sr-3', {

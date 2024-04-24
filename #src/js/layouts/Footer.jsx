@@ -39,9 +39,70 @@ export default function Header() {
 							</div>
 						</div>
 						<div className="content-info__column el-3">
-							<div className="content-info__title">OUR TEAM</div>
-							<div className="content-info__team-items">
-								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus ea ipsa quod a, natus doloremque maiores dolores ipsum? Atque unde pariatur, quo, ex aperiam velit necessitatibus magnam error asperiores eos beatae itaque voluptas obcaecati aliquam quisquam nulla reprehenderit ipsam exercitationem. Quae adipisci reiciendis quisquam ipsa delectus, veritatis autem, neque numquam facilis ipsum temporibus explicabo dicta laborum. Ipsam commodi adipisci fugit doloribus, perferendis laboriosam. Illo, cum. Qui nisi accusantium consequatur sequi pariatur? In hic esse aperiam doloremque natus, corporis perspiciatis quisquam, dolor rem tempora quidem, repellendus voluptatem libero! Eaque saepe veritatis nam qui asperiores. Obcaecati, amet nihil labore molestiae repellat iste.</p>
+							<div className='content-info__body'>
+								<div className="content-info__title">OUR TEAM</div>
+								<div className="team-mates content-info__team-items">
+									<ul className="team-mates__list">
+										<li>
+											<div className="team-mates__image">
+												<img src="@@webRoot/img/footer/team-1.png" alt="image" />
+											</div>
+										</li>
+										<li>
+											<div className="team-mates__name">
+												<a href="#">Ryan Gosling</a>
+											</div>
+											<div className="team-mates__text">
+												<p>Райан - основатель студии и ведущий звукорежиссер.engineer.</p>
+											</div>
+										</li>
+									</ul>
+									<ul className="team-mates__list">
+										<li>
+											<div className="team-mates__image">
+												<img src="@@webRoot/img/footer/team-2.png" alt="image" />
+											</div>
+										</li>
+										<li>
+											<div className="team-mates__name">
+												<a href="#">Ryan Gosling</a>
+											</div>
+											<div className="team-mates__text">
+												<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
+											</div>
+										</li>
+									</ul>
+									<ul className="team-mates__list">
+										<li>
+											<div className="team-mates__image">
+												<img src="@@webRoot/img/footer/team-3.png" alt="image" />
+											</div>
+										</li>
+										<li>
+											<div className="team-mates__name">
+												<a href="#">Ryan Gosling</a>
+											</div>
+											<div className="team-mates__text">
+												<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
+											</div>
+										</li>
+									</ul>
+									<ul className="team-mates__list">
+										<li>
+											<div className="team-mates__image">
+												<img src="@@webRoot/img/footer/team-4.png" alt="image" />
+											</div>
+										</li>
+										<li>
+											<div className="team-mates__name">
+												<a href="#">Ryan Gosling</a>
+											</div>
+											<div className="team-mates__text">
+												<p>Adam is the studio’s founder and leading sound engineer.</p>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -26,7 +26,7 @@ export default {
 			],
 		},
 		entry: {
-			app: './#src/js/assets/App.jsx',
+			app: './#src/js/app/App.jsx',
 		},
 		output: {
 			filename: '[name].min.js',

@@ -245,12 +245,12 @@
 		position: relative;
 		padding-bottom: 1.5rem;
 		line-height: 100%;
-		@include flex-align-center;
 		color: $gray;
+
 		&::before {
 			content: '';
 			position: absolute;
-			left: -17px;
+			left: -13px;
 			width: 4px;
 			height: 4px;
 			border-radius: 50%;

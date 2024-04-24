@@ -33,7 +33,6 @@ export default function Mainslide() {
 			});
 
 			observer.observe(slideWrapper, { attributes: true });
-
 			// Отключение наблюдателя при размонтировании компонента
 			return () => {
 				observer.disconnect();

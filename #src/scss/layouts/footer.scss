@@ -159,9 +159,8 @@
 			@include _690-920 {
 				grid-column: -3 / -1;
 			}
-			.content-info__team-items {
-				border: 1px solid $gray;
-				height: 90%;
+			.content-info__body {
+				border: none;
 			}
 		}
 	}
@@ -214,13 +213,6 @@
 			border-bottom: 1px solid $gray;
 		}
 
-		i {
-			display: block;
-			margin-right: 3rem;
-			width: 7rem;
-			height: 3.2rem;
-		}
-
 		[class*='icon-'] {
 			&::before {
 				cursor: pointer;
@@ -234,6 +226,7 @@
 			font-size: 1.4rem;
 		}
 		@include flex-align-center;
+		gap: 2rem;
 	}
 
 	// .content-info__nav
@@ -284,6 +277,11 @@
 
 	// .content-info__team-items
 	&__team-items {
+		padding: 2rem 0 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
 	}
 }
 
@@ -358,5 +356,44 @@
 	// .contacts__text
 	&__text {
 		font-size: 1.4rem;
+		p {
+			line-height: 170%;
+		}
+	}
+}
+
+.team-mates {
+	// .team-mates__list
+	&__list {
+		display: flex;
+		@include _920 {
+			&:not(:last-child) {
+				margin-bottom: 3rem;
+			}
+		}
+	}
+
+	// .team-mates__image
+	&__image {
+		width: 104px;
+		height: 104px;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 3px 3px 10px #000;
+		margin-right: 2rem;
+		opacity: 0.5;
+	}
+
+	// .team-mates__name
+	&__name {
+		font-size: 1.6rem;
+		color: $neon-blue-dark;
+		margin-bottom: 1rem;
+	}
+
+	// .team-mates__text
+	&__text {
+		font-size: 1.4rem;
+		color: $gray;
 	}
 }
