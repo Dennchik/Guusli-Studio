@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 export default function Header() {
 	const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
@@ -55,7 +55,7 @@ export default function Header() {
 							<Link className='link-key key-services'
 								to='services'
 								duration={300}
-								offset={-130}
+								offset={-100}
 							>SERVICES</Link>
 						</div>
 						<div className="header__item"><a href="#">VIDEOS</a></div>
@@ -65,7 +65,7 @@ export default function Header() {
 							<Link className='link-key key-services'
 								to='footer'
 								duration={300}
-								offset={-90}
+								offset={-100}
 							>CONTACTS</Link>
 						</div>
 					</div>

@@ -1,7 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 // -----------------------------------------------------------------------------
 export default function Menufloat() {
+	const [offset, setOffset] = useState(-100);
+	useEffect(() => {
+		function handleResize(params) {
+			const screenWidth = window.innerWidth;
+			//todo: Настроить логику для установки различных значений offset в зависимости от ширины экрана
+			if (screenWidth < 768) {
+				setOffset(-150);
+			} else {
+				setOffset(-100);
+			}
+		}
+		//todo: Вызываем функцию handleResize сразу после монтирования компонента, чтобы установить начальное значение 
+		handleResize();
+
+		//todo: Убираем слушатель события изменения размера окна при размонтировании компонента
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	useEffect(() => {
 		document.querySelector('.burger-button').addEventListener('click', function () {
 			this.classList.toggle('_active');
@@ -65,11 +83,11 @@ export default function Menufloat() {
 										<div className="menu-float__menu-link">
 											<a href="#">Home</a></div>
 										<div className="menu-float__menu-link">
-											<Link to='services' duration={300} offset={-130}>
+											<Link to='services' duration={300} offset={-80}>
 												Services
 											</Link></div>
 										<div className="menu-float__menu-link">
-											<Link to='footer' duration={300} offset={-90}>
+											<Link to='footer' duration={300} offset={-80}>
 												Contacts
 											</Link></div>
 									</div>

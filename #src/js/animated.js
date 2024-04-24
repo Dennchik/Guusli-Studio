@@ -2,7 +2,9 @@ import { smoother, applyEffects, applyParallaxEffects, animateTitles, initSectio
 // -----------------------------------------------------------------------------
 
 applyParallaxEffects(smoother);
-animateTitles(); initSectionTriggerMove('#main-slide', '.header__item--home');
+animateTitles('.services__title', '.services', '.services', '=150', '=0');
+animateTitles('.offer-container__title', '.services__offer', '.services', '=150');
+initSectionTriggerMove('#main-slide', '.header__item--home');
 initSectionTriggerMove('#services', '.header__item--services');
 initSectionTriggerMove('#footer', '#contacts');
 

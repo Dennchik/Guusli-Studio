@@ -3,7 +3,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // -----------------------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-ScrollTrigger.normalizeScroll(true);
+// ScrollTrigger.normalizeScroll(true);
 export let smoother = ScrollSmoother.create({
 	wrapper: "#wrapper",
 	content: "#content",
@@ -40,6 +40,7 @@ export function applyEffects(smoother) {
 	});
 
 };
+
 export function applyParallaxEffects(smoother) {
 	smoother.effects(".material-parallax", {
 		speed: (i) => {
@@ -48,34 +49,19 @@ export function applyParallaxEffects(smoother) {
 	});
 }
 // -----------------------------------------------------------------------------
-export function animateTitles() {
-	gsap.from('.services__title', {
-		y: 250,
-		duration: 1,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: '.services',
-			start: 'top bottom-=300',
-			endTrigger: '.services',
-			end: 'bottom bottom-=300',
-			toggleActions: 'play none none reverse',
-			markers: true,
-		},
-
-	});
-
-	gsap.from('.offer-container__title', {
+export function animateTitles(element, trigger, endTrigger, start, end) {
+	gsap.from(element, {
 		y: 150,
 		duration: 1,
 		opacity: 0,
 		scrollTrigger: {
-			trigger: '.services__offer',
-			start: 'top bottom-=300',
-			endTrigger: '.services',
-			end: 'bottom bottom-=300',
+			trigger: trigger,
+			start: `top bottom-${start}}`,
+			endTrigger: endTrigger,
+			end: `bottom bottom-${end}`,
 			toggleActions: 'play none none reverse',
 			markers: true,
-		}
+		},
 	});
 }
 // -----------------------------------------------------------------------------

@@ -46,8 +46,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="./img/slides/slide_1.webp" type="image/webp" />
-								: <img src="./img/slides/slide_1.jpg" alt="image" />}
+								? <img src="@@webRoot/img/slides/slide_1.webp" />
+								: <img src="@@webRoot/img/slides/slide_1.jpg" alt="slide-1" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">
@@ -61,8 +61,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="./img/slides/slide_4.webp" type="image/webp" />
-								: <img src="./img/slides/slide_4.jpg" alt="image" />}
+								? <img src="@@webRoot/img/slides/slide_4.webp" />
+								: <img src="@@webRoot/img/slides/slide_4.jpg" alt="slide-4" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">
@@ -76,8 +76,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="./img/slides/slide_2.webp" type="image/webp" />
-								: <img src="./img/slides/slide_2.jpg" alt="image" />}
+								? <img src="@@webRoot/img/slides/slide_2.webp" />
+								: <img src="@@webRoot/img/slides/slide_2.jpg" alt="slide-2" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">
@@ -91,8 +91,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="./img/slides/slide_3.webp" type="image/webp" />
-								: <img src="./img/slides/slide_3.jpg" alt="image" />}
+								? <img src="@@webRoot/img/slides/slide_3.webp" />
+								: <img src="@@webRoot/img/slides/slide_3.jpg" alt="slide-3" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">

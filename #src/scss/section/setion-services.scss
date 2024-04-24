@@ -11,20 +11,19 @@
 
 	// .services__title
 	&__title {
-		position: relative;
-		display: inline;
-		padding: 0 5rem 2rem;
+		color: $neon-blue;
+		text-align: center;
+		line-height: 100%;
+		letter-spacing: 0;
 		font: {
 			family: 'aa_neon', serif;
 			size: 7.5rem;
 			weight: normal;
 		}
-		text-align: center;
-		line-height: 100%;
-		letter-spacing: 0;
-		color: $neon-blue;
+		position: relative;
+		display: inline;
+		padding: 0 5rem 2rem;
 		z-index: 9;
-
 		//! ------------------------------------------------------------------------
 		perspective-origin: 45% 320%;
 		transform-style: preserve-3d;
@@ -44,14 +43,13 @@
 		}
 
 		&:nth-child(1) {
-			margin: 6rem 0 4rem;
+			margin-top: 6rem;
 			@include _690 {
 				font-size: 5.1rem;
-				margin: -2rem 0 6rem;
 			}
 			@include _425 {
 				font-size: 3.4rem;
-				margin: -1.2rem 0 6rem;
+				margin-top: 4rem;
 			}
 			&::before {
 				transform: translate(0, 58%);
@@ -166,10 +164,13 @@
 	// .content-box__body
 	&__body {
 		position: relative;
-		margin: 12rem 0;
+		margin: 12rem 1.5rem;
 		gap: 2.5rem;
 		display: flex;
 		justify-content: space-between;
+		@include _490 {
+			margin: 6rem 1.5rem;
+		}
 	}
 
 	// .content-box__column

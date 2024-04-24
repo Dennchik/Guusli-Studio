@@ -89,13 +89,13 @@ export default function Services() {
 									<a href="#">
 										<picture>
 											{isWebpSupported()
-												? <img src="./img/body/img_1.webp" type="image/webp" />
-												: <img src="./img/body/img_1.png" alt="image" />}
+												? <img src="@@webRoot/img/body/img_1.webp" />
+												: <img src="@@webRoot/img/body/img_1.png" alt="image-1" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="./img/body/bg_img.webp" type="image/webp" />
-												: <img className='content-box__bg-img' src="./img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="./img/body/bg_img.png" alt="bg-image" />
 											}
 										</picture>
 									</a>
@@ -132,13 +132,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="./img/body/img_2.webp" type="image/webp" />
-												: <img src="./img/body/img_2.png" alt="image" />}
+												? <img src="@@webRoot/img/body/img_2.webp" />
+												: <img src="@@webRoot/img/body/img_2.png" alt="image-2" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="./img/body/bg_img.webp" alt="bg-img" />
-												: <img className='content-box__bg-img' src="./img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>
@@ -170,13 +170,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="./img/body/img_3.webp" type="image/webp" />
-												: <img src="./img/body/img_3.png" alt="image" />}
+												? <img src="@@webRoot/img/body/img_3.webp" />
+												: <img src="@@webRoot/img/body/img_3.png" alt="image-3" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="./img/body/bg_img.webp" alt="bg-img" />
-												: <img className='content-box__bg-img' src="./img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>
@@ -208,13 +208,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="./img/body/img_4.webp" type="image/webp" />
-												: <img src="./img/body/img_4.png" alt="image" />}
+												? <img src="@@webRoot/img/body/img_4.webp" />
+												: <img src="@@webRoot/img/body/img_4.png" alt="image-4" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="./img/body/bg_img.webp" alt="bg-img" />
-												: <img className='content-box__bg-img' src="./img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>
@@ -252,13 +252,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="./img/body/img_5.webp" type="image/webp" />
-												: <img src="./img/body/img_5.png" alt="image" />}
+												? <img src="@@webRoot/img/body/img_5.webp" />
+												: <img src="@@webRoot/img/body/img_5.png" alt="image-5" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="./img/body/bg_img.webp" alt="bg-img" />
-												: <img className='content-box__bg-img' src="./img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>

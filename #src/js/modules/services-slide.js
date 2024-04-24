@@ -12,7 +12,7 @@ export default function servicesSlide(
 		new Swiper(mainslide, {
 			speed: 800,
 			spaceBetween: 30,
-			loop: true,
+			// loop: true,
 			grabCursor: true,
 			// mousewheel: true,
 			// centeredSlides: true,
