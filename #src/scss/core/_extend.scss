@@ -183,9 +183,7 @@
 		bottom: -3px;
 		left: 0;
 	}
-
-	&:hover {
-		color: $neon-blue;
+	&.active {
 		text-shadow: 2px 2px 3px #000;
 		&::before {
 			width: 75%;
@@ -194,6 +192,17 @@
 			width: 40%;
 		}
 	}
+
+	// &:hover {
+	// 	// color: $neon-blue;
+	// 	text-shadow: 2px 2px 3px #000;
+	// 	&::before {
+	// 		width: 75%;
+	// 	}
+	// 	&::after {
+	// 		width: 40%;
+	// 	}
+	// }
 }
 
 .is-open {

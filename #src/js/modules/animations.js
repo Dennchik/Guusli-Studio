@@ -74,7 +74,7 @@ export function fadeInSlide() {
 		.add({
 			targets: '.swiper-slide-active .main-slide__text',
 			opacity: [0, 1],
-			translateY: [90, 0],
+			translateY: [100, 0],
 			delay: anime.stagger(100, { start: 500 }),
 			duration: 1000,
 			easing: 'easeInOutSine',
@@ -84,18 +84,6 @@ export function fadeInSlide() {
 				});
 			}
 		}, 130);
-}
-export function fadeInSlideBack() {
-	let fadeInSlide = anime.timeline({
-		duration: 750,
-	})
-		.add({
-			targets: '.main-slide__title,  .main-slide__text',
-			opacity: 0,
-			translateY: 90,
-			duration: 1000,
-			easing: 'easeInOutSine',
-		});
 }
 export function animationSvgLine(target, reverse) {
 	const path = target.querySelector('.content-box__svg .lines path');

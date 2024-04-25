@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fadeInSlide, fadeInSlideBack } from '../modules/animations.js';
+import { fadeInSlide } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import { Element } from 'react-scroll';
 // Компонент Mainslide
@@ -25,8 +25,6 @@ export default function Mainslide() {
 						if (isActive) {
 							// Если слайд-контейнер содержит класс 'swiper-slide-active', запускаем анимацию
 							fadeInSlide();
-						} else {
-							fadeInSlideBack();
 						}
 					}
 				});

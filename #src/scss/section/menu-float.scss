@@ -158,9 +158,6 @@
 			margin-right: 1rem;
 		}
 
-		&:hover {
-			color: $neon-blue;
-		}
 		&.active {
 			color: $neon-blue;
 			text-shadow: 2px 2px 3px #000;
@@ -170,6 +167,7 @@
 			&::after {
 				width: 40%;
 			}
+			transition: all 0.9s ease-in-out;
 		}
 		@extend .link_underline;
 	}
