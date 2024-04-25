@@ -4,9 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // -----------------------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollTrigger.normalizeScroll(true);
+// preventDefault();
+ScrollTrigger.config({ ignoreMobileResize: true });
 export let smoother = ScrollSmoother.create({
-	wrapper: "#wrapper",
-	content: "#content",
+	wrapper: ".main-content",
+	content: ".main-content__content",
 	smooth: 1,
 	effects: true,
 	normalizeScroll: true

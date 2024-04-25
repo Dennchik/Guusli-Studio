@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
-export default function Header() {
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+
+const Header = () => {
 	const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 
 	useEffect(() => {
 		const fadeIn = document.querySelector('.page__fade-in');
-
 		document.querySelector('.header__ellipsis').addEventListener("click", () => {
 			fadeIn.classList.toggle('_active');
 		});
-
-
 		const handleScroll = () => {
 			const header = document.querySelector('.header');
 			const mainContent = document.querySelector('.page__main-content');
@@ -28,7 +26,6 @@ export default function Header() {
 				header.classList.remove('without-border');
 			}
 		};
-
 		window.addEventListener('scroll', handleScroll);
 		// Очистка слушателя событий при размонтировании компонента
 		return () => {
@@ -36,8 +33,20 @@ export default function Header() {
 		};
 	}, []);
 
+	function handleClick() {
+		document.querySelector('.header__item--home').addEventListener('click', function () {
+			scroller.scrollTo('main-slide', {
+				activeClass: "_active",
+				to: 'main-slide',
+				spy: true,
+				duration: 700,
+				smooth: 'easeInQuint',
+			});
+		});
+	}
+
 	return (
-		<div className="header key-object" name='home'>
+		<div className="header key-object">
 			<div className="header__container">
 				<div className="header__column el-logo">
 					<div className="header__logo"></div>
@@ -48,24 +57,30 @@ export default function Header() {
 				</div>
 				<div className="header__column">
 					<div className="header__menu">
-						<div className="header__item header__item--home">
-							<a href='#' className='link-key key-home' to='home'>HOME</a>
-						</div>
+						<Link href='' className="header__item header__item--home"
+							to='main-slide'
+							spy={true}
+							duration={700}
+							smooth='easeInQuint'
+						>HOME
+						</Link>
 						<div className="header__item header__item--services">
 							<Link className='link-key key-services'
 								to='services'
-								duration={300}
+								duration={700}
 								offset={-100}
+								smooth='easeInCubic'
 							>SERVICES</Link>
 						</div>
 						<div className="header__item"><a href="#">VIDEOS</a></div>
 						<div className="header__item"><a href="#">BIO</a></div>
 						<div className="header__item"><a href="#">NEWS</a></div>
-						<div className="header__item" id='contacts'>
+						<div className="header__item header__item--contacts">
 							<Link className='link-key key-services'
 								to='footer'
-								duration={300}
+								duration={700}
 								offset={-100}
+								smooth='easeInOutCubic'
 							>CONTACTS</Link>
 						</div>
 					</div>
@@ -74,7 +89,6 @@ export default function Header() {
 					<div className="header__ellipsis">
 						<span></span>
 					</div>
-
 					<div className="community header__community" data-move-el={JSON.stringify(dataMoveEl)}>
 						<div className="community__icon">
 							<a class="wa" title="WhatsApp" target="blank" href="https://wa.me/79106044424">
@@ -100,6 +114,8 @@ export default function Header() {
 				</div>
 			</div>
 		</div>
-
 	);
-}
+};
+
+
+export default Header;

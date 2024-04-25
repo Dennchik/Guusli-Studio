@@ -198,13 +198,11 @@
 
 .is-open {
 	display: grid;
+	grid-template-columns: 1fr;
+	width: 100%;
 	grid-template-rows: 0fr;
-	opacity: 0;
-	transition:
-		grid-template-rows 0.4s,
-		opacity 0.5s ease-in-out;
+	transition: grid-template-rows 0.4s ease-in-out;
 	&._is-open {
-		opacity: 1;
 		grid-template-rows: 1fr;
 	}
 }

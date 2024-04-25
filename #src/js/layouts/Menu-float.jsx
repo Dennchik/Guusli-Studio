@@ -40,9 +40,9 @@ export default function Menufloat() {
 									<div className="main-menu__menu-wrapper">
 										<div className="main-menu__column">
 											<ul className="main-menu__menu-nav">
-												<div className="main-menu__title">
+												<li className="main-menu__title">
 													<h4>Inspiration</h4>
-												</div>
+												</li>
 												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Видео</a></li>
 												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Звук</a></li>
 												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Текст</a></li>
@@ -80,13 +80,13 @@ export default function Menufloat() {
 							<div className="menu-float__layout menu-float__layout--secondary">
 								<div className="menu-float__content">
 									<div className="menu-float__nav">
-										<div className="menu-float__menu-link">
+										<div className="menu-float__menu-link menu-float__menu-link--home">
 											<Link to='main-slide' duration={700} smooth={true} offset={0}>Home</Link></div>
-										<div className="menu-float__menu-link">
+										<div className="menu-float__menu-link menu-float__menu-link--services">
 											<Link to='services' duration={700} smooth={true} offset={-80}>
 												Services
 											</Link></div>
-										<div className="menu-float__menu-link">
+										<div className="menu-float__menu-link menu-float__menu-link--footer">
 											<Link to='footer' duration={700} smooth={true} offset={-80}>
 												Contacts
 											</Link></div>

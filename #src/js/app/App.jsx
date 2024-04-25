@@ -11,6 +11,8 @@ ReactDOM.render(
 	<StrictMode><Services /></StrictMode>, document.querySelector('.main-content__services')
 );
 
+
+
 import Footer from '../layouts/Footer.jsx';
 ReactDOM.render(
 	<StrictMode><Footer /></StrictMode>, document.querySelector('.main-content__footer')

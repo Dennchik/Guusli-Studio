@@ -16,11 +16,6 @@
 		display: block;
 	}
 
-	&.is-visible {
-		opacity: 1;
-		bottom: 3rem;
-	}
-
 	// .menu-float__body
 	&__body {
 		padding: 0 8px;
@@ -36,15 +31,17 @@
 		position: relative;
 		display: flex;
 		justify-content: center;
+		width: 100%;
 	}
 
 	// .menu-float__wrapper
 	&__wrapper {
 		position: relative;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
-		// min-width: 0;
-		max-width: fit-content;
+		max-width: 425px;
+		margin: 0 15px;
 		padding: 5px;
 		border-radius: 5px;
 		background: #2b2d41e3;
@@ -64,6 +61,16 @@
 	&__top {
 		overflow: hidden;
 		@extend .is-open;
+		&._is-open {
+			.main-menu__column {
+				&:nth-child(1) {
+					transform: translate(0, 0);
+				}
+				&:nth-child(2) {
+					transform: translate(0, 0);
+				}
+			}
+		}
 	}
 
 	// .menu-float__top-content
@@ -75,17 +82,14 @@
 	&__bottom {
 		position: relative;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		gap: 1rem;
-	}
-
-	// .menu-float__layout
-	&__layout {
 	}
 
 	// .menu-float__content
 	&__content {
 		height: 100%;
+		width: 100%;
 		padding: 0 1.5rem;
 		display: inline-flex;
 		align-items: center;
@@ -133,15 +137,13 @@
 		}
 	}
 
-	// .menu-float__subtitle
-	&__subtitle {
-	}
-
 	// .menu-float__nav
 	&__nav {
+		flex: 1 1 auto;
 		position: relative;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		height: 100%;
 	}
 
@@ -159,7 +161,16 @@
 		&:hover {
 			color: $neon-blue;
 		}
-
+		&.active {
+			color: $neon-blue;
+			text-shadow: 2px 2px 3px #000;
+			&::before {
+				width: 75%;
+			}
+			&::after {
+				width: 40%;
+			}
+		}
 		@extend .link_underline;
 	}
 
@@ -175,6 +186,7 @@
 
 	// .menu-float__layout--secondary
 	&__layout--secondary {
+		flex: 1 1 auto;
 		.menu-float__content {
 			background-color: #0f0b1af6;
 			@include _425 {
@@ -223,6 +235,13 @@
 		background-position: left top;
 		background-repeat: repeat-y;
 		background-size: 1px 8px;
+		transition: transform 0.4s ease-in-out 0.4s;
+		&:nth-child(1) {
+			transform: translate(-135%, 0);
+		}
+		&:nth-child(2) {
+			transform: translate(135%, 0);
+		}
 	}
 
 	// .main-menu__menu-nav
@@ -256,11 +275,5 @@
 			border-radius: 50%;
 			background: var(--menu-color-2, #fff);
 		}
-	}
-}
-
-.dot {
-	// .dot_after
-	&_after {
 	}
 }

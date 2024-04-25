@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fadeInSlide, fadeInSlideBack } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
-
+import { Element } from 'react-scroll';
 // Компонент Mainslide
 export default function Mainslide() {
 	useEffect(() => {
@@ -40,14 +40,15 @@ export default function Mainslide() {
 		});
 	}, []);
 	return (
-		<div className="main-slide" id='main-slide'>
+		<Element className="main-slide" name='main-slide'>
 			<div className="main-slide__body _swiper">
 				<div className="main-slide__slide-wrapper">
 					<div className="main-slide__slide-image _img">
-						<picture>
-							{isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_1.webp" />
-								: <img src="@@webRoot/img/slides/slide_1.jpg" alt="slide-1" />}
+						<picture> {
+							isWebpSupported()
+								? <img src="@@webRoot/img/slides/slide_1.webp" alt="slide-1" />
+								: <img src="@@webRoot/img/slides/slide_1.jpg" alt="slide-1" />
+						}
 						</picture>
 					</div>
 					<div className="main-slide__content">
@@ -61,14 +62,14 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_4.webp" />
+								? <img src="@@webRoot/img/slides/slide_4.webp" alt="slide-4" />
 								: <img src="@@webRoot/img/slides/slide_4.jpg" alt="slide-4" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">
 						<div className="main-slide__title el-slidetitle"><span>Атмосфера Звука </span>Музыкального Пространства
 						</div>
-						<div className="main-slide__text">Мы создаем звуковые шедевры в атмосфере исключительного звукового пространства, где каждая нота оживает и звучит волшебно. Наша команда талантливых звукорежиссеров и инженеров гарантирует, что ваше музыкальное произведение будет звучать так же эмоционально и мощно, как в самом сердце концертного зала. Доверьте нам ваше творчество и ощутите магию звука в каждой ноте.
+						<div className="main-slide__text">Мы создаем звуковые шедевры, где каждая нота оживает и звучит волшебно. Наша команда гарантирует, что ваше музыкальное произведение будет звучать так же эмоционально и мощно, как в самом сердце концертного зала. Доверьте нам ваше творчество и ощутите магию звука в каждой ноте.
 						</div>
 					</div>
 				</div>
@@ -76,7 +77,7 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_2.webp" />
+								? <img src="@@webRoot/img/slides/slide_2.webp" alt="slide-2" />
 								: <img src="@@webRoot/img/slides/slide_2.jpg" alt="slide-2" />}
 						</picture>
 					</div>
@@ -91,7 +92,7 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_3.webp" />
+								? <img src="@@webRoot/img/slides/slide_3.webp" alt="slide-3" />
 								: <img src="@@webRoot/img/slides/slide_3.jpg" alt="slide-3" />}
 						</picture>
 					</div>
@@ -104,6 +105,6 @@ export default function Mainslide() {
 				</div>
 			</div>
 			<div className="main-slide__pagination"></div>
-		</div>
+		</Element>
 	);
 }

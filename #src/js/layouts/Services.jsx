@@ -26,10 +26,7 @@ export default function Services() {
 		const initSwiper = document.querySelector('.content-box__body');
 		if (isMobile.any()) {
 			initSwiper.classList.add('_swiper');
-			console.log(initSwiper);
-			console.log('  mobyle');
 			if (initSwiper.classList.contains('_swiper')) {
-				console.log('есть класс swiper');
 			} else {
 				console.log('нет класс swiper');
 			}
@@ -68,7 +65,7 @@ export default function Services() {
 	}, []);
 
 	return (
-		<Element className="services key-object" name='services' id='services'>
+		<Element className="services key-object" name='services'>
 			<div className="services__body _container">
 				<div className="services__title">Наши услуги</div>
 				<div className="services__content">

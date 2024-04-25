@@ -1,9 +1,8 @@
 import React from 'react';
 import { Element } from "react-scroll";
-
 export default function Header() {
 	return (
-		<footer className='footer' name='footer' id='footer'>
+		<footer className='footer' name='footer'>
 			<Element className="footer__content">
 				<div className="footer__info _container">
 					<div className="content-info footer__content-info">
