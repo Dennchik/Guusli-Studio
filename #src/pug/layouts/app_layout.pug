@@ -11,7 +11,9 @@ html(lang="ru")
 			link(rel="icon" type="image/icon" href="@@webRoot/img/icons/icon-logo.ico")
 			link(rel="stylesheet" type="text/css" href="@@webRoot/css/style.min.css" ) 
 		block script 
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/app/app.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/app/index.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/animated.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js")
 		block title
 		- var text
 			title #{text}
@@ -20,18 +22,10 @@ html(lang="ru")
 		include ../modules/loading
 		include ../includes/mixins
 		div(class="wrapper")
-			block page
-				.page
-					block header
-						header._header#home
-							._header-wrapper
-							._fade-in.bp-1
-					main._main-content
-						block main-content
-							block section 
-							block footer
-					block menu-float
-						._menu-float 
-							//- include ../partials/menu-float
-		script(defer="defer" type="text/javascript" src="@@webRoot/js/animated.min.js")
-		script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js")
+			block page 
+				block header 
+				block main-content
+					block section 
+					block footer 
+					block mobile-menu
+				._menu-float  

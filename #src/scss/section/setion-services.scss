@@ -88,8 +88,6 @@
 
 .material-parallax {
 	position: fixed;
-	display: flex;
-	justify-content: center;
 	overflow: hidden;
 	width: 100%;
 	height: 100vh;
@@ -108,6 +106,7 @@
 	&__image {
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		opacity: 0.3;
 		z-index: 0;
 		width: 100%;
@@ -122,40 +121,6 @@
 			max-width: none;
 			object-fit: contain;
 			object-position: center;
-		}
-	}
-}
-
-.equalizer-content {
-	z-index: 999;
-	overflow: hidden;
-	width: 98%;
-	height: 100%;
-	position: fixed;
-	opacity: 0;
-	top: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-
-	&.vertical {
-		flex-direction: row;
-	}
-
-	&__square {
-		border-bottom: 5px solid $neon-fuchsia;
-		position: relative;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
-		width: 290px;
-		height: 50%;
-		&:not(:last-child) {
-			margin-right: 1rem;
 		}
 	}
 }

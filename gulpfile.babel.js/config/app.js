@@ -26,7 +26,7 @@ export default {
 			],
 		},
 		entry: {
-			app: './#src/js/app/App.jsx',
+			index: './#src/js/app/App-index.jsx',
 		},
 		output: {
 			filename: '[name].min.js',

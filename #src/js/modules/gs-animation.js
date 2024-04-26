@@ -4,8 +4,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // -----------------------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 ScrollTrigger.normalizeScroll(true);
-// preventDefault();
 ScrollTrigger.config({ ignoreMobileResize: true });
+// preventDefault();
+// -----------------------------------------------------------------------------
+//todo: Устанавливаем плавную прокрутку страницы
 export let smoother = ScrollSmoother.create({
 	wrapper: ".main-content",
 	content: ".main-content__content",
@@ -13,19 +15,7 @@ export let smoother = ScrollSmoother.create({
 	effects: true,
 	normalizeScroll: true
 });
-// -----------------------------------------------------------------------------
-// export function smoother() {
-// 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-// 	ScrollTrigger.normalizeScroll(true);
-// 	ScrollSmoother.create({
-// 		wrapper: "#wrapper",
-// 		content: "#content",
-// 		smooth: 2,
-// 		effects: true,
-// 		normalizeScroll: true
-// 	});
-// }
-// export let smoother = smoother();
+
 // -----------------------------------------------------------------------------
 export function applyEffects(smoother) {
 	smoother.effects(".content-box__column", {
@@ -42,7 +32,8 @@ export function applyEffects(smoother) {
 	});
 
 };
-
+// -----------------------------------------------------------------------------
+//todo: Секция "Parallax Effects".
 export function applyParallaxEffects(smoother) {
 	smoother.effects(".material-parallax", {
 		speed: (i) => {
@@ -62,13 +53,13 @@ export function animateTitles(element, trigger, endTrigger, start, end) {
 			endTrigger: endTrigger,
 			end: `bottom bottom-${end}`,
 			toggleActions: 'play none none reverse',
-			markers: true,
+			// markers: true,
 		},
 	});
 }
 // -----------------------------------------------------------------------------
+//todo: Секция "#main-slide".
 export function initSectionTriggerMove(trigger, targets) {
-	//todo: Секция "#main-slide".
 	ScrollTrigger.create({
 		trigger: trigger,
 		start: "top center", // Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
@@ -133,42 +124,6 @@ export function tlFooterParallel() {
 	}, '-=1');
 }
 // -----------------------------------------------------------------------------
-// export function tlFooterSequential() {
-// 	const tlFooterSequential = gsap.timeline({
-// 		scrollTrigger: {
-// 			trigger: '.footer',
-// 			start: 'top bottom',
-// 			endTrigger: '.footer',
-// 			end: 'bottom bottom',
-// 			scrub: 0.1,
-// 			ease: 'linear',
-// 			toggleActions: 'play none none reverse',
-// 			markers: true,
-// 		}
-// 	});
-
-// 	if (window.innerWidth <= 920) {
-// 		tlFooterSequential.from('.footer .el-1', {
-// 			x: -250,
-// 			duration: 1,
-// 			opacity: 0,
-// 		});
-
-// 		tlFooterSequential.from('.el-2', {
-// 			x: window.innerWidth <= 680 ? 350 : 0,
-// 			y: window.innerWidth > 680 ? 150 : 0,
-// 			duration: 1,
-// 			opacity: 0,
-// 		}, '-=1');
-
-// 		tlFooterSequential.from('.el-3', {
-// 			x: window.innerWidth <= 680 ? -350 : (window.innerWidth > 680 ? 350 : 0),
-// 			duration: 1,
-// 			opacity: 0,
-// 		}, '-=1');
-// 	};
-// }
-// -----------------------------------------------------------------------------
 export function tlServices1() {
 	const tlServices1 = gsap.timeline({
 		scrollTrigger: {
@@ -219,4 +174,50 @@ export function tlServices2() {
 		duration: 1,
 		opacity: 0,
 	}, '-=1');
+}
+// -----------------------------------------------------------------------------
+//todo: Секция "Equalizer Animated".
+import { equalizerAnimated, removeElement } from './animations';
+export function initTriggerServices(trigger, targets) {
+	ScrollTrigger.create({
+		trigger: trigger,
+		start: "top center",
+		endTrigger: trigger,
+		end: "bottom center",
+		toggleClass: {
+			targets: targets,
+			className: "active"
+		},
+		onEnter: function () {
+			//todo: Запуск анимации при входе в зону видимости триг. - Start.
+			gsap.to('.equalizer-content', {
+				duration: 0.5,
+				opacity: 1,
+			});
+			equalizerAnimated();
+		},
+		onLeaveBack: function () {
+			//todo: Останавливаем анимацию при выходе из зоны видимости триг. - Start.
+			removeElement();
+			gsap.to('.equalizer-content', {
+				opacity: 0,
+			});
+		},
+		onLeave: function () {
+			//todo: Останавливаем анимацию при выходе из зоны видимости триг. - End.
+			removeElement();
+			gsap.to('.equalizer-content', {
+				opacity: 0,
+			});
+		},
+		onEnterBack: function () {
+			//todo: Запуск анимации при входе в зоны видимости триг. - End.
+			equalizerAnimated();
+			gsap.to('.equalizer-content', {
+				opacity: 1,
+			});
+		},
+
+		// markers: true
+	});
 }
