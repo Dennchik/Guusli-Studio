@@ -9,8 +9,8 @@ ScrollTrigger.config({ ignoreMobileResize: true });
 // -----------------------------------------------------------------------------
 //todo: Устанавливаем плавную прокрутку страницы
 export let smoother = ScrollSmoother.create({
-	wrapper: ".main-content",
-	content: ".main-content__content",
+	wrapper: "#wrapper",
+	content: "#content",
 	smooth: 1,
 	effects: true,
 	normalizeScroll: true
@@ -176,48 +176,3 @@ export function tlServices2() {
 	}, '-=1');
 }
 // -----------------------------------------------------------------------------
-//todo: Секция "Equalizer Animated".
-import { equalizerAnimated, removeElement } from './animations';
-export function initTriggerServices(trigger, targets) {
-	ScrollTrigger.create({
-		trigger: trigger,
-		start: "top center",
-		endTrigger: trigger,
-		end: "bottom center",
-		toggleClass: {
-			targets: targets,
-			className: "active"
-		},
-		onEnter: function () {
-			//todo: Запуск анимации при входе в зону видимости триг. - Start.
-			gsap.to('.equalizer-content', {
-				duration: 0.5,
-				opacity: 1,
-			});
-			equalizerAnimated();
-		},
-		onLeaveBack: function () {
-			//todo: Останавливаем анимацию при выходе из зоны видимости триг. - Start.
-			removeElement();
-			gsap.to('.equalizer-content', {
-				opacity: 0,
-			});
-		},
-		onLeave: function () {
-			//todo: Останавливаем анимацию при выходе из зоны видимости триг. - End.
-			removeElement();
-			gsap.to('.equalizer-content', {
-				opacity: 0,
-			});
-		},
-		onEnterBack: function () {
-			//todo: Запуск анимации при входе в зоны видимости триг. - End.
-			equalizerAnimated();
-			gsap.to('.equalizer-content', {
-				opacity: 1,
-			});
-		},
-
-		// markers: true
-	});
-}

@@ -15,7 +15,17 @@ import Footer from '../layouts/Footer.jsx';
 ReactDOM.render(
 	<StrictMode><Footer /></StrictMode>, document.querySelector('.main-content__footer')
 );
-
+// -----------------------------------------------------------------------------
+import AboutCompany from '../layouts/AboutCompanys.jsx';
+// Создаем временный DOM-элемент
+const tempElement = document.createElement('div');
+// Получаем ссылку на DOM-элемент
+const footerInfo = document.querySelector('.footer__info');
+// Рендерим компонент AboutCompany в созданный контейнер
+ReactDOM.render(<AboutCompany />, tempElement);
+// Добавляем контейнер с компонентом AboutCompany в конец .footer__info
+footerInfo.insertBefore(tempElement.firstChild, footerInfo.firstChild);
+// -----------------------------------------------------------------------------
 import Menufloat from '../layouts/Menu-float.jsx';
 ReactDOM.render(
 	<StrictMode> <Menufloat /></StrictMode>, document.querySelector('.page__menu-float')

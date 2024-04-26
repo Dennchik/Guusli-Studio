@@ -1,111 +1,12 @@
 import React from 'react';
-import { Element } from "react-scroll";
+// import About from './AboutCompany.jsx';
 export default function Footer() {
 	return (
 		<footer className='footer' name='footer'>
-			<Element className="footer__content">
+			<div className="footer__content">
 				<div className="footer__info _container">
-					<div className="content-info footer__content-info">
-						<div className="content-info__column el-1">
-							<div className="content-info__body">
-								<div className="content-info__title">ABOUT OUR STUDIO</div>
-								<div className="content-info__text">
-									<p>Наша медиа-группа представляет собой превосходную студию звукозаписи и продюсерскую компанию. Мы специализируемся на создании текстов, продюсировании, звукозаписи и развитии талантов. Готовы к сотрудничеству с вами в любое время.</p>
-									<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка. В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p></div>
-							</div>
-							<div className='content-info__footer'>
-								<a className='content-info__button' href="#" type='button'>Read more</a>
-							</div>
-						</div>
-						<div className="content-info__column el-2">
-							<div className='content-info__body'>
-								<div className="content-info__title">SERVICES</div>
-								<div className="content-info__item-services">
-									<i className='icon-microphone'></i>
-									<span>Мы предлагаем услуги аналоговой и цифровой записи, а также микширования в широком спектре жанров.</span>
-								</div>
-								<div className="content-info__item-services">
-									<i className='icon-fast-forward'></i>
-									<span>Наша студия привлекает великолепным интерьером и оборудованными комфортабельными помещениями, идеально подходящими для создания лучших произведений.</span>
-								</div>
-								<div className="content-info__item-services">
-									<i className='icon-music'></i>
-									<span>В нашей студии мы внедряем передовое оборудование и программное обеспечение для микширования, обеспечивая высочайшее качество звучания ваших треков. Ваше творчество - наш приоритет.</span>
-								</div>
-							</div>
-							<div className='content-info__footer'>
-								<a className='content-info__button' href="#" type='button'>Read more</a>
-							</div>
-						</div>
-						<div className="content-info__column el-3">
-							<div className='content-info__body'>
-								<div className="content-info__title">OUR TEAM</div>
-								<div className="team-mates content-info__team-items">
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-1.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Райан - основатель студии и ведущий звукорежиссер.engineer.</p>
-											</div>
-										</li>
-									</ul>
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-2.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
-											</div>
-										</li>
-									</ul>
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-3.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
-											</div>
-										</li>
-									</ul>
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-4.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Adam is the studio’s founder and leading sound engineer.</p>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="content-info__nav el-4">
+					{/* <About /> */}
+					<div className="footer__help el-4">
 						<i className='icon-achievements'></i>
 						<i className='icon-services'></i>
 						<i className='icon-reviews'></i>
@@ -139,7 +40,7 @@ export default function Footer() {
 					</div>
 
 				</div>
-			</Element>
+			</div>
 			<div className="footer__community _container">
 				<div className="community">
 					<div className="community__items">

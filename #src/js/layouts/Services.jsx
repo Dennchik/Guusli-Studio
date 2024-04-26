@@ -66,6 +66,15 @@ export default function Services() {
 
 	return (
 		<Element className="services key-object" name='services'>
+			<div className="material-parallax parallax">
+				<div className="parallax__image">
+					<picture>{isWebpSupported() ? (
+						<source srcSet="@@webRoot/img/body/parallax_bg.webp" type="image/webp" />
+					) : null}
+						<img src="@@webRoot/img/body/parallax_bg.png " alt="bg-image" />
+					</picture>
+				</div>
+			</div>
 			<div className="services__body _container">
 				<div className="services__title">Наши услуги</div>
 				<div className="services__content">

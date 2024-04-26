@@ -1,4 +1,10 @@
 extends ../layouts/app_layout
+append link 
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
+append script 
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/indexApp.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/animatedind.min.js")
 block title
 	- var text='Студия зувукозаписи "Gusli" Обнинск' 
 
@@ -11,13 +17,7 @@ block page
 		._main-content
 			block main-content 
 				main.main-content#wrapper 
-					._content#content
-						div(class="material-parallax parallax")
-							div(class="parallax__image")
-								img(src="./img/body/parallax_bg.png", alt="parallax-bg")
-								block equalizer
-									._equalizer
-										//- include ../partials/block-equalizer
+					._content#content 
 						block section
 							section._slide  
 							section._services 

@@ -26,7 +26,8 @@ export default {
 			],
 		},
 		entry: {
-			index: './#src/js/app/App-index.jsx',
+			indexApp: './#src/js/app/AppIndex.jsx',
+			servicesApp: './#src/js/app/AppServices.jsx',
 		},
 		output: {
 			filename: '[name].min.js',
@@ -98,14 +99,9 @@ export default {
 			},
 		},
 		entry: {
-			// gsap: './#src/js/libraries/gsap.js',
-			// chroma: './#src/js/libraries/chroma.js',
-			// SplitText: './#src/js/libraries/SplitText.js',
-			// ScrollSmoother: './#src/js/libraries/ScrollSmoother.js',
-			// ScrollTrigger: './#src/js/libraries/ScrollTrigger.js',
-			// ScrollToPlugin: './#src/js/libraries/ScrollToPlugin.js',
-			// assets: './#src/js/assets.js',
-			animated: './#src/js/animated.js',
+			animatedind: './#src/js/animatedind.js',
+			services: './#src/js/services.js',
+			index: './#src/js/index.js',
 			main: './#src/js/main.js'
 		},
 		output: {

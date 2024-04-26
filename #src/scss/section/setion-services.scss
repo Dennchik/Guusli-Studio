@@ -1,5 +1,4 @@
 .services {
-	position: relative;
 	// .services__body
 	&__body {
 		position: relative;
@@ -87,39 +86,39 @@
 }
 
 .material-parallax {
-	position: fixed;
+	position: absolute;
 	overflow: hidden;
 	width: 100%;
 	height: 100vh;
-	z-index: 9;
+	z-index: -1;
 }
 
 .parallax {
 	position: absolute;
-	background-size: cover;
 	overflow: hidden;
 	z-index: 1;
 	width: 100%;
 	height: 100%;
+	background: rgba(255, 255, 255, 0.02);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
 
 	// .parallax__image
 	&__image {
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		opacity: 0.3;
 		z-index: 0;
 		width: 100%;
 		height: 100%;
-		@extend .gradient-services;
-		object-position: center;
+
 		img {
 			pointer-events: none;
 			width: 100%;
-			min-width: 1440px;
+			min-width: 100%;
 			height: 100%;
 			max-width: none;
-			object-fit: contain;
+			object-fit: cover;
 			object-position: center;
 		}
 	}

@@ -9,9 +9,11 @@ html(lang="ru")
 		meta(name="keywords" content="keywords-ключевые слова для поиска")
 		block link
 			link(rel="icon" type="image/icon" href="@@webRoot/img/icons/icon-logo.ico")
-			
-		block script  
-			script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js") 
+			link(rel="stylesheet" type="text/css" href="@@webRoot/css/style.min.css" ) 
+		block script 
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/app/index.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/animated.min.js")
+			script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js")
 		block title
 		- var text
 			title #{text}

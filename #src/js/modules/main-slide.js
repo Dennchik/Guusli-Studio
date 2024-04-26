@@ -12,10 +12,10 @@ export default function mainSlide(
 ) {
 	if (mainslide) {
 		new Swiper(mainslide, {
-			// autoplay: {
-			// 	delay: 6500,
-			// 	disableOnInteraction: true,
-			// },
+			autoplay: {
+				delay: 7000,
+				disableOnInteraction: true,
+			},
 			speed: 800,
 			loop: true,
 			grabCursor: true,

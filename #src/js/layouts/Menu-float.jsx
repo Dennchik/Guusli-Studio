@@ -4,7 +4,7 @@ import { Link } from 'react-scroll';
 export default function Menufloat() {
 	const [offset, setOffset] = useState(-100);
 	useEffect(() => {
-		function handleResize(params) {
+		function handleResize() {
 			const screenWidth = window.innerWidth;
 			//todo: Настроить логику для установки различных значений offset в зависимости от ширины экрана
 			if (screenWidth < 768) {

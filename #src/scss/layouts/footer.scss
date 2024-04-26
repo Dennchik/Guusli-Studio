@@ -17,21 +17,7 @@
 
 	// .footer__info
 	&__info {
-		padding: 4rem 2rem;
-	}
-
-	// .footer__content-info
-	&__content-info {
-		margin-bottom: 6rem;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 4rem;
-		@include _690-920 {
-			grid-template-columns: 1fr 1fr;
-		}
-		@include _690 {
-			grid-template-columns: 1fr;
-		}
+		// padding: 4rem 2rem;
 	}
 
 	// .footer__contacts
@@ -146,91 +132,9 @@
 			}
 		}
 	}
-}
 
-.content-info {
-	// .content-info__column
-	&__column {
-		display: flex;
-		flex-direction: column;
-
-		&:nth-child(3) {
-			height: 100%;
-			@include _690-920 {
-				grid-column: -3 / -1;
-			}
-			.content-info__body {
-				border: none;
-			}
-		}
-	}
-
-	// .content-info__body
-	&__body {
-		display: flex;
-		flex-direction: column;
-		flex: 1 1 auto;
-		border-bottom: 1px solid $gray;
-	}
-
-	// .content-info__text
-	&__text {
-		padding: 2rem 0;
-
-		p {
-			color: $gray;
-			font-size: 1.4rem;
-			&:nth-child(1) {
-				color: $neon-blue-dark;
-			}
-			&:nth-child(2) {
-				color: $gray;
-			}
-
-			&:not(:last-child) {
-				margin-bottom: 1.5rem;
-			}
-		}
-	}
-
-	// .content-info__footer
-	&__footer {
-		padding: 2rem 0;
-	}
-
-	// .content-info__title
-	&__title {
-		font-size: 2rem;
-		text-shadow: 1px 1px 1px $neon-pink;
-	}
-
-	// .content-info__item-services
-	&__item-services {
-		flex-wrap: nowrap;
-		padding: 2.5rem 0;
-
-		&:not(:last-child) {
-			border-bottom: 1px solid $gray;
-		}
-
-		[class*='icon-'] {
-			&::before {
-				cursor: pointer;
-				font-size: 3.2rem;
-				color: $gray;
-			}
-		}
-
-		span {
-			color: $gray;
-			font-size: 1.4rem;
-		}
-		@include flex-align-center;
-		gap: 2rem;
-	}
-
-	// .content-info__nav
-	&__nav {
+	// .footer__help
+	&__help {
 		text-align: center;
 		font-size: 4.8rem;
 		color: $gray;
@@ -255,33 +159,6 @@
 			text-shadow: 3px 3px 10px #000;
 		}
 		@include flex-align-center-justify-center;
-	}
-
-	// .content-info__button
-	&__button {
-		margin-top: 2rem;
-		padding: 1rem;
-		background-color: #3d3d3d;
-		border-radius: 2px;
-		font-weight: 500;
-		text-transform: uppercase;
-		text-shadow: 1px 1px 2px #000;
-		transition:
-			color 0.4s,
-			background 0.4s ease-in-out;
-		&:hover {
-			background: #392b7c;
-			color: #392b7c;
-		}
-	}
-
-	// .content-info__team-items
-	&__team-items {
-		padding: 2rem 0 1rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		height: 100%;
 	}
 }
 

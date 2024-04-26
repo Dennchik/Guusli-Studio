@@ -1,9 +1,9 @@
-import { smoother, applyEffects, applyParallaxEffects, animateTitles, initSectionTriggerMove, tlFooterParallel, tlServices1, tlServices2, initTriggerServices, applyEqualizersEffects } from "./modules/gs-animation.js";
+import { smoother, applyEffects, applyParallaxEffects, animateTitles, initSectionTriggerMove, tlFooterParallel, tlServices1, tlServices2 } from "./modules/gs-animation.js";
 // -----------------------------------------------------------------------------
 
 applyParallaxEffects(smoother);
 // -----------------------------------------------------------------------------
-import isMobile from "./libraries/Js-devise";
+import isMobile from "./libraries/Js-devise.js";
 if (isMobile.any()) {
 } else {
 	tlFooterParallel();

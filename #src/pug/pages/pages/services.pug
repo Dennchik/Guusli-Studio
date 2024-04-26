@@ -1,0 +1,24 @@
+extends ../../layouts/app_layout
+block link  
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/services.min.css" ) 
+append script  
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/services.min.js")
+block title
+	- var text='Услуги / Студия зувукозаписи "Gusli" Обнинск' 
+
+block page
+	.page
+		block header
+			._header  
+			._fade-in.bp-1
+		._main-content
+			block main-content 
+				main.main-conten 
+					._content 
+						block section 
+		//- 					section._services 
+		//- 					//- section._template 
+		//- 				block footer
+		//- 					._footer 
+		//- 	block mobile-menu
+		//- 		._menu-float 

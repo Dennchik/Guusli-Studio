@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 
 const Header = () => {
 	const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
