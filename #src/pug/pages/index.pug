@@ -1,13 +1,12 @@
 extends ../layouts/app_layout
 append link 
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
-append script 
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/indexApp.min.js")
+prepend script 
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appindex.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/animatedind.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animateindex.min.js")
 block title
 	- var text='Студия зувукозаписи "Gusli" Обнинск' 
-
 
 block page
 	.page
@@ -20,8 +19,7 @@ block page
 					._content#content 
 						block section
 							section._slide  
-							section._services 
-							//- section._template 
+							section._services  
 						block footer
 							._footer 
 			block mobile-menu

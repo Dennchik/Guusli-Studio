@@ -55,7 +55,7 @@
 @import 'layouts/header';
 @import 'layouts/footer';
 // todo --------------------------- Pages --------------------------------------
-@import 'pages/page';
+@import 'pages/main-page';
 // todo --------------------------- Modules ------------------------------------
 // @import 'modules/loading';
 // @import 'modules/breadcrumbs';
@@ -63,6 +63,4 @@
 @import 'section/section-mainslide';
 @import 'section/setion-services';
 @import 'section/menu-float';
-@import 'section/aboute';
-// @import 'section/section-swiper';
-// @import 'section/section-modal';
+@import 'section/aboute-footer';

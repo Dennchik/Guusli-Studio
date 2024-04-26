@@ -44,8 +44,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture> {
 							isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_1.webp" alt="slide-1" />
-								: <img src="@@webRoot/img/slides/slide_1.jpg" alt="slide-1" />
+								? <img src="@@webRoot/img/main/slides/slide_1.webp" alt="slide-1" />
+								: <img src="@@webRoot/img/main/slides/slide_1.jpg" alt="slide-1" />
 						}
 						</picture>
 					</div>
@@ -60,8 +60,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_4.webp" alt="slide-4" />
-								: <img src="@@webRoot/img/slides/slide_4.jpg" alt="slide-4" />}
+								? <img src="@@webRoot/img/main/slides/slide_4.webp" alt="slide-4" />
+								: <img src="@@webRoot/img/main/slides/slide_4.jpg" alt="slide-4" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">
@@ -75,8 +75,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_2.webp" alt="slide-2" />
-								: <img src="@@webRoot/img/slides/slide_2.jpg" alt="slide-2" />}
+								? <img src="@@webRoot/img/main/slides/slide_2.webp" alt="slide-2" />
+								: <img src="@@webRoot/img/main/slides/slide_2.jpg" alt="slide-2" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">
@@ -90,8 +90,8 @@ export default function Mainslide() {
 					<div className="main-slide__slide-image _img">
 						<picture>
 							{isWebpSupported()
-								? <img src="@@webRoot/img/slides/slide_3.webp" alt="slide-3" />
-								: <img src="@@webRoot/img/slides/slide_3.jpg" alt="slide-3" />}
+								? <img src="@@webRoot/img/main/slides/slide_3.webp" alt="slide-3" />
+								: <img src="@@webRoot/img/main/slides/slide_3.jpg" alt="slide-3" />}
 						</picture>
 					</div>
 					<div className="main-slide__content">

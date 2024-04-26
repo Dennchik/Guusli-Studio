@@ -69,9 +69,9 @@ export default function Services() {
 			<div className="material-parallax parallax">
 				<div className="parallax__image">
 					<picture>{isWebpSupported() ? (
-						<source srcSet="@@webRoot/img/body/parallax_bg.webp" type="image/webp" />
+						<source srcSet="@@webRoot/img/main/body/parallax_bg.webp" type="image/webp" />
 					) : null}
-						<img src="@@webRoot/img/body/parallax_bg.png " alt="bg-image" />
+						<img src="@@webRoot/img/main/body/parallax_bg.png " alt="bg-image" />
 					</picture>
 				</div>
 			</div>
@@ -95,13 +95,13 @@ export default function Services() {
 									<a href="#">
 										<picture>
 											{isWebpSupported()
-												? <img src="@@webRoot/img/body/img_1.webp" />
-												: <img src="@@webRoot/img/body/img_1.png" alt="image-1" />}
+												? <img src="@@webRoot/img/main/body/img_1.webp" />
+												: <img src="@@webRoot/img/main/body/img_1.png" alt="image-1" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
-												: <img className='content-box__bg-img' src="./img/body/bg_img.png" alt="bg-image" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src=".@@webRoot/img/main/body/bg_img.png" alt="bg-image" />
 											}
 										</picture>
 									</a>
@@ -138,13 +138,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="@@webRoot/img/body/img_2.webp" />
-												: <img src="@@webRoot/img/body/img_2.png" alt="image-2" />}
+												? <img src="@@webRoot/img/main/body/img_2.webp" />
+												: <img src="@@webRoot/img/main/body/img_2.png" alt="image-2" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
-												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>
@@ -176,13 +176,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="@@webRoot/img/body/img_3.webp" />
-												: <img src="@@webRoot/img/body/img_3.png" alt="image-3" />}
+												? <img src="@@webRoot/img/main/body/img_3.webp" />
+												: <img src="@@webRoot/img/main/body/img_3.png" alt="image-3" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
-												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>
@@ -214,13 +214,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="@@webRoot/img/body/img_4.webp" />
-												: <img src="@@webRoot/img/body/img_4.png" alt="image-4" />}
+												? <img src="@@webRoot/img/main/body/img_4.webp" />
+												: <img src="@@webRoot/img/main/body/img_4.png" alt="image-4" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
-												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>
@@ -258,13 +258,13 @@ export default function Services() {
 									<a href="">
 										<picture>
 											{isWebpSupported()
-												? <img src="@@webRoot/img/body/img_5.webp" />
-												: <img src="@@webRoot/img/body/img_5.png" alt="image-5" />}
+												? <img src="@@webRoot/img/main/body/img_5.webp" />
+												: <img src="@@webRoot/img/main/body/img_5.png" alt="image-5" />}
 										</picture>
 										<picture>
 											{isWebpSupported()
-												? <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.webp" />
-												: <img className='content-box__bg-img' src="@@webRoot/img/body/bg_img.png" alt="bg-img" />
+												? <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.webp" />
+												: <img className='content-box__bg-img' src="@@webRoot/img/main/body/bg_img.png" alt="bg-img" />
 											}
 										</picture>
 									</a>
@@ -298,7 +298,7 @@ export default function Services() {
 									</div>
 								</a>
 								<div className="offer-container__text">
-									Включает час звукозаписи сведение и мастеринг
+									Включает час звукозаписи сведение и мастеринг.
 								</div>
 							</div>
 							<div className="offer-container__thumbnail"></div>
@@ -312,7 +312,7 @@ export default function Services() {
 									</div>
 								</a>
 								<div className="offer-container__text">
-									Час звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг
+									Час звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг.
 								</div>
 							</div>
 							<div className="offer-container__thumbnail"></div>
@@ -326,7 +326,7 @@ export default function Services() {
 									</div>
 								</a>
 								<div className="offer-container__text">
-									Час звукозаписи, Педагог по вокалу поможет раскрыть ваш голос присутствуя на звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг
+									Час звукозаписи, Педагог по вокалу поможет раскрыть ваш голос присутствуя на звукозаписи, Продюсирование, отбор лучших дублей, нотная коррекция, сведение и мастеринг.
 								</div>
 							</div>
 							<div className="offer-container__thumbnail"></div>
@@ -340,7 +340,7 @@ export default function Services() {
 									</div>
 								</a>
 								<div className="offer-container__text">
-									При заказе Клипа в студии дарим скидку 10%
+									При заказе клипа в нашей студии вы получаете не только профессиональное видео высокого качества, но и дополнительные преимущества! Мы рады предоставить вам скидку в размере 10% на ваш заказ.
 								</div>
 							</div>
 							<div className="offer-container__thumbnail"></div>

@@ -26,8 +26,10 @@ export default {
 			],
 		},
 		entry: {
-			indexApp: './#src/js/app/AppIndex.jsx',
-			servicesApp: './#src/js/app/AppServices.jsx',
+			animatebio: './#src/js/app/animate-bio.jsx',
+			animateindex: './#src/js/app/animate-index.jsx',
+			appindex: './#src/js/app/AppIndex.jsx',
+			appbio: './#src/js/app/AppBio.jsx',
 		},
 		output: {
 			filename: '[name].min.js',
@@ -99,8 +101,7 @@ export default {
 			},
 		},
 		entry: {
-			animatedind: './#src/js/animatedind.js',
-			services: './#src/js/services.js',
+			bio: './#src/js/bio.js',
 			index: './#src/js/index.js',
 			main: './#src/js/main.js'
 		},

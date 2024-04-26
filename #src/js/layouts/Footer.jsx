@@ -35,10 +35,8 @@ export default function Footer() {
 									<span>studio@obninsk-gusli.ru</span>
 								</a>
 							</div>
-
 						</div>
 					</div>
-
 				</div>
 			</div>
 			<div className="footer__community _container">
