@@ -215,14 +215,6 @@
 			}
 		}
 	}
-
-	// .header__media
-	&__media {
-		position: fixed;
-		width: 100%;
-		top: 6.5rem;
-		z-index: 99;
-	}
 }
 
 @keyframes fadeOutGradient {

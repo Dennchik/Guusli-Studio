@@ -13,12 +13,12 @@ export default () => {
 		.pipe($.gulpIf(app.isDev, $.gul.sourcemaps.init({
 			loadMaps: true
 		})))
-		.pipe($.gul.babel({
-			// only: [
-			// 	'#src/js/assets',
-			// ],
-			compact: false
-		}))
+		// .pipe($.gul.babel({
+		// 	only: [
+		// 		'#src/js/assets',
+		// 	],
+		// 	compact: false
+		// }))
 		.pipe($.gul.babel())
 		.pipe($.webPackStream(app.webpackReact))
 		.pipe($.gul.fileInclude())

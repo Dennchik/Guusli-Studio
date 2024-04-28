@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { fadeInSlide } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
+import AudioPlayer from './AudioPlayer.jsx';
 import { Element } from 'react-scroll';
 // Компонент Mainslide
 export default function Mainslide() {
@@ -103,6 +104,9 @@ export default function Mainslide() {
 				</div>
 			</div>
 			<div className="main-slide__pagination"></div>
+			<div className="main-slide__media">
+				<AudioPlayer />
+			</div>
 		</Element>
 	);
 }

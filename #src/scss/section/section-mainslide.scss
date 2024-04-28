@@ -130,4 +130,12 @@
 			object-fit: cover;
 		}
 	}
+
+	// .main-slide__media
+	&__media {
+		position: absolute;
+		width: 100%;
+		bottom: 0rem;
+		z-index: 99;
+	}
 }

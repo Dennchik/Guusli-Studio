@@ -1,4 +1,5 @@
-import { smoother, applyEffects, applyParallaxEffects, animateTitles, initSectionTriggerMove, tlFooterParallel, tlServices1, tlServices2 } from "../modules/gs-animation.js";
+import { smoother, applyEffects, applyParallaxEffects, animateTitles, initSectionTriggerMove, tlFooterParallel, tlServices1, tlServices2 }
+	from "../modules/gs-animation.jsx";
 // -----------------------------------------------------------------------------
 
 applyParallaxEffects(smoother);

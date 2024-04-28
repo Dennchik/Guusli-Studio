@@ -27,13 +27,12 @@ const AudioPlayer = ({ progress }) => {
 						</div>
 					</div>
 				</div>
-
 				<div className="audio-player__timeline">
 					<div className="audio-player__progress" style={{ width: `${progress}%` }}></div>
 				</div>
 			</div>
 
-			<audio src="../img/media/AdeleTaylor-Hello.mp3"></audio>
+			{/* <audio src="../img/media/AdeleTaylor-Hello.mp3"></audio> */}
 		</figure>
 	);
 };

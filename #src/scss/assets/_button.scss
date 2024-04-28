@@ -1,22 +1,45 @@
-.page__button {
-	position: fixed;
-	top: 50%;
-	left: 0;
-	z-index: 13;
-	font-size: 5rem;
-	margin-left: 1rem;
-	color: $electric-lime;
-	transition:
-		transform 0.5s,
-		color 0.5s ease-in-out;
-	&._rotate {
-		transform: rotate(-180deg);
+.page {
+	//. page_buttom
+	&__button {
+		position: fixed;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		top: 50%;
+		left: 0;
+		z-index: 13;
+		font-size: 3.8rem;
+		margin-left: 1rem;
 		color: $neon-blue;
+		background: rgba(28, 21, 63, 0.281);
+		transition:
+			transform 0.5s,
+			color 0.5s ease-in-out;
+
+		&._rotate {
+			transform: rotate(-180deg);
+			color: $neon-blue-dark;
+			i {
+				text-shadow: -2px -2px 3px #000;
+			}
+		}
+
 		i {
-			text-shadow: -2px -2px 3px #000;
+			text-shadow: 2px 2px 3px #000;
+		}
+		transition: all 0.5s ease-in-out; /* Плавное изменение фона */
+		&:hover {
+			background: $black-color;
+			box-shadow: 0 0 4px $neon-blue;
+			animation: fadeInBackground;
 		}
 	}
-	i {
-		text-shadow: 2px 2px 3px #000;
-	}
 }
+// @keyframes fadeInBackground {
+// 	// 0% {
+// 	// 	background: rgb(28, 21, 63);
+// 	// }
+// 	100% {
+// 		background: $black-color;
+// 	}
+// }

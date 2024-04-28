@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link, scroller } from 'react-scroll';
-import AudioPlayer from './AudioPlayer.jsx';
 
 const Header = () => {
 	const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
@@ -34,17 +33,17 @@ const Header = () => {
 		};
 	}, []);
 
-	function handleClick() {
-		document.querySelector('.header__item--home').addEventListener('click', function () {
-			scroller.scrollTo('main-slide', {
-				activeClass: "_active",
-				to: 'main-slide',
-				spy: true,
-				duration: 700,
-				smooth: 'easeInQuint',
-			});
-		});
-	}
+	// function handleClick() {
+	// 	document.querySelector('.header__item--home').addEventListener('click', function () {
+	// 		scroller.scrollTo('main-slide', {
+	// 			activeClass: "_active",
+	// 			to: 'main-slide',
+	// 			spy: true,
+	// 			duration: 700,
+	// 			smooth: 'easeInQuint',
+	// 		});
+	// 	});
+	// }
 
 	return (
 		<header className="header key-object">
@@ -118,11 +117,8 @@ const Header = () => {
 							</div>
 						</div>
 					</div>
+				</div>
 
-				</div>
-				<div className="header__media">
-					<AudioPlayer />
-				</div>
 			</div>
 
 
