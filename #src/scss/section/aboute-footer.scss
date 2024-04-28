@@ -93,10 +93,11 @@
 
 	// .about__button
 	&__button {
-		margin-top: 2rem;
+		display: block;
+		width: fit-content;
 		padding: 1rem;
 		background-color: #3d3d3d;
-		border-radius: 2px;
+		border-radius: 4px;
 		font-weight: 500;
 		text-transform: uppercase;
 		text-shadow: 1px 1px 2px #000;
@@ -111,10 +112,42 @@
 
 	// .about__team-items
 	&__team-items {
-		padding: 2rem 0 1rem;
 		display: flex;
 		flex-direction: column;
+		gap: 2rem;
 		justify-content: space-between;
 		height: 100%;
+	}
+}
+
+.team-mates {
+	margin: 2rem 0;
+	// .team-mates__list
+	&__list {
+		display: flex;
+	}
+
+	// .team-mates__image
+	&__image {
+		width: 104px;
+		height: 104px;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 3px 3px 10px #000;
+		margin-right: 2rem;
+		opacity: 0.5;
+	}
+
+	// .team-mates__name
+	&__name {
+		font-size: 1.6rem;
+		color: $neon-blue-dark;
+		margin-bottom: 1rem;
+	}
+
+	// .team-mates__text
+	&__text {
+		font-size: 1.4rem;
+		color: $gray;
 	}
 }

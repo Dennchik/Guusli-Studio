@@ -5,3 +5,7 @@ import servicesSlide from './modules/services-slide.js';
 if (isMobile.any()) {
 	servicesSlide();
 }
+
+import AudioPlayer from './assets/audio-player.js';
+AudioPlayer();
+// -----------------------------------------------------------------------------

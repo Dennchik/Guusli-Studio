@@ -1,0 +1,22 @@
+.page__button {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	z-index: 13;
+	font-size: 5rem;
+	margin-left: 1rem;
+	color: $electric-lime;
+	transition:
+		transform 0.5s,
+		color 0.5s ease-in-out;
+	&._rotate {
+		transform: rotate(-180deg);
+		color: $neon-blue;
+		i {
+			text-shadow: -2px -2px 3px #000;
+		}
+	}
+	i {
+		text-shadow: 2px 2px 3px #000;
+	}
+}

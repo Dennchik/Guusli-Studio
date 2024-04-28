@@ -34,9 +34,9 @@ export default function AboutCompany() {
 				</div>
 			</div>
 			<div className="about__column el-3">
-				<div className='content-info__body'>
-					<div className="content-info__title">OUR TEAM</div>
-					<div className="team-mates content-info__team-items">
+				<div className='about__body'>
+					<div className="about__title">OUR TEAM</div>
+					<div className="team-mates about__team-items">
 						<ul className="team-mates__list">
 							<li>
 								<div className="team-mates__image">

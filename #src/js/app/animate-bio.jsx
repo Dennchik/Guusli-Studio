@@ -6,7 +6,7 @@ applyParallaxEffects(smoother);
 import isMobile from "../libraries/Js-devise.js";
 if (isMobile.any()) {
 } else {
-	tlFooterParallel();
+	// tlFooterParallel();
 	applyEffects(smoother);
 }
 // // -----------------------------------------------------------------------------

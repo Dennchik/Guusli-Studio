@@ -5,7 +5,7 @@ export default function Footer() {
 		<footer className='footer' name='footer'>
 			<div className="footer__content">
 				<div className="footer__info _container">
-					{/* <About /> */}
+					{/* --About content-- */}
 					<div className="footer__help el-4">
 						<i className='icon-achievements'></i>
 						<i className='icon-services'></i>

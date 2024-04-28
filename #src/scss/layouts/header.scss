@@ -1,7 +1,7 @@
 .header {
-	position: fixed;
-	left: 0;
-	top: 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
 	width: 100%;
 	z-index: 9;
 	background: transparent;
@@ -46,9 +46,13 @@
 			width: 100%;
 		}
 	}
-
+	&__wrapper {
+		position: relative;
+		width: 100%;
+	}
 	// .header__container
 	&__container {
+		position: relative;
 		width: 100%;
 		z-index: 8;
 		position: relative;
@@ -210,6 +214,14 @@
 				transform: scale(0.7);
 			}
 		}
+	}
+
+	// .header__media
+	&__media {
+		position: fixed;
+		width: 100%;
+		top: 6.5rem;
+		z-index: 99;
 	}
 }
 

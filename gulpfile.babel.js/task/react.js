@@ -14,9 +14,9 @@ export default () => {
 			loadMaps: true
 		})))
 		.pipe($.gul.babel({
-			only: [
-				'#src/js/assets',
-			],
+			// only: [
+			// 	'#src/js/assets',
+			// ],
 			compact: false
 		}))
 		.pipe($.gul.babel())

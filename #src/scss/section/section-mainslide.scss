@@ -76,7 +76,8 @@
 	// .main-slide__content
 	&__content {
 		position: absolute;
-		padding: 0 2rem;
+		// padding: 0 2rem;
+		padding-left: 4rem;
 		max-width: 100rem;
 		flex-direction: column;
 		@include flex-align-center-justify-center;
@@ -109,7 +110,7 @@
 
 	// .main-slide__text
 	&__text {
-		padding-right: 5rem;
+		padding-right: 6rem;
 		transition: all 0.7s ease-in-out;
 		text-align: left;
 		text-shadow: 0px 0px 5px $neon-blue-dark;

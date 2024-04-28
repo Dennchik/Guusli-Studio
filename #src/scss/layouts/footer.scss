@@ -68,7 +68,7 @@
 				justify-content: space-between;
 				@include flex-align-center;
 				@include _768 {
-					padding-bottom: 13rem;
+					padding-bottom: 12rem;
 				}
 				@include _490 {
 					flex-direction: column;
@@ -135,6 +135,7 @@
 
 	// .footer__help
 	&__help {
+		padding-bottom: 2rem;
 		text-align: center;
 		font-size: 4.8rem;
 		color: $gray;
@@ -169,6 +170,7 @@
 		grid-template-columns: repeat(3, auto);
 		justify-content: start;
 		text-shadow: 2px 2px 4px #000;
+		padding: 0 2rem;
 
 		@include _768 {
 			grid-template-columns: repeat(2, auto);
@@ -236,41 +238,5 @@
 		p {
 			line-height: 170%;
 		}
-	}
-}
-
-.team-mates {
-	// .team-mates__list
-	&__list {
-		display: flex;
-		@include _920 {
-			&:not(:last-child) {
-				margin-bottom: 3rem;
-			}
-		}
-	}
-
-	// .team-mates__image
-	&__image {
-		width: 104px;
-		height: 104px;
-		border-radius: 5px;
-		overflow: hidden;
-		box-shadow: 3px 3px 10px #000;
-		margin-right: 2rem;
-		opacity: 0.5;
-	}
-
-	// .team-mates__name
-	&__name {
-		font-size: 1.6rem;
-		color: $neon-blue-dark;
-		margin-bottom: 1rem;
-	}
-
-	// .team-mates__text
-	&__text {
-		font-size: 1.4rem;
-		color: $gray;
 	}
 }

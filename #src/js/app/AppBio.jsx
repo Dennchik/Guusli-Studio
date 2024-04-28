@@ -12,6 +12,14 @@ ReactDOM.render(
 );
 import Menufloat from '../layouts/Menu-float.jsx';
 ReactDOM.render(
-	<StrictMode> <Menufloat /></StrictMode>, document.querySelector('.page__menu-float')
+	<StrictMode><Menufloat /></StrictMode>, document.querySelector('.page__menu-float')
 );
-
+// -----------------------------------------------------------------------------
+import Slidebio from '../layouts/Slidebio.jsx';
+ReactDOM.render(
+	<StrictMode><Slidebio /></StrictMode>, document.querySelector('.main-content__about')
+);
+// import Mainslide from '../layouts/Mainslide.jsx';
+// ReactDOM.render(
+// 	<StrictMode><Mainslide /></StrictMode>, document.querySelector('.main-content__slide')
+// );
