@@ -38,7 +38,7 @@ const Header = () => {
 			<div className="header__wrapper">
 				<div className="header__container">
 					<div className="header__column el-logo">
-						<a href="../index.html">
+						<a href="./index.html">
 							<div className="header__logo"></div></a>
 						<div className="header__text">
 							<h1>Media-Studio</h1>
@@ -63,7 +63,7 @@ const Header = () => {
 								>SERVICES</Link>
 							</div>
 							<div className="header__item"><a href="#">VIDEOS</a></div>
-							<div className="header__item"><a href="../pages/about.html">BIO</a></div>
+							<div className="header__item"><a href="@@webRoot/pages/about.html">BIO</a></div>
 							<div className="header__item"><a href="#">NEWS</a></div>
 							<div className="header__item header__item--contacts">
 								<Link className='link-key key-services'
