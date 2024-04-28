@@ -16,8 +16,7 @@ function returnToSavedPosition() {
 			behavior: 'smooth'
 		});
 	} else if (savedScrollPosition !== 0) {
-		// Если прокрутка находится в самом верху и есть сохраненная позиция,
-		// возвращаемся к сохраненной позиции
+		// Если прокрутка находится в самом верху и есть сохраненная позиция, возвращаемся к сохраненной позиции
 		window.scrollTo({
 			top: savedScrollPosition,
 			behavior: 'smooth'
@@ -39,7 +38,7 @@ scrollButton.addEventListener('click', function () {
 
 // Отслеживаем событие прокрутки страницы
 window.addEventListener('scroll', function () {
-	// Если прокрутка больше, чем половина высоты окна браузера, добавляем класс _rotate кнопке 
+	// Если прокрутка больше, чем половина высоты окна браузера, добавляем класс "_rotate" кнопке 
 	if ((window.scrollY || document.documentElement.scrollTop) > window.innerHeight * 0.2) {
 		scrollButton.classList.add('_rotate');
 	} else {
@@ -51,10 +50,3 @@ window.addEventListener('scroll', function () {
 //* ----------------------------------------------------------------------------
 console.log("%c РОССИЯ ", "background: blue; color: yellow; font-size: x-large; border-left: 5px solid black; border-top: 30px solid white; border-right: 2px solid black; border-bottom: 30px solid red;");
 //* ----------------------------------------------------------------------------
-
-
-
-
-
-
-

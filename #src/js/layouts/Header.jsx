@@ -33,18 +33,6 @@ const Header = () => {
 		};
 	}, []);
 
-	// function handleClick() {
-	// 	document.querySelector('.header__item--home').addEventListener('click', function () {
-	// 		scroller.scrollTo('main-slide', {
-	// 			activeClass: "_active",
-	// 			to: 'main-slide',
-	// 			spy: true,
-	// 			duration: 700,
-	// 			smooth: 'easeInQuint',
-	// 		});
-	// 	});
-	// }
-
 	return (
 		<header className="header key-object">
 			<div className="header__wrapper">
@@ -59,9 +47,9 @@ const Header = () => {
 					</div>
 					<div className="header__column">
 						<div className="header__menu">
-							<Link href='' className="header__item header__item--home"
+							<Link href='#' className="header__item header__item--home"
 								to='main-slide'
-								spy={true}
+								spy={false}
 								duration={700}
 								smooth='easeInQuint'
 							>HOME
@@ -118,10 +106,7 @@ const Header = () => {
 						</div>
 					</div>
 				</div>
-
 			</div>
-
-
 		</header>
 	);
 };

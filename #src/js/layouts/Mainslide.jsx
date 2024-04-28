@@ -38,6 +38,7 @@ export default function Mainslide() {
 			};
 		});
 	}, []);
+
 	return (
 		<Element className="main-slide" name='main-slide'>
 			<div className="main-slide__body _swiper">

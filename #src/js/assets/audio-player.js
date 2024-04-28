@@ -1,7 +1,7 @@
 export default function audio() {
 	const audioPlayer = document.querySelector(".audio-player");
 	const audio = new Audio(
-		"../img/audio/AdeleTaylor-Hello.mp3"
+		"./img/audio/AdeleTaylor-Hello.mp3"
 	);
 	//credit for song: Adrian kreativaweb@gmail.com
 

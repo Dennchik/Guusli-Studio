@@ -73,21 +73,25 @@ export default function Menufloat() {
 								<div className="menu-float__content"><a className="menu-float__mail" href="tel:+79106044424">
 									<div className="menu-float__logo"><i className="icon-phone-call"></i></div>
 									<div className="menu-float__breadcrumb"><strong className="menu-float__title">G.студия</strong></div>
-								</a></div>
+								</a>
+								</div>
 							</div>
 							<div className="menu-float__layout menu-float__layout--secondary">
 								<div className="menu-float__content">
 									<div className="menu-float__nav">
 										<div className="menu-float__menu-link menu-float__menu-link--home">
-											<Link to='main-slide' duration={700} smooth={true} offset={0}>Home</Link></div>
+											<Link to='main-slide' duration={700} smooth={true} offset={0}>Home</Link>
+										</div>
 										<div className="menu-float__menu-link menu-float__menu-link--services">
 											<Link to='services' duration={700} smooth={true} offset={-80}>
 												Services
-											</Link></div>
+											</Link>
+										</div>
 										<div className="menu-float__menu-link menu-float__menu-link--footer">
 											<Link to='footer' duration={700} smooth={true} offset={-80}>
 												Contacts
-											</Link></div>
+											</Link>
+										</div>
 									</div>
 								</div>
 							</div>

@@ -131,72 +131,72 @@ export function animationSvgText(target, reverse) {
 		}
 	});
 }
-export function equalizerAnimated() {
-	var equaContentEl = document.querySelector('.equalizer-content');
-	var fragment = document.createDocumentFragment();
-	var easingNames = [
-		'easeInQuad',
-		'easeInCubic',
-		'easeInQuart',
-		'easeInQuint',
-		'easeInSine',
-		'easeInExpo',
-		'easeInCirc',
-		'easeInBack',
-		'easeOutQuad',
-		'easeOutCubic',
-		'easeOutQuart',
-		'easeOutQuint',
-		'easeOutSine',
-		'easeOutExpo',
-		'easeOutCirc',
-		'easeOutBack',
-		'easeInBounce',
-		'easeInOutQuad',
-		'easeInOutCubic',
-		'easeInOutQuart',
-		'easeInOutQuint',
-		'easeInOutSine',
-		'easeInOutExpo',
-		'easeInOutCirc',
-		'easeInOutBack',
-		'easeInOutBounce',
-		'easeOutBounce',
-		'easeOutInQuad',
-		'easeOutInCubic',
-		'easeOutInQuart',
-		'easeOutInQuint',
-		'easeOutInSine',
-		'easeOutInExpo',
-		'easeOutInCirc',
-		'easeOutInBack',
-		'easeOutInBounce',
-	];
+// export function equalizerAnimated() {
+// 	var equaContentEl = document.querySelector('.equalizer-content');
+// 	var fragment = document.createDocumentFragment();
+// 	var easingNames = [
+// 		'easeInQuad',
+// 		'easeInCubic',
+// 		'easeInQuart',
+// 		'easeInQuint',
+// 		'easeInSine',
+// 		'easeInExpo',
+// 		'easeInCirc',
+// 		'easeInBack',
+// 		'easeOutQuad',
+// 		'easeOutCubic',
+// 		'easeOutQuart',
+// 		'easeOutQuint',
+// 		'easeOutSine',
+// 		'easeOutExpo',
+// 		'easeOutCirc',
+// 		'easeOutBack',
+// 		'easeInBounce',
+// 		'easeInOutQuad',
+// 		'easeInOutCubic',
+// 		'easeInOutQuart',
+// 		'easeInOutQuint',
+// 		'easeInOutSine',
+// 		'easeInOutExpo',
+// 		'easeInOutCirc',
+// 		'easeInOutBack',
+// 		'easeInOutBounce',
+// 		'easeOutBounce',
+// 		'easeOutInQuad',
+// 		'easeOutInCubic',
+// 		'easeOutInQuart',
+// 		'easeOutInQuint',
+// 		'easeOutInSine',
+// 		'easeOutInExpo',
+// 		'easeOutInCirc',
+// 		'easeOutInBack',
+// 		'easeOutInBounce',
+// 	];
 
-	function createEasingDemo(easing) {
-		var divEl = document.createElement('div');
-		divEl.classList.add('equalizer-content__square', 'el', 'stretched', 'easing-' + easing);
-		anime({
-			targets: divEl,
-			translateY: [750, -750],
-			direction: 'alternate',
-			loop: true,
-			delay: 1500,
-			endDelay: 700,
-			duration: 1000,
-			easing: easing
-		});
+// 	function createEasingDemo(easing) {
+// 		var divEl = document.createElement('div');
+// 		divEl.classList.add('equalizer-content__square', 'el', 'stretched', 'easing-' + easing);
+// 		anime({
+// 			targets: divEl,
+// 			translateY: [750, -750],
+// 			direction: 'alternate',
+// 			loop: true,
+// 			delay: 1500,
+// 			endDelay: 700,
+// 			duration: 1000,
+// 			easing: easing
+// 		});
 
 
-		fragment.appendChild(divEl);
-	}
-	easingNames.forEach(function (easeName) {
-		createEasingDemo(easeName);
-	});
+// 		fragment.appendChild(divEl);
+// 	}
+// 	easingNames.forEach(function (easeName) {
+// 		createEasingDemo(easeName);
+// 	});
 
-	equaContentEl.innerHTML = '';
-	equaContentEl.appendChild(fragment);
-}
+// 	equaContentEl.innerHTML = '';
+// 	equaContentEl.appendChild(fragment);
+// }
 export function removeElement() {
 	const animatedElements = document.querySelectorAll('.equalizer-content__square');
 	animatedElements.forEach(element => {

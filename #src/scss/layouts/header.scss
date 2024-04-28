@@ -121,7 +121,7 @@
 		cursor: pointer;
 		position: relative;
 		text-shadow: 1px 1px 2px #000;
-		opacity: 0;
+		// opacity: 0;
 
 		&:not(:last-child) {
 			margin-right: 2rem;
@@ -137,6 +137,7 @@
 				width: 40%;
 			}
 		}
+
 		&.active {
 			color: $neon-blue;
 			text-shadow: 2px 2px 3px #000;
