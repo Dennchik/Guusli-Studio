@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { Link, scroller } from 'react-scroll';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 
-const Header = () => {
+const Header = ({ baseUrl }) => {
 	const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 
 	useEffect(() => {
@@ -33,12 +33,16 @@ const Header = () => {
 		};
 	}, []);
 
+	const getPath = (fileName) => {
+		return `${baseUrl}/${fileName}`;
+	};
+
 	return (
 		<header className="header key-object">
 			<div className="header__wrapper">
 				<div className="header__container">
 					<div className="header__column el-logo">
-						<a href="../@@webRoot/index.html">
+						<a href={getPath('index.html')}>
 							<div className="header__logo"></div></a>
 						<div className="header__text">
 							<h1>Media-Studio</h1>
@@ -63,7 +67,9 @@ const Header = () => {
 								>SERVICES</Link>
 							</div>
 							<div className="header__item"><a href="#">VIDEOS</a></div>
-							<div className="header__item"><a href="../@@webRoot/pages/about.html">BIO</a></div>
+							<div className="header__item">
+								<a href={getPath('pages/about.html')}>BIO</a>
+							</div>
 							<div className="header__item"><a href="#">NEWS</a></div>
 							<div className="header__item header__item--contacts">
 								<Link className='link-key key-services'
@@ -107,7 +113,7 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
-		</header>
+		</header >
 	);
 };
 

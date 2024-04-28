@@ -2,8 +2,9 @@ import React, { StrictMode } from 'react';
 import ReactDOM from "react-dom";
 
 import Header from '../layouts/Header.jsx';
+const baseUrl = '.';
 ReactDOM.render(
-	<StrictMode><Header /></StrictMode>, document.querySelector('.page__header')
+	<StrictMode><Header baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__header')
 );
 
 import Services from '../layouts/Services.jsx';
