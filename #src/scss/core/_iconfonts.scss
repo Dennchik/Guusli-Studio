@@ -27,6 +27,21 @@
   //* Better Font Rendering
 }
 
+.icon-phone-ringing {
+  &:before {
+    content: $icon-phone-ringing;
+  }
+}
+.icon-cellular-phone {
+  &:before {
+    content: $icon-cellular-phone;
+  }
+}
+.icon-phone-hand {
+  &:before {
+    content: $icon-phone-hand;
+  }
+}
 .icon-angle-left {
   &:before {
     content: $icon-angle-left;

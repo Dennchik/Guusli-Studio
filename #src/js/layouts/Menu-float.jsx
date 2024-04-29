@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 // -----------------------------------------------------------------------------
-export default function Menufloat() {
+export default function Menufloat({ baseUrl }) {
 	const [offset, setOffset] = useState(-100);
 	useEffect(() => {
 		function handleResize() {
@@ -28,6 +28,9 @@ export default function Menufloat() {
 			menuFloattop.classList.toggle('_is-open');
 		});
 	}, []);
+	const getPath = (filename) => {
+		return `${baseUrl}/${filename}`;
+	};
 
 	return (
 		<nav className="menu-float">
@@ -43,11 +46,21 @@ export default function Menufloat() {
 												<li className="main-menu__title">
 													<h4>Inspiration</h4>
 												</li>
-												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Видео</a></li>
-												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Звук</a></li>
-												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Текст</a></li>
-												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Ивенты</a></li>
-												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Услуги</a></li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Видео</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Звук</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Текст</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Ивенты</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Услуги</a>
+												</li>
 											</ul>
 										</div>
 										<div className="main-menu__column">
@@ -55,7 +68,10 @@ export default function Menufloat() {
 												<div className="main-menu__title">
 													<h4>w.</h4>
 												</div>
-												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Биография</a></li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link"
+														href={getPath('pages/about.html')}>Биография</a>
+												</li>
 												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">С кем работали</a>
 												</li>
 												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Отзывы клиентов</a>

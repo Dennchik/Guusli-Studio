@@ -1,8 +1,7 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from "react-dom";
-
-import Header from '../layouts/Header.jsx';
 const baseUrl = '.';
+import Header from '../layouts/Header.jsx';
 ReactDOM.render(
 	<StrictMode><Header baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__header')
 );
@@ -29,10 +28,10 @@ footerInfo.insertBefore(tempElement.firstChild, footerInfo.firstChild);
 // -----------------------------------------------------------------------------
 import Menufloat from '../layouts/Menu-float.jsx';
 ReactDOM.render(
-	<StrictMode> <Menufloat /></StrictMode>, document.querySelector('.page__menu-float')
+	<StrictMode> <Menufloat baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__menu-float')
 );
 import Mainslide from '../layouts/Mainslide.jsx';
 ReactDOM.render(
-	<StrictMode><Mainslide /></StrictMode>, document.querySelector('.main-content__slide')
+	<StrictMode><Mainslide baseUrl={baseUrl} /></StrictMode>, document.querySelector('.main-content__slide')
 );
 

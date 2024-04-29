@@ -1,6 +1,7 @@
 // todo -------------------------- Variables -----------------------------------
 @import 'core/variables';
 @import 'core/variables-icon';
+@import 'core/swiper-vars';
 //todo ---------------------------- Core ---------------------------------------
 @import 'core/mixins';
 @import 'core/extend';
@@ -14,6 +15,8 @@
 @import 'core/fonts';
 //todo  ------------------------ Icon Fonts ------------------------------------
 @import 'core/iconfonts';
+// todo -------------------------- Plugins -------------------------------------
+@import 'assets/swiper';
 // todo -------------------------- Classes -------------------------------------
 // #region
 .wrapper {
@@ -48,15 +51,20 @@
 // todo --------------------------- Assets -------------------------------------
 @import 'assets/burger-button';
 @import 'assets/button';
+@import 'assets/audio-player';
 // todo --------------------------- layout -------------------------------------
 @import 'layouts/bem-block';
 @import 'layouts/header';
 @import 'layouts/footer';
 // todo --------------------------- Pages --------------------------------------
 @import 'pages/page-bio';
+@import 'pages/main-page';
 // todo --------------------------- Modules ------------------------------------
 // @import 'modules/loading';
 // @import 'modules/breadcrumbs';
 // todo -------------------------- Sections ------------------------------------
+@import 'section/section-mainslide';
 @import 'section/menu-float';
 @import 'section/section-about';
+
+// -----------------------------------------------------------------------------

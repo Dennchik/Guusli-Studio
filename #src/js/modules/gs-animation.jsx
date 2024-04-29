@@ -53,7 +53,7 @@ export function animateTitles(element, trigger, endTrigger, start, end) {
 			endTrigger: endTrigger,
 			end: `bottom bottom-${end}`,
 			toggleActions: 'play none none reverse',
-			markers: true,
+			// markers: true,
 		},
 	});
 }

@@ -3,6 +3,7 @@ append link
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/bio-style.min.css" ) 
 prepend script
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appbio.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/bio.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animatebio.min.js")
 block title
 	- var text='Услуги / Студия зувукозаписи "Gusli" Обнинск' 
@@ -12,12 +13,11 @@ block page
 		block header
 			._header  
 			._fade-in.bp-1
-		._main-content#wrapper 
+		._main-content
 			block main-content 
-				main.main-content
-					._content#content 
-						block section
-							//- section._slide 
+				main.main-content#wrapper 
+					._content#content
+						block section 
 							section._about
 						block footer
 							._footer 

@@ -3,9 +3,6 @@ export default function audio() {
 	const audio = new Audio(
 		"./img/audio/AdeleTaylor-Hello.mp3"
 	);
-	//credit for song: Adrian kreativaweb@gmail.com
-
-	console.dir(audio);
 
 	audio.addEventListener(
 		"loadeddata",

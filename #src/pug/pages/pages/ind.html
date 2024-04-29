@@ -1,69 +1,27 @@
-<div class="moto-widget moto-widget-container moto-container_header_58b6d51c4" data-widget="container"
-	data-container="container" data-css-name="moto-container_header_58b6d51c4" data-bg-position="left top">
-	<div data-widget-id="wid__audio_player__5aa0cf4eda074"
-		class="moto-widget moto-widget-audio_player moto-media-player moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto "
-		data-widget="audio_player" data-preset="default">
-		<div class="moto-media-player-container"
-			data-buttons="{&quot;playpause&quot;:true,&quot;stop&quot;:true,&quot;muted&quot;:true,&quot;loop&quot;:true,&quot;download&quot;:false}">
-			<span class="mejs-offscreen">Audio Player</span>
-			<div id="mep_0" class="mejs-container mejs-container-keyboard-inactive mejs-audio" tabIndex="0" role="application"
-				aria-label="Audio Player" style={{ minWidth: '124px' }}>
-				<div class="mejs-inner">
-					<div class="mejs-mediaelement">
-						<mediaelementwrapper id="mejs_03210947812924769">
-							<audio preload="metadata" loop id="mejs_03210947812924769_html5">
-								<source src="/mt-demo/59400/59460/mt-content/uploads/2017/03/full-v.mp3" type="audio/mpeg"
-									title="Full V.mp3" />
-							</audio>
-						</mediaelementwrapper>
-					</div>
-					<div class="mejs-layers">
-						<div class="mejs-poster mejs-layer" style={{ display: 'none' }}></div>
-					</div>
-					<div class="mejs-controls">
-						<div class="mejs-button mejs-playpause-button mejs-play">
-							<button type="button" aria-controls="mep_0" title="" aria-label="" tabIndex="0"></button>
+<div class="about">
+	<div class="about__bg-image _ibg">
+		<picture>
+			{isWebpSupported()
+			? <img src="../img/about/ab-img-01.webp" type="image/webp" />
+			: <img src="../img/about/ab-img-01.png" alt="image" />}
+		</picture>
+	</div>
+	<div class="about__container">
+		<div class="content-body about__content">
+			<div class="content-body">
+				<div class="content-body__column"></div>
+				<div class="content-body__column">
+					<div class="content-body__text">
+						<div class="content-body__title">
+							<h1>OUR STUDIO</h1>
+							<p>Опишите свой проект за считанные секунды. Получите предложения от ведущих профессионалов. Выберите и
+								наймите своего профессионала. Получайте потрясающе звучащие треки!</p>
+							<span>Если у вас есть талант, но не хватает профессионального оборудования, чтобы продемонстрировать свой
+								потенциал, у нас есть все необходимое для удовлетворения ваших художественных потребностей. Наша студия
+								не просто оснащена самыми передовыми инструментами, но и создает особое настроение для человека, который
+								ими пользуется. Здесь царит очень дружелюбная атмосфера, позволяющая вам расслабиться и на 100%
+								насладиться процессом записи.</span>
 						</div>
-						<div class="mejs-button mejs-stop-button mejs-stop">
-							<button type="button" aria-controls="mep_0" title="" aria-label=""></button>
-						</div>
-						<div class="mejs-time-rail">
-							<span class="mejs-time-total mejs-time-slider" role="slider" tabIndex="0" aria-label="Time Slider"
-								aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" aria-valuetext="00:00">
-								<span class="mejs-time-buffering" style={{ display: 'none' }}></span>
-								<span class="mejs-time-loaded"></span>
-								<span class="mejs-time-current" style={{ transform: 'scaleX(0)' }}></span>
-								<span class="mejs-time-hovered no-hover"></span>
-								<span class="mejs-time-handle" style={{ transform: 'translateX(0px)' }}>
-									<span class="mejs-time-handle-content"></span>
-								</span>
-								<span class="mejs-time-float">
-									<span class="mejs-time-float-current">00:00</span>
-									<span class="mejs-time-float-corner"></span>
-								</span>
-							</span>
-							<div class="mejs-moto-track-name" title="Full V.mp3">Full V.mp3</div>
-							<div class="mejs-time" role="timer" aria-live="off">
-								<span class="mejs-currenttime">00:00</span>
-								<span>/</span>
-								<span class="mejs-duration">02:06</span>
-							</div>
-						</div>
-						<div class="mejs-button mejs-volume-button mejs-mute" style={{ display: 'block' }}>
-							<button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute" tabIndex="0"></button>
-							<a class="mejs-horizontal-volume-slider" href="javascript:void(0);" aria-label="Volume Slider"
-								aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" role="slider">
-								<span class="mejs-offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span>
-								<div class="mejs-horizontal-volume-total">
-									<div class="mejs-horizontal-volume-current" style={{ left: '0px' , width: '100%' }}></div>
-									<div class="mejs-horizontal-volume-handle" style={{ left: '100%' , marginLeft: '-3px' }}></div>
-								</div>
-							</a>
-						</div>
-						<div class="mejs-button mejs-moto-loop-button mejs-button_active">
-							<button></button>
-						</div>
-						<div class="mejs-button mejs-moto-last-hidden-button"></div>
 					</div>
 				</div>
 			</div>

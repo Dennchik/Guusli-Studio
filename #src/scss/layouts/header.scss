@@ -1,7 +1,5 @@
 .header {
 	position: relative;
-	display: flex;
-	flex-direction: column;
 	width: 100%;
 	z-index: 9;
 	background: transparent;
@@ -46,10 +44,7 @@
 			width: 100%;
 		}
 	}
-	&__wrapper {
-		position: relative;
-		width: 100%;
-	}
+
 	// .header__container
 	&__container {
 		position: relative;
@@ -155,69 +150,36 @@
 	&__community {
 		display: flex;
 	}
-
-	// .header__ellipsis
-	&__ellipsis {
-		position: relative;
-		padding: 2rem;
-		display: none;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		@include _min-920 {
-			display: none;
-		}
-
-		span {
-			top: 50%;
-			margin-top: -3px;
-			position: absolute;
-			width: 6px;
-			height: 6px;
-			line-height: 6px;
-			text-align: center;
-			background: $electric-lime;
-			left: 50%;
-			margin-left: -3px;
-			border-radius: 50%;
-			transition: 0.3s all ease;
-
-			&::before,
-			&::after {
-				content: '';
-				position: absolute;
-				width: 6px;
-				height: 6px;
-				line-height: 6px;
-				text-align: center;
-				background: $electric-lime;
-				left: 50%;
-				margin-left: -3px;
-				border-radius: 50%;
-				transition: 0.4s all ease;
-			}
-
-			&::before {
-				bottom: 100%;
-				margin-bottom: 3px;
-			}
-
-			&::after {
-				top: 100%;
-				margin-top: 3px;
-			}
-		}
-
-		&._active {
-			span {
-				transform: scale(0.7);
-			}
-		}
-	}
 }
 
+.el-community {
+	// .el-community__phone
+	&__phone {
+		@include flex-align-center;
+	}
+
+	.icon-phone-ringing {
+		font-size: 2.8rem;
+		color: $electric-lime;
+		margin-right: 1rem;
+	}
+
+	// .el-community__content
+	&__content {
+		color: #d4d4d4;
+		text-shadow: 1px 0 2px #000;
+	}
+
+	// .el-community__title
+	&__title {
+		text-transform: uppercase;
+		font-size: 1rem;
+	}
+	span {
+		font-size: 1rem;
+		color: $neon-blue;
+	}
+}
 @keyframes fadeOutGradient {
 	100% {
 		background-position: 100% 0;

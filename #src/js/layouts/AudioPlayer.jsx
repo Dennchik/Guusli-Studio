@@ -2,8 +2,9 @@ import React from 'react';
 
 const AudioPlayer = ({ progress }) => {
 	return (
-		<figure>
-			<figcaption></figcaption>
+		<div>
+			{/* <figure> */}
+			{/* <figcaption></figcaption> */}
 			<div className="audio-player">
 				<div className="audio-player__controls">
 					<div className="audio-player__play-container">
@@ -31,9 +32,8 @@ const AudioPlayer = ({ progress }) => {
 					<div className="audio-player__progress" style={{ width: `${progress}%` }}></div>
 				</div>
 			</div>
-
-			{/* <audio src="../img/media/AdeleTaylor-Hello.mp3"></audio> */}
-		</figure>
+			{/* </figure> */}
+		</div>
 	);
 };
 
