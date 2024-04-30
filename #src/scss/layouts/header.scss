@@ -58,7 +58,7 @@
 	// .header__column
 	&__column {
 		@include flex-align-center;
-		@include _768 {
+		@include _920 {
 			&:nth-child(2) {
 				display: none;
 			}
@@ -159,15 +159,23 @@
 	}
 
 	.icon-phone-ringing {
-		font-size: 2.8rem;
+		font-size: 4.2rem;
 		color: $electric-lime;
 		margin-right: 1rem;
+		text-shadow: 1px 1px 3px #000;
+		&:hover {
+			color: $neon-blue;
+		}
 	}
 
 	// .el-community__content
 	&__content {
 		color: #d4d4d4;
 		text-shadow: 1px 0 2px #000;
+		line-height: 100%;
+		@include _425 {
+			display: none;
+		}
 	}
 
 	// .el-community__title
@@ -176,7 +184,7 @@
 		font-size: 1rem;
 	}
 	span {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		color: $neon-blue;
 	}
 }

@@ -146,12 +146,12 @@
 			&::before {
 				transition: color 0.4s ease-in-out;
 			}
-			&:not(:last-child) {
-				margin: 3rem;
-				@include _425 {
-					margin: 3rem 2rem;
-				}
+
+			margin: 3rem;
+			@include _425 {
+				margin: 3rem 2rem;
 			}
+
 			&:hover {
 				scale: 1.2;
 				&::before {

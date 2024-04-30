@@ -87,15 +87,15 @@ const Header = ({ baseUrl }) => {
 					</div>
 				</div>
 				<div className="header__column el-community">
-					<div className="header__column el-community">
-						<a href='tel:++79106044424' className="el-community__phone">
-							<i className='icon-phone-ringing'></i>
-							<div className="el-community__content">
-								<h5 className='el-community__title'>GIVE US A CALL</h5>
-								<span>+7 910 604-44-24</span>
-							</div>
-						</a>
-					</div>
+					{/* <div className="header__column el-community"> */}
+					<a href='tel:++79106044424' className="el-community__phone">
+						<i className='icon-phone-ringing'></i>
+						<div className="el-community__content">
+							<h5 className='el-community__title'>GIVE US A CALL</h5>
+							<span>+7 910 604-44-24</span>
+						</div>
+					</a>
+					{/* </div> */}
 				</div>
 			</div>
 		</header >

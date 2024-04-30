@@ -47,6 +47,9 @@
 		text-shadow: 1px 1px 2px #000;
 		max-width: 670px;
 		color: $gray;
+		@include _min-490 {
+			text-align: justify;
+		}
 
 		p {
 			position: relative;
@@ -54,19 +57,16 @@
 			display: inline-block;
 			color: #fff;
 			line-height: 170%;
-			letter-spacing: 3px;
+			letter-spacing: 2px;
 			font-weight: 300;
-			font-size: 1.6rem;
-			text-align: justify;
+			font-size: 1.5rem;
 		}
 
 		span {
 			display: block;
-			text-align: justify;
 			line-height: 200%;
 			font-size: 1.4rem;
 			font-weight: 200;
-			letter-spacing: 1.5px;
 			color: #d4d4d4;
 
 			&:not(:last-child) {
@@ -74,16 +74,16 @@
 			}
 		}
 
-		&._active {
+		&.hidden {
 			.content-body__ellipsis {
 				transform: rotate(360deg);
-				color: red;
 			}
 		}
 	}
-	.content-body__icon {
+
+	&__icon {
 		transition: transform 0.9s ease-in-out;
-		display: inline-flex;
+		display: inline-flex !important;
 		align-items: center;
 		justify-content: center;
 		height: 2rem;
@@ -101,9 +101,10 @@
 			opacity 0.9s ease-in-out;
 		@include _min-920 {
 			grid-template-rows: 1fr;
+			opacity: 1;
 		}
 
-		&._active {
+		&.hidden {
 			grid-template-rows: 1fr;
 			opacity: 1;
 		}
