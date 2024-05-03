@@ -7,9 +7,6 @@ import { Element } from 'react-scroll';
 export default function Mainslide({ baseUrl }) {
 
 	useEffect(() => {
-		document.addEventListener("DOMContentLoaded", function () {
-			mainSlede();
-		});
 		const slideWrappers = document.querySelectorAll('.main-slide__slide-wrapper');
 		if (!slideWrappers.length) return; // Проверка, что слайд-контейнеры существуют
 

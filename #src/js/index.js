@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	mainSlede();
 });
 // -----------------------------------------------------------------------------
-// import isMobile from "./libraries/Js-devise.js";
-// import servicesSlide from './modules/services-slide.js';
-// if (isMobile.any()) {
-// 	servicesSlide();
-// }
+import isMobile from "./libraries/Js-devise.js";
+import servicesSlide from './modules/services-slide.js';
+if (isMobile.any()) {
+	servicesSlide();
+}
 // -----------------------------------------------------------------------------
-// import AudioPlayer from './assets/audio-player.js';
-// AudioPlayer();
+import AudioPlayer from './assets/audio-player.js';
+AudioPlayer();
 
 // -----------------------------------------------------------------------------
