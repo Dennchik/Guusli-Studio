@@ -94,6 +94,7 @@
 		"style-loader": "^4.0.0",
 		"terser-webpack-plugin": "^5.3.10",
 		"webpack": "^5.91.0",
+		"webpack-dashboard": "^3.3.8",
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {

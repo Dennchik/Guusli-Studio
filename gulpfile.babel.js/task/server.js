@@ -1,5 +1,5 @@
 //* Server
-import path from '../config/path.js';
+import path from '../config/path.js';;
 export default () => {
 	$.browserSync.init({
 		server: {

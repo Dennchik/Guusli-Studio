@@ -8,7 +8,7 @@ applyParallaxEffects(smoother, '.material-parallax');
 import isMobile from "../libraries/Js-devise.js";
 if (isMobile.any()) {
 } else {
-	// tlFooterParallel();
+	tlFooterParallel();
 	applyEffects(smoother);
 }
 // -----------------------------------------------------------------------------

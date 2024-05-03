@@ -2,7 +2,7 @@ import React from 'react';
 // import About from './AboutCompany.jsx';
 const Footer = () => {
 	return (
-		<footer className='footer' id='footer' name='footer'>
+		<footer className='footer' name='footer'>
 			<div className="footer__content">
 				<div className="footer__info _container">
 					<div className="footer__help el-4">

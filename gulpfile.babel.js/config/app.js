@@ -24,7 +24,7 @@ export default {
 					extractComments: false,
 				}),
 			],
-			// runtimeChunk: 'single',
+			runtimeChunk: 'single',
 		},
 		entry: {
 			animatebio: './#src/js/app/animate-bio.jsx',

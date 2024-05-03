@@ -22,14 +22,14 @@ block page-content
 							section._slide 
 							section._services  
 						block footer
-							._footer 
-			block mobile-menu
+							._footer#footer
+					//- block mobile-menu
 				._menu-float 
 		block button 
 			._button#scrollButton
 					+iconfont('angle-down')
 
-	//- script(type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
+	script(type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
 	script(type="text/javascript" src="@@webRoot/js/app/appindex.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animateindex.min.js")
+	//- script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animateindex.min.js")
