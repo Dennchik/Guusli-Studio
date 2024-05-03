@@ -4,11 +4,7 @@ import { Link } from 'react-scroll';
 const Header = ({ baseUrl }) => {
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 	useEffect(() => {
-		const fadeIn = document.querySelector('.page__fade-in');
-		// document.querySelector('.header__ellipsis').addEventListener("click", () => {
-		// 	fadeIn.classList.toggle('_active');
-		// });
-
+		// const fadeIn = document.querySelector('.page__fade-in');
 		const handleScroll = () => {
 			const header = document.querySelector('.header');
 			const mainContent = document.querySelector('.page__main-content');
@@ -16,11 +12,11 @@ const Header = ({ baseUrl }) => {
 
 			if (mainContentTop < 0) {
 				header.classList.add('with-border');
-				fadeIn.classList.add('with-border');
+				// fadeIn.classList.add('with-border');
 			} else {
 				header.classList.add('without-border');
 				header.classList.remove('with-border');
-				fadeIn.classList.remove('with-border');
+				// fadeIn.classList.remove('with-border');
 			}
 			if (mainContentTop < 0) {
 				header.classList.remove('without-border');
@@ -50,13 +46,8 @@ const Header = ({ baseUrl }) => {
 				</div>
 				<div className="header__column">
 					<div className="header__menu">
-						<Link href='#' className="header__item header__item--home"
-							to='main-slide'
-							spy={false}
-							duration={700}
-							smooth='easeInQuint'
-						>HOME
-						</Link>
+						<a href={getPath('index.html')} className="header__item header__item--home">HOME
+						</a>
 						<div className="header__item header__item--services">
 							<Link className='link-key key-services'
 								to='services'
@@ -87,7 +78,6 @@ const Header = ({ baseUrl }) => {
 					</div>
 				</div>
 				<div className="header__column el-community">
-					{/* <div className="header__column el-community"> */}
 					<a href='tel:++79106044424' className="el-community__phone">
 						<i className='icon-phone-ringing'></i>
 						<div className="el-community__content">
@@ -95,7 +85,6 @@ const Header = ({ baseUrl }) => {
 							<span>+7 910 604-44-24</span>
 						</div>
 					</a>
-					{/* </div> */}
 				</div>
 			</div>
 		</header >

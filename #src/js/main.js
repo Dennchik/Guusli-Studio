@@ -1,8 +1,8 @@
 import { timeLineHeaderItem } from './modules/animations.js';
 timeLineHeaderItem();
 
-import dinamicAdaptive from './libraries/move-elements.js';
-dinamicAdaptive();
+// import dinamicAdaptive from './libraries/move-elements.js';
+// dinamicAdaptive();
 
 import returnToSavedPosition from './modules/return-position.js';
 returnToSavedPosition();

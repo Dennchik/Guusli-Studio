@@ -27,8 +27,8 @@
 		left: 0;
 		width: 0;
 		height: 1px;
-		background: linear-gradient(to left top, #8164ff 40%, rgb(42, 53, 20) 70%);
 		transition: all 0.7s ease-in-out;
+		@extend .gradient-border-bottom;
 	}
 
 	&.with-border {

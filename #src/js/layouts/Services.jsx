@@ -3,23 +3,6 @@ import { Element } from 'react-scroll';
 import { animationSvgLine, animationSvgText } from '../modules/animations.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import isMobile from "../libraries/Js-devise.js";
-import {
-	NeonGreenColor,
-	NeonFuchsiaColor,
-	NeonPinkColor,
-	NeonRedColor,
-	NeonBlueColor,
-	NeonElectricColor,
-	NeonBlueDarkColor,
-	NeonPurpleColor,
-	NeonCarrotColor,
-	NeonYellowColor,
-	LaserLemonColor,
-	LuminescentRedColor,
-	LuminescentOrangeColor,
-	liquidNeonColor,
-	ElectricLimeColor,
-} from '../core/variables.jsx';
 // -----------------------------------------------------------------------------
 export default function Services() {
 	useEffect(() => {
@@ -63,6 +46,9 @@ export default function Services() {
 			});
 		};
 	}, []);
+	// useEffect(() => {
+	// 	applyParallaxEffects(smoother, '.material-parallax');
+	// }, []);
 
 	return (
 		<Element className="services key-object" name='services'>
@@ -109,8 +95,8 @@ export default function Services() {
 										<svg viewBox="0 0 250 40">
 											<defs>
 												<linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-													<stop offset="0%" style={{ stopColor: NeonGreenColor, stopOpacity: 1 }} />
-													<stop offset="100%" style={{ stopColor: ElectricLimeColor, stopOpacity: 1 }} />
+													<stop offset="0%" style={{ stopColor: 'rgb(57, 255, 20)', stopOpacity: 1 }} />
+													<stop offset="100%" style={{ stopColor: 'rgb(204, 255, 0)', stopOpacity: 1 }} />
 												</linearGradient>
 											</defs>
 											<g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1" className="lines-text">

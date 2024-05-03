@@ -24,6 +24,7 @@ export default {
 					extractComments: false,
 				}),
 			],
+			// runtimeChunk: 'single',
 		},
 		entry: {
 			animatebio: './#src/js/app/animate-bio.jsx',
@@ -34,6 +35,7 @@ export default {
 		output: {
 			filename: '[name].min.js',
 		},
+
 		module: {
 			rules: [
 				{

@@ -1,6 +1,7 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from "react-dom";
 const baseUrl = '..';
+
 import Header from '../layouts/Header.jsx';
 ReactDOM.render(
 	<StrictMode><Header baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__header')
@@ -9,6 +10,11 @@ ReactDOM.render(
 import Footer from '../layouts/Footer.jsx';
 ReactDOM.render(
 	<StrictMode><Footer /></StrictMode>, document.querySelector('.main-content__footer')
+);
+// -----------------------------------------------------------------------------
+import Achievements from "../layouts/Achievements.jsx";
+ReactDOM.render(
+	<StrictMode><Achievements /></StrictMode>, document.querySelector('.main-content__achievements')
 );
 // -----------------------------------------------------------------------------
 import Menufloat from '../layouts/Menu-float.jsx';

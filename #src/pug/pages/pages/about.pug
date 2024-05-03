@@ -1,14 +1,15 @@
 extends ../../layouts/app_layout
 append link  
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/bio-style.min.css" ) 
-prepend script
+prepend script 
+	//- script(type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appbio.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/bio.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animatebio.min.js")
 block title
 	- var text='Услуги / Студия зувукозаписи "Gusli" Обнинск' 
 
-block page
+block page-content 
 	.page
 		block header
 			._header  
@@ -19,6 +20,7 @@ block page
 					._content#content
 						block section 
 							section._about
+							section._achievements
 						block footer
 							._footer 
 			block mobile-menu

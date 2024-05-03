@@ -14,6 +14,5 @@ export default () => {
 				return data;
 			}
 		}))
-		.pipe($.gul.debug({ title: '(JSON)' }))
 		.pipe($.gulp.dest(path.json.dest));
 };

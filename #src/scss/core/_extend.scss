@@ -14,9 +14,9 @@
 	background-repeat: no-repeat;
 	transition: background-size 400ms;
 }
-.gradient-box {
-	background: linear-gradient(to right, #0b486bbd, #0b486b, #0b486bbd);
-}
+// .gradient-box {
+// 	background: linear-gradient(to right, #0b486bbd, #0b486b, #0b486bbd);
+// }
 .gradient-top-link {
 	text-shadow: $orange 1px 0 10px;
 	background: linear-gradient(to bottom, #008192, #90effc, #008192 100%);
@@ -27,6 +27,15 @@
 }
 .gradient {
 	background: linear-gradient(to left, #0b0813, #392b7c 50%, #0c0814 100%);
+}
+
+.gradient-default {
+	background: linear-gradient(to right, #0b0813 10%, #2b2644 50%, #0b0813 90%);
+}
+
+.gradient-spec {
+	background: linear-gradient(-45deg, #fe59c2, #170e31 83%);
+	background-size: 200% 200%;
 }
 
 .liner-gradient-box {
@@ -50,11 +59,6 @@
 
 .gradient-services {
 	background: linear-gradient(to right, #0b0813 20%, #1c153f 50%, #0b0813 80%);
-}
-
-.gradient-spec {
-	background: linear-gradient(-45deg, #fe59c2, #170e31 83%);
-	background-size: 200% 200%;
 }
 
 .gradient-title {
@@ -215,4 +219,8 @@
 	&._is-open {
 		grid-template-rows: 1fr;
 	}
+}
+
+.gradient-border-bottom {
+	background: linear-gradient(to left top, #8164ff 40%, rgb(42, 53, 20) 70%);
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 // import About from './AboutCompany.jsx';
-export default function Footer() {
+const Footer = () => {
 	return (
-		<footer className='footer' name='footer'>
+		<footer className='footer' id='footer' name='footer'>
 			<div className="footer__content">
 				<div className="footer__info _container">
-					{/* --About content-- */}
 					<div className="footer__help el-4">
 						<i className='icon-achievements'></i>
 						<i className='icon-services'></i>
@@ -75,4 +74,5 @@ export default function Footer() {
 			</div>
 		</footer>
 	);
-} 
+};
+export default Footer;  

@@ -59,5 +59,30 @@
 		position: relative;
 		width: 100%;
 		min-height: calc(100vh - 2px);
+		&::after {
+			z-index: 9;
+			width: 100%;
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			transition: all 0.7s ease-in-out;
+			@extend .gradient-border-bottom;
+		}
+	}
+
+	//.main-content__achievements
+	&__achievements {
+		position: relative;
+		height: 100%;
+		@extend .gradient-default;
+	}
+
+	// .main-content__footer
+	&__footer {
+		position: relative;
+		z-index: 9;
+		@extend .gradient-services;
 	}
 }

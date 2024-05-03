@@ -1,5 +1,8 @@
-import React from 'react';
-export default function AboutCompany() {
+import React, { useEffect } from 'react';
+const AboutCompany = ({ baseUrl }) => {
+	const getPath = (fileName) => {
+		return `${baseUrl}/${fileName}`;
+	};
 	return (
 		<div className="about">
 			<div className="about__column el-1">
@@ -7,10 +10,12 @@ export default function AboutCompany() {
 					<div className="about__title">ABOUT OUR STUDIO</div>
 					<div className="about__text">
 						<p>Наша медиа-группа представляет собой превосходную студию звукозаписи и продюсерскую компанию. Мы специализируемся на создании текстов, продюсировании, звукозаписи и развитии талантов. Готовы к сотрудничеству с вами в любое время.</p>
-						<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка. В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p></div>
+						<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка.</p>
+						<p>В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p>
+					</div>
 				</div>
 				<div className='about__footer'>
-					<a className='about__button' href="#" type='button'>Read more</a>
+					<a className='about__button' href={getPath('pages/about.html')}>Read more</a>
 				</div>
 			</div>
 			<div className="about__column el-2">
@@ -102,4 +107,5 @@ export default function AboutCompany() {
 			</div>
 		</div>
 	);
-}
+};
+export default AboutCompany;

@@ -40,10 +40,10 @@ export default function mainSlide(
 			// },
 			// on: {
 			// 	slideChange: function () {
-			// 		// Проверяем, содержит ли активный слайд нужный класс
+			// Проверяем, содержит ли активный слайд нужный класс
 			// 		const activeSlide = document.querySelector('.main-slide__slide-wrapper');
 			// 		if (activeSlide.classList.contains('swiper-slide-active')) {
-			// 			// Запускаем анимацию, если активный слайд содержит нужный класс
+			// Запускаем анимацию, если активный слайд содержит нужный класс
 			// 			fadeInSlide();
 			// 		}
 			// 	}

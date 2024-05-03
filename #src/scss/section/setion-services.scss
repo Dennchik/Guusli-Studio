@@ -24,9 +24,7 @@
 		padding: 0 5rem 2rem;
 		z-index: 9;
 		//! ------------------------------------------------------------------------
-		perspective-origin: 45% 320%;
-		transform-style: preserve-3d;
-		perspective: 100px;
+
 		filter: $filter;
 		//! ------------------------------------------------------------------------
 		&::before {
@@ -42,6 +40,9 @@
 		}
 
 		&:nth-child(1) {
+			perspective-origin: 45% 320%;
+			transform-style: preserve-3d;
+			perspective: 100px;
 			margin-top: 6rem;
 			@include _690 {
 				font-size: 5.1rem;
@@ -108,7 +109,6 @@
 	// .parallax__image
 	&__image {
 		opacity: 0.3;
-		z-index: 0;
 		width: 100%;
 		height: 100%;
 

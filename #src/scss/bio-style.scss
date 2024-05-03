@@ -51,14 +51,14 @@
 // todo --------------------------- Assets -------------------------------------
 @import 'assets/burger-button';
 @import 'assets/button';
-@import 'assets/audio-player';
+// @import 'assets/audio-player';
 // todo --------------------------- layout -------------------------------------
 @import 'layouts/bem-block';
 @import 'layouts/header';
 @import 'layouts/footer';
 // todo --------------------------- Pages --------------------------------------
 @import 'pages/page-bio';
-@import 'pages/main-page';
+// @import 'pages/page-main';
 // todo --------------------------- Modules ------------------------------------
 // @import 'modules/loading';
 // @import 'modules/breadcrumbs';
@@ -66,5 +66,6 @@
 @import 'section/section-mainslide';
 @import 'section/menu-float';
 @import 'section/section-about';
+@import 'section/section-achieve.scss';
 
 // -----------------------------------------------------------------------------

@@ -10,7 +10,7 @@ export default () => {
 				message: error.message,
 			})),
 		}))
-		.pipe($.gul.sassGlob())
+		// .pipe($.gul.sassGlob())
 		.pipe($.gulpIf(app.isDev, $.gul.sourcemaps.init({
 			loadMaps: true,
 		})))

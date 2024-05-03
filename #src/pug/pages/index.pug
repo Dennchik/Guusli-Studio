@@ -1,18 +1,19 @@
 extends ../layouts/app_layout
 append link 
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
-prepend script 
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appindex.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animateindex.min.js")
+//- prepend script 
+	//- script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appindex.min.js")
+	//- script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
+	//- script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animateindex.min.js")
 block title
 	- var text='Студия зувукозаписи "Gusli" Обнинск' 
 
-block page
+
+block page-content
 	.page
 		block header
 			._header
-			._fade-in.bp-1
+			//- ._fade-in.bp-1
 		._main-content
 			block main-content 
 				main.main-content#wrapper 
@@ -26,4 +27,9 @@ block page
 				._menu-float 
 		block button 
 			._button#scrollButton
-				+iconfont('angle-down')
+					+iconfont('angle-down')
+
+	//- script(type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
+	script(type="text/javascript" src="@@webRoot/js/app/appindex.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animateindex.min.js")

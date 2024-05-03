@@ -11,7 +11,7 @@
 		font-size: 3.8rem;
 		margin-left: 1rem;
 		color: $neon-blue;
-		background: rgba(28, 21, 63, 0.281);
+		background: $black-color;
 		transition:
 			transform 0.5s,
 			color 0.5s ease-in-out;
@@ -29,7 +29,6 @@
 		}
 		transition: all 0.5s ease-in-out; /* Плавное изменение фона */
 		&:hover {
-			background: $black-color;
 			box-shadow: 0 0 4px $neon-blue;
 			animation: fadeInBackground;
 		}
