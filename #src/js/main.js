@@ -1,4 +1,4 @@
-import { timeLineHeaderItem } from './modules/animations.js';
+import { timeLineHeaderItem } from './modules/anime-js.js';
 timeLineHeaderItem();
 
 // import dinamicAdaptive from './libraries/move-elements.js';

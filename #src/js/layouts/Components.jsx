@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fadeInSlide } from '../modules/animations.js';
+import { fadeInSlide } from '../modules/anime-js.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import AudioPlayer from './AudioPlayer.jsx';
 import { Element } from 'react-scroll';

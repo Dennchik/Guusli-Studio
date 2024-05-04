@@ -1,36 +1,45 @@
 .page {
 	//. page_buttom
-	&__button {
+	&__aside {
 		position: fixed;
-		width: 35px;
-		height: 35px;
-		border-radius: 50%;
-		top: 50%;
+		top: 0;
 		left: 0;
+		height: 100vh;
+		width: 45px;
 		z-index: 13;
-		font-size: 3.8rem;
-		margin-left: 1rem;
-		color: $neon-blue;
-		background: $black-color;
-		transition:
-			transform 0.5s,
-			color 0.5s ease-in-out;
+		padding-left: 1rem;
 
-		&._rotate {
-			transform: rotate(-180deg);
-			color: $neon-blue-dark;
+		._button {
+			cursor: pointer;
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			top: 50%;
+			left: 0;
+			z-index: 13;
+			font-size: 3.8rem;
+			color: $neon-blue;
+			background: $black-color;
+			margin-left: 1rem;
+			transition: all 0.5s ease-in-out; /* Плавное изменение фона */
+			&:hover {
+				box-shadow: 0 0 4px $neon-blue;
+				animation: fadeInBackground;
+			}
 			i {
-				text-shadow: -2px -2px 3px #000;
+				text-shadow: 2px 2px 3px #000;
 			}
 		}
 
-		i {
-			text-shadow: 2px 2px 3px #000;
-		}
-		transition: all 0.5s ease-in-out; /* Плавное изменение фона */
-		&:hover {
-			box-shadow: 0 0 4px $neon-blue;
-			animation: fadeInBackground;
+		&._rotate {
+			i {
+				scale: -1;
+				text-shadow: -2px -2px 3px #000;
+			}
+			._button {
+				color: $neon-blue-dark;
+			}
 		}
 	}
 }

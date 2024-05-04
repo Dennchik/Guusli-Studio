@@ -18,8 +18,8 @@ mixin btn-link(type, text, mod)
 	block
 
 //-! mixin iconFont		
-mixin iconfont(mod)
-	i(class='icon-' + mod)
+mixin iconfont(mod, classes)
+	i(class='icon-' + mod + ' ' + classes)
 		block
 
 //-! Mxin list «rest arguments».

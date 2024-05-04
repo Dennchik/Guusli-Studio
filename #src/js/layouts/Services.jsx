@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Element } from 'react-scroll';
-import { animationSvgLine, animationSvgText } from '../modules/animations.js';
+import { animationSvgLine, animationSvgText } from '../modules/anime-js.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import isMobile from "../libraries/Js-devise.js";
 // -----------------------------------------------------------------------------

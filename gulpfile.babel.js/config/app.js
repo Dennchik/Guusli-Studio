@@ -27,10 +27,15 @@ export default {
 			runtimeChunk: 'single',
 		},
 		entry: {
-			animatebio: './#src/js/app/animate-bio.jsx',
-			animateindex: './#src/js/app/animate-index.jsx',
-			appindex: './#src/js/app/AppIndex.jsx',
-			appbio: './#src/js/app/AppBio.jsx',
+			// animatebio: './#src/js/app/animate-bio.jsx',
+			// animateindex: './#src/js/app/animate-index.jsx',
+			// appindex: './#src/js/app/AppIndex.jsx',
+			"app-about": { import: ['./#src/js/app/AppBio.jsx', './#src/js/app/animate-bio.jsx'], filename: '[name].min.js', dependOn: 'anime-vendors' },
+
+			'app-home': { import: ['./#src/js/app/AppIndex.jsx', './#src/js/app/animate-index.jsx'], filename: '[name].min.js', dependOn: 'anime-vendors' },
+			'anime-vendors': ['gsap', 'react', 'react-dom', 'prop-types'],
+			// dependOn: 'shared',
+			// shared: 'lodash',
 		},
 		output: {
 			filename: '[name].min.js',
@@ -103,7 +108,7 @@ export default {
 			},
 		},
 		entry: {
-			bio: './#src/js/bio.js',
+			about: './#src/js/about.js',
 			index: './#src/js/index.js',
 			main: './#src/js/main.js'
 		},

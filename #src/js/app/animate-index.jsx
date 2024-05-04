@@ -12,8 +12,8 @@ if (isMobile.any()) {
 	applyEffects(smoother);
 }
 // -----------------------------------------------------------------------------
-// animateTitles('.services__title', '.services', '.services', '=150', '=0');
-// animateTitles('.offer-container__title', '.services__offer', '.services', '=150', '=0');
+animateTitles('.services__title', '.services', '.services', '=150', '=0');
+animateTitles('.offer-container__title', '.services__offer', '.services', '=150', '=0');
 // initSectionTriggerMove('.main-slide', '.header__item--home');
 // initSectionTriggerMove('.services', '.header__item--services');
 // initSectionTriggerMove('.footer', '.header__item--contacts');

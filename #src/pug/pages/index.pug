@@ -3,9 +3,9 @@ append link
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 prepend script 
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/appindex.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
-	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/animateindex.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/anime-vendors.min.js")
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/app-home.min.js") 
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js") 
 block title
 	- var text='Студия зувукозаписи "Gusli" Обнинск' 
 
@@ -27,5 +27,5 @@ block page-content
 					//- block mobile-menu
 				._menu-float 
 		block button 
-			._button#scrollButton
-					+iconfont('angle-down')
+			._aside#scrollButton
+				+iconfont('angle-down', '_button')
