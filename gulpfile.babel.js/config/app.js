@@ -27,22 +27,14 @@ export default {
 			runtimeChunk: 'single',
 		},
 		entry: {
-			// animatebio: './#src/js/app/animate-bio.jsx',
-			animateindex: './#src/js/app/animate-index.jsx',
-			// "app-home": './#src/js/app/AppIndex.jsx',
-			'home-components': { import: ['./#src/js/layouts/Components.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
-			// "app-about": { import: ['./#src/js/app/AppAbout.jsx', './#src/js/app/animate-bio.jsx'], filename: '[name].min.js', dependOn: 'react-vendors' },
+			'home-components': { import: ['./#src/js/app/MainComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
+
+			"about-components": { import: ['./#src/js/app/AboutComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
+
 			'react-vendors': ['react', 'react-dom', 'prop-types'],
 			'anime-vendors': ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'],
 			'swiper-bundle': ['swiper/bundle']
-			// 'app-home': { import: ['./#src/js/app/AppIndex.jsx', './#src/js/app/animate-index.jsx'], filename: '[name].min.js', dependOn: 'react-vendors' },
 
-			// "app-about": { import: ['./#src/js/app/AppAbout.jsx', './#src/js/app/animate-bio.jsx'], filename: '[name].min.js', dependOn: ['react-vendors', 'module-plg'] },
-
-			// 'app-home': { import: ['./#src/js/app/AppIndex.jsx', './#src/js/app/animate-index.jsx'], filename: '[name].min.js', dependOn: ['react-vendors', 'module-plg'] },
-			// 'react-vendors': ['react', 'react-dom', 'prop-types'],
-			// 'module-plg': ['gsap', 'swiper'],
-			// 'animejs': ['animejs'],
 			// dependOn: 'shared',
 			// shared: 'lodash',
 		},

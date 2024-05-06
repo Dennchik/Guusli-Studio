@@ -3,20 +3,19 @@ import { createRoot } from 'react-dom/client';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import { Link } from 'react-scroll';
 import { Element } from 'react-scroll';
-// ------------------------------- Components ----------------------------------
+// -----------------------------------------------------------------------------
 import isMobile from "../libraries/Js-devise.js";
 import swiperLayout from '../assets/swiper-layout.js';
 import mainSlide from '../modules/main-slide.js';
 import servicesSlide from '../modules/services-slide.js';
-import AudioPlayer from './AudioPlayer.jsx';
+import AudioPlayer from '../layouts/AudioPlayer.jsx';
+// ------------------------------- Components ----------------------------------
 import { fadeInSlide, timeLineHeaderItem, animationSvgLine, animationSvgText } from '../modules/anime-js.js';
-// -----------------------------------------------------------------------------
+
 import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterParallel, initSectionTriggerMove } from "../animations/animation-index.jsx";
 // -----------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------
 const baseUrl = '.';
-// -----------------------------------------------------------------------------
+// --------------------------------- Header ------------------------------------
 const Header = ({ baseUrl }) => {
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 	useEffect(() => {
@@ -107,7 +106,7 @@ const Header = ({ baseUrl }) => {
 		</header >
 	);
 };
-// -----------------------------------------------------------------------------
+// -------------------------------- Mainslide ----------------------------------
 const Mainslide = ({ baseUrl }) => {
 	useEffect(() => {
 		// swiperLayout('._swiper');
@@ -226,7 +225,7 @@ const Mainslide = ({ baseUrl }) => {
 
 	);
 };
-// -----------------------------------------------------------------------------
+// -------------------------------- Services -----------------------------------
 const Services = () => {
 	useEffect(() => {
 	});
@@ -575,7 +574,7 @@ const Services = () => {
 		</Element>
 	);
 };
-// -----------------------------------------------------------------------------
+// --------------------------------- footer ------------------------------------
 const Footer = () => {
 	useEffect(() => {
 		if (isMobile.any()) {
@@ -658,7 +657,7 @@ const Footer = () => {
 		</footer>
 	);
 };
-// -----------------------------------------------------------------------------
+// ------------------------------ AboutCompany ---------------------------------
 const AboutCompany = ({ baseUrl }) => {
 	const getPath = (fileName) => {
 		return `${baseUrl}/${fileName}`;
@@ -768,7 +767,7 @@ const AboutCompany = ({ baseUrl }) => {
 		</div>
 	);
 };
-// -----------------------------------------------------------------------------
+// ------------------------------- Menufloat -----------------------------------
 const Menufloat = ({ baseUrl }) => {
 	const [offset, setOffset] = useState(-100);
 	useEffect(() => {
@@ -903,7 +902,7 @@ const Menufloat = ({ baseUrl }) => {
 		</nav>
 	);
 };
-// -----------------------------------------------------------------------------
+// -----------------------------Render RootDOm ---------------------------------
 createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
 // -----------------------------------------------------------------------------
 createRoot(document.querySelector('.main-content__slide')).render(<Mainslide baseUrl={baseUrl} />);
@@ -911,12 +910,6 @@ createRoot(document.querySelector('.main-content__slide')).render(<Mainslide bas
 createRoot(document.querySelector('.main-content__services')).render(<Services baseUrl={baseUrl} />);
 // -----------------------------------------------------------------------------
 createRoot(document.querySelector('.main-content__footer')).render(<Footer baseUrl={baseUrl} />);
-// -----------------------------------------------------------------------------
-// ReactDOM.render(
-// 	<StrictMode><Footer /></StrictMode>, document.querySelector('.main-content__footer')
-// );
-// -----------------------------------------------------------------------------
-
 // -----------------------------------------------------------------------------
 createRoot(document.querySelector('.page__menu-float')).render(<Menufloat />);
 // -----------------------------------------------------------------------------
