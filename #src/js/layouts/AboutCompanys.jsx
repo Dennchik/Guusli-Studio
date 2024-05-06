@@ -53,7 +53,7 @@ const AboutCompany = ({ baseUrl }) => {
 									<a href="#">Ryan Gosling</a>
 								</div>
 								<div className="team-mates__text">
-									<p>Райан - основатель студии и ведущий звукорежиссер.engineer.</p>
+									<p>Райан - основатель студии и ведущий звукорежиссер. Engineer.</p>
 								</div>
 							</li>
 						</ul>

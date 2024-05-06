@@ -1,20 +1,22 @@
 .about {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	width: 100%;
 	gap: 4rem;
-	padding: 2rem 0;
+	padding-top: 4rem;
 	@include _690-920 {
 		grid-template-columns: 1fr 1fr;
 	}
 
 	@include _690 {
-		grid-template-columns: 1fr;
+		grid-template-columns: auto;
 	}
 
 	// .about__column
 	&__column {
 		display: flex;
 		flex-direction: column;
+		padding: 0 2rem;
 
 		&:nth-child(3) {
 			height: 100%;

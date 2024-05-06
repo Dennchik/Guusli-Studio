@@ -1,6 +1,9 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import audio from '../assets/audio-player.js';
 const AudioPlayer = ({ progress }) => {
+	useEffect(() => {
+		audio();
+	});
 	return (
 		<div>
 			{/* <figure> */}

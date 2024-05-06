@@ -1,14 +1,14 @@
-import swiperLayout from "../assets/swiper-layout";
-swiperLayout('._swiper');
+// import swiperLayout from "../assets/swiper-layout";
+// swiperLayout('._swiper');
 //* import Swiper bundle with all modules installed 
 import Swiper from 'swiper/bundle';
 //* import styles bundle 
 export default function mainSlide(
 	mainslide = '.main-slide__body',
 	pagination = '.main-slide__pagination',
-	scrollbar = '',
-	nextEl = '',
-	prevEl = '',
+	// scrollbar = '',
+	// nextEl = '',
+	// prevEl = '',
 ) {
 	if (mainslide) {
 		new Swiper(mainslide, {
@@ -30,10 +30,10 @@ export default function mainSlide(
 				// },
 			},
 
-			navigation: {
-				nextEl: nextEl,
-				prevEl: prevEl,
-			},
+			// navigation: {
+			// 	nextEl: nextEl,
+			// 	prevEl: prevEl,
+			// },
 
 			// scrollbar: {
 			// 	el: scrollbar,

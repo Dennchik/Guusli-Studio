@@ -1,24 +1,63 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, StrictMode } from 'react';
+import anime from 'animejs';
+import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
+import { Link } from 'react-scroll';
 import { fadeInSlide } from '../modules/anime-js.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
-import swiperLayout from '../assets/swiper-layout.js';
 import mainSlide from '../modules/main-slide.js';
-import AudioPlayer from './AudioPlayer.jsx';
-// import audio from '../assets/audio-player.js';
+import swiperLayout from '../assets/swiper-layout.js';
+// import AudioPlayer from './AudioPlayer.jsx'; 
 // import { Element } from 'react-scroll';
-// Компонент Mainslide
-export default function Mainslide({ baseUrl }) {
 
+// -----------------------------------------------------------------------------
+const baseUrl = '.';
+// -----------------------------------------------------------------------------
+
+const Mainslide = ({ baseUrl }) => {
 	useEffect(() => {
 		const slideWrappers = document.querySelectorAll('.main-slide__slide-wrapper');
+		console.log(slideWrappers);
 		if (!slideWrappers.length) return; // Проверка, что слайд-контейнеры существуют
 
 		// Проверяем активен ли первый слайд при загрузке страницы
 		const firstSlideWrapper = slideWrappers[0];
 		const isActive = firstSlideWrapper.classList.contains('swiper-slide-active');
 		if (isActive) {
-			// Если первый слайд активен, запускаем анимацию
+			console.log('fadeInSlide() вызван');
 			fadeInSlide();
+			// Если первый слайд активен, запускаем анимацию 
+			// console.log('fadeInSlide() вызван');
+			// let fadeInSlide = anime.timeline({
+			// 	duration: 750,
+			// });
+			// fadeInSlide
+			// 	.add({
+			// 		targets: '.swiper-slide-active .main-slide__title',
+			// 		opacity: [0, 1],
+			// 		translateY: [80, 0],
+			// 		delay: anime.stagger(100, { start: 500 }),
+			// 		duration: 1000,
+			// 		easing: 'easeInOutSine',
+			// 		begin: function (anim) {
+			// 			anim.animatables.forEach(function (animatable) {
+			// 				animatable.target.style.transition = 'opacity 0.3s ease-out';
+			// 			});
+			// 		}
+			// 	}, 50)
+			// 	.add({
+			// 		targets: '.swiper-slide-active .main-slide__text',
+			// 		opacity: [0, 1],
+			// 		translateY: [100, 0],
+			// 		delay: anime.stagger(100, { start: 500 }),
+			// 		duration: 1000,
+			// 		easing: 'easeInOutSine',
+			// 		begin: function (anim) {
+			// 			anim.animatables.forEach(function (animatable) {
+			// 				animatable.target.style.transition = 'opacity 0.3s ease-out';
+			// 			});
+			// 		}
+			// 	}, 130);
 		}
 
 		// Начинаем отслеживать изменения в слайд-контейнерах
@@ -27,9 +66,42 @@ export default function Mainslide({ baseUrl }) {
 				mutations.forEach((mutation) => {
 					if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
 						const isActive = slideWrapper.classList.contains('swiper-slide-active');
+						console.log(isActive);
 						if (isActive) {
-							// Если слайд-контейнер содержит класс 'swiper-slide-active', запускаем анимацию
+							console.log('fadeInSlide() вызван');
 							fadeInSlide();
+							// Если слайд-контейнер содержит класс 'swiper-slide-active', запускаем анимацию 
+							// console.log('fadeInSlide() вызван');
+							// let fadeInSlide = anime.timeline({
+							// 	duration: 750,
+							// });
+							// fadeInSlide
+							// 	.add({
+							// 		targets: '.swiper-slide-active .main-slide__title',
+							// 		opacity: [0, 1],
+							// 		translateY: [80, 0],
+							// 		delay: anime.stagger(100, { start: 500 }),
+							// 		duration: 1000,
+							// 		easing: 'easeInOutSine',
+							// 		begin: function (anim) {
+							// 			anim.animatables.forEach(function (animatable) {
+							// 				animatable.target.style.transition = 'opacity 0.3s ease-out';
+							// 			});
+							// 		}
+							// 	}, 50)
+							// 	.add({
+							// 		targets: '.swiper-slide-active .main-slide__text',
+							// 		opacity: [0, 1],
+							// 		translateY: [100, 0],
+							// 		delay: anime.stagger(100, { start: 500 }),
+							// 		duration: 1000,
+							// 		easing: 'easeInOutSine',
+							// 		begin: function (anim) {
+							// 			anim.animatables.forEach(function (animatable) {
+							// 				animatable.target.style.transition = 'opacity 0.3s ease-out';
+							// 			});
+							// 		}
+							// 	}, 130);
 						}
 					}
 				});
@@ -41,13 +113,16 @@ export default function Mainslide({ baseUrl }) {
 				observer.disconnect();
 			};
 		});
+
+
 	}, []);
 
 	useEffect(() => {
-		swiperLayout();
+		swiperLayout('._swiper');
 		mainSlide();
 		// audio();
 	}, []);
+
 
 	const getPath = (fileName) => {
 		return `${baseUrl}/${fileName}`;
@@ -120,37 +195,17 @@ export default function Mainslide({ baseUrl }) {
 			</div>
 			<div className="main-slide__pagination"></div>
 			<div className="main-slide__media">
-				<AudioPlayer />
-				{/* <div className="audio-player">
-					<div className="audio-player__controls">
-						<div className="audio-player__play-container">
-							<div className="audio-player__toggle-play play">
-							</div>
-						</div>
-						<div className="audio-player__time">
-							<div className="audio-player__current">0:00</div>
-							<div className="audio-player__divider">/</div>
-							<div className="audio-player__length"></div>
-						</div>
-						<div className="audio-player__name">AdeleTaylor-Hello</div>
-
-						<div className="audio-player__volume-container">
-							<div className="audio-player__volume-button">
-								<div className="audio-player__volume icono-volumeMedium"></div>
-							</div>
-
-							<div className="audio-player__volume-slider">
-								<div className="audio-player__volume-percentage"></div>
-							</div>
-						</div>
-					</div>
-					<div className="audio-player__timeline">
-						<div className="audio-player__progress" style={{ width: `${progress}%` }}></div>
-					</div>
-				</div> */}
+				{/* <AudioPlayer /> */}
 			</div>
 		</div>
-
-
 	);
-}
+};
+// -----------------------------------------------------------------------------
+// createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
+// -----------------------------------------------------------------------------
+const mainsliddeNode = (document.querySelector('.main-content__slide'));
+const mainSlideRoot = createRoot(mainsliddeNode);
+mainSlideRoot.render(<Mainslide baseUrl={baseUrl} />);
+ReactDOM.render(
+	<StrictMode><Mainslide baseUrl={baseUrl} /></StrictMode>, document.querySelector('.main-content__slide')
+);

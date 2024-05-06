@@ -3,11 +3,10 @@ import { createRoot } from 'react-dom/client';
 import ReactDOM from "react-dom";
 const baseUrl = '.';
 
-import Header from '../layouts/Header.jsx';
-const header = createRoot(document.querySelector('.page__header'));
-header.render(
-	<StrictMode><Header baseUrl={baseUrl} /></StrictMode>);
-
+// -----------------------------------------------------------------------------
+import Header from '../layouts/AppHeader.jsx';
+ReactDOM.render(
+	<StrictMode><Header baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__header'));
 // -----------------------------------------------------------------------------
 import Services from '../layouts/Services.jsx';
 ReactDOM.render(
@@ -33,9 +32,13 @@ import Menufloat from '../layouts/Menu-float.jsx';
 ReactDOM.hydrate(
 	<StrictMode> <Menufloat baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__menu-float')
 );
-
 // -----------------------------------------------------------------------------
 import Mainslide from '../layouts/Mainslide.jsx';
 ReactDOM.render(
 	<StrictMode><Mainslide baseUrl={baseUrl} /></StrictMode>, document.querySelector('.main-content__slide')
 );
+
+// -----------------------------------------------------------------------------
+// import Mainslide from '../layouts/Mainslide.jsx';
+// const mainslide = createRoot(document.querySelector('.main-content__slide'));
+// mainslide.render(<StrictMode><Mainslide baseUrl={baseUrl} /></StrictMode>);

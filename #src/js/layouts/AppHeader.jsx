@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { timeLineHeaderItem } from '../modules/anime-js.js';
 
 const Header = ({ baseUrl }) => {
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 	useEffect(() => {
+		timeLineHeaderItem();
 		// const fadeIn = document.querySelector('.page__fade-in');
 		const handleScroll = () => {
 			const header = document.querySelector('.header');

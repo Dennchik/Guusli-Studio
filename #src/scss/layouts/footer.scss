@@ -17,7 +17,7 @@
 
 	// .footer__info
 	&__info {
-		// padding: 4rem 2rem;
+		// margin: 0 2rem;
 	}
 
 	// .footer__contacts
@@ -63,7 +63,7 @@
 		.community {
 			// .community__items
 			&__items {
-				padding: 5rem 0;
+				padding: 5rem 2rem;
 
 				justify-content: space-between;
 				@include flex-align-center;

@@ -28,12 +28,21 @@ export default {
 		},
 		entry: {
 			// animatebio: './#src/js/app/animate-bio.jsx',
-			// animateindex: './#src/js/app/animate-index.jsx',
-			// appindex: './#src/js/app/AppIndex.jsx',
-			"app-about": { import: ['./#src/js/app/AppBio.jsx', './#src/js/app/animate-bio.jsx'], filename: '[name].min.js', dependOn: 'anime-vendors' },
+			animateindex: './#src/js/app/animate-index.jsx',
+			// "app-home": './#src/js/app/AppIndex.jsx',
+			'home-components': { import: ['./#src/js/layouts/Components.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
+			// "app-about": { import: ['./#src/js/app/AppAbout.jsx', './#src/js/app/animate-bio.jsx'], filename: '[name].min.js', dependOn: 'react-vendors' },
+			'react-vendors': ['react', 'react-dom', 'prop-types'],
+			'anime-vendors': ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'],
+			'swiper-bundle': ['swiper/bundle']
+			// 'app-home': { import: ['./#src/js/app/AppIndex.jsx', './#src/js/app/animate-index.jsx'], filename: '[name].min.js', dependOn: 'react-vendors' },
 
-			'app-home': { import: ['./#src/js/app/AppIndex.jsx', './#src/js/app/animate-index.jsx'], filename: '[name].min.js', dependOn: 'anime-vendors' },
-			'anime-vendors': ['gsap', 'react', 'react-dom', 'prop-types'],
+			// "app-about": { import: ['./#src/js/app/AppAbout.jsx', './#src/js/app/animate-bio.jsx'], filename: '[name].min.js', dependOn: ['react-vendors', 'module-plg'] },
+
+			// 'app-home': { import: ['./#src/js/app/AppIndex.jsx', './#src/js/app/animate-index.jsx'], filename: '[name].min.js', dependOn: ['react-vendors', 'module-plg'] },
+			// 'react-vendors': ['react', 'react-dom', 'prop-types'],
+			// 'module-plg': ['gsap', 'swiper'],
+			// 'animejs': ['animejs'],
 			// dependOn: 'shared',
 			// shared: 'lodash',
 		},
@@ -81,6 +90,7 @@ export default {
 		},
 
 	},
+
 	webpack: {
 		// mode: isProd ? 'production' : 'development',
 		mode: 'production',

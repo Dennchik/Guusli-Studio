@@ -1,6 +1,6 @@
 extends ../../layouts/app_layout
 append link  
-	link(rel="stylesheet" type="text/css" href="@@webRoot/css/bio-style.min.css" ) 
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/about-style.min.css" ) 
 prepend script 
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
 	script(defer="defer" type="text/javascript" src="@@webRoot/js/app/anime-vendors.min.js")
@@ -13,7 +13,7 @@ block page-content
 	.page
 		block header
 			._header  
-			._fade-in.bp-1
+			//- ._fade-in.bp-1
 		._main-content
 			block main-content 
 				main.main-content#wrapper 

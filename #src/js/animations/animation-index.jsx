@@ -70,7 +70,7 @@ export function initSectionTriggerMove(trigger, targets) {
 			targets: targets,
 			className: "active"
 		},
-		// markers: true
+		markers: true
 	});
 }
 // -----------------------------------------------------------------------------
