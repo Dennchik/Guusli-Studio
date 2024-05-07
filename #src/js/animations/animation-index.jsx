@@ -18,8 +18,8 @@ export let smoother = ScrollSmoother.create({
 });
 
 // -----------------------------------------------------------------------------
-export function applyEffects(smoother) {
-	smoother.effects(".content-box__column", {
+export function applyEffectsColumn(smoother, element) {
+	smoother.effects(element, {
 		speed: (i) => {
 			// Desktop three columns layout
 			if (window.matchMedia('(min-width:730)').matches) {
@@ -105,6 +105,21 @@ export function tlFooterParallel() {
 		duration: 1,
 		opacity: 0,
 	}, '-=1');
+}
+// -----------------------------------------------------------------------------
+export function tlFooterContacts() {
+	const tlFooter = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.footer',
+			start: 'top bottom',
+			endTrigger: '.footer',
+			end: 'bottom bottom',
+			scrub: 0.1,
+			ease: 'linear',
+			toggleActions: 'play none none reverse',
+			// markers: true,
+		}
+	});
 
 	tlFooter.from('.el-4', {
 		y: 150,

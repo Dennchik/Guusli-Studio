@@ -27,19 +27,24 @@ export default {
 			runtimeChunk: 'single',
 		},
 		entry: {
+			about: { import: './#src/js/about.jsx', filename: '[name].min.js' },
+			index: { import: './#src/js/index.jsx', filename: '[name].min.js' },
+
 			'home-components': { import: ['./#src/js/app/MainComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
 
 			"about-components": { import: ['./#src/js/app/AboutComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
 
-			'react-vendors': ['react', 'react-dom', 'prop-types'],
-			'anime-vendors': ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'],
-			'swiper-bundle': ['swiper/bundle']
+			'react-vendors': { import: ['react', 'react-dom', 'prop-types'] },
+
+			'anime-vendors': { import: ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'] },
+
+			'swiper-bundle': { import: ['swiper/bundle'] }
 
 			// dependOn: 'shared',
 			// shared: 'lodash',
 		},
 		output: {
-			filename: '[name].min.js',
+			filename: 'app/[name].min.js',
 		},
 
 		module: {
@@ -110,8 +115,8 @@ export default {
 			},
 		},
 		entry: {
-			about: './#src/js/about.js',
-			index: './#src/js/index.js',
+			// about: './#src/js/about.js',
+			// index: './#src/js/index.js',
 			main: './#src/js/main.js'
 		},
 		output: {

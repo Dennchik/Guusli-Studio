@@ -15,7 +15,7 @@ const AboutCompany = ({ baseUrl }) => {
 					</div>
 				</div>
 				<div className='about__footer'>
-					<a className='about__button' href={getPath('pages/about.html')}>Read more</a>
+					<a href={getPath('pages/about.html')} className='about__button'>Read more</a>
 				</div>
 			</div>
 			<div className="about__column el-2">

@@ -1,13 +1,16 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
+
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
-import { Link } from 'react-scroll';
-import { Element } from 'react-scroll';
-// -----------------------------------------------------------------------------
+import { Element, Button, Link } from 'react-scroll';
+
+// -------------------------------- Modules ------------------------------------
+import isMobile from "../libraries/Js-devise.js";
+// import isMobile from "js/libraries/Js-devise.js";
 // ------------------------------- Components ----------------------------------
 import { timeLineHeaderItem } from '../modules/anime-js.js';
 
-import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterParallel, initSectionTriggerMove } from "../animations/animation-index.jsx";
+import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterContacts, initSectionTriggerMove } from "../animations/animation-index.jsx";
 // -----------------------------------------------------------------------------
 const baseUrl = '..';
 // -------------------------------- Header -------------------------------------
@@ -43,7 +46,16 @@ const Header = ({ baseUrl }) => {
 	const getPath = (fileName) => {
 		return `${baseUrl}/${fileName}`;
 	};
-
+	useEffect(() => {
+		document.addEventListener('DOMContentLoaded', function () {
+			var element = document.getElementById('target-services');
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' });
+			} else {
+				console.error('Элемент с идентификатором target-services не найден на странице.');
+			}
+		});
+	}, []);
 	return (
 		<header className="header key-object">
 			<div className="header__container">
@@ -60,12 +72,10 @@ const Header = ({ baseUrl }) => {
 						<a href={getPath('index.html')} className="header__item header__item--home">HOME
 						</a>
 						<div className="header__item header__item--services">
-							<Link className='link-key key-services'
-								to='services'
-								duration={700}
-								offset={-100}
-								smooth='easeInCubic'
-							>SERVICES</Link>
+							<a className="link-key key-services"
+								href="../index.html#target"
+							// to='../index.html#target-services'
+							>SERVICES</a>
 						</div>
 						<div className="header__item">
 							<a href={getPath('pages/videos.html')}>VIDEOS</a></div>
@@ -76,12 +86,12 @@ const Header = ({ baseUrl }) => {
 							<a href={getPath('pages/news.html')}>NEWS</a>
 						</div>
 						<div className="header__item header__item--contacts">
-							<Link className='link-key key-services'
+							<Button className=' key-services'
 								to='footer'
 								duration={700}
 								offset={-100}
 								smooth='easeInQuad'
-							>CONTACTS</Link>
+							>CONTACTS</Button>
 						</div>
 					</div>
 					<div className="header__bookmark">
@@ -113,6 +123,7 @@ const About = () => {
 	}, []);
 
 	useEffect(() => {
+		applyParallaxEffects(smoother, '.about__bg-image');
 		const toggleButton = toggleButtonRef.current;
 
 		if (toggleButton) {
@@ -153,6 +164,9 @@ const About = () => {
 		return () => window.removeEventListener('resize', handleResize);
 	}, [handleResize]);
 
+
+	useEffect(() => {
+	});
 	return (
 		<div className="about" id='about'>
 			<div className="about__bg-image _ibg">
@@ -245,6 +259,89 @@ const Achievements = () => {
 		</div>
 	);
 };
+// --------------------------------- footer ------------------------------------
+const Footer = () => {
+	useEffect(() => {
+		if (isMobile.any()) {
+		} else {
+			tlFooterContacts();
+		}
+	}, []);
+
+	return (
+		<Element className='footer' name='footer'>
+			<div className="footer__content">
+				<div className="footer__info _container">
+					<div className="footer__help el-4">
+						<i className='icon-achievements _current-page'></i>
+						<i className='icon-services'></i>
+						<i className='icon-reviews'></i>
+						<i className='icon-contacts'></i>
+					</div>
+				</div>
+				<div className="contacts footer__contacts el-5">
+					<div className="contacts__container">
+						<div className="contacts__items">
+							<div className="contacts__item">
+								<i className='icon-location'></i>
+								<div className='contacts__text'>
+									<p>Россия, Калужская область, г. Обнинск,</p>
+									<p>Проспект Ленина, 137, к. 4, подъезд 3, оф. 260</p>
+								</div>
+							</div>
+							<div className="contacts__item">
+								<a href="tel:+79106044424">
+									<i className="icon-phone-call"></i>
+									<span>+7 910 604-44-24</span>
+								</a>
+							</div>
+							<div className="contacts__item">
+								<a href="mailto:mailto:studio@obninsk-gusli.ru">
+									<i className="icon-enve-mail"></i>
+									<span>studio@obninsk-gusli.ru</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="footer__community _container">
+				<div className="community">
+					<div className="community__items">
+						<div className="community__title">
+							<span>Media-Studio GROUP ©  2024.</span>
+							<a className='community__link' href="">Privacy Policy.
+								<i className='icon-angles-right-solid'></i>
+							</a>
+						</div>
+						<div className="community__icons">
+							<div className="community__icon">
+								<a class="wa" title="WhatsApp" target="blank" href="https://wa.me/79106044424">
+									<i className="icon-whatsapp"></i>
+								</a>
+							</div>
+							<div className="community__icon">
+								<a class="wa" title="VK" target="blank" href="https://vk.com/studio_gusli">
+									<i className="icon-vk-brand"></i>
+								</a>
+							</div>
+							<div className="community__icon">
+								<a class="wa" title="TG" target="blank" href="https://t.me/gusli_studio">
+									<i className="icon-telegram-fly"></i>
+								</a>
+							</div>
+							<div className="community__icon">
+								<a class="wa" title="youtube" target="blank" href="https://youtube.com/@guslistudio6257?si=36fe20TYpLAJyB3m">
+									<i className="icon-youtube-logo"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</Element>
+	);
+};
 // ------------------------------- Menufloat -----------------------------------
 const Menufloat = ({ baseUrl }) => {
 	const [offset, setOffset] = useState(-100);
@@ -277,7 +374,7 @@ const Menufloat = ({ baseUrl }) => {
 	useEffect(() => {
 		initSectionTriggerMove('#about', '.menu-float__menu-link--home');
 		initSectionTriggerMove('#achieve', '.menu-float__menu-link--services');
-		// initSectionTriggerMove('#footer', '.menu-float__menu-link--footer');
+		initSectionTriggerMove('#footer', '.menu-float__menu-link--footer');
 	});
 	const getPath = (filename) => {
 		return `${baseUrl}/${filename}`;
@@ -337,27 +434,30 @@ const Menufloat = ({ baseUrl }) => {
 						</div>
 						<div className="menu-float__bottom">
 							<div className="menu-float__layout menu-float__layout--primary">
-								<div className="menu-float__content"><a className="menu-float__mail" href="tel:+79106044424">
-									<div className="menu-float__logo"><i className="icon-phone-call"></i></div>
-									<div className="menu-float__breadcrumb"><strong className="menu-float__title">G.студия</strong></div>
-								</a>
+								<div className="menu-float__content">
+									<a className="menu-float__mail" href="tel:+79106044424">
+										<div className="menu-float__logo"><i className="icon-phone-call"></i></div>
+										<div className="menu-float__breadcrumb">
+											<strong className="menu-float__title">G.студия</strong>
+										</div>
+									</a>
 								</div>
 							</div>
 							<div className="menu-float__layout menu-float__layout--secondary">
 								<div className="menu-float__content">
 									<div className="menu-float__nav">
 										<div className="menu-float__menu-link menu-float__menu-link--home">
-											<Link to='about' duration={700} smooth={true} offset={0}>Home</Link>
+											<Button to='about' duration={700} smooth={true} offset={0}>Home</Button>
 										</div>
 										<div className="menu-float__menu-link menu-float__menu-link--services">
-											<Link to='achieve-items' duration={700} smooth={true} offset={-80}>
+											<Button to='achieve-items' duration={700} smooth={true} offset={-80}>
 												Services
-											</Link>
+											</Button>
 										</div>
 										<div className="menu-float__menu-link menu-float__menu-link--footer">
-											<Link to='footer' duration={700} smooth={true} offset={-80}>
+											<Button to='footer' duration={700} smooth={true} offset={-80}>
 												Contacts
-											</Link>
+											</Button>
 										</div>
 									</div>
 								</div>
@@ -380,7 +480,6 @@ const Menufloat = ({ baseUrl }) => {
 		</nav>
 	);
 };
-
 // -----------------------------------------------------------------------------
 createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
 // -----------------------------------------------------------------------------
@@ -388,5 +487,7 @@ createRoot(document.querySelector('.main-content__about')).render(<About />);
 // -----------------------------------------------------------------------------
 createRoot(document.querySelector('.main-content__achievements')).render(<Achievements />);
 // -----------------------------------------------------------------------------
-createRoot(document.querySelector('.page__menu-float')).render(<Menufloat />);
+createRoot(document.querySelector('.main-content__footer')).render(<Footer baseUrl={baseUrl} />);
+// -----------------------------------------------------------------------------
+createRoot(document.querySelector('.page__menu-float')).render(<Menufloat baseUrl={baseUrl} />);
 // -----------------------------------------------------------------------------
