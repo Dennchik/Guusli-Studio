@@ -35,12 +35,12 @@ export default {
 	react: {
 		src: pathSrc + '/js/**/*.{jsx}',
 		watch: pathSrc + '/js/**/*.{jsx,scss}',
-		dest: pathDest + '/js'
+		dest: pathDest + '/js/app/'
 	},
 	reactSass: {
 		src: pathSrc + '/scss/assets/*.{jsx,js}',
 		watch: pathSrc + '/scss/app/**/*.{scss,sass,jsx}',
-		dest: pathDest + '/js/'
+		dest: pathDest + '/js/app/'
 	},
 	reactWebp: {
 		src: pathSrc + '/js/layouts/*.{jsx}',

@@ -16,7 +16,6 @@
 		"IMAGE": "gulp image",
 		"SPRITE": "gulp sprite",
 		"FONT": "gulp fonts",
-		"CLEAR - (Fonts)": "gulp clearFonts",
 		"(3) TASKS": "gulp --tasks"
 	},
 	"author": "Dennchik",
@@ -91,6 +90,7 @@
 		"react-image-webp": "^0.8.0",
 		"react-router-dom": "^6.23.0",
 		"react-router-hash-link": "^2.4.3",
+		"react-scripts": "^5.0.1",
 		"react-scroll": "^1.9.0",
 		"require-dir": "^1.2.0",
 		"sass": "^1.76.0",

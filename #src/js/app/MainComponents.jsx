@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
-import { Element, Link } from 'react-scroll';
-// --------------------------------- Modules -----------------------------------
-import ScrollToElement from '../assets/ScrollToElement.jsx';
+import { Link } from 'react-scroll';
+import { Element } from 'react-scroll';
+// -----------------------------------------------------------------------------
 import isMobile from "../libraries/Js-devise.js";
 import swiperLayout from '../assets/swiper-layout.js';
 import mainSlide from '../modules/main-slide.js';
@@ -12,7 +12,7 @@ import AudioPlayer from '../layouts/AudioPlayer.jsx';
 // ------------------------------- Components ----------------------------------
 import { fadeInSlide, timeLineHeaderItem, animationSvgLine, animationSvgText } from '../modules/anime-js.js';
 
-import { smoother, applyParallaxEffects, applyEffectsColumn, animateTitles, tlServices1, tlServices2, tlFooterParallel, tlFooterContacts, initSectionTriggerMove } from "../animations/animation-index.jsx";
+import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterParallel, initSectionTriggerMove } from "../animations/animation-index.jsx";
 // -----------------------------------------------------------------------------
 const baseUrl = '.';
 // --------------------------------- Header ------------------------------------
@@ -113,7 +113,6 @@ const Mainslide = ({ baseUrl }) => {
 		swiperLayout();
 		mainSlide();
 	}, []);
-
 	useEffect(() => {
 		const slideWrappers = document.querySelectorAll('.main-slide__slide-wrapper');
 		if (!slideWrappers.length) return; // Проверка, что слайд-контейнеры существуют
@@ -229,9 +228,7 @@ const Mainslide = ({ baseUrl }) => {
 // -------------------------------- Services -----------------------------------
 const Services = () => {
 	useEffect(() => {
-		ScrollToElement;
 	});
-
 	useEffect(() => {
 		const initSwiper = document.querySelector('.content-box__body');
 		if (isMobile.any()) {
@@ -278,7 +275,7 @@ const Services = () => {
 	useEffect(() => {
 		if (isMobile.any()) {
 		} else {
-			applyEffectsColumn(smoother, '.content-box__column');
+			applyEffects(smoother);
 		}
 		applyParallaxEffects(smoother, '.material-parallax');
 		tlServices1();
@@ -291,7 +288,7 @@ const Services = () => {
 	}, []);
 
 	return (
-		<Element className="services key-object" id='target-services'>
+		<Element className="services key-object" name='services'>
 			<div className="material-parallax parallax">
 				<div className="parallax__image">
 					<picture>{isWebpSupported() ? (
@@ -578,129 +575,23 @@ const Services = () => {
 	);
 };
 // --------------------------------- footer ------------------------------------
-const Footer = ({ baseUrl }) => {
+const Footer = () => {
 	useEffect(() => {
 		if (isMobile.any()) {
 		} else {
 			tlFooterParallel();
-			tlFooterContacts();
 		}
-	}, []);
-	const getPath = (fileName) => {
-		return `${baseUrl}/${fileName}`;
-	};
+	});
 	return (
 		<footer className='footer' name='footer'>
 			<div className="footer__content">
 				<div className="footer__info _container">
-					<div className="about">
-						<div className="about__column el-1">
-							<div className="about__body">
-								<div className="about__title">ABOUT OUR STUDIO</div>
-								<div className="about__text">
-									<p>Наша медиа-группа представляет собой превосходную студию звукозаписи и продюсерскую компанию. Мы специализируемся на создании текстов, продюсировании, звукозаписи и развитии талантов. Готовы к сотрудничеству с вами в любое время.</p>
-									<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка.</p>
-									<p>В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p>
-								</div>
-							</div>
-							<div className='about__footer'>
-								<a href={getPath('pages/about.html')} className='about__button'>Read more</a>
-							</div>
-						</div>
-						<div className="about__column el-2">
-							<div className='about__body'>
-								<div className="about__title">SERVICES</div>
-								<div className="about__item-services">
-									<i className='icon-microphone'></i>
-									<span>Мы предлагаем услуги аналоговой и цифровой записи, а также микширования в широком спектре жанров.</span>
-								</div>
-								<div className="about__item-services">
-									<i className='icon-fast-forward'></i>
-									<span>Наша студия привлекает великолепным интерьером и оборудованными комфортабельными помещениями, идеально подходящими для создания лучших произведений.</span>
-								</div>
-								<div className="about__item-services">
-									<i className='icon-music'></i>
-									<span>В нашей студии мы внедряем передовое оборудование и программное обеспечение для микширования, обеспечивая высочайшее качество звучания ваших треков. Ваше творчество - наш приоритет.</span>
-								</div>
-							</div>
-							<div className='about__footer'>
-								<a className='about__button' href="#" type='button'>Read more</a>
-							</div>
-						</div>
-						<div className="about__column el-3">
-							<div className='about__body'>
-								<div className="about__title">OUR TEAM</div>
-								<div className="team-mates about__team-items">
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-1.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Райан - основатель студии и ведущий звукорежиссер. Engineer.</p>
-											</div>
-										</li>
-									</ul>
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-2.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
-											</div>
-										</li>
-									</ul>
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-3.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
-											</div>
-										</li>
-									</ul>
-									<ul className="team-mates__list">
-										<li>
-											<div className="team-mates__image">
-												<img src="@@webRoot/img/footer/team-4.png" alt="image" />
-											</div>
-										</li>
-										<li>
-											<div className="team-mates__name">
-												<a href="#">Ryan Gosling</a>
-											</div>
-											<div className="team-mates__text">
-												<p>Adam is the studio’s founder and leading sound engineer.</p>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
+					<AboutCompany />
 					<div className="footer__help el-4">
-						<a href={getPath("pages/about.html")}><i className='icon-achievements'></i></a>
-						<a href={getPath("pages/about.html")}><i className='icon-services'></i></a>
-						<a href={getPath("pages/about.html")}><i className='icon-reviews'></i></a>
-						<a href={getPath("pages/about.html")}><i className='icon-contacts'></i></a>
+						<i className='icon-achievements'></i>
+						<i className='icon-services'></i>
+						<i className='icon-reviews'></i>
+						<i className='icon-contacts'></i>
 					</div>
 				</div>
 				<div className="contacts footer__contacts el-5">
@@ -764,6 +655,116 @@ const Footer = ({ baseUrl }) => {
 				</div>
 			</div>
 		</footer>
+	);
+};
+// ------------------------------ AboutCompany ---------------------------------
+const AboutCompany = ({ baseUrl }) => {
+	const getPath = (fileName) => {
+		return `${baseUrl}/${fileName}`;
+	};
+	return (
+		<div className="about">
+			<div className="about__column el-1">
+				<div className="about__body">
+					<div className="about__title">ABOUT OUR STUDIO</div>
+					<div className="about__text">
+						<p>Наша медиа-группа представляет собой превосходную студию звукозаписи и продюсерскую компанию. Мы специализируемся на создании текстов, продюсировании, звукозаписи и развитии талантов. Готовы к сотрудничеству с вами в любое время.</p>
+						<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка.</p>
+						<p>В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p>
+					</div>
+				</div>
+				<div className='about__footer'>
+					<a className='about__button' href={getPath('pages/about.html')}>Read more</a>
+				</div>
+			</div>
+			<div className="about__column el-2">
+				<div className='about__body'>
+					<div className="about__title">SERVICES</div>
+					<div className="about__item-services">
+						<i className='icon-microphone'></i>
+						<span>Мы предлагаем услуги аналоговой и цифровой записи, а также микширования в широком спектре жанров.</span>
+					</div>
+					<div className="about__item-services">
+						<i className='icon-fast-forward'></i>
+						<span>Наша студия привлекает великолепным интерьером и оборудованными комфортабельными помещениями, идеально подходящими для создания лучших произведений.</span>
+					</div>
+					<div className="about__item-services">
+						<i className='icon-music'></i>
+						<span>В нашей студии мы внедряем передовое оборудование и программное обеспечение для микширования, обеспечивая высочайшее качество звучания ваших треков. Ваше творчество - наш приоритет.</span>
+					</div>
+				</div>
+				<div className='about__footer'>
+					<a className='about__button' href="#" type='button'>Read more</a>
+				</div>
+			</div>
+			<div className="about__column el-3">
+				<div className='about__body'>
+					<div className="about__title">OUR TEAM</div>
+					<div className="team-mates about__team-items">
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-1.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Райан - основатель студии и ведущий звукорежиссер. Engineer.</p>
+								</div>
+							</li>
+						</ul>
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-2.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
+								</div>
+							</li>
+						</ul>
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-3.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
+								</div>
+							</li>
+						</ul>
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-4.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Adam is the studio’s founder and leading sound engineer.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };
 // ------------------------------- Menufloat -----------------------------------
@@ -901,14 +902,14 @@ const Menufloat = ({ baseUrl }) => {
 		</nav>
 	);
 };
-//? -----------------------------Render Header ---------------------------------
+// -----------------------------Render RootDOm ---------------------------------
 createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
-//? ---------------------------Render Mainslide --------------------------------
+// -----------------------------------------------------------------------------
 createRoot(document.querySelector('.main-content__slide')).render(<Mainslide baseUrl={baseUrl} />);
-//? ---------------------------Render Services ---------------------------------
+// -----------------------------------------------------------------------------
 createRoot(document.querySelector('.main-content__services')).render(<Services baseUrl={baseUrl} />);
-//? ----------------------------Render Footer ----------------------------------
+// -----------------------------------------------------------------------------
 createRoot(document.querySelector('.main-content__footer')).render(<Footer baseUrl={baseUrl} />);
-//? ---------------------------Render Menufloat --------------------------------
-createRoot(document.querySelector('.page__menu-float')).render(<Menufloat baseUrl={baseUrl} />);
+// -----------------------------------------------------------------------------
+createRoot(document.querySelector('.page__menu-float')).render(<Menufloat />);
 // -----------------------------------------------------------------------------

@@ -15,6 +15,11 @@
 		}
 	}
 
+	// .footer__info
+	&__info {
+		// margin: 0 2rem;
+	}
+
 	// .footer__contacts
 	&__contacts {
 		padding: 2rem 0;
@@ -131,7 +136,7 @@
 
 	// .footer__help
 	&__help {
-		padding: 2rem 0;
+		padding-bottom: 2rem;
 		text-align: center;
 		font-size: 4.8rem;
 		color: $gray;
@@ -145,12 +150,6 @@
 			margin: 3rem;
 			@include _425 {
 				margin: 3rem 2rem;
-			}
-			&._current-page {
-				scale: 1.2;
-				&::before {
-					color: $neon-blue-dark;
-				}
 			}
 
 			&:hover {

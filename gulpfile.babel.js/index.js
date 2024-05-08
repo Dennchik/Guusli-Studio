@@ -34,7 +34,6 @@ import reactWebp from './task/reactWebp';
 
 const change = $.gulp.series(clearFonts, fonts, fontsStyle);
 const changejson = $.gulp.series(json, pug);
-const changeReact = $.gulp.series(react);
 //* Observation
 function reload(done) {
 	$.browserSync.reload();
