@@ -46,9 +46,9 @@ export default function Services() {
 			});
 		};
 	}, []);
-	// useEffect(() => {
-	// 	applyParallaxEffects(smoother, '.material-parallax');
-	// }, []);
+	useEffect(() => {
+		applyParallaxEffects(smoother, '.material-parallax');
+	}, []);
 
 	return (
 		<Element className="services key-object" name='services'>
