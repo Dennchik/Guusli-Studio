@@ -1,9 +1,10 @@
 import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { Flip } from 'gsap/Flip';
 // -----------------------------------------------------------------------------
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Flip);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Flip, ScrollToPlugin);
 ScrollTrigger.normalizeScroll(true);
 ScrollTrigger.config({ ignoreMobileResize: true });
 // preventDefault();
@@ -54,7 +55,7 @@ export function animateTitles(element, trigger, endTrigger, start, end) {
 			endTrigger: endTrigger,
 			end: `bottom bottom-${end}`,
 			toggleActions: 'play none none reverse',
-			// markers: true,
+			markers: true,
 		},
 	});
 }

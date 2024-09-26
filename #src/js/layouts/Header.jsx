@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { timeLineHeaderItem } from '../modules/anime-js.js';
 
+import "../../scss/layouts/header.scss";
+
 const Header = ({ baseUrl }) => {
 	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
 	useEffect(() => {
@@ -40,31 +42,38 @@ const Header = ({ baseUrl }) => {
 			<div className="header__container">
 				<div className="header__column el-logo">
 					<a href={getPath('index.html')}>
-						<div className="header__logo"></div></a>
+						<div className="header__logo">
+							<img src="./img/header/logo.png" alt="Logo" />
+						</div>
+					</a>
 					<div className="header__text">
-						<h1>Media-Studio</h1>
-						<p><span>Group</span><span>Obninsk</span></p>
+						<span>Media-Group</span>
 					</div>
 				</div>
 				<div className="header__column">
 					<div className="header__menu">
-						<a href={getPath('index.html')} className="header__item header__item--home">HOME
+						<a href={getPath('index.html')} className="header__item header__item--home">
+							<i className='icon-home'></i>
 						</a>
 						<div className="header__item header__item--services">
 							<Link className='link-key key-services'
 								to='services'
 								duration={700}
 								offset={-100}
-								smooth='easeInCubic'
-							>SERVICES</Link>
+								smooth='easeInCubic'>
+								<span>Услуги</span>
+							</Link>
 						</div>
 						<div className="header__item">
-							<a href={getPath('pages/videos.html')}>VIDEOS</a></div>
-						<div className="header__item">
-							<a href={getPath('pages/about.html')}>BIO</a>
+							<a href={getPath('pages/videos.html')}>
+								<sapn>Видео</sapn>
+							</a>
 						</div>
 						<div className="header__item">
-							<a href={getPath('pages/news.html')}>NEWS</a>
+							<a href={getPath('pages/about.html')}>Компания</a>
+						</div>
+						<div className="header__item">
+							<a href={getPath('pages/news.html')}>Новости</a>
 						</div>
 						<div className="header__item header__item--contacts">
 							<Link className='link-key key-services'
@@ -72,7 +81,7 @@ const Header = ({ baseUrl }) => {
 								duration={700}
 								offset={-100}
 								smooth='easeInQuad'
-							>CONTACTS</Link>
+							>Контакты</Link>
 						</div>
 					</div>
 					<div className="header__bookmark">
@@ -83,7 +92,7 @@ const Header = ({ baseUrl }) => {
 					<a href='tel:++79106044424' className="el-community__phone">
 						<i className='icon-phone-ringing'></i>
 						<div className="el-community__content">
-							<h5 className='el-community__title'>GIVE US A CALL</h5>
+							<h5 className='el-community__title'>Связаться с нами</h5>
 							<span>+7 910 604-44-24</span>
 						</div>
 					</a>
@@ -92,6 +101,5 @@ const Header = ({ baseUrl }) => {
 		</header >
 	);
 };
-
 
 export default Header;

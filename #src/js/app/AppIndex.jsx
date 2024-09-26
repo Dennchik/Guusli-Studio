@@ -8,7 +8,7 @@ import Header from '../layouts/AppHeader.jsx';
 ReactDOM.render(
 	<StrictMode><Header baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__header'));
 // -----------------------------------------------------------------------------
-import Services from '../layouts/Services.jsx';
+import Services from '../components/Services.jsx/index.js';
 ReactDOM.render(
 	<StrictMode><Services /></StrictMode>, document.querySelector('.main-content__services')
 );
@@ -18,7 +18,7 @@ ReactDOM.render(
 	<StrictMode><Footer /></StrictMode>, document.querySelector('.main-content__footer')
 );
 // -----------------------------------------------------------------------------
-import AboutCompany from '../layouts/AboutCompanys.jsx';
+import AboutCompany from '../components/AboutCompanys.jsx';
 // Создаем временный DOM-элемент
 const tempElement = document.createElement('div');
 // Получаем ссылку на DOM-элемент
@@ -28,7 +28,7 @@ ReactDOM.render(<AboutCompany baseUrl={baseUrl} />, tempElement);
 // Добавляем контейнер с компонентом AboutCompany в конец .footer__info
 footerInfo.insertBefore(tempElement.firstChild, footerInfo.firstChild);
 // -----------------------------------------------------------------------------
-import Menufloat from '../layouts/Menu-float.jsx';
+import Menufloat from '../components/Menu-float.jsx';
 ReactDOM.hydrate(
 	<StrictMode> <Menufloat baseUrl={baseUrl} /></StrictMode>, document.querySelector('.page__menu-float')
 );

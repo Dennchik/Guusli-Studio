@@ -3,12 +3,14 @@ import { fadeInSlide } from '../modules/anime-js.js';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import swiperLayout from '../assets/swiper-layout.js';
 import mainSlide from '../modules/main-slide.js';
-import AudioPlayer from './AudioPlayer.jsx';
-// import audio from '../assets/audio-player.js';
+import AudioPlayer from '../layouts/AudioPlayer.jsx';
 // import { Element } from 'react-scroll';
 // Компонент Mainslide
 export default function Mainslide({ baseUrl }) {
-
+	useEffect(() => {
+		swiperLayout();
+		mainSlide();
+	}, []);
 	useEffect(() => {
 		const slideWrappers = document.querySelectorAll('.main-slide__slide-wrapper');
 		if (!slideWrappers.length) return; // Проверка, что слайд-контейнеры существуют
@@ -16,6 +18,7 @@ export default function Mainslide({ baseUrl }) {
 		// Проверяем активен ли первый слайд при загрузке страницы
 		const firstSlideWrapper = slideWrappers[0];
 		const isActive = firstSlideWrapper.classList.contains('swiper-slide-active');
+
 		if (isActive) {
 			// Если первый слайд активен, запускаем анимацию
 			fadeInSlide();
@@ -41,12 +44,6 @@ export default function Mainslide({ baseUrl }) {
 				observer.disconnect();
 			};
 		});
-	}, []);
-
-	useEffect(() => {
-		swiperLayout();
-		mainSlide();
-		// audio();
 	}, []);
 
 	const getPath = (fileName) => {
@@ -121,36 +118,8 @@ export default function Mainslide({ baseUrl }) {
 			<div className="main-slide__pagination"></div>
 			<div className="main-slide__media">
 				<AudioPlayer />
-				{/* <div className="audio-player">
-					<div className="audio-player__controls">
-						<div className="audio-player__play-container">
-							<div className="audio-player__toggle-play play">
-							</div>
-						</div>
-						<div className="audio-player__time">
-							<div className="audio-player__current">0:00</div>
-							<div className="audio-player__divider">/</div>
-							<div className="audio-player__length"></div>
-						</div>
-						<div className="audio-player__name">AdeleTaylor-Hello</div>
-
-						<div className="audio-player__volume-container">
-							<div className="audio-player__volume-button">
-								<div className="audio-player__volume icono-volumeMedium"></div>
-							</div>
-
-							<div className="audio-player__volume-slider">
-								<div className="audio-player__volume-percentage"></div>
-							</div>
-						</div>
-					</div>
-					<div className="audio-player__timeline">
-						<div className="audio-player__progress" style={{ width: `${progress}%` }}></div>
-					</div>
-				</div> */}
 			</div>
 		</div>
 
-
 	);
-}
+};

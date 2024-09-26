@@ -8,8 +8,8 @@ export function timeLineHeaderItem() {
 	timeline
 		.add({
 			targets: '.header__item',
-			opacity: [0, 1],
-			translateY: [100, 0],
+			opacity: [0, 0.7],
+			translateY: [-100, 0],
 			delay: anime.stagger(100, { start: 100 }),
 			easing: 'easeInOutSine',
 			begin: function (anim) {
@@ -20,33 +20,32 @@ export function timeLineHeaderItem() {
 		})
 		.add({
 			targets: '.header__item',
-			opacity: [0, 1],
 			delay: anime.stagger(100, { start: 500 }),
 			easing: 'easeInOutSine',
 		}, '-=250')
 		.add({
 			targets: '.el-logo',
 			opacity: [0, 1],
-			translateY: [-200, 0],
-			rotate: [-90, 0],
+			translateX: [-200, 0],
+			// rotate: [-90, 0],
 			duration: 1250,
 			easing: 'easeInOutSine',
 			begin: function (anim) {
 				anim.animatables.forEach(function (animatable) {
-					animatable.target.style.transition = 'opacity 3s ease-out';
+					animatable.target.style.transition = 'opacity 0.5s ease-out';
 				});
 			}
 		}, 50)
 		.add({
 			targets: '.el-community',
 			opacity: [0, 1],
-			translateY: [200, 0],
-			rotate: [-90, 0],
+			translateX: [200, 0],
+			// rotate: [-90, 0],
 			duration: 1250,
 			easing: 'easeInOutSine',
 			begin: function (anim) {
 				anim.animatables.forEach(function (animatable) {
-					animatable.target.style.transition = 'opacity 3s ease-out';
+					animatable.target.style.transition = 'opacity 0.5s ease-out';
 				});
 			}
 		}, 50);
@@ -137,3 +136,7 @@ export function removeElement() {
 		anime.remove(element); // Удаляем анимацию для каждого элемента
 	});
 }
+
+
+
+

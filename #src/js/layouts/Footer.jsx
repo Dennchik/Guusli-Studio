@@ -1,10 +1,24 @@
-import React from 'react';
-// import About from './AboutCompany.jsx';
+import React, { useEffect } from 'react';
+// -------------------------------------------------------------------------------------------------
+import isMobile from "../libraries/Js-devise.js";
+// -------------------------------------------------------------------------------------------------
+
+
+import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterParallel, initSectionTriggerMove } from "../animations/animation-index.jsx";
+// -------------------------------------------------------------------------------------------------
+import AboutCompany from "../components/AboutCompanys.jsx";
 const Footer = () => {
+	useEffect(() => {
+		if (isMobile.any()) {
+		} else {
+			tlFooterParallel();
+		}
+	});
 	return (
 		<footer className='footer' name='footer'>
 			<div className="footer__content">
 				<div className="footer__info _container">
+					<AboutCompany />
 					<div className="footer__help el-4">
 						<i className='icon-achievements'></i>
 						<i className='icon-services'></i>

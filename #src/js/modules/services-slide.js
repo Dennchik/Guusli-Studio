@@ -2,7 +2,7 @@ import swiperLayout from "../assets/swiper-layout";
 swiperLayout('._swiper');
 //* import Swiper bundle with all modules installed 
 import Swiper from 'swiper/bundle';
-export default function servicesSlide(
+export function servicesSlide(
 	mainslide = '.content-box__body',
 	scrollbar = '',
 	nextEl = '',
@@ -16,13 +16,13 @@ export default function servicesSlide(
 			grabCursor: true,
 			// mousewheel: true,
 			// centeredSlides: true,
-			slidesPerView: 5,
+			// slidesPerView: 5,
 			breakpoints: {
 				300: {
 					slidesPerView: 1,
 				},
 				376: {
-					slidesPerView: 2,
+					slidesPerView: 1,
 				},
 				491: {
 					slidesPerView: 3,

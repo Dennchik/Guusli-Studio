@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-// -----------------------------------------------------------------------------
-export default function Menufloat({ baseUrl }) {
+import { initSectionTriggerMove } from "../animations/animation-index.jsx";
+// -------------------------------------------------------------------------------------------------
+const Menufloat = ({ baseUrl }) => {
 	const [offset, setOffset] = useState(-100);
 	useEffect(() => {
 		function handleResize() {
@@ -28,10 +29,15 @@ export default function Menufloat({ baseUrl }) {
 			menuFloattop.classList.toggle('_is-open');
 		});
 	}, []);
+
+	useEffect(() => {
+		initSectionTriggerMove('.main-slide', '.menu-float__menu-link--home');
+		initSectionTriggerMove('.services', '.menu-float__menu-link--services');
+		initSectionTriggerMove('#footer', '.menu-float__menu-link--footer');
+	});
 	const getPath = (filename) => {
 		return `${baseUrl}/${filename}`;
 	};
-
 	return (
 		<nav className="menu-float">
 			<div className="menu-float__body">
@@ -128,4 +134,5 @@ export default function Menufloat({ baseUrl }) {
 			</div>
 		</nav>
 	);
-}
+};
+export default Menufloat;

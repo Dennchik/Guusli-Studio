@@ -2,105 +2,16 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 import { Link } from 'react-scroll';
-import { Element } from 'react-scroll';
-// -----------------------------------------------------------------------------
-// ------------------------------- Components ----------------------------------
-import { timeLineHeaderItem } from '../modules/anime-js.js';
+
+// -------------------------------------------------------------------------------------------------
+const baseUrl = '..';
+// ------------------------------------- Components ------------------------------------------------
+import Header from "../layouts/Header.jsx";
 
 import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterParallel, initSectionTriggerMove } from "../animations/animation-index.jsx";
-// -----------------------------------------------------------------------------
-const baseUrl = '..';
+
 // -------------------------------- Header -------------------------------------
-const Header = ({ baseUrl }) => {
-	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
-	useEffect(() => {
-		timeLineHeaderItem();
-		// const fadeIn = document.querySelector('.page__fade-in');
-		const handleScroll = () => {
-			const header = document.querySelector('.header');
-			const mainContent = document.querySelector('.page__main-content');
-			const mainContentTop = mainContent.getBoundingClientRect().top;
-
-			if (mainContentTop < 0) {
-				header.classList.add('with-border');
-				// fadeIn.classList.add('with-border');
-			} else {
-				header.classList.add('without-border');
-				header.classList.remove('with-border');
-				// fadeIn.classList.remove('with-border');
-			}
-			if (mainContentTop < 0) {
-				header.classList.remove('without-border');
-			}
-		};
-		window.addEventListener('scroll', handleScroll);
-		// Очистка слушателя событий при размонтировании компонента
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-
-	const getPath = (fileName) => {
-		return `${baseUrl}/${fileName}`;
-	};
-
-	return (
-		<header className="header key-object">
-			<div className="header__container">
-				<div className="header__column el-logo">
-					<a href={getPath('index.html')}>
-						<div className="header__logo"></div></a>
-					<div className="header__text">
-						<h1>Media-Studio</h1>
-						<p><span>Group</span><span>Obninsk</span></p>
-					</div>
-				</div>
-				<div className="header__column">
-					<div className="header__menu">
-						<a href={getPath('index.html')} className="header__item header__item--home">HOME
-						</a>
-						<div className="header__item header__item--services">
-							<Link className='link-key key-services'
-								to='services'
-								duration={700}
-								offset={-100}
-								smooth='easeInCubic'
-							>SERVICES</Link>
-						</div>
-						<div className="header__item">
-							<a href={getPath('pages/videos.html')}>VIDEOS</a></div>
-						<div className="header__item">
-							<a href={getPath('pages/about.html')}>BIO</a>
-						</div>
-						<div className="header__item">
-							<a href={getPath('pages/news.html')}>NEWS</a>
-						</div>
-						<div className="header__item header__item--contacts">
-							<Link className='link-key key-services'
-								to='footer'
-								duration={700}
-								offset={-100}
-								smooth='easeInQuad'
-							>CONTACTS</Link>
-						</div>
-					</div>
-					<div className="header__bookmark">
-
-					</div>
-				</div>
-				<div className="header__column el-community">
-					<a href='tel:++79106044424' className="el-community__phone">
-						<i className='icon-phone-ringing'></i>
-						<div className="el-community__content">
-							<h5 className='el-community__title'>GIVE US A CALL</h5>
-							<span>+7 910 604-44-24</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		</header >
-	);
-};
+createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
 // -------------------------------- About --------------------------------------
 const About = () => {
 	const [isContentExpanded, setIsContentExpanded] = useState(window.innerWidth > 920);
@@ -382,7 +293,6 @@ const Menufloat = ({ baseUrl }) => {
 };
 
 // -----------------------------------------------------------------------------
-createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
 // -----------------------------------------------------------------------------
 createRoot(document.querySelector('.main-content__about')).render(<About />);
 // -----------------------------------------------------------------------------

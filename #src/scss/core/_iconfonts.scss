@@ -27,6 +27,11 @@
   //* Better Font Rendering
 }
 
+.icon-home {
+  &:before {
+    content: $icon-home;
+  }
+}
 .icon-phone-ringing {
   &:before {
     content: $icon-phone-ringing;
@@ -40,71 +45,6 @@
 .icon-phone-hand {
   &:before {
     content: $icon-phone-hand;
-  }
-}
-.icon-angle-left {
-  &:before {
-    content: $icon-angle-left;
-  }
-}
-.icon-angle-right {
-  &:before {
-    content: $icon-angle-right;
-  }
-}
-.icon-angle-up {
-  &:before {
-    content: $icon-angle-up;
-  }
-}
-.icon-angle-down {
-  &:before {
-    content: $icon-angle-down;
-  }
-}
-.icon-hand-shake {
-  &:before {
-    content: $icon-hand-shake;
-  }
-}
-.icon-phone-call {
-  &:before {
-    content: $icon-phone-call;
-  }
-}
-.icon-volume-control-phone {
-  &:before {
-    content: $icon-volume-control-phone;
-  }
-}
-.icon-music {
-  &:before {
-    content: $icon-music;
-  }
-}
-.icon-fast-forward {
-  &:before {
-    content: $icon-fast-forward;
-  }
-}
-.icon-youtube-logo {
-  &:before {
-    content: $icon-youtube-logo;
-  }
-}
-.icon-whatsapp {
-  &:before {
-    content: $icon-whatsapp;
-  }
-}
-.icon-vk-brand {
-  &:before {
-    content: $icon-vk-brand;
-  }
-}
-.icon-telegram-fly {
-  &:before {
-    content: $icon-telegram-fly;
   }
 }
 .icon-angles-left-solid {
@@ -157,14 +97,29 @@
     content: $icon-youtube;
   }
 }
-.icon-location {
+.icon-camera {
   &:before {
-    content: $icon-location;
+    content: $icon-camera;
   }
 }
-.icon-enve-mail {
+.icon-movie {
   &:before {
-    content: $icon-enve-mail;
+    content: $icon-movie;
+  }
+}
+.icon-video {
+  &:before {
+    content: $icon-video;
+  }
+}
+.icon-record {
+  &:before {
+    content: $icon-record;
+  }
+}
+.icon-film {
+  &:before {
+    content: $icon-film;
   }
 }
 .icon-microphone {
@@ -175,5 +130,130 @@
 .icon-record-voice {
   &:before {
     content: $icon-record-voice;
+  }
+}
+.icon-step-backward {
+  &:before {
+    content: $icon-step-backward;
+  }
+}
+.icon-fast-backward {
+  &:before {
+    content: $icon-fast-backward;
+  }
+}
+.icon-backward {
+  &:before {
+    content: $icon-backward;
+  }
+}
+.icon-play {
+  &:before {
+    content: $icon-play;
+  }
+}
+.icon-pause {
+  &:before {
+    content: $icon-pause;
+  }
+}
+.icon-stop {
+  &:before {
+    content: $icon-stop;
+  }
+}
+.icon-forward {
+  &:before {
+    content: $icon-forward;
+  }
+}
+.icon-fast-forward {
+  &:before {
+    content: $icon-fast-forward;
+  }
+}
+.icon-step-forward {
+  &:before {
+    content: $icon-step-forward;
+  }
+}
+.icon-eject {
+  &:before {
+    content: $icon-eject;
+  }
+}
+.icon-rub {
+  &:before {
+    content: $icon-rub;
+  }
+}
+.icon-angle-left {
+  &:before {
+    content: $icon-angle-left;
+  }
+}
+.icon-angle-right {
+  &:before {
+    content: $icon-angle-right;
+  }
+}
+.icon-angle-up {
+  &:before {
+    content: $icon-angle-up;
+  }
+}
+.icon-angle-down {
+  &:before {
+    content: $icon-angle-down;
+  }
+}
+.icon-hand-shake {
+  &:before {
+    content: $icon-hand-shake;
+  }
+}
+.icon-phone-call {
+  &:before {
+    content: $icon-phone-call;
+  }
+}
+.icon-volume-control-phone {
+  &:before {
+    content: $icon-volume-control-phone;
+  }
+}
+.icon-music {
+  &:before {
+    content: $icon-music;
+  }
+}
+.icon-youtube-logo {
+  &:before {
+    content: $icon-youtube-logo;
+  }
+}
+.icon-whatsapp {
+  &:before {
+    content: $icon-whatsapp;
+  }
+}
+.icon-vk-brand {
+  &:before {
+    content: $icon-vk-brand;
+  }
+}
+.icon-telegram-fly {
+  &:before {
+    content: $icon-telegram-fly;
+  }
+}
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
+}
+.icon-enve-mail {
+  &:before {
+    content: $icon-enve-mail;
   }
 }

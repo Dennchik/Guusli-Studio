@@ -1,3 +1,6 @@
+@import '../core/mixins';
+@import '../core/variables';
+@import '../core/extend';
 .header {
 	position: relative;
 	width: 100%;
@@ -57,12 +60,17 @@
 
 	// .header__column
 	&__column {
-		@include flex-align-center;
+		&:nth-child(1) {
+			display: flex;
+			align-items: flex-end;
+		}
+
 		@include _920 {
 			&:nth-child(2) {
 				display: none;
 			}
 		}
+		@include flex-align-center;
 	}
 
 	// .header__text
@@ -71,27 +79,19 @@
 		text-transform: uppercase;
 		white-space: nowrap;
 		@include flex-align-center;
-		h1 {
+
+		span {
 			line-height: 100%;
-			font-size: 2.8rem;
+			font-size: 41px;
+			font-weight: 100;
+			font-family: $font-family-exclude;
+			transform: translateY(-7px);
+			text-shadow: 0px 0px 3px #000000;
+			opacity: 0.7;
+			color: #919191;
+
 			@include _425 {
 				font-size: 2.4rem;
-			}
-		}
-		P {
-			margin-top: 0.5rem;
-			span {
-				line-height: 100%;
-				font-size: 1.6rem;
-				color: gray;
-				&:not(:last-child) {
-					margin-right: 0.8rem;
-				}
-				&:nth-child(2) {
-					color: $electric-lime;
-					font-size: 2.4rem;
-					text-transform: none;
-				}
 			}
 		}
 	}
@@ -100,7 +100,8 @@
 	&__logo {
 		height: 5.3em;
 		width: 8.3rem;
-		background: url('../img/header/logo.png') center / contain no-repeat;
+		// background: url('../../img/header/logo.png') center / contain no-repeat;
+		opacity: 0.9;
 	}
 
 	// .header__menu
@@ -109,6 +110,17 @@
 		display: flex;
 		transition: all 0.9s ease 0s;
 		margin: 0 1.5rem;
+		text-transform: uppercase;
+		display: flex;
+		align-items: flex-start;
+		transform: translateY(7px);
+
+		.icon-home {
+			&::before {
+				font-size: 22px;
+				color: #919191;
+			}
+		}
 	}
 
 	// .header__item
@@ -116,7 +128,6 @@
 		cursor: pointer;
 		position: relative;
 		text-shadow: 1px 1px 2px #000;
-		// opacity: 0;
 
 		&:not(:last-child) {
 			margin-right: 2rem;
@@ -125,25 +136,42 @@
 		&:hover {
 			color: $neon-blue;
 			text-shadow: 2px 2px 3px #000;
-			&::before {
-				width: 75%;
+
+			a {
+				opacity: 1;
 			}
-			&::after {
-				width: 40%;
+
+			.icon-home {
+				&::before {
+					transition: all 0.4s ease 0s;
+					color: $neon-blue;
+				}
 			}
 		}
 
 		&.active {
 			color: $neon-blue;
 			text-shadow: 2px 2px 3px #000;
+
 			&::before {
 				width: 75%;
 			}
+
+			.icon-home {
+				&::before {
+					color: $neon-blue;
+				}
+			}
+
 			&::after {
 				width: 40%;
 			}
 		}
-		@extend .link_underline;
+
+		&:not(:first-child) {
+			opacity: 1;
+			@extend .link_underline;
+		}
 	}
 
 	// .header__community

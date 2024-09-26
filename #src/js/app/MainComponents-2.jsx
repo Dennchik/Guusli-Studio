@@ -1,14 +1,240 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Element } from 'react-scroll';
-import { animationSvgLine, animationSvgText } from '../modules/anime-js.js';
+import React, { useEffect, useState, useRef } from 'react';
+import { createRoot } from 'react-dom/client';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
+import { Link } from 'react-scroll';
+import { Element } from 'react-scroll';
+// -------------------------------------------------------------------------------------------------
 import isMobile from "../libraries/Js-devise.js";
-// -----------------------------------------------------------------------------
-export default function Services() {
+import swiperLayout from '../assets/swiper-layout.js';
+import mainSlide from '../modules/main-slide.js';
+import { servicesSlide } from '../modules/services-slide.js';
+import AudioPlayer from '../layouts/AudioPlayer.jsx';
+// ------------------------------------- Components ----------------------------------
+import { fadeInSlide, timeLineHeaderItem, animationSvgLine, animationSvgText } from '../modules/anime-js.js';
+
+import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterParallel, initSectionTriggerMove } from "../animations/animation-index.jsx";
+// -------------------------------------------------------------------------------------------------
+const baseUrl = '.';
+// -------------------------------------- Header ---------------------------------------------------
+const Header = ({ baseUrl }) => {
+	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
+	useEffect(() => {
+		timeLineHeaderItem();
+		// const fadeIn = document.querySelector('.page__fade-in');
+		const handleScroll = () => {
+			const header = document.querySelector('.header');
+			const mainContent = document.querySelector('.page__main-content');
+			const mainContentTop = mainContent.getBoundingClientRect().top;
+
+			if (mainContentTop < 0) {
+				header.classList.add('with-border');
+				// fadeIn.classList.add('with-border');
+			} else {
+				header.classList.add('without-border');
+				header.classList.remove('with-border');
+				// fadeIn.classList.remove('with-border');
+			}
+			if (mainContentTop < 0) {
+				header.classList.remove('without-border');
+			}
+		};
+		window.addEventListener('scroll', handleScroll);
+		// Очистка слушателя событий при размонтировании компонента
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	const getPath = (fileName) => {
+		return `${baseUrl}/${fileName}`;
+	};
+
+	return (
+		<header className="header key-object">
+			<div className="header__container">
+				<div className="header__column el-logo">
+					<a href={getPath('index.html')}>
+						<div className="header__logo"></div></a>
+					<div className="header__text">
+						<h1>Media-Studio</h1>
+						<p><span>Group</span><span>Obninsk</span></p>
+					</div>
+				</div>
+				<div className="header__column">
+					<div className="header__menu">
+						<a href={getPath('index.html')} className="header__item header__item--home">HOME
+						</a>
+						<div className="header__item header__item--services">
+							<Link className='link-key key-services'
+								to='services'
+								duration={700}
+								offset={-100}
+								smooth='easeInCubic'
+							>SERVICES</Link>
+						</div>
+						<div className="header__item">
+							<a href={getPath('pages/videos.html')}>VIDEOS</a></div>
+						<div className="header__item">
+							<a href={getPath('pages/about.html')}>BIO</a>
+						</div>
+						<div className="header__item">
+							<a href={getPath('pages/news.html')}>NEWS</a>
+						</div>
+						<div className="header__item header__item--contacts">
+							<Link className='link-key key-services'
+								to='footer'
+								duration={700}
+								offset={-100}
+								smooth='easeInQuad'
+							>CONTACTS</Link>
+						</div>
+					</div>
+					<div className="header__bookmark">
+
+					</div>
+				</div>
+				<div className="header__column el-community">
+					<a href='tel:++79106044424' className="el-community__phone">
+						<i className='icon-phone-ringing'></i>
+						<div className="el-community__content">
+							<h5 className='el-community__title'>GIVE US A CALL</h5>
+							<span>+7 910 604-44-24</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</header >
+	);
+};
+// -------------------------------------- Mainslide ------------------------------------------------
+const Mainslide = ({ baseUrl }) => {
+	useEffect(() => {
+		// swiperLayout('._swiper');
+		swiperLayout();
+		mainSlide();
+	}, []);
+	useEffect(() => {
+		const slideWrappers = document.querySelectorAll('.main-slide__slide-wrapper');
+		if (!slideWrappers.length) return; // Проверка, что слайд-контейнеры существуют
+
+		// Проверяем активен ли первый слайд при загрузке страницы
+		const firstSlideWrapper = slideWrappers[0];
+		const isActive = firstSlideWrapper.classList.contains('swiper-slide-active');
+
+		if (isActive) {
+			// Если первый слайд активен, запускаем анимацию
+			fadeInSlide();
+		}
+
+		// Начинаем отслеживать изменения в слайд-контейнерах
+		slideWrappers.forEach((slideWrapper) => {
+			const observer = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+						const isActive = slideWrapper.classList.contains('swiper-slide-active');
+						if (isActive) {
+							// Если слайд-контейнер содержит класс 'swiper-slide-active', запускаем анимацию
+							fadeInSlide();
+						}
+					}
+				});
+			});
+
+			observer.observe(slideWrapper, { attributes: true });
+			// Отключение наблюдателя при размонтировании компонента
+			return () => {
+				observer.disconnect();
+			};
+		});
+	}, []);
+
+	const getPath = (fileName) => {
+		return `${baseUrl}/${fileName}`;
+	};
+
+	return (
+		<div className="main-slide" name='main-slide'>
+			<div className="main-slide__body _swiper">
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture> {
+							isWebpSupported()
+								? <img src={getPath("@@webRoot/img/main/slides/slide_1.webp")} alt="slide-1" />
+								: <img src={getPath("@@webRoot/img/main/slides/slide_1.jpg")} alt="slide-1" />
+						}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Профессиональная </span>Студия Звукозаписи
+						</div>
+						<div className="main-slide__text">Мы - современная студия звукозаписи, в которой работают лучшие российские специалисты в области записи и продюсирования музыки, предоставляющие самый лучший сервис и удобства для современных артистов, как подписанных, так и независимых.
+						</div>
+					</div>
+				</div>
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture>
+							{isWebpSupported()
+								? <img src={getPath("@@webRoot/img/main/slides/slide_4.webp")} alt="slide-4" />
+								: <img src={getPath("@@webRoot/img/main/slides/slide_4.jpg")} alt="slide-4" />}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Атмосфера Звука </span>Музыкального Пространства
+						</div>
+						<div className="main-slide__text">Мы создаем звуковые шедевры, где каждая нота оживает и звучит волшебно. Наша команда гарантирует, что ваше музыкальное произведение будет звучать так же эмоционально и мощно, как в самом сердце концертного зала. Доверьте нам ваше творчество и ощутите магию звука в каждой ноте.
+						</div>
+					</div>
+				</div>
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture>
+							{isWebpSupported()
+								? <img src={getPath("@@webRoot/img/main/slides/slide_2.webp")} alt="slide-2" />
+								: <img src={getPath("@@webRoot/img/main/slides/slide_2.jpg")} alt="slide-2" />}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Индивидуальный  подход  </span>к Нашим Клиентам
+						</div>
+						<div className="main-slide__text">В нашей студии мы всегда стараемся делать все возможное, чтобы процесс записи был вдохновляющим и творческим. Мы индивидуально подбираем подход к каждому клиенту, с которым работаем.
+						</div>
+					</div>
+				</div>
+				<div className="main-slide__slide-wrapper">
+					<div className="main-slide__slide-image _img">
+						<picture>
+							{isWebpSupported()
+								? <img src={getPath("@@webRoot/img/main/slides/slide_3.webp")} alt="slide-3" />
+								: <img src={getPath("@@webRoot/img/main/slides/slide_3.jpg")} alt="slide-3" />}
+						</picture>
+					</div>
+					<div className="main-slide__content">
+						<div className="main-slide__title el-slidetitle"><span>Все виды  </span> Микширования Звука
+						</div>
+						<div className="main-slide__text">Если вы ищете качественное сведение звука, то в нашей студии есть все, что вам нужно! Помимо первоклассных решений для микширования и мастеринга, мы также предлагаем полный цикл услуг по созданию музыки.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="main-slide__pagination"></div>
+			<div className="main-slide__media">
+				<AudioPlayer />
+			</div>
+		</div>
+
+	);
+};
+// -------------------------------------- Services -------------------------------------------------
+const Services = () => {
+	useEffect(() => {
+	});
 	useEffect(() => {
 		const initSwiper = document.querySelector('.content-box__body');
 		if (isMobile.any()) {
 			initSwiper.classList.add('_swiper');
+			swiperLayout();
+			servicesSlide();
 			if (initSwiper.classList.contains('_swiper')) {
 			} else {
 				console.log('нет класс swiper');
@@ -47,7 +273,18 @@ export default function Services() {
 		};
 	}, []);
 	useEffect(() => {
+		if (isMobile.any()) {
+		} else {
+			applyEffects(smoother);
+		}
 		applyParallaxEffects(smoother, '.material-parallax');
+		tlServices1();
+		tlServices2();
+		animateTitles('.services__title', '.services', '.services', '=150', '=0');
+		animateTitles('.offer-container__title', '.services__offer', '.services', '=150', '=0');
+		initSectionTriggerMove('.main-slide', '.header__item--home');
+		initSectionTriggerMove('.services', '.header__item--services');
+		initSectionTriggerMove('#footer', '.header__item--contacts');
 	}, []);
 
 	return (
@@ -336,4 +573,343 @@ export default function Services() {
 			</div>
 		</Element>
 	);
-}
+};
+// -------------------------------------- Footer ---------------------------------------------------
+const Footer = () => {
+	useEffect(() => {
+		if (isMobile.any()) {
+		} else {
+			tlFooterParallel();
+		}
+	});
+	return (
+		<footer className='footer' name='footer'>
+			<div className="footer__content">
+				<div className="footer__info _container">
+					<AboutCompany />
+					<div className="footer__help el-4">
+						<i className='icon-achievements'></i>
+						<i className='icon-services'></i>
+						<i className='icon-reviews'></i>
+						<i className='icon-contacts'></i>
+					</div>
+				</div>
+				<div className="contacts footer__contacts el-5">
+					<div className="contacts__container">
+						<div className="contacts__items">
+							<div className="contacts__item">
+								<i className='icon-location'></i>
+								<div className='contacts__text'>
+									<p>Россия, Калужская область, г. Обнинск,</p>
+									<p>Проспект Ленина, 137, к. 4, подъезд 3, оф. 260</p>
+								</div>
+							</div>
+							<div className="contacts__item">
+								<a href="tel:+79106044424">
+									<i className="icon-phone-call"></i>
+									<span>+7 910 604-44-24</span>
+								</a>
+							</div>
+							<div className="contacts__item">
+								<a href="mailto:mailto:studio@obninsk-gusli.ru">
+									<i className="icon-enve-mail"></i>
+									<span>studio@obninsk-gusli.ru</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="footer__community _container">
+				<div className="community">
+					<div className="community__items">
+						<div className="community__title">
+							<span>Media-Studio GROUP ©  2024.</span>
+							<a className='community__link' href="">Privacy Policy.
+								<i className='icon-angles-right-solid'></i>
+							</a>
+						</div>
+						<div className="community__icons">
+							<div className="community__icon">
+								<a class="wa" title="WhatsApp" target="blank" href="https://wa.me/79106044424">
+									<i className="icon-whatsapp"></i>
+								</a>
+							</div>
+							<div className="community__icon">
+								<a class="wa" title="VK" target="blank" href="https://vk.com/studio_gusli">
+									<i className="icon-vk-brand"></i>
+								</a>
+							</div>
+							<div className="community__icon">
+								<a class="wa" title="TG" target="blank" href="https://t.me/gusli_studio">
+									<i className="icon-telegram-fly"></i>
+								</a>
+							</div>
+							<div className="community__icon">
+								<a class="wa" title="youtube" target="blank" href="https://youtube.com/@guslistudio6257?si=36fe20TYpLAJyB3m">
+									<i className="icon-youtube-logo"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
+};
+// -------------------------------------- AboutCompany ---------------------------------------------
+const AboutCompany = ({ baseUrl }) => {
+	const getPath = (fileName) => {
+		return `${baseUrl}/${fileName}`;
+	};
+	return (
+		<div className="about">
+			<div className="about__column el-1">
+				<div className="about__body">
+					<div className="about__title">ABOUT OUR STUDIO</div>
+					<div className="about__text">
+						<p>Наша медиа-группа представляет собой превосходную студию звукозаписи и продюсерскую компанию. Мы специализируемся на создании текстов, продюсировании, звукозаписи и развитии талантов. Готовы к сотрудничеству с вами в любое время.</p>
+						<p>Мы признаём и ценим значимость каждого проекта. Наше обязательство - обеспечить высочайшее качество звукозаписи, гибкость и терпение, необходимые для достижения вами высокого уровня в конкурентной среде современного рынка.</p>
+						<p>В нашей студии вас ждёт дружелюбная и уютная атмосфера, создающая идеальное окружение для раскрытия вашего таланта и создания ваших лучших произведений.</p>
+					</div>
+				</div>
+				<div className='about__footer'>
+					<a className='about__button' href={getPath('pages/about.html')}>Read more</a>
+				</div>
+			</div>
+			<div className="about__column el-2">
+				<div className='about__body'>
+					<div className="about__title">SERVICES</div>
+					<div className="about__item-services">
+						<i className='icon-microphone'></i>
+						<span>Мы предлагаем услуги аналоговой и цифровой записи, а также микширования в широком спектре жанров.</span>
+					</div>
+					<div className="about__item-services">
+						<i className='icon-fast-forward'></i>
+						<span>Наша студия привлекает великолепным интерьером и оборудованными комфортабельными помещениями, идеально подходящими для создания лучших произведений.</span>
+					</div>
+					<div className="about__item-services">
+						<i className='icon-music'></i>
+						<span>В нашей студии мы внедряем передовое оборудование и программное обеспечение для микширования, обеспечивая высочайшее качество звучания ваших треков. Ваше творчество - наш приоритет.</span>
+					</div>
+				</div>
+				<div className='about__footer'>
+					<a className='about__button' href="#" type='button'>Read more</a>
+				</div>
+			</div>
+			<div className="about__column el-3">
+				<div className='about__body'>
+					<div className="about__title">OUR TEAM</div>
+					<div className="team-mates about__team-items">
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-1.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Райан - основатель студии и ведущий звукорежиссер. Engineer.</p>
+								</div>
+							</li>
+						</ul>
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-2.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
+								</div>
+							</li>
+						</ul>
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-3.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Райан - ассистент звукорежиссера в студии звукозаписи.</p>
+								</div>
+							</li>
+						</ul>
+						<ul className="team-mates__list">
+							<li>
+								<div className="team-mates__image">
+									<img src="@@webRoot/img/footer/team-4.png" alt="image" />
+								</div>
+							</li>
+							<li>
+								<div className="team-mates__name">
+									<a href="#">Ryan Gosling</a>
+								</div>
+								<div className="team-mates__text">
+									<p>Adam is the studio’s founder and leading sound engineer.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+// -------------------------------------- Menufloat ------------------------------------------------
+const Menufloat = ({ baseUrl }) => {
+	const [offset, setOffset] = useState(-100);
+	useEffect(() => {
+		function handleResize() {
+			const screenWidth = window.innerWidth;
+			//todo: Настроить логику для установки различных значений offset в зависимости от ширины экрана
+			if (screenWidth < 768) {
+				setOffset(-150);
+			} else {
+				setOffset(-100);
+			}
+		}
+		//todo: Вызываем функцию handleResize сразу после монтирования компонента, чтобы установить начальное значение 
+		handleResize();
+
+		//todo: Убираем слушатель события изменения размера окна при размонтировании компонента
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	useEffect(() => {
+		document.querySelector('.burger-button').addEventListener('click', function () {
+			this.classList.toggle('_active');
+			const menuFloattop = document.querySelector('.menu-float__top');
+			console.log(menuFloattop);
+			menuFloattop.classList.toggle('_is-open');
+		});
+	}, []);
+
+	useEffect(() => {
+		initSectionTriggerMove('.main-slide', '.menu-float__menu-link--home');
+		initSectionTriggerMove('.services', '.menu-float__menu-link--services');
+		initSectionTriggerMove('#footer', '.menu-float__menu-link--footer');
+	});
+	const getPath = (filename) => {
+		return `${baseUrl}/${filename}`;
+	};
+
+	return (
+		<nav className="menu-float">
+			<div className="menu-float__body">
+				<div className="menu-float__inner">
+					<div className="menu-float__wrapper">
+						<div className="menu-float__top">
+							<div className="menu-float__top-content">
+								<div className="main-menu">
+									<div className="main-menu__menu-wrapper">
+										<div className="main-menu__column">
+											<ul className="main-menu__menu-nav">
+												<li className="main-menu__title">
+													<h4>Inspiration</h4>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Видео</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Звук</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Текст</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Ивенты</a>
+												</li>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link" href="">Услуги</a>
+												</li>
+											</ul>
+										</div>
+										<div className="main-menu__column">
+											<ul className="main-menu__menu-nav">
+												<div className="main-menu__title">
+													<h4>w.</h4>
+												</div>
+												<li className="main-menu__menu-link">
+													<a className="main-menu__menu-link"
+														href={getPath('pages/about.html')}>Биография</a>
+												</li>
+												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">С кем работали</a>
+												</li>
+												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Отзывы клиентов</a>
+												</li>
+												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Галерея</a></li>
+												<li className="main-menu__menu-link"><a className="main-menu__menu-link" href="">Контакты</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="menu-float__bottom">
+							<div className="menu-float__layout menu-float__layout--primary">
+								<div className="menu-float__content"><a className="menu-float__mail" href="tel:+79106044424">
+									<div className="menu-float__logo"><i className="icon-phone-call"></i></div>
+									<div className="menu-float__breadcrumb"><strong className="menu-float__title">G.студия</strong></div>
+								</a>
+								</div>
+							</div>
+							<div className="menu-float__layout menu-float__layout--secondary">
+								<div className="menu-float__content">
+									<div className="menu-float__nav">
+										<div className="menu-float__menu-link menu-float__menu-link--home">
+											<Link to='main-slide' duration={700} smooth={true} offset={0}>Home</Link>
+										</div>
+										<div className="menu-float__menu-link menu-float__menu-link--services">
+											<Link to='services' duration={700} smooth={true} offset={-80}>
+												Services
+											</Link>
+										</div>
+										<div className="menu-float__menu-link menu-float__menu-link--footer">
+											<Link to='footer' duration={700} smooth={true} offset={-80}>
+												Contacts
+											</Link>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="menu-float__layout menu-float__layout--button">
+								<div className="menu-float__content">
+									<div className="burger-button">
+										<div className="burger-button__items"><svg viewBox="10 6 44 36">
+											<path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
+											<path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
+											<path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
+										</svg></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	);
+};
+// -------------------------------------- Render RootDOm -------------------------------------------
+createRoot(document.querySelector('.page__header')).render(<Header baseUrl={baseUrl} />);
+// -------------------------------------------------------------------------------------------------
+createRoot(document.querySelector('.main-content__slide')).render(<Mainslide baseUrl={baseUrl} />);
+// -------------------------------------------------------------------------------------------------
+createRoot(document.querySelector('.main-content__services')).render(<Services baseUrl={baseUrl} />);
+// -------------------------------------------------------------------------------------------------
+createRoot(document.querySelector('.main-content__footer')).render(<Footer baseUrl={baseUrl} />);
+// -------------------------------------------------------------------------------------------------
+createRoot(document.querySelector('.page__menu-float')).render(<Menufloat />);
+// -------------------------------------------------------------------------------------------------
