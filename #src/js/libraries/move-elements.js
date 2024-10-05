@@ -1,4 +1,4 @@
-export default function dinamicAdaptive() {
+function dinamicAdaptive() {
   class ItcMoveEl {
     constructor() {
       this._els = document.querySelectorAll('[data-move-el]');
@@ -43,13 +43,13 @@ export default function dinamicAdaptive() {
           newState = isChange ? newState : -1;
           if (item.state !== newState) {
             item.state = newState;
-            this._move(item);
+            this.move(item);
           }
         });
       });
       resizeObserver.observe(document.body);
     }
-    _move(item) {
+    move(item) {
       const el = item['el'];
       const state = item['state'];
       const position = state > -1 ? item['moves'][state]['index'] : item['position'];
@@ -59,3 +59,4 @@ export default function dinamicAdaptive() {
   }
   new ItcMoveEl();
 }
+export default dinamicAdaptive;

@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 // -------------------------------------------------------------------------------------------------
 import isMobile from "../libraries/Js-devise.js";
 // -------------------------------------------------------------------------------------------------
+const baseUrl = '..';
 
-
-import { smoother, applyParallaxEffects, applyEffects, animateTitles, tlServices1, tlServices2, tlFooterParallel, initSectionTriggerMove } from "../animations/animation-index.jsx";
+import { tlFooterParallel } from "../animations/animation-index.jsx";
 // -------------------------------------------------------------------------------------------------
-import AboutCompany from "../components/AboutCompanys.jsx";
+import AboutCompany from "../components/AboutCompany.jsx";
+
 const Footer = () => {
+
+
 	useEffect(() => {
 		if (isMobile.any()) {
 		} else {
@@ -18,7 +21,7 @@ const Footer = () => {
 		<footer className='footer' name='footer'>
 			<div className="footer__content">
 				<div className="footer__info _container">
-					<AboutCompany />
+					<AboutCompany baseUrl={baseUrl}/>
 					<div className="footer__help el-4">
 						<i className='icon-achievements'></i>
 						<i className='icon-services'></i>
@@ -63,22 +66,26 @@ const Footer = () => {
 						</div>
 						<div className="community__icons">
 							<div className="community__icon">
-								<a class="wa" title="WhatsApp" target="blank" href="https://wa.me/79106044424">
+								<a className="wa" title="WhatsApp" target="blank"
+									 href="https://wa.me/79106044424">
 									<i className="icon-whatsapp"></i>
 								</a>
 							</div>
 							<div className="community__icon">
-								<a class="wa" title="VK" target="blank" href="https://vk.com/studio_gusli">
+								<a className="wa" title="VK" target="blank"
+									 href="https://vk.com/studio_gusli">
 									<i className="icon-vk-brand"></i>
 								</a>
 							</div>
 							<div className="community__icon">
-								<a class="wa" title="TG" target="blank" href="https://t.me/gusli_studio">
+								<a className="wa" title="TG" target="blank"
+									 href="https://t.me/gusli_studio">
 									<i className="icon-telegram-fly"></i>
 								</a>
 							</div>
 							<div className="community__icon">
-								<a class="wa" title="youtube" target="blank" href="https://youtube.com/@guslistudio6257?si=36fe20TYpLAJyB3m">
+								<a className="wa" title="youtube" target="blank"
+									 href="https://youtube.com/@guslistudio6257?si=36fe20TYpLAJyB3m">
 									<i className="icon-youtube-logo"></i>
 								</a>
 							</div>

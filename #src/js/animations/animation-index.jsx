@@ -1,12 +1,12 @@
-import { gsap } from 'gsap';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { Flip } from 'gsap/Flip';
+import {gsap} from 'gsap';
+import {ScrollSmoother} from 'gsap/ScrollSmoother';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
+import {Flip} from 'gsap/Flip';
 // -----------------------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Flip, ScrollToPlugin);
 ScrollTrigger.normalizeScroll(true);
-ScrollTrigger.config({ ignoreMobileResize: true });
+ScrollTrigger.config({ignoreMobileResize: true});
 // preventDefault();
 // -----------------------------------------------------------------------------
 //todo: Устанавливаем плавную прокрутку страницы
@@ -33,7 +33,8 @@ export function applyEffects(smoother) {
 		}
 	});
 
-};
+}
+
 // -----------------------------------------------------------------------------
 //todo: Секция "Parallax Effects".
 export function applyParallaxEffects(smoother, element) {
@@ -43,6 +44,7 @@ export function applyParallaxEffects(smoother, element) {
 		}
 	});
 }
+
 // -----------------------------------------------------------------------------
 export function animateTitles(element, trigger, endTrigger, start, end) {
 	gsap.from(element, {
@@ -59,14 +61,18 @@ export function animateTitles(element, trigger, endTrigger, start, end) {
 		},
 	});
 }
+
 // -----------------------------------------------------------------------------
 //todo: Секция "#main-slide".
 export function initSectionTriggerMove(trigger, targets) {
 	ScrollTrigger.create({
 		trigger: trigger,
-		start: "top center", // Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
+		/*Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже
+		 верха окна браузера*/
+		start: "top center",
 		endTrigger: trigger, // Конец события - конец документа
-		end: "bottom center", // Закончить событие, когда верхняя граница элемента 1 достигнет верха окна браузера
+		/*Закончить событие, когда верхняя граница элемента 1 достигнет верха окна браузера*/
+		end: "bottom center",
 		toggleClass: {
 			targets: targets,
 			className: "active"
@@ -74,6 +80,7 @@ export function initSectionTriggerMove(trigger, targets) {
 		// markers: true
 	});
 }
+
 // -----------------------------------------------------------------------------
 export function tlFooterParallel() {
 	const tlFooter = gsap.timeline({
@@ -125,6 +132,7 @@ export function tlFooterParallel() {
 		opacity: 0,
 	}, '-=1');
 }
+
 // -----------------------------------------------------------------------------
 export function tlServices1() {
 	const tlServices1 = gsap.timeline({
@@ -151,6 +159,7 @@ export function tlServices1() {
 		opacity: 0,
 	}, '-=1');
 }
+
 // -----------------------------------------------------------------------------
 export function tlServices2() {
 	const tlServices2 = gsap.timeline({
@@ -177,21 +186,3 @@ export function tlServices2() {
 		opacity: 0,
 	}, '-=1');
 }
-// -----------------------------------------------------------------------------
-// export function flippElement() {
-
-// 	const box = document.querySelector("._button-flip"),
-// 		originalContainer = document.querySelector(".achieve-items__body"),
-// 		newContainer = document.querySelector(".achieve-items__new-container");
-
-// 	document.querySelector("._button-flip").addEventListener('click', () => {
-// 		const state = Flip.getState(box);
-
-// 		(box.parentNode === originalContainer ? newContainer : originalContainer).appendChild(box);
-
-// 		Flip.from(state, { duration: 1, ease: "power1.inOut", scale: true });
-// 	});
-
-// }
-
-

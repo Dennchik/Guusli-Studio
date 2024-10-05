@@ -1,35 +1,36 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-scroll';
-import { timeLineHeaderItem } from '../modules/anime-js.js';
+import React, { useEffect } from "react";
+import { Link } from "react-scroll";
+import { timeLineHeaderItem } from "../modules/anime-js.js";
+import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
 
 import "../../scss/layouts/header.scss";
 
-const Header = ({ baseUrl }) => {
-	// const dataMoveEl = [{ 'bp-max': 920.99, 'index': 1, 'target': '.bp-1' }];
+
+const Header = ({baseUrl}) => {
 	useEffect(() => {
 		timeLineHeaderItem();
-		// const fadeIn = document.querySelector('.page__fade-in');
+
 		const handleScroll = () => {
-			const header = document.querySelector('.header');
-			const mainContent = document.querySelector('.page__main-content');
+			const header = document.querySelector(".header");
+			const mainContent = document.querySelector(".page__main-content");
 			const mainContentTop = mainContent.getBoundingClientRect().top;
 
 			if (mainContentTop < 0) {
-				header.classList.add('with-border');
-				// fadeIn.classList.add('with-border');
+				header.classList.add("with-border");
 			} else {
-				header.classList.add('without-border');
-				header.classList.remove('with-border');
-				// fadeIn.classList.remove('with-border');
+				header.classList.add("without-border");
+				header.classList.remove("with-border");
 			}
+
 			if (mainContentTop < 0) {
-				header.classList.remove('without-border');
+				header.classList.remove("without-border");
 			}
 		};
-		window.addEventListener('scroll', handleScroll);
-		// Очистка слушателя событий при размонтировании компонента
+
+		window.addEventListener("scroll", handleScroll);
+
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 
@@ -41,9 +42,12 @@ const Header = ({ baseUrl }) => {
 		<header className="header key-object">
 			<div className="header__container">
 				<div className="header__column el-logo">
-					<a href={getPath('index.html')}>
+					<a href={getPath("index.html")}>
 						<div className="header__logo">
-							<img src="./img/header/logo.png" alt="Logo" />
+							{isWebpSupported()
+								? <img src={getPath("./img/header/logo.webp")} alt="Logo"
+											 type="image/webp"/>
+								: <img src={getPath("./img/header/logo.png")} alt="Logo"/>}
 						</div>
 					</a>
 					<div className="header__text">
@@ -52,41 +56,41 @@ const Header = ({ baseUrl }) => {
 				</div>
 				<div className="header__column">
 					<div className="header__menu">
-						<a href={getPath('index.html')} className="header__item header__item--home">
+						<a className="header__item header__item--home"
+							 href={getPath("index.html")}>
 							<i className='icon-home'></i>
 						</a>
 						<div className="header__item header__item--services">
 							<Link className='link-key key-services'
-								to='services'
-								duration={700}
-								offset={-100}
-								smooth='easeInCubic'>
+										to='services'
+										duration={700}
+										offset={-100}
+										smooth='easeInCubic'>
 								<span>Услуги</span>
 							</Link>
 						</div>
 						<div className="header__item">
-							<a href={getPath('pages/videos.html')}>
-								<sapn>Видео</sapn>
+							<a href={getPath("pages/videos.html")}>
+								<span>Видео</span>
 							</a>
 						</div>
 						<div className="header__item">
-							<a href={getPath('pages/about.html')}>Компания</a>
+							<a href={getPath("pages/about.html")}>Компания</a>
 						</div>
 						<div className="header__item">
-							<a href={getPath('pages/news.html')}>Новости</a>
+							<a href={getPath("pages/news.html")}>Новости</a>
 						</div>
 						<div className="header__item header__item--contacts">
 							<Link className='link-key key-services'
-								to='footer'
-								duration={700}
-								offset={-100}
-								smooth='easeInQuad'
-							>Контакты</Link>
+										to='footer'
+										duration={700}
+										offset={-100}
+										smooth='easeInQuad'>
+								Контакты
+							</Link>
 						</div>
 					</div>
-					<div className="header__bookmark">
-
-					</div>
+					<div className="header__bookmark"></div>
 				</div>
 				<div className="header__column el-community">
 					<a href='tel:++79106044424' className="el-community__phone">
@@ -98,8 +102,7 @@ const Header = ({ baseUrl }) => {
 					</a>
 				</div>
 			</div>
-		</header >
-	);
+		</header>);
 };
 
 export default Header;
