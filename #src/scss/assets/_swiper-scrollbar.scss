@@ -1,0 +1,41 @@
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar .swiper-scrollbar-horizontal {
+	position: absolute;
+	left: var(--swiper-scrollbar-sides-offset);
+	bottom: var(--swiper-scrollbar-bottom);
+	top: var(--swiper-scrollbar-top);
+	z-index: 8;
+	height: var(--swiper-scrollbar-size);
+	width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset));
+}
+
+.swiper-scrollbar {
+	border-radius: var(--swiper-scrollbar-border-radius);
+	position: relative;
+	touch-action: none;
+	background: var(--swiper-scrollbar-bg-color);
+}
+
+.swiper-scrollbar-drag {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: var(--swiper-scrollbar-drag-bg-color);
+	border-radius: var(--swiper-scrollbar-border-radius);
+	left: 0;
+	top: 0;
+}
+// .swiper-vertical > .swiper-scrollbar,
+// .swiper-scrollbar .swiper-scrollbar-vertical {
+// 	position: absolute;
+// 	left: var(--swiper-scrollbar-sides-offset);
+// 	bottom: var(--swiper-scrollbar-bottom);
+// 	top: var(--swiper-scrollbar-top);
+// 	z-index: 8;
+// 	height: var(--swiper-scrollbar-size);
+// 	width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset));
+// }
+// .swiper-scrollbar {
+// 	touch-action: none;
+// 	background: var(--swiper-scrollbar-bg-color);
+// }

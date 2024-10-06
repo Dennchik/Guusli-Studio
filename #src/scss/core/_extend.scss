@@ -1,0 +1,220 @@
+.grad_underline {
+	background: linear-gradient(to left, transparent, transparent),
+		linear-gradient(
+			to left,
+			var(--background-selected),
+			var(--font-color-active)
+		);
+	background-size:
+		100% 1px,
+		0 1px;
+	background-position:
+		100% 100%,
+		0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 400ms;
+}
+
+.gradient {
+	background: linear-gradient(to left, #0b0813, #392b7c 50%, #0c0814 100%);
+}
+
+.gradient-default {
+	background: linear-gradient(to right, #0b0813 10%, #2b2644 50%, #0b0813 90%);
+}
+
+.gradient-spec {
+	background: linear-gradient(-45deg, #fe59c2, #170e31 83%);
+	background-size: 200% 200%;
+}
+
+.liner-gradient-box {
+	background: linear-gradient(45deg, #10133a 55%, #47208a73 10%, #10133a);
+}
+
+.text-gradient {
+	background: currentColor 100%;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.gradient-header {
+	background: linear-gradient(
+		-45deg,
+		#1a1530,
+		#332764 60%,
+		rgb(42, 53, 20) 10%,
+		#000 70%
+	);
+}
+
+.gradient-services {
+	background: linear-gradient(to right, #0b0813 20%, #1c153f 50%, #0b0813 80%);
+}
+
+.gradient-title {
+	background: linear-gradient(to top, #170e31 10%, #402e6b 50%, #1a1530 100%);
+}
+
+.gradient-spec-active {
+	background: linear-gradient(-45deg, #04d9ff, #170e31 83%);
+	background-size: 200% 200%;
+}
+
+.gradient-spec-comfort {
+	background: linear-gradient(-45deg, #c8ff00, #170e31 83%);
+	background-size: 200% 200%;
+}
+
+.gradient-border-right {
+	background: linear-gradient(
+		to right,
+		rgba(42, 53, 20, 0.685) 20%,
+		#332764 50%,
+		#2a3514 80%
+	);
+}
+
+.gradient-border-left {
+	background: linear-gradient(to left top, #8164ff 40%, rgb(42, 53, 20) 70%);
+}
+
+.icon-style {
+	border: 1px var(--border-color);
+	border-style: none solid;
+	height: 100%;
+	padding: 0 1.5rem;
+	@include flex-align-center;
+}
+.shadow-after {
+	transform: rotateX(15deg) translateZ(-10px);
+	color: rgba(23, 14, 49, 0.479);
+	text-shadow:
+		5px 0px 5px $color,
+		0 0 40px rgba(125, 248, 255, 0.26),
+		0px 0px 20px rgba(204, 255, 0, 0.267);
+	z-index: -1;
+}
+// background: linear-gradient(to right, #04d9ff 20%, #ffff 50%, #04d9ff 80%);
+//! ----------------------------------------------------------------------------
+.overflow-hidden {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		height: 0;
+	}
+}
+
+.border-present {
+	color: $neon-blue;
+	display: block;
+	position: absolute;
+	inset: 0.7rem;
+	background: linear-gradient(
+			to right,
+			currentColor 0%,
+			$liquid-neon 8%,
+			transparent 8%,
+			transparent 92%,
+			$liquid-neon 92%,
+			currentColor 100%
+		),
+		linear-gradient(
+			to right,
+			currentColor 0%,
+			$liquid-neon 8%,
+			transparent 8%,
+			transparent 92%,
+			$liquid-neon 92%,
+			currentColor 100%
+		),
+		linear-gradient(
+			to bottom,
+			currentColor 0%,
+			$liquid-neon 11%,
+			transparent 11%,
+			transparent 89%,
+			$liquid-neon 89%,
+			currentColor 100%
+		),
+		linear-gradient(
+			to bottom,
+			currentColor 0%,
+			$liquid-neon 11%,
+			transparent 11%,
+			transparent 89%,
+			$liquid-neon 89%,
+			currentColor 100%
+		);
+	background-size:
+		100% 1px,
+		100% 1px,
+		1px 100%,
+		1px 100%;
+	background-position:
+		0 0,
+		0 100%,
+		0 0,
+		100% 0;
+	background-repeat: no-repeat;
+}
+
+.link_underline {
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 1px;
+		background-color: $electric-lime;
+		transition: width 0.4s ease-in-out;
+	}
+
+	&::before {
+		right: 0;
+		bottom: 0;
+	}
+	&::after {
+		bottom: -3px;
+		left: 0;
+	}
+
+	&.active {
+		text-shadow: 2px 2px 3px #000;
+		&::before {
+			width: 50%;
+		}
+		&::after {
+			width: 40%;
+		}
+	}
+
+	&:hover {
+		color: $neon-blue;
+		text-shadow: 2px 2px 3px #000;
+		&::before {
+			width: 50%;
+		}
+		&::after {
+			width: 40%;
+		}
+		a {
+			opacity: 1;
+		}
+	}
+}
+
+.is-open {
+	display: grid;
+	grid-template-columns: 1fr;
+	width: 100%;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.4s ease-in-out;
+	&._is-open {
+		grid-template-rows: 1fr;
+	}
+}
+
+.gradient-border-bottom {
+	background: linear-gradient(to left top, #8164ff 40%, rgb(42, 53, 20) 70%);
+}

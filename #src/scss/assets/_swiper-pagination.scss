@@ -1,0 +1,87 @@
+//! ---------------------[swiper-pagination-horizontal]-------------------------
+.swiper-pagination {
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	transform: translate3d(0, 0, 0);
+	z-index: 8;
+}
+
+.swiper-pagination-bullet {
+	cursor: pointer;
+	display: inline-block;
+	width: var(
+		--swiper-pagination-bullet-width,
+		var(--swiper-pagination-bullet-size)
+	);
+	height: var(
+		--swiper-pagination-bullet-height,
+		var(--swiper-pagination-bullet-size)
+	);
+	transition: opacity var(--swiper-transition-opacity) ease-in-out;
+	border-radius: var(--swiper-pagination-bullet-border-radius);
+	background: var(--swiper-pagination-bullet-inactive-color);
+	opacity: var(--swiper-pagination-bullet-inactive-opacity);
+}
+
+.swiper-pagination-bullets,
+.swiper-pagination-horizontal,
+.swiper-pagination-vertical {
+	bottom: var(--swiper-pagination-bottom);
+	top: var(--swiper-pagination-top);
+	left: 0;
+	width: 100%;
+}
+.swiper-pagination-bullet {
+	margin: var(--swiper-pagination-bullet-horizontal-gap);
+}
+.swiper-pagination-bullet-active {
+	opacity: var(--swiper-pagination-bullet-opacity);
+	background: var(--swiper-pagination-color, var(--swiper-theme-color));
+}
+// -----------------------------------------------------------------------------
+
+// .swiper-horizontal
+// 	> .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+// .swiper-pagination-horizontal.swiper-pagination-bullets
+// .swiper-pagination-bullets-dynamic {
+// 	left: 50%;
+// 	transform: translateX(-50%);
+// 	white-space: nowrap;
+// }
+
+// .swiper-pagination-bullets-dynamic {
+// 	overflow: hidden;
+// 	font-size: 0;
+// }
+
+// // .swiper-horizontal
+// // 	> .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+// // 	.swiper-pagination-bullet,
+// // .swiper-pagination-horizontal.swiper-pagination-bullets
+// .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+// 	transition:
+// 		200ms transform,
+// 		200ms left;
+// }
+
+// .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+// 	transform: scale(0.3);
+// 	position: relative;
+// }
+// .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+// 	transform: scale(0.6);
+// }
+// .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+// 	transform: scale(0.8);
+// }
+// .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+// 	transform: scale(1);
+// }
+// .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+// 	transform: scale(0.8);
+// }
+// .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+// 	transform: scale(0.6);
+// }

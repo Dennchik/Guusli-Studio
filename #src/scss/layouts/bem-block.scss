@@ -1,0 +1,53 @@
+.swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
+	.main-slide__title {
+		transition: opacity 0.9s ease-in-out;
+		opacity: 0 !important;
+	}
+	.main-slide__text {
+		transition: opacity 0.9s ease-in-out;
+		opacity: 0 !important;
+	}
+}
+
+.community {
+	// .community__icon
+	&__icon {
+		background: $electric-lime;
+		font-size: 2.2rem;
+		width: 4.2rem;
+		height: 4.2rem;
+		border-radius: 50%;
+		color: $black-color;
+		overflow: hidden;
+		transition: all 0.3s ease-in-out;
+
+		i {
+			&::before {
+				transition: color 0.3s ease-in-out;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
+
+		&:hover {
+			background: $black-color;
+			color: $electric-lime;
+		}
+	}
+}
+// -----------------------------------------------------------------------------
+._ibg {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: fill;
+	}
+}

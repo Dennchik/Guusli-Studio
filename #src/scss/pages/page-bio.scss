@@ -1,0 +1,88 @@
+.page {
+	height: 100%;
+	overflow: hidden;
+	// .page__header
+	&__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		z-index: 11;
+		height: 10rem;
+	}
+
+	// .page__fade-in
+	&__fade-in {
+		@include _920 {
+			position: fixed;
+			opacity: 0;
+			right: 0px;
+			top: 10rem;
+			z-index: 19;
+			transform: translate3d(300px, 0, 0);
+			padding: 1.5rem 3rem;
+			border: 1px $neon-blue-dark;
+			border-style: none none solid solid;
+			border-radius: 0 0 0 6px;
+			box-shadow: 0 1px 10px #000;
+			visibility: hidden;
+			transition:
+				transform 0.5s,
+				opacity 0.5s ease-in-out;
+
+			&._active {
+				display: flex;
+				transform: translate3d(0, 0, 0);
+				opacity: 1;
+				visibility: visible;
+			}
+			&.with-border {
+				background: linear-gradient(to right, #271e4d 60%, #1a1530);
+			}
+		}
+	}
+
+	// .page__content
+	&__main-content {
+		position: relative;
+		inset: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 8;
+	}
+}
+
+.main-content {
+	//.main-content__about
+	&__about {
+		position: relative;
+		width: 100%;
+		min-height: calc(100vh - 2px);
+		&::after {
+			z-index: 9;
+			width: 100%;
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			transition: all 0.7s ease-in-out;
+			@extend .gradient-border-bottom;
+		}
+	}
+
+	//.main-content__achievements
+	&__achievements {
+		position: relative;
+		height: 100%;
+		@extend .gradient-default;
+	}
+
+	// .main-content__footer
+	&__footer {
+		position: relative;
+		z-index: 9;
+		@extend .gradient-services;
+	}
+}

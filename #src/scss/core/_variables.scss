@@ -1,0 +1,102 @@
+//* ------------------------------- [Variables] --------------------------------
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1440px;
+$headerHeight: 4rem;
+$footerHeight: 4rem;
+$sidebarWidth: 4rem;
+$titleHeight: 3rem;
+$min-height: calc(100% - ($headerHeight + $footerHeight));
+//* ---------------------------- [Font Variables] ------------------------------
+$font-path: '../fonts';
+$font-defoult: 'Roboto', sans-serif;
+$font-size: 1.6rem;
+$font-family-secondary: 'Roboto Slab', sans-serif;
+$font-family-exclude: 'Architectural', sans-serif;
+$font-weight-defoult: 470;
+$font-size-defoult: 1.4rem;
+//* ------------------------------ [Font color] --------------------------------
+$font-color-var-name: #77faff;
+$font-color-var: #cd6dfa;
+$font-color-other-var: #e99287;
+//* -------------------------------- [Color] -----------------------------------
+$neon-green: rgb(57, 255, 20);
+$neon-fuchsia: rgb(254, 89, 194);
+$neon-pink: rgb(254, 1, 154);
+$neon-red: rgb(255, 7, 58);
+$neon-blue: rgb(4, 217, 255);
+$neon-electric: rgb(125, 249, 255);
+$neon-blue-dark: rgb(85, 85, 255);
+$neon-purple: rgb(188, 19, 254);
+$neon-carrot: rgb(255, 163, 67);
+$neon-yellow: rgb(255, 234, 25);
+$laser-lemon: rgb(254, 254, 34);
+$luminescent-red: rgb(248, 0, 0);
+$luminescent-orange: rgb(255, 164, 32);
+$liquid-neon: rgb(200, 255, 0);
+$electric-lime: rgb(204, 255, 0);
+$color: #0b0813;
+$color-second: #1c153f;
+
+$black-color: #1c153f;
+$gray: #999999;
+$orange: #f67438;
+$darkcyan: darkcyan;
+$border-color: rgb(42, 53, 20);
+
+//* ---------------------------- [Other colors] --------------------------------
+$boxShadow: 0px 0px 2px 5px #04d9ff7a;
+$boxShadowSecond: #000;
+$BlackShadow: #091116;
+$filter: drop-shadow(0px 0px 10px #392b7c) invert(5%);
+//* ----------------------------------------------------------------------------
+
+//* ----------------------------------------------------------------------------
+$text-title: #8ff2ff;
+$text-selection: #0054633f;
+$text-color-selection: #9b9999;
+
+//* ----------------------------------------------------------------------------
+:root {
+	--font-body-color: #fff;
+	--font-color-second: #4d5bce;
+	--font-color-title: #88c0ff;
+	--font-color-active: #7796f3;
+	--font-color-not-active: #8bb0ff6c;
+	//* ---------------------------- [Background] --------------------------------
+	--background-color: #0e0e0e;
+	--background-second: #020a10;
+	--background-selected: #2b2d4156;
+	--background-terminal: #16161e;
+	--background-side-bar: #191b27;
+	--background-active-bar: #1e202e;
+	--background-color-title: #0e0e13;
+	--background-transparent: #0e0e13da;
+	//* ---------------------------- [Scrollbar] ---------------------------------
+	--selected-color: #71cbff;
+	--themes-color: #5e4da8;
+	--background-thumb: #16161e;
+	--scrollbar-thumb-bgcolor: rgb(71, 83, 45);
+	//* -------------------------- [Other colors] --------------------------------
+	--border-color: #3c548d49;
+
+	// ---------------------------------------------------------------------------
+	--pos: left center;
+	--size: 0;
+	--inset-top: 0;
+	--inset-right: 100%;
+	--inset-bottom: 100%;
+	--inset-left: 0;
+	// ---------------------------------------------------------------------------
+	--stripe-width: 10px;
+	--nav-marker-border: #3b8686;
+	--sidebar-width: 28.5rem;
+	--duration: 0.3s;
+
+	--button-size: 4rem;
+	--mob-expanded-width: 320px;
+	--mob-collapsed-width: 4rem;
+}
+
+$snap: cubic-bezier(1, 0.005, 0.24, 1);
+$bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
