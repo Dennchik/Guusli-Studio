@@ -200,6 +200,14 @@ export default {
 			min: '.min.js'
 		}
 	},
+	cssnano: {
+		//? Объединяет селекторы с одинаковыми свойствами в один селектор.
+		mergeRules: true,
+		discardUnused: {
+			fontFace: true,
+			keyframes: true,
+		}, //? Удаляет неиспользуемые селекторы
+	},
 	svgMin: {
 		js2svg: {
 			indent: 4,

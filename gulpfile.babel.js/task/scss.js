@@ -10,25 +10,25 @@ export default () => {
 				message: error.message,
 			})),
 		}))
-		// .pipe($.gul.sassGlob())
 		.pipe($.gulpIf(app.isDev, $.gul.sourcemaps.init({
 			loadMaps: true,
 		})))
 		.pipe($.sass.sync({
 			outputStyle: 'expanded',
 		}).on('error', $.gul.notify.onError()))
-		.pipe($.gulpIf(app.isProd, $.gul.stripCssComments()))
 		.pipe($.gulpIf(app.isProd, $.gul.autoprefixer(app.autoprefixer)))
 		.pipe($.gulpIf(app.isProd, $.gul.debug({
 			title: '(Autoprefixer)'
 		})))
-		.pipe($.gulpIf(app.isProd, $.gul.groupCssMediaQueries()))
-		.pipe($.gulpIf(app.isProd, $.gul.shorthand()))
-		.pipe($.gulpIf(app.isProd, $.gul.webpCss()))
+		// .pipe($.gulpIf(app.isProd, $.gul.groupCssMediaQueries()))
+		// .pipe($.gulpIf(app.isProd, $.gul.shorthand()))
+		// .pipe($.gulpIf(app.isProd, $.gul.webpCss()))
+		.pipe($.gul.postcss([$.combineMediaQuery]))
 		.pipe($.gulpIf(app.isProd, $.gulp.dest(path.scss.dest)))
 		.pipe($.gulpIf(app.isProd, $.gul.size({
 			title: 'До сжатия - (CSS):'
 		})))
+		.pipe($.gul.cssnano(app.cssnano))
 		.pipe($.gul.csso(
 			{
 				restructure: true,

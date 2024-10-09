@@ -8,6 +8,7 @@ global.$ = {
 	gulpSvgSprite: require('gulp-svg-sprite'),
 	webPackStream: require('webpack-stream'),
 	merge: require('gulp-merge-json'),
+	combineMediaQuery: require('postcss-combine-media-query'),
 	gulpIf: require('gulp-if'),
 	del: require('del'),
 	fs: require('fs'),
@@ -34,13 +35,11 @@ import reactWebp from './task/reactWebp';
 
 const change = $.gulp.series(clearFonts, fonts, fontsStyle);
 const changejson = $.gulp.series(json, pug);
-
 //* Observation
 function reload(done) {
 	$.browserSync.reload();
 	done();
 }
-
 const watcher = () => {
 
 	$.gulp.watch(path.js.watch, $.gulp.series(js, reload));

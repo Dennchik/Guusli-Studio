@@ -1,11 +1,6 @@
-import React, { useEffect, HTMLAttributes  } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { isWebpSupported } from 'react-image-webp/dist/utils/index.js';
-
-/**
- * Компонент Header.
- * @param {{ baseUrl: string }} props - Объект пропсов.
- */
-function Achievements({baseUrl}) {
+export default function Achievements() {
 	useEffect(() => {
 
 	});
@@ -15,9 +10,8 @@ function Achievements({baseUrl}) {
 				<div className="achieve-items__bg-image _ibg">
 					<picture>
 						{isWebpSupported()
-							? <img src={"../img/about/achieve/pattern-11.webp"}
-										 type="image/webp" alt="image"/>
-							: <img src={"../img/about/achieve/pattern-11.png"} alt="image"/>}
+							? <img src="../img/about/achieve/pattern-11.webp" type="image/webp" />
+							: <img src="../img/about/achieve/pattern-11.png" alt="image" />}
 					</picture>
 				</div>
 				<div className="achieve-items__wrapper">
@@ -25,17 +19,42 @@ function Achievements({baseUrl}) {
 						<div className="achieve-items__image _ibg">
 							<picture>
 								{isWebpSupported()
-									?
-									<img src={"../img/about/slide/sert1.webp"} type="image/webp"/>
-									: <img src={"../img/about/slide/sert1.png"} alt="image"/>}
+									? <img src="../img/about/slide/sert1.webp" type="image/webp" />
+									: <img src="../img/about/slide/sert1.png" alt="image" />}
 							</picture>
 						</div>
 					</div>
-
+					{/* <div className="achieve-items__image">
+						<picture>
+							{isWebpSupported()
+								? <img src="../img/about/slide/sert2.webp" type="image/webp" />
+								: <img src="../img/about/slide/sert2.png" alt="image" />}
+						</picture>
+					</div>
+					<div className="achieve-items__image">
+						<picture>
+							{isWebpSupported()
+								? <img src="../img/about/slide/sert3.webp" type="image/webp" />
+								: <img src="../img/about/slide/sert3.png" alt="image" />}
+						</picture>
+					</div>
+					<div className="achieve-items__image">
+						<picture>
+							{isWebpSupported()
+								? <img src="../img/about/slide/sert4.webp" type="image/webp" />
+								: <img src="../img/about/slide/sert4.png" alt="image" />}
+						</picture>
+					</div>
+					<div className="achieve-items__image">
+						<picture>
+							{isWebpSupported()
+								? <img src="../img/about/slide/sert5.webp" type="image/webp" />
+								: <img src="../img/about/slide/sert5.png" alt="image" />}
+						</picture>
+					</div> */}
 				</div>
+				{/* <div class="achieve-items__new-container">new container</div> */}
 			</div>
 		</div>
 	);
 }
-
-export default Achievements

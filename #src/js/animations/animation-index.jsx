@@ -11,8 +11,8 @@ ScrollTrigger.config({ ignoreMobileResize: true });
 // -----------------------------------------------------------------------------
 //todo: Устанавливаем плавную прокрутку страницы
 export let smoother = ScrollSmoother.create({
-	wrapper: '#wrapper',
-	content: '#content',
+	wrapper: "#wrapper",
+	content: "#content",
 	smooth: 1,
 	effects: true,
 	normalizeScroll: true
@@ -20,7 +20,7 @@ export let smoother = ScrollSmoother.create({
 
 // -----------------------------------------------------------------------------
 export function applyEffects(smoother) {
-	smoother.effects('.content-box__column', {
+	smoother.effects(".content-box__column", {
 		speed: (i) => {
 			// Desktop three columns layout
 			if (window.matchMedia('(min-width:730)').matches) {
@@ -33,8 +33,7 @@ export function applyEffects(smoother) {
 		}
 	});
 
-}
-
+};
 // -----------------------------------------------------------------------------
 //todo: Секция "Parallax Effects".
 export function applyParallaxEffects(smoother, element) {
@@ -44,7 +43,6 @@ export function applyParallaxEffects(smoother, element) {
 		}
 	});
 }
-
 // -----------------------------------------------------------------------------
 export function animateTitles(element, trigger, endTrigger, start, end) {
 	gsap.from(element, {
@@ -61,26 +59,21 @@ export function animateTitles(element, trigger, endTrigger, start, end) {
 		},
 	});
 }
-
 // -----------------------------------------------------------------------------
 //todo: Секция "#main-slide".
 export function initSectionTriggerMove(trigger, targets) {
 	ScrollTrigger.create({
 		trigger: trigger,
-		/*Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже
-		 верха окна браузера*/
-		start: 'top center',
+		start: "top center", // Начинаем событие, когда верхняя граница элемента-1 находится на 100px ниже верха окна браузера
 		endTrigger: trigger, // Конец события - конец документа
-		/*Закончить событие, когда верхняя граница элемента 1 достигнет верха окна браузера*/
-		end: 'bottom center',
+		end: "bottom center", // Закончить событие, когда верхняя граница элемента 1 достигнет верха окна браузера
 		toggleClass: {
 			targets: targets,
-			className: 'active'
+			className: "active"
 		},
 		// markers: true
 	});
 }
-
 // -----------------------------------------------------------------------------
 export function tlFooterParallel() {
 	const tlFooter = gsap.timeline({
@@ -132,7 +125,6 @@ export function tlFooterParallel() {
 		opacity: 0,
 	}, '-=1');
 }
-
 // -----------------------------------------------------------------------------
 export function tlServices1() {
 	const tlServices1 = gsap.timeline({
@@ -159,7 +151,6 @@ export function tlServices1() {
 		opacity: 0,
 	}, '-=1');
 }
-
 // -----------------------------------------------------------------------------
 export function tlServices2() {
 	const tlServices2 = gsap.timeline({
@@ -186,3 +177,21 @@ export function tlServices2() {
 		opacity: 0,
 	}, '-=1');
 }
+// -----------------------------------------------------------------------------
+// export function flippElement() {
+
+// 	const box = document.querySelector("._button-flip"),
+// 		originalContainer = document.querySelector(".achieve-items__body"),
+// 		newContainer = document.querySelector(".achieve-items__new-container");
+
+// 	document.querySelector("._button-flip").addEventListener('click', () => {
+// 		const state = Flip.getState(box);
+
+// 		(box.parentNode === originalContainer ? newContainer : originalContainer).appendChild(box);
+
+// 		Flip.from(state, { duration: 1, ease: "power1.inOut", scale: true });
+// 	});
+
+// }
+
+
