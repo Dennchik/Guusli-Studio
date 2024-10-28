@@ -10,14 +10,21 @@
 		height: 100%;
 		z-index: 10;
 		flex-direction: column;
-		@include flex-justify-center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include screen-690 {
+			width: 3rem;
+		}
 
 		.swiper-pagination-bullet {
 			position: relative;
 			top: 0;
 			left: 0;
 			width: 100%;
-			@include flex-align-center;
+			display: flex;
+			align-items: center;
 
 			&::after {
 				content: '';
@@ -50,6 +57,7 @@
 				width: calc(100% - 16px);
 				scale: 1;
 			}
+
 			&::before {
 				content: '';
 				position: absolute;
@@ -70,50 +78,90 @@
 
 	// .main-slide__slide-wrapper
 	&__slide-wrapper {
-		@include flex-align-center-justify-center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	// .main-slide__content
 	&__content {
+		padding-right: 3.6rem;
 		position: absolute;
-		// padding: 0 2rem;
-		padding-left: 4rem;
-		max-width: 100rem;
-		flex-direction: column;
-		@include flex-align-center-justify-center;
-
-		gap: 2rem;
+		// display: flex;
+		// flex-direction: column;
+		// gap: 4rem;
+		// justify-content: center;
 	}
 
 	// .main-slide__title
 	&__title {
-		padding-right: 5rem;
 		width: 100%;
-		transition: all 0.9s ease-in-out;
-		text-shadow: 1px 1px 7pt #000;
 		text-align: left;
-
+		text-shadow: 1px 1px 7px #000;
+		line-height: 130.952381%; /* 76px/42 */
 		font: {
-			size: 3.6rem;
-			weight: 700;
+			size: 54px;
+			weight: 300;
+			family: $font-family-secondary;
 		}
+
 		span {
-			color: $liquid-neon;
+			&:nth-child(1) {
+				display: block;
+				color: $liquid-neon;
+			}
+
+			&:nth-child(3) {
+				color: $liquid-neon;
+				font-stretch: expanded;
+				letter-spacing: 1.5px;
+
+				font: {
+					family: $font-family-exclude;
+					size: 57px;
+					weight: 600;
+				}
+
+				@include minmax-490-1920 {
+					font-size: calc(28px + (54 - 28) * ((100vw - 490px) / (1920 - 490)));
+				}
+
+				@include screen-490 {
+					font-size: 28px;
+				}
+			}
 		}
-		@include _690 {
-			font-size: 3.2rem;
+
+		@include minmax-490-1920 {
+			font-size: calc(24px + (54 - 24) * ((100vw - 490px) / (1920 - 490)));
 		}
-		@include _425 {
-			font-size: 2.4rem;
+
+		@include screen-490 {
+			font-size: 24px;
 		}
 	}
 
 	// .main-slide__text
 	&__text {
-		padding-right: 6rem;
-		transition: all 0.7s ease-in-out;
 		text-align: left;
-		text-shadow: 0px 0px 5px $neon-blue-dark;
+		font-size: 24px;
+		font-weight: 400;
+		letter-spacing: 1.5px;
+		max-width: 1100px;
+		text-shadow: rgb(0, 0, 0) 1px 0 10px;
+		text-shadow:
+			0px 0px 15px #000000,
+			0 0 1em #000,
+			0 0 0.2em blue;
+		line-height: 150%;
+
+		@include minmax-490-1920 {
+			font-size: calc(13px + (24 - 13) * ((100vw - 490px) / (1920 - 490)));
+		}
+
+		@include screen-490 {
+			font-size: 1.6rem;
+		}
 	}
 
 	// .main-slide__slide-image
@@ -136,7 +184,7 @@
 	&__media {
 		position: absolute;
 		width: 100%;
-		bottom: 0rem;
+		bottom: 0;
 		z-index: 99;
 	}
 }

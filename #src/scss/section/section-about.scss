@@ -47,7 +47,7 @@
 		text-shadow: 1px 1px 2px #000;
 		max-width: 670px;
 		color: $gray;
-		@include _min-490 {
+		@include min-490 {
 			text-align: justify;
 		}
 
@@ -99,7 +99,7 @@
 		transition:
 			grid-template-rows 0.5s,
 			opacity 0.9s ease-in-out;
-		@include _min-920 {
+		@include min-920 {
 			grid-template-rows: 1fr;
 			opacity: 1;
 		}
@@ -134,7 +134,7 @@
 		border-radius: 50%;
 		transition: 0.3s all ease;
 
-		@include _min-920 {
+		@include min-920 {
 			display: none !important;
 		}
 

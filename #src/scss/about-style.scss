@@ -40,7 +40,9 @@
 [class*='icon-'] {
 	cursor: pointer;
 	height: 100%;
-	@include flex-align-center-justify-center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 [class*='_stretch'] {

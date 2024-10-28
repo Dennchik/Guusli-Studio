@@ -15,10 +15,10 @@
 
 	// .page__fade-in
 	&__fade-in {
-		@include _920 {
+		@include screen-920 {
 			position: fixed;
 			opacity: 0;
-			right: 0px;
+			right: 0;
 			top: 10rem;
 			z-index: 19;
 			transform: translate3d(300px, 0, 0);

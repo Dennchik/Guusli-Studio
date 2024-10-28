@@ -16,7 +16,8 @@
 		"IMAGE": "gulp image",
 		"SPRITE": "gulp sprite",
 		"FONT": "gulp fonts",
-		"(3) TASKS": "gulp --tasks"
+		"(3) TASKS": "gulp --tasks",
+		"server": "gulp server"
 	},
 	"author": "Dennchik",
 	"license": "ISC",

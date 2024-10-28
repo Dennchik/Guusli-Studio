@@ -1,12 +1,12 @@
 //* Configuration
-import path from "../config/path.js";
-import app from "../config/app.js";
+import path from '../config/path.js';
+import app from '../config/app.js';
 //* Sprite processing
 export default () => {
 	return $.gulp.src(path.sprite.src)
 		.pipe($.gul.plumber({
 			errorHandler: $.gul.notify.onError(error => ({
-				title: "sprite",
+				title: 'sprite',
 				message: error.message
 			}))
 		}))

@@ -9,12 +9,12 @@ $titleHeight: 3rem;
 $min-height: calc(100% - ($headerHeight + $footerHeight));
 //* ---------------------------- [Font Variables] ------------------------------
 $font-path: '../fonts';
-$font-defoult: 'Roboto', sans-serif;
-$font-size: 1.6rem;
-$font-family-secondary: 'Roboto Slab', sans-serif;
+$font-default: 'Manrope', sans-serif;
+$font-family-secondary: 'Oswald', sans-serif;
 $font-family-exclude: 'Architectural', sans-serif;
-$font-weight-defoult: 470;
-$font-size-defoult: 1.4rem;
+$font-weight-default: 470;
+$font-size: 1.6rem;
+$font-size-default: 1.4rem;
 //* ------------------------------ [Font color] --------------------------------
 $font-color-var-name: #77faff;
 $font-color-var: #cd6dfa;
@@ -39,16 +39,16 @@ $color: #0b0813;
 $color-second: #1c153f;
 
 $black-color: #1c153f;
-$gray: #999999;
+$gray: #dfdfdf;
 $orange: #f67438;
 $darkcyan: darkcyan;
 $border-color: rgb(42, 53, 20);
 
 //* ---------------------------- [Other colors] --------------------------------
-$boxShadow: 0px 0px 2px 5px #04d9ff7a;
+$boxShadow: 0px 0px 2px 3px #04d9ff7a;
 $boxShadowSecond: #000;
 $BlackShadow: #091116;
-$filter: drop-shadow(0px 0px 10px #392b7c) invert(5%);
+$filter: drop-shadow(1px 0px 3px #201947) invert(5%);
 //* ----------------------------------------------------------------------------
 
 //* ----------------------------------------------------------------------------

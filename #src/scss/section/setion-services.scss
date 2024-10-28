@@ -4,12 +4,16 @@
 		position: relative;
 		z-index: 9;
 		padding-bottom: 6rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex-direction: column;
-		@include flex-align-center-justify-center;
+		// margin: 12rem 0 6rem;
 	}
 
 	// .services__title
 	&__title {
+		position: relative;
 		color: $neon-blue;
 		text-align: center;
 		line-height: 100%;
@@ -19,41 +23,39 @@
 			size: 7.5rem;
 			weight: normal;
 		}
-		position: relative;
 		display: inline;
 		padding: 0 5rem 2rem;
 		z-index: 9;
-		//! ------------------------------------------------------------------------
-
 		filter: $filter;
-		//! ------------------------------------------------------------------------
+
 		&::before {
 			content: '';
-			// width: 100%;
-			height: 70%;
 			position: absolute;
+			width: 100%;
+			height: 70%;
 			top: 0;
 			left: 0;
 			z-index: -1;
-			// border-radius: 50%;
-			// @extend .gradient-title;
 		}
 
 		&:nth-child(1) {
 			perspective-origin: 45% 320%;
 			transform-style: preserve-3d;
 			perspective: 100px;
-			margin-top: 6rem;
-			@include _690 {
+
+			@include screen-690 {
 				font-size: 5.1rem;
 			}
-			@include _425 {
+
+			@include screen-425 {
 				font-size: 3.4rem;
 				margin-top: 4rem;
 			}
+
 			&::before {
 				transform: translate(0, 58%);
 			}
+
 			&::after {
 				content: 'наши услуги';
 				position: absolute;
@@ -64,20 +66,21 @@
 				font: {
 					weight: 900;
 				}
-				@include _425 {
-					// padding: 0 5.5rem;
-				}
 				transform: rotateX(15deg) translateZ(-11px);
 				@extend .shadow-after;
 			}
+		}
+		@include minmax-490-1024 {
+			font-size: calc(27px + (75 - 27) * ((100vw - 490px) / (1920 - 490)));
+		}
+		@include screen-490 {
+			font-size: 27px;
 		}
 	}
 
 	// .services__content
 	&__content {
-		// padding: 4rem;
 		width: 100%;
-		overflow: hidden;
 	}
 
 	// .services__offer
@@ -124,20 +127,21 @@
 	}
 }
 
-.content-box {
-	// .content-box__body
+.services-slide {
+	// .services-slide__body
 	&__body {
 		position: relative;
-		margin: 12rem 1.5rem;
+		margin: 12rem 0;
 		gap: 2.5rem;
 		display: flex;
 		justify-content: space-between;
-		@include _490 {
-			margin: 6rem 1.5rem;
+
+		@include screen-490 {
+			margin: 6rem 0;
 		}
 	}
 
-	// .content-box__column
+	// .services-slide__column
 	&__column {
 		position: relative;
 		min-width: 150px;
@@ -148,44 +152,59 @@
 			display: block;
 			position: absolute;
 			box-shadow: $boxShadow;
-			top: -20px;
+			top: -10px;
 			left: 30px;
 			right: 30px;
-			bottom: -20px;
+			bottom: -10px;
 			z-index: -1;
-			border-radius: 4px;
+			border-radius: 2px;
 			opacity: 0.3;
 			transition: all 0.3s ease-in-out;
+
+			@include screen-1024 {
+				top: 1px;
+				left: 1px;
+				right: 1px;
+				bottom: 1px;
+			}
 		}
 
 		&:hover {
 			&::before {
-				top: -10px;
-				left: -10px;
-				right: -10px;
-				bottom: -10px;
+				top: -3px;
+				left: -3px;
+				right: -3px;
+				bottom: -3px;
 				opacity: 0.8;
 			}
-			.content-box__image {
-				scale: 1.05;
+			.services-slide__image {
+				// img {
+				scale: 1.1;
+				// }
 			}
 
-			.content-box__bg-img {
+			.services-slide__bg-img {
 				transform: translateY(0);
 				opacity: 1;
 			}
-			.content-box__text {
+			.services-slide__text {
 				transform: translateY(-150%);
 			}
 		}
 	}
-	// .content-box__image
+
+	// .services-slide__content
+	&__content {
+		overflow: hidden;
+	}
+
+	// .services-slide__image
 	&__image {
 		overflow: hidden;
 		transition: all 0.5s ease-in-out;
 		height: 100%;
 		cursor: pointer;
-		border-radius: 4px;
+		border-radius: 2px;
 		filter: $filter;
 
 		img {
@@ -196,9 +215,6 @@
 			object-fit: cover;
 			object-position: center;
 			transition: scale 0.4s ease-in-out;
-			&:hover {
-				scale: 1.1;
-			}
 		}
 
 		svg {
@@ -206,7 +222,7 @@
 		}
 	}
 
-	// .content-box__bg-img
+	// .services-slide__bg-img
 	&__bg-img {
 		position: absolute;
 		top: 0;
@@ -218,7 +234,7 @@
 			box-shadow 0.3s ease-in-out 0.2s;
 	}
 
-	// .content-box__svg
+	// .services-slide__svg
 	&__svg {
 		width: 100%;
 		object-fit: cover;
@@ -236,7 +252,7 @@
 		}
 	}
 
-	// .content-box__text
+	// .services-slide__text
 	&__text {
 		position: absolute;
 		font-family: 'aa_neon', Helvetica, sans-serif;
@@ -264,9 +280,11 @@
 }
 
 .offer-container {
-	flex-direction: column;
 	height: 100%;
-	@include flex-align-center-justify-space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
 
 	// .offer-container__title
 	&__title {
@@ -285,33 +303,30 @@
 		letter-spacing: 0;
 		color: $neon-blue;
 		z-index: 9;
-		@include _690 {
-			font-size: 2.6rem;
-		}
-		@include _490 {
-			font-size: 2.2rem;
-			padding: 0 2rem 2rem;
-			margin: 0 6rem 6rem;
-			line-height: 120%;
-		}
-		//! ------------------------------------------------------------------------
 		perspective-origin: 45% 320%;
 		transform-style: preserve-3d;
 		perspective: 100px;
 		filter: $filter;
-		//! ------------------------------------------------------------------------
+
+		@include minmax-490-1920 {
+			font-size: calc(17px + (50 - 17) * ((100vw - 490px) / (1920 - 490)));
+		}
+
+		@include screen-490 {
+			font-size: 17px;
+			padding: 0 0 2rem;
+			margin: 0 0 6rem;
+			line-height: 120%;
+		}
 
 		&::before {
 			content: '';
-			// width: 100%;
 			height: 100%;
 			position: absolute;
 			top: 0;
 			left: 0;
 			z-index: -1;
-			// border-radius: 50%;
 			transform: translate(0, 10%);
-			// @extend .gradient-title;
 		}
 
 		&::after {
@@ -336,7 +351,8 @@
 		grid-template-rows: auto auto;
 		gap: 2rem;
 		height: 100%;
-		@include _690 {
+
+		@include screen-690 {
 			grid-template-columns: 1fr;
 		}
 	}
@@ -351,10 +367,11 @@
 		border-bottom: 1px solid $border-color;
 		padding: 2rem;
 		border-radius: 4px;
-
-		filter: $filter;
 		z-index: 9;
+		filter: $filter;
+
 		@extend .gradient-spec;
+
 		&:hover {
 			.offer-container__thumbnail {
 				opacity: 1;
@@ -379,12 +396,13 @@
 		pointer-events: none;
 		inset: 0;
 		transition: all 0.7s ease-in-out;
+		background: linear-gradient(-45deg, #04d9ff81, #170e3181 83%);
+		background-size: 200% 200%;
+
 		&::before {
 			content: '';
 			@extend .border-present;
 		}
-		background: linear-gradient(-45deg, #04d9ff81, #170e3181 83%);
-		background-size: 200% 200%;
 	}
 
 	// .offer-container__link
@@ -424,7 +442,7 @@
 				}
 			}
 
-			@include _425 {
+			@include screen-425 {
 				font-size: 2rem;
 			}
 		}
@@ -432,10 +450,6 @@
 
 	// .offer-container__text
 	&__text {
-		color: gray;
-		font-size: 1.8rem;
-		@include _425 {
-			font-size: 1.6rem;
-		}
+		color: $gray;
 	}
 }

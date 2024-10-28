@@ -1,8 +1,8 @@
+import imagemin from 'gulp-imagemin';
+import pugbem from 'gulp-pugbem';
 import TerserPlugin from 'terser-webpack-plugin';
-import pugbem from "gulp-pugbem";
-import imagemin from "gulp-imagemin";
 
-const isProd = process.argv.includes("--production");
+const isProd = process.argv.includes('--production');
 const isDev = !isProd;
 
 export default {
@@ -29,7 +29,7 @@ export default {
 		entry: {
 			'home-components': { import: ['./#src/js/app/MainComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
 
-			"about-components": { import: ['./#src/js/app/AboutComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
+			'about-components': { import: ['./#src/js/app/AboutComponents.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'] },
 
 			'react-vendors': ['react', 'react-dom', 'prop-types'],
 			'anime-vendors': ['gsap', 'animejs', 'gsap/ScrollSmoother', 'gsap/ScrollTrigger'],
@@ -52,16 +52,16 @@ export default {
 				{
 					test: /\.css$/,
 					use: [
-						"style-loader",
-						"css-loader"
+						'style-loader',
+						'css-loader'
 					],
 				},
 				{
 					test: /\.scss$/,
 					exclude: /node_modules/,
 					use: [
-						"style-loader",
-						"css-loader",
+						'style-loader',
+						'css-loader',
 						'sass-loader'   // компилирует Sass в CSS
 					]
 				},
@@ -127,16 +127,16 @@ export default {
 				{
 					test: /\.css$/,
 					use: [
-						"style-loader",
-						"css-loader"
+						'style-loader',
+						'css-loader'
 					],
 				},
 				{
 					test: /\.scss$/,
 					exclude: /node_modules/,
 					use: [
-						"style-loader",
-						"css-loader",
+						'style-loader',
+						'css-loader',
 						'sass-loader'   // компилирует Sass в CSS
 					]
 				},
@@ -162,9 +162,9 @@ export default {
 			transform: [{
 				svgo: {
 					plugins: [
-						"cleanupAttrs",
-						"convertColors",
-						"removeEmptyAttrs"
+						'cleanupAttrs',
+						'convertColors',
+						'removeEmptyAttrs'
 					]
 				}
 			}],
@@ -226,11 +226,11 @@ export default {
 		cascade: false,
 		grid: 'auto-place',
 		overrideBrowserslist: [
-			"Android >= 4",
-			"last 3 versions",
-			"Firefox >= 24",
-			"Safari >= 6",
-			"Opera >= 12"
+			'Android >= 4',
+			'last 3 versions',
+			'Firefox >= 24',
+			'Safari >= 6',
+			'Opera >= 12'
 		]
 	},
 	imagemin: ([

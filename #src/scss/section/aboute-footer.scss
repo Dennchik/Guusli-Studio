@@ -4,11 +4,12 @@
 	width: 100%;
 	gap: 4rem;
 	padding-top: 4rem;
-	@include _690-920 {
+	color: $maxWidth;
+	@include minmax-690-920 {
 		grid-template-columns: 1fr 1fr;
 	}
 
-	@include _690 {
+	@include screen-690 {
 		grid-template-columns: auto;
 	}
 
@@ -16,13 +17,14 @@
 	&__column {
 		display: flex;
 		flex-direction: column;
-		padding: 0 2rem;
 
 		&:nth-child(3) {
 			height: 100%;
-			@include _690-920 {
+
+			@include minmax-690-920 {
 				grid-column: -3 / -1;
 			}
+
 			.about__body {
 				border: none;
 			}
@@ -34,7 +36,7 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 auto;
-		border-bottom: 1px solid $gray;
+		border-bottom: 1px solid #9999992c;
 	}
 
 	// .about__text
@@ -43,10 +45,11 @@
 
 		p {
 			color: $gray;
-			font-size: 1.4rem;
+
 			&:nth-child(1) {
-				color: $neon-blue-dark;
+				color: rgb(85, 85, 255);
 			}
+
 			&:nth-child(2) {
 				color: $gray;
 			}
@@ -60,21 +63,29 @@
 	// .about__footer
 	&__footer {
 		padding: 2rem 0;
+
+		@include screen-690 {
+			display: flex;
+			justify-content: center;
+		}
 	}
 
 	// .about__title
 	&__title {
 		font-size: 2rem;
-		text-shadow: 1px 1px 1px $neon-pink;
+		text-shadow: 0 0 1px $neon-electric;
 	}
 
 	// .about__item-services
 	&__item-services {
 		flex-wrap: nowrap;
 		padding: 2.5rem 0;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
 
 		&:not(:last-child) {
-			border-bottom: 1px solid $gray;
+			border-bottom: 1px solid #9999992c;
 		}
 
 		[class*='icon-'] {
@@ -87,17 +98,14 @@
 
 		span {
 			color: $gray;
-			font-size: 1.4rem;
 		}
-		@include flex-align-center;
-		gap: 2rem;
 	}
 
 	// .about__button
 	&__button {
 		display: block;
 		width: fit-content;
-		padding: 1rem;
+		padding: 1rem 2rem;
 		background-color: #3d3d3d;
 		border-radius: 4px;
 		font-weight: 500;
@@ -106,9 +114,15 @@
 		transition:
 			color 0.4s,
 			background 0.4s ease-in-out;
+
 		&:hover {
 			background: #392b7c;
 			color: #392b7c;
+		}
+
+		@include screen-375 {
+			width: 100%;
+			text-align: center;
 		}
 	}
 

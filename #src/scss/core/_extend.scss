@@ -1,17 +1,26 @@
 .grad_underline {
-	background: linear-gradient(to left, transparent, transparent),
+	/* Определяем фоновые изображения */
+	background-image: linear-gradient(to left, transparent, transparent),
 		linear-gradient(
 			to left,
 			var(--background-selected),
 			var(--font-color-active)
 		);
+
+	/* Размер фона для каждого слоя */
 	background-size:
 		100% 1px,
-		0 1px;
+		/* Первое изображение */ 0 1px; /* Второе изображение */
+
+	/* Позиционирование фона */
 	background-position:
 		100% 100%,
-		0 100%;
+		/* Первое изображение */ 0 100%; /* Второе изображение */
+
+	/* Повторение фона */
 	background-repeat: no-repeat;
+
+	/* Переход для изменения размера фона */
 	transition: background-size 400ms;
 }
 
@@ -37,6 +46,7 @@
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
 .gradient-header {
 	background: linear-gradient(
 		-45deg,
@@ -83,23 +93,27 @@
 	border-style: none solid;
 	height: 100%;
 	padding: 0 1.5rem;
-	@include flex-align-center;
+	display: flex;
+	align-items: center;
 }
+
 .shadow-after {
 	transform: rotateX(15deg) translateZ(-10px);
 	color: rgba(23, 14, 49, 0.479);
 	text-shadow:
-		5px 0px 5px $color,
+		5px 0 5px $color,
 		0 0 40px rgba(125, 248, 255, 0.26),
-		0px 0px 20px rgba(204, 255, 0, 0.267);
+		0 0 20px rgba(204, 255, 0, 0.267);
 	z-index: -1;
 }
+
 // background: linear-gradient(to right, #04d9ff 20%, #ffff 50%, #04d9ff 80%);
 //! ----------------------------------------------------------------------------
 .overflow-hidden {
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 	scrollbar-width: none;
+
 	&::-webkit-scrollbar {
 		height: 0;
 	}
@@ -110,7 +124,7 @@
 	display: block;
 	position: absolute;
 	inset: 0.7rem;
-	background: linear-gradient(
+	background-image: linear-gradient(
 			to right,
 			currentColor 0%,
 			$liquid-neon 8%,
@@ -166,38 +180,45 @@
 		position: absolute;
 		width: 0;
 		height: 1px;
-		background-color: $electric-lime;
+		background-color: $neon-blue;
 		transition: width 0.4s ease-in-out;
+		opacity: 0.6;
 	}
 
 	&::before {
 		right: 0;
 		bottom: 0;
 	}
+
 	&::after {
-		bottom: -3px;
+		bottom: 0;
 		left: 0;
 	}
 
-	&.active {
-		text-shadow: 2px 2px 3px #000;
+	&._active {
+		// text-shadow: 2px 2px 3px #000;
+
 		&::before {
-			width: 50%;
+			width: 45%;
 		}
+
 		&::after {
-			width: 40%;
+			width: 45%;
 		}
 	}
 
 	&:hover {
 		color: $neon-blue;
-		text-shadow: 2px 2px 3px #000;
+		transition: color 0.4s ease-in-out;
+
 		&::before {
-			width: 50%;
+			width: 45%;
 		}
+
 		&::after {
-			width: 40%;
+			width: 45%;
 		}
+
 		a {
 			opacity: 1;
 		}
@@ -210,6 +231,7 @@
 	width: 100%;
 	grid-template-rows: 0fr;
 	transition: grid-template-rows 0.4s ease-in-out;
+
 	&._is-open {
 		grid-template-rows: 1fr;
 	}

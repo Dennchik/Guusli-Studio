@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-import { initSectionTriggerMove } from "../animations/animation-index.jsx";
-// -------------------------------------------------------------------------------------------------
-const Menufloat = ({ baseUrl }) => {
+import { initSectionTriggerMove } from '../animations/animation-index.jsx';
+// * ---------------------------------------------------------------------------
+export const MenuFloat = ({ baseUrl }) => {
 	const [offset, setOffset] = useState(-100);
 	useEffect(() => {
 		function handleResize() {
@@ -134,5 +134,4 @@ const Menufloat = ({ baseUrl }) => {
 			</div>
 		</nav>
 	);
-};
-export default Menufloat;
+}; 

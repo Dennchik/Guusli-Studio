@@ -2,18 +2,16 @@
 	display: none;
 	color: #fff;
 	position: fixed;
-	bottom: 2rem;
+	bottom: 0.1rem;
 	left: 0;
 	width: 100%;
 	font-size: 1.5rem;
 	opacity: 1;
 	pointer-events: none;
 	transition: all 0.3s ease-in-out;
-	z-index: 9;
-	pointer-events: none;
 	z-index: 12;
 
-	@include _920 {
+	@include screen-920 {
 		display: block;
 	}
 
@@ -42,7 +40,6 @@
 		display: flex;
 		flex-direction: column;
 		max-width: 425px;
-		margin: 0 15px;
 		padding: 5px;
 		border-radius: 5px;
 		background: #2b2d41e3;
@@ -62,6 +59,7 @@
 	&__top {
 		overflow: hidden;
 		@extend .is-open;
+
 		&._is-open {
 			.main-menu__column {
 				&:nth-child(1) {
@@ -108,7 +106,8 @@
 		font-family: IrmCIEUcs, roboto, sans-serif;
 		font-weight: 400;
 		transition: all 0.4s ease-in-out;
-		@include flex-align-center;
+		display: flex;
+		align-items: center;
 
 		&:hover {
 			color: $neon-blue;
@@ -124,7 +123,7 @@
 		i {
 			font-size: 2rem;
 		}
-		@include _425 {
+		@include screen-425 {
 			display: block;
 		}
 	}
@@ -133,7 +132,7 @@
 	&__breadcrumb {
 		font-family: IrmCIEUcs, sans-serif;
 		letter-spacing: 4px;
-		@include _425 {
+		@include screen-425 {
 			display: none;
 		}
 	}
@@ -141,11 +140,12 @@
 	// .menu-float__nav
 	&__nav {
 		flex: 1 1 auto;
+		height: 100%;
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100%;
+		gap: 20px;
 	}
 
 	// .menu-float__menu-link
@@ -155,10 +155,6 @@
 		text-transform: uppercase;
 		font-weight: 200;
 		transition: all 0.4s ease-in-out;
-
-		&:not(:last-child) {
-			margin-right: 1rem;
-		}
 
 		&.active {
 			color: $neon-blue;
@@ -174,11 +170,32 @@
 		@extend .link_underline;
 	}
 
+	//.menu-float__link
+	&__link {
+		display: flex;
+		align-items: center;
+		@extend .link_underline;
+		&:hover {
+			color: inherit;
+			&::before,
+			&::after {
+				width: 0;
+			}
+		}
+		i {
+			&::before {
+				font-size: 18px;
+				color: #919191;
+			}
+		}
+	}
+
 	// .menu-float__layout--primary
 	&__layout--primary {
 		.menu-float__content {
 			background-color: $color;
-			@include _425 {
+
+			@include screen-425 {
 				width: 5rem;
 			}
 		}
@@ -189,9 +206,6 @@
 		flex: 1 1 auto;
 		.menu-float__content {
 			background-color: #0f0b1af6;
-			@include _425 {
-				font-size: 1.2rem;
-			}
 		}
 	}
 
@@ -236,6 +250,7 @@
 		background-repeat: repeat-y;
 		background-size: 1px 8px;
 		transition: transform 0.4s ease-in-out 0.4s;
+
 		&:nth-child(1) {
 			transform: translate(-135%, 0);
 		}
@@ -251,8 +266,8 @@
 			1.5rem Roboto,
 			sans-serif;
 		font-weight: 300;
-		font-size: 1.5rem;
 		white-space: nowrap;
+
 		&:not(:last-child) {
 			margin-bottom: 1rem;
 		}

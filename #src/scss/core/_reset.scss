@@ -2,18 +2,18 @@ html {
 	font: {
 		style: normal;
 		size: 62.5%;
-		weight: $font-weight-defoult;
-		family: $font-defoult;
+		weight: $font-weight-default;
+		family: $font-default;
 	}
 	height: 100%;
 	// overflow-x: hidden;
 	counter-reset: heading;
 	color: var(--font-body-color);
 
-	letter-spacing: 1.7px;
+	letter-spacing: 1.1px;
 	// user-select: none;
 
-	@include _1024 {
+	@include screen-1024 {
 		font-size: 50%;
 	}
 }
@@ -21,25 +21,16 @@ html {
 body {
 	@extend .gradient-services;
 	// overscroll-behavior: none;
-	font:
-		1.6rem/1.6 Roboto,
-		sans-serif;
-	@include _1024 {
-		font:
-			1.8rem/1.6 Roboto,
-			sans-serif;
-	}
+	font: 1.6rem/1.6 $font-default;
 
-	@include _320 {
-		font:
-			1rem/1.6 Roboto,
-			sans-serif;
+	@include screen-490 {
+		font: 1.5rem/1.5 $font-default;
 	}
 }
 
 * {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	border: none;
 	box-sizing: border-box;
 	scrollbar-width: none;
@@ -86,8 +77,7 @@ button,
 input[type='submit'] {
 	display: inline-block;
 	box-shadow: none;
-	background-color: transparent;
-	background: none;
+	background: transparent none;
 	cursor: pointer;
 }
 
